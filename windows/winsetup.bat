@@ -12,14 +12,15 @@ goto msdos
 
 :runwinnt
 setlocal
-for %%v in (Daytona Cairo Hydra Neptune NT) do ver|find "%%v" > nul & ^
+for %%v in (Daytona Cairo Hydra Neptune NT) do ^
+ver|find "%%v" > nul & ^
 if not errorlevel 1 (set OLD_WINNT=1)
-for /f "tokens=4-7 delims=[.NT] " %%v in ('ver') do ^
-if "%%v.%%w"=="5.2" (set OLD_WINNT=1) else ^
-if "%%w.%%x"=="5.1" (set OLD_WINNT=1) else ^
-if "%%w.%%x"=="5.00" (set OLD_WINNT=1)
-if %OLD_WINNT%!==1! goto ntold
-if not defined OLD_WINNT setlocal EnableExtensions EnableDelayedExpansion
+if %OLD_WINNT%!==1! (goto ntold) ^
+else (setlocal EnableExtensions EnableDelayedExpansion)
+for /f "tokens=4-6 delims=[.NT] " %%v in ('ver') do (
+for %%a in (00 01) do if "%%w.%%x"=="5.%%a" (goto :ntold)
+for %%b in (1 2 3) do if "%%v.%%w"=="5.%%b" (goto :ntold)
+)
 
 set "drive=CDEFGHIJKLMNOPQRSTUVWXYZ"
 set "alpha=ABCDEFGHIJKLMNOPQRSTUVWYZabcdefghijklmnopqrstuvwyz"
@@ -63,6 +64,9 @@ echo This script only allowed in Setup Environment.
 endlocal
 goto :eof
 )
+for %%a in (BypassTPMCheck BypassSecureBootCheck BypassRAMCheck BypassCPUCheck) do ^
+reg add HKLM\Setup\LabConfig /V %%a /D 1 /T REG_DWORD > nul 2>&1
+reg add HKLM\System\Setup /V AllowUpgradesWithUnsupportedTPMOrCPU /D 1 /T REG_DWORD > nul 2>&1
 ::IMAGEX
 for /l %%d in (0,1,23) do ^
 if exist "!drive:~%%d,1!:\sources\imagex.exe" (set "imagexcd=!drive:~%%d,1!:\sources\imagex.exe")
@@ -251,18 +255,13 @@ set /p "=%~2" < nul
 :keyloop
 set "key="
 for /f "delims=" %%a in ('xcopy /l /w "%~f0" "%~f0" 2^> nul') do ^
-if not defined key set "key=%%a"
+if not defined key ^
+set "key=%%a"
 set "key=%key:~-1%"
-
 if defined key (
 if "%key%"=="%BS%" (
-if defined _password (
-set "_password=%_password:~0,-1%"
-set /p "=!BS! !BS!" < nul
-)) else (
-set "_password=%_password%%key%"
-set /p "=" < nul
-)
+if defined _password (set "_password=%_password:~0,-1%" & set /p "=!BS! !BS!" < nul)) ^
+else (set "_password=%_password%%key%" & set /p "=" < nul)
 goto :keyloop
 )
 echo/
