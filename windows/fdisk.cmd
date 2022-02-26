@@ -27,16 +27,20 @@ if not errorlevel 1 goto windos_2
 goto msdos
 :runwinnt
 setlocal
-for %%v in (Daytona Cairo Hydra Neptune NT) do ver|find "%%v" > nul & ^
-if not errorlevel 1 set OLD_WINNT=1
+for %%v in (Daytona Cairo Hydra Neptune NT) do ^
+ver|find "%%v" > nul & ^
+if not errorlevel 1 (set OLD_WINNT=1)
+if %OLD_WINNT%! == 1! (goto ntold) ^
+else (setlocal EnableExtensions EnableDelayedExpansion)
 for /f "tokens=4-7 delims=[.NT] " %%v in ('ver') do ^
-if "%%v.%%w" == "5.2" (set OLD_WINNT=1) else ^
-if "%%w.%%x" == "5.1" (set OLD_WINNT=1) else ^
-if "%%w.%%x" == "5.00" (set OLD_WINNT=1) & ^
-if "%%v.%%w" == "10.0" if %%x GTR 15063 (set "WINVER=%%v.%%w.%%x.%%y") ^
-else (set "WINVER=%%v.%%w.%%x")
-if %OLD_WINNT%! == 1! goto ntold
-if not defined OLD_WINNT setlocal EnableExtensions EnableDelayedExpansion
+set "WINVER=%%v.%%w.%%x" && ^
+if "%%v.%%w" == "10.0" (
+if %%x GTR 15063 (set "WINVER=%%v.%%w.%%x.%%y") ^
+else (set "WINVER=%%v.%%w.%%x.1")
+) else (
+for %%a in (00 10) do if "%%w.%%x" == "5.%%a" goto ntold
+for %%a in (1 2 3) do if "%%v.%%w" == "5.%%a" goto ntold
+)
 
 set "_UCASE=ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 set "_LCASE=abcdefghijklmnopqrstuvwxyz"
@@ -59,8 +63,9 @@ call :end
 goto :eof
 )
 
-if "%SystemRoot:~0,2%" == "X:" (bcdedit /store %SystemRoot%\system32\config\bcd-template > nul 2>&1) ^
-else (cacls %SystemRoot%\system32\config\system > nul 2>&1)
+set "REGDIR=%SystemRoot%\system32\config"
+if "%SystemRoot:~0,2%" == "X:" (bcdedit /store %REGDIR%\bcd-template > nul 2>&1) ^
+else (cacls %REGDIR%\system > nul 2>&1)
 
 if %ERRORLEVEL% NEQ 0 (
 if exist %SystemRoot%\system32\WindowsPowerShell\v1.0\powershell.exe (
@@ -68,8 +73,8 @@ call powershell.exe -noprofile -command ^
 $ShellApplication = New-Object -ComObject Shell.Application ;^
 $ShellApplication.ShellExecute^('%SystemRoot%\system32\cmd.exe', '/c "%~dpf0" %*', '', 'RunAs', 1^)
 ) else (
->> "%tmp%\getrunas.vbs" echo CreateObject^("Shell.Application"^).ShellExecute _
->> "%tmp%\getrunas.vbs" echo "%SystemRoot%\system32\cmd.exe", "/c ""%~dpf0"" %*", "", "RunAs", ^1
+echo >> "%tmp%\getrunas.vbs" CreateObject^("Shell.Application"^).ShellExecute _
+echo >> "%tmp%\getrunas.vbs" "%SystemRoot%\system32\cmd.exe", "/c ""%~dpf0"" %*", "", "RunAs", ^1
 call %SystemRoot%\system32\cscript.exe //nologo //e:vbscript "%tmp%\getrunas.vbs"
 del /q "%tmp%\getrunas.vbs" > nul 2>&1
 ) & endlocal
@@ -85,8 +90,9 @@ goto :eof
 )
 
 if "%_PARAM%" == "/STATUS" (
-echo list disk > "%tmp%\%~n0.ini"
-echo list volume >> "%tmp%\%~n0.ini"
+call :listdiskandpart
+call :listvol
+call :listvdisk
 call :rundiskpart
 endlocal
 goto :eof
@@ -726,6 +732,58 @@ goto :start
 ;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxy
 ;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxz
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxa
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxb
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxc
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxd
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxe
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxf
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxg
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxh
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxi
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxj
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxk
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxl
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxm
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxn
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxo
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxp
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxq
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxr
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxs
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxt
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxu
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxv
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxw
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxy
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxz
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxa
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxb
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxc
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxd
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxe
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxf
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxg
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxh
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxi
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxj
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxk
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxl
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxm
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxn
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxo
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxp
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxq
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxr
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxs
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxt
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxu
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxv
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxw
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxy
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxz
 ;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx0
 
 
@@ -734,8 +792,26 @@ goto :start
 echo list disk >> "%tmp%\%~n0.ini"
 goto :eof
 
+:listpar
+echo list partition >> "%tmp%\%~n0.ini"
+goto :eof
+
+:listdiskandpart
+call :listdisk
+%SystemRoot%\system32\diskpart.exe /s "%tmp%\%~n0.ini" > "%tmp%\%~n0.list"
+for /l %%l in (0,1,23) do ^
+for /f "tokens=1-2 delims= " %%a in ('type "%tmp%\%~n0.list"^|find "Disk %%l"') do set "disk=%%b" & ^
+call :seldisk %%b & ^
+call :listpar
+del /q "%tmp%\%~n0.list" > nul 2>&1
+goto :eof
+
 :listvol
 echo list volume >> "%tmp%\%~n0.ini"
+goto :eof
+
+:listvdisk
+echo list vdisk >> "%tmp%\%~n0.ini"
 goto :eof
 
 :seldisk
@@ -851,17 +927,19 @@ goto :eof
 
 :start
 for %%i in (
-crepart syspart convert delete options shrext
-prompts canceldel
+crepart syspart convert delete options shrext viewmenu
+prompts canceldel diskp detail volume vdisk backmenu
 disk vol size fs label letter
 ) do set "%%i="
 cls
+if not defined started (
 echo Microsoft Windows version %WINVER%
 echo Disk Partition Console Manager Program
 echo Powered by DISKPART.EXE
 echo.
-echo Copyright (C) Microsoft Corporation. All rights reserved.
+echo Copyright ^(C^) Microsoft Corporation. All rights reserved.
 echo On computer: %COMPUTERNAME%
+)
 echo.
 echo 1.  Create partition or logical drive
 echo 2.  Set active partition
@@ -872,24 +950,66 @@ echo 6.  Display disk or partition information
 echo 7.  Exit this setup
 echo.
 set /p "options=Choose one of the following> "
-if %options%? == 1? goto :crepartmenu
-if %options%? == 2? goto :setactive
-if %options%? == 3? goto :deletemenu
-if %options%? == 4? goto :shrextmenu
-if %options%? == 5? goto :convertmenu
-if %options%? == 6? goto :viewdiskvol
+if %options%? == 1? (goto :crepartmenu)
+if %options%? == 2? (goto :setactive)
+if %options%? == 3? (goto :deletemenu)
+if %options%? == 4? (goto :shrextmenu)
+if %options%? == 5? (goto :convertmenu)
+if %options%? == 6? (cls & goto :viewmenu)
 if %options%? == 7? (cls & endlocal & goto :eof)
 goto :start
 
+:viewmenu
+set started=1
+for %%i in (
+crepart syspart convert delete options shrext viewmenu
+prompts canceldel diskp detail volume vdisk backmenu
+disk vol size fs label letter
+) do set "%%i="
+cls
+echo.
+echo 1.  Show all information
+echo 2.  Show disk drive partition
+echo 3.  Show volume, letter, and file system
+echo 4.  Show virtual disk
+echo 5.  Go back to main menu
+echo.
+set /p "viewmenu=Choose one of the following> "
+if %viewmenu%? == 1? (set "diskp=1" & set "volume=1" & set "vdisk=1" & goto :viewdiskvol)
+if %viewmenu%? == 2? (set "diskp=1" & set "backmenu=1" & goto :viewdiskvol)
+if %viewmenu%? == 3? (set "volume=1" & set "backmenu=1" & goto :viewdiskvol)
+if %viewmenu%? == 4? (set "vdisk=1" & set "backmenu=1" & goto :viewdiskvol)
+if %viewmenu%? == 5? goto :start
+goto :viewmenu
+
 :viewdiskvol
-call :listdisk & call :listvol
+if defined diskp (
+cls
+echo Getting disk drive and partition information...
+call :listdiskandpart
+call :rundiskpart & echo.& pause
+if defined backmenu goto :start
+)
+if defined volume (
+cls
+echo Getting volume, letter, and file system information...
+call :listvol
+call :rundiskpart & echo.& pause
+if defined backmenu goto :start
+)
+if defined vdisk (
+cls
+echo Getting virtual disk information...
+call :listvdisk
 call :rundiskpart & echo.& pause & goto :start
+)
 
 
 :crepartmenu
+set started=1
 for %%i in (
-crepart syspart convert delete options shrext
-prompts canceldel
+crepart syspart convert delete options shrext viewmenu
+prompts canceldel diskp detail volume vdisk backmenu
 disk vol size fs label letter
 ) do set "%%i="
 cls
@@ -967,9 +1087,10 @@ call :rundiskpart & pause & goto :start
 
 
 :syspartmenu
+set started=1
 for %%i in (
-crepart syspart convert delete options shrext
-prompts canceldel
+crepart syspart convert delete options shrext viewmenu
+prompts canceldel diskp detail volume vdisk backmenu
 disk vol size fs label letter
 ) do set "%%i="
 cls
@@ -1059,9 +1180,10 @@ goto :start
 
 
 :shrextmenu
+set started=1
 for %%i in (
-crepart syspart convert delete options shrext
-prompts canceldel
+crepart syspart convert delete options shrext viewmenu
+prompts canceldel diskp detail volume vdisk backmenu
 disk vol size fs label letter
 ) do set "%%i="
 cls
@@ -1072,8 +1194,8 @@ echo 3.  Go back to main menu
 echo.
 set /p "shrext=Choose one of the following> "
 if %shrext%? == 3? goto :start
-call :listvol
-call :rundiskpart
+for %%a in (1 2) do ^
+if %convert%? == %%a? (call :listvol & call :rundiskpart)
 if %shrext%? == 1? goto :shrink
 if %shrext%? == 2? goto :extend
 goto :shrextmenu
@@ -1102,9 +1224,10 @@ goto :start
 
 
 :convertmenu
+set started=1
 for %%i in (
-crepart syspart convert delete options shrext
-prompts canceldel
+crepart syspart convert delete options shrext viewmenu
+prompts canceldel diskp detail volume vdisk backmenu
 disk vol size fs label letter
 ) do set "%%i="
 cls
@@ -1115,8 +1238,8 @@ echo 3.  Go back to main menu
 echo.
 set /p "convert=Choose one of the following> "
 if %convert%? == 3? goto :start
-call :listdisk
-call :rundiskpart
+for %%a in (1 2) do ^
+if %convert%? == %%a? (call :listdisk & call :rundiskpart)
 if %convert%? == 1? goto :convertmbr
 if %convert%? == 2? goto :convertgpt
 goto :convertmenu
@@ -1147,9 +1270,10 @@ goto :start
 
 
 :deletemenu
+set started=1
 for %%i in (
-crepart syspart convert delete options shrext
-prompts canceldel
+crepart syspart convert delete options shrext viewmenu
+prompts canceldel diskp detail volume vdisk backmenu
 disk vol size fs label letter
 ) do set "%%i="
 cls
@@ -1806,6 +1930,58 @@ goto :promptsdel
 ;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxy
 ;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxz
 ;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx1
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxa
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxb
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxc
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxd
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxe
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxf
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxg
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxh
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxi
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxj
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxk
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxl
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxm
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxn
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxo
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxp
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxq
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxr
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxs
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxt
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxu
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxv
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxw
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxy
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxz
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxa
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxb
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxc
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxd
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxe
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxf
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxg
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxh
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxi
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxj
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxk
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxl
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxm
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxn
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxo
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxp
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxq
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxr
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxs
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxt
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxu
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxv
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxw
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxy
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxz
 ;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxa
 ;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxb
 ;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxc
