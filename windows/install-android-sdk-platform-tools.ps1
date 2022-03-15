@@ -37,8 +37,7 @@ foreach{$_.IsInRole([System.Security.Principal.WindowsBuiltinRole]::Administrato
 } elseif($(whoami) -eq "root") {$true} else {$false}
 $Run_InvokeExpression = foreach($iex in @("Invoke-Expression", "invoke-expression", "iex")) {@(
 "bit.ly/install_adb", "$Github_Site/$RepositoryName/raw/$RepositoryBranch", "$RawGithub/$RepositoryName/$RepositoryBranch"
-) |
-foreach{if(($MainArgument -match $iex) -and ($MainArgument -match $_)) {$true}}}
+).foreach({if(($MainArgument -match $iex) -and ($MainArgument -match $_)) {$true}})}
 $ErrorAppInfo = if($Run_InvokeExpression) {$AppFileName} else {Split-Path -Leaf $MainArgument}
 
 if(!($IsWindows -or ($env:OS -eq "Windows_NT"))) {
@@ -107,7 +106,7 @@ if(($LoadOptions -notmatch "DISABLE_INTEGRITY_CHECKS") -or `
    ($TestSigning -ne "Yes")) {
     $Options = $MsgBoxDialog::Show(
     "You are not activate Disable Driver Signature Enforcement Mode at Boot Configuration Data. " +
-    for($i=1; $i -le 2; $i++) {$NewLine} +
+    $(for($i=1; $i -le 2; $i++) {$NewLine}) +
     "You must restart in advanced startup setting, select Disable Driver Signature Enforcement, " +
     "run this installation and ignore this message. But if you don't restart, driver cannot be " +
     "run after install and connect. Are you sure to continue this installation?", $Null,
