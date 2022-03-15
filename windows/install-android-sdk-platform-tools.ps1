@@ -34,9 +34,9 @@ $IsAdmin = if($IsWindows -or ($env:OS -eq "Windows_NT")) {[System.Security.Princ
 foreach{$_.IsInRole([System.Security.Principal.WindowsBuiltinRole]::Administrator)}} elseif($(whoami) -eq "root") {$true} else {$false}
 $Run_InvokeExpression = foreach($iex in @("Invoke-Expression", "invoke-expression", "iex")) {
 @("bit.ly/install_adb", "$Github_Site/$RepositoryName/raw/$RepositoryBranch/$AppFileName", "$RawGithub/$RepositoryName/$RepositoryBranch/$AppFileName") |
-foreach{if(($MyInvocation.MyCommand.Definition -match $iex) -and ($MyInvocation.MyCommand.Definition -match $iex)) {$true}
-}}
-$ErrorAppInfo = if($Run_InvokeExpression) {"$AppFileName"} else {Split-Path -Leaf $MyInvocation.MyCommand.Definition}
+foreach{if(($MyInvocation.MyCommand.Definition -match $iex) -and ($MyInvocation.MyCommand.Definition -match $_)) {$true}}
+}
+$ErrorAppInfo = if($Run_InvokeExpression) {$AppFileName} else {Split-Path -Leaf $MyInvocation.MyCommand.Definition}
 
 if(!($IsWindows -or ($env:OS -eq "Windows_NT"))) {
     $ErrorMsg = "This script only support running on Microsoft Windows Operating System."
@@ -100,12 +100,11 @@ $NoIntegrityChecks = $($(bcdedit | where{$_ -match "nointegritychecks"}) -split 
 if(($LoadOptions -notmatch "DISABLE_INTEGRITY_CHECKS") -or `
    ($NoIntegrityChecks -ne "Yes") -or `
    ($TestSigning -ne "Yes")) {
-    $Options = $MsgBoxDialog::Show(
-    "You are not activate Disable Driver Signature Enforcement Mode at Boot Configuration Data. " + $NewLine +
-    $NewLine +
-    "You must restart in advanced startup setting, select Disable Driver Signature Enforcement, " + $NewLine +
-    "run this installation and ignore this message. But if you don't restart, driver cannot be " + $NewLine +
-    "run after install and connect. Are you sure to continue this installation?", $Null,
+    $Options = $MsgBoxDialog::Show(@(
+    "You are not activate Disable Driver Signature Enforcement Mode at Boot Configuration Data. $($NewLine)"
+    "You must restart in advanced startup setting, select Disable Driver Signature Enforcement, "
+    "run this installation and ignore this message. But if you don't restart, driver cannot be "
+    "run after install and connect. Are you sure to continue this installation?" -join $NewLine), $Null,
     $MsgBoxButton::YesNo,
     $MsgBoxIcon::Information
     )
