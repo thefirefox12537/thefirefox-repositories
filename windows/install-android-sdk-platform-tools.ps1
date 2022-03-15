@@ -27,12 +27,16 @@ $RawGithub = "raw.githubusercontent.com"
 $RepositoryName = "thefirefox12537/thefirefox-repositories"
 $RepositoryBranch = "main/windows"
 $AppFileName = "install-android-sdk-platform-tools.ps1"
+$Android = "android-sdk"
+$Title = "platform-tools"
+$PwshShell = (Get-Process -id $PID).Path
 $IsAdmin = if($IsWindows -or ($env:OS -eq "Windows_NT")) {[System.Security.Principal.WindowsPrincipal][System.Security.Principal.WindowsIdentity]::GetCurrent() |
 foreach{$_.IsInRole([System.Security.Principal.WindowsBuiltinRole]::Administrator)}} elseif($(whoami) -eq "root") {$true} else {$false}
 $Run_InvokeExpression = foreach($iex in @("Invoke-Expression", "invoke-expression", "iex")) {
 @("bit.ly/install_adb", "$Github_Site/$RepositoryName/raw/$RepositoryBranch/$AppFileName", "$RawGithub/$RepositoryName/$RepositoryBranch/$AppFileName") |
 foreach{if(($MyInvocation.MyCommand.Definition -match $iex) -and ($MyInvocation.MyCommand.Definition -match $iex)) {$true}
 }}
+$ErrorAppInfo = if($Run_InvokeExpression) {"$AppFileName"} else {Split-Path -Leaf $MyInvocation.MyCommand.Definition}
 
 if(!($IsWindows -or ($env:OS -eq "Windows_NT"))) {
     $ErrorMsg = "This script only support running on Microsoft Windows Operating System."
@@ -40,14 +44,10 @@ if(!($IsWindows -or ($env:OS -eq "Windows_NT"))) {
     if($env:DISPLAY -and (Get-Command kdialog -ErrorAction Ignore)) {$GUIBox = "kdialog"; $DialogType = "--error"}
     if(!($GUIBox)) {Write-Error $ErrorMsg}
     else {& $GUIBox $DialogType $ErrorMsg 8 72}
-    if($Run_InvokeExpression) {pause}
     exit
 }
 
-$Android = "android-sdk"
-$Title = "platform-tools"
 $NewLine = [System.Environment]::NewLine
-$PwshShell = (Get-Process -id $PID).Path
 
 if($Help) {Get-Help "$($MyInvocation.MyCommand.Definition)" -detailed; exit 0}
 if($IsAdmin -eq $false) {
@@ -55,10 +55,7 @@ if($IsAdmin -eq $false) {
         Start-Process -verb RunAs `
         "$PwshShell" "/noprofile /executionpolicy unrestricted /file `"$($MyInvocation.MyCommand.Definition)`""
     } else {
-        Write-Host -ForegroundColor red $(@(
-        "$(Split-Path -Leaf $MyInvocation.MyCommand.Definition): "
-        "This command cannot be run as standard user. You must running as administrator first."
-        ) -join " ")
+        Write-Host -ForegroundColor red "${ErrorAppInfo}: This command cannot be run as standard user. You must running as administrator first."
     }
     if($Run_InvokeExpression) {pause}
     exit
@@ -67,7 +64,7 @@ if($IsAdmin -eq $false) {
 $availableExecutionPolicy = @("Unrestricted", "RemoteSigned", "ByPass")
 if((Get-ExecutionPolicy).ToString() -notin $availableExecutionPolicy) {
     Write-Host -ForegroundColor red $(@(
-    "$(Split-Path -Leaf $MyInvocation.MyCommand.Definition): "
+    "${ErrorAppInfo}: "
     "PowerShell requires an execution policy in [$($availableExecutionPolicy -join ", ")] to run this script. "
     "For example, to set the execution policy to 'RemoteSigned' please run PowerShell as Administrator and type : $($NewLine)"
     "'Set-ExecutionPolicy RemoteSigned'"
@@ -80,10 +77,7 @@ $SvcPointMan = [System.Net.ServicePointManager]
 $SecProtocol = [System.Net.SecurityProtocolType]
 if([System.Environment]::OSVersion.Version -lt (New-Object Version 6,1)) {
     if([System.Enum]::GetNames($SecProtocol) -notcontains "Tls12") {
-        Write-Host -ForegroundColor red $(@(
-        "$(Split-Path -Leaf $MyInvocation.MyCommand.Definition): "
-        "This script requires at least Microsoft .NET Framework 4.5."
-        ) -join " ")
+        Write-Host -ForegroundColor red "${ErrorAppInfo}: "This script requires at least Microsoft .NET Framework 4.5."
         if($Run_InvokeExpression) {pause}
         exit
     }
