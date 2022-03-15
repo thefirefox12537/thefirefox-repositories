@@ -67,12 +67,12 @@ if($IsAdmin -eq $false) {
 
 $availableExecutionPolicy = @("Unrestricted", "RemoteSigned", "ByPass")
 if((Get-ExecutionPolicy).ToString() -notin $availableExecutionPolicy) {
-    Write-Host -BackgroundColor black -ForegroundColor red $(
-    "${ErrorAppInfo}: " +
-    "PowerShell requires an execution policy in [$($availableExecutionPolicy -join ", ")] to run this script. " +
-    "For example, to set the execution policy to 'RemoteSigned' please run PowerShell as Administrator and type :$NewLine" +
+    Write-Host -BackgroundColor black -ForegroundColor red $(@(
+    "${ErrorAppInfo}:"
+    "PowerShell requires an execution policy in [$($availableExecutionPolicy -join ", ")] to run this script."
+    "For example, to set the execution policy to 'RemoteSigned' please run PowerShell as Administrator and type : "
     "'Set-ExecutionPolicy RemoteSigned'"
-    )
+    ) -join " ")
     if($Run_InvokeExpression) {pause}
     exit 1
 }
