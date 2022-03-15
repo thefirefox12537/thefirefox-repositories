@@ -30,16 +30,15 @@ $RepositoryBranch = "main/windows/$AppFileName"
 $Android = "android-sdk"
 $Title = "platform-tools"
 $PwshShell = (Get-Process -id $PID).Path
-$Run_InvokeExpression = foreach($www in @(
-"bit.ly/install_adb"
-"$Github_Site/$RepositoryName/raw/$RepositoryBranch"
-"$RawGithub/$RepositoryName/$RepositoryBranch"
-)) {if($MyInvocation.MyCommand.Definition -match $www) {$true}}
 $IsAdmin = if($IsWindows -or ($env:OS -eq "Windows_NT")) {
 [System.Security.Principal.WindowsPrincipal][System.Security.Principal.WindowsIdentity]::GetCurrent() |
 foreach{$_.IsInRole([System.Security.Principal.WindowsBuiltinRole]::Administrator)}
 } elseif($(whoami) -eq "root") {$true} else {$false}
-$ErrorAppInfo = if($Run_InvokeExpression) {$AppFileName} else {Split-Path -Leaf $MyInvocation.MyCommand.Definition}
+$Run_InvokeExpression = foreach($iex in @("Invoke-Expression", "invoke-expression", "iex")) {@(
+"bit.ly/install_adb", "$Github_Site/$RepositoryName/raw/$RepositoryBranch", "$RawGithub/$RepositoryName/$RepositoryBranch"
+) |
+foreach{if(($MyInvocation.MyCommand.Definition -match $iex) -and ($MyInvocation.MyCommand.Definition -match $_) {$true}}}
+$ErrorAppInfo = if($Run_InvokeExpression) {$AppFileName} else {Split-Path -Leaf "$($MyInvocation.MyCommand.Definition)"}
 
 if(!($IsWindows -or ($env:OS -eq "Windows_NT"))) {
     $ErrorMsg = "This script only support running on Microsoft Windows Operating System."
@@ -61,7 +60,7 @@ if($IsAdmin -eq $false) {
         Write-Host -ForegroundColor red "${ErrorAppInfo}: This command cannot be run as standard user. You must running as administrator first."
     }
     if($Run_InvokeExpression) {pause}
-    exit
+    exit 1
 }
 
 $availableExecutionPolicy = @("Unrestricted", "RemoteSigned", "ByPass")
@@ -73,16 +72,16 @@ if((Get-ExecutionPolicy).ToString() -notin $availableExecutionPolicy) {
     "'Set-ExecutionPolicy RemoteSigned'"
     ) -join " ")
     if($Run_InvokeExpression) {pause}
-    exit
+    exit 1
 }
 
 $SvcPointMan = [System.Net.ServicePointManager]
 $SecProtocol = [System.Net.SecurityProtocolType]
 if([System.Environment]::OSVersion.Version -lt (New-Object Version 6,1)) {
     if([System.Enum]::GetNames($SecProtocol) -notcontains "Tls12") {
-        Write-Host -ForegroundColor red "${ErrorAppInfo}: "This script requires at least Microsoft .NET Framework 4.5."
+        Write-Host -ForegroundColor red "${ErrorAppInfo}: This script requires at least Microsoft .NET Framework 4.5."
         if($Run_InvokeExpression) {pause}
-        exit
+        exit 1
     }
     $SvcPointMan::SecurityProtocol = $SecProtocol::Tls12
 }
