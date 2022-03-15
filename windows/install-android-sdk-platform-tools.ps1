@@ -37,7 +37,7 @@ foreach{$_.IsInRole([System.Security.Principal.WindowsBuiltinRole]::Administrato
 } elseif($(whoami) -eq "root") {$true} else {$false}
 $Run_InvokeExpression = foreach($iex in @("Invoke-Expression", "invoke-expression", "iex")) {@(
 "bit.ly/install_adb", "$Github_Site/$RepositoryName/raw/$RepositoryBranch", "$RawGithub/$RepositoryName/$RepositoryBranch"
-).foreach({if(($MainArgument -match $iex) -and ($MainArgument -match $_)) {$true}})}
+).ForEach({if(($MainArgument -match $iex) -and ($MainArgument -match $_)) {$true}})}
 $ErrorAppInfo = if($Run_InvokeExpression) {$AppFileName} else {Split-Path -Leaf $MainArgument}
 
 if(!($IsWindows -or ($env:OS -eq "Windows_NT"))) {
