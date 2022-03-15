@@ -58,7 +58,9 @@ if($IsAdmin -eq $false) {
         Start-Process -verb RunAs `
         "$PwshShell" "/noprofile /executionpolicy bypass /file `"$MainArgument`""
     } else {
-        Write-Host -ForegroundColor red "${ErrorAppInfo}: This command cannot be run as standard user. You must running as administrator first."
+        Write-Host -BackgroundColor black -ForegroundColor red @(
+        "${ErrorAppInfo}: This command cannot be run as standard user. You must running as administrator first."
+        )
     }
     if($Run_InvokeExpression) {pause}
     exit 1
@@ -66,7 +68,7 @@ if($IsAdmin -eq $false) {
 
 $availableExecutionPolicy = @("Unrestricted", "RemoteSigned", "ByPass")
 if((Get-ExecutionPolicy).ToString() -notin $availableExecutionPolicy) {
-    Write-Host -ForegroundColor red $(@(
+    Write-Host -BackgroundColor black -ForegroundColor red $(@(
     "${ErrorAppInfo}: "
     "PowerShell requires an execution policy in [$($availableExecutionPolicy -join ", ")] to run this script. "
     "For example, to set the execution policy to 'RemoteSigned' please run PowerShell as Administrator and type : $($NewLine)"
@@ -80,7 +82,9 @@ $SvcPointMan = [System.Net.ServicePointManager]
 $SecProtocol = [System.Net.SecurityProtocolType]
 if([System.Environment]::OSVersion.Version -lt (New-Object Version 6,1)) {
     if([System.Enum]::GetNames($SecProtocol) -notcontains "Tls12") {
-        Write-Host -ForegroundColor red "${ErrorAppInfo}: This script requires at least Microsoft .NET Framework 4.5."
+        Write-Host -BackgroundColor black -ForegroundColor red @(
+        "${ErrorAppInfo}: This script requires at least Microsoft .NET Framework 4.5."
+        )
         if($Run_InvokeExpression) {pause}
         exit 1
     }
@@ -101,11 +105,11 @@ $NoIntegrityChecks = $($(bcdedit | where{$_ -match "nointegritychecks"}) -split 
 if(($LoadOptions -notmatch "DISABLE_INTEGRITY_CHECKS") -or `
    ($NoIntegrityChecks -ne "Yes") -or `
    ($TestSigning -ne "Yes")) {
-    $Options = $MsgBoxDialog::Show(@(
-    "You are not activate Disable Driver Signature Enforcement Mode at Boot Configuration Data. `r`n"
-    "You must restart in advanced startup setting, select Disable Driver Signature Enforcement, "
-    "run this installation and ignore this message. But if you don't restart, driver cannot be "
-    "run after install and connect. Are you sure to continue this installation?" -join $NewLine), $Null,
+    $Options = $MsgBoxDialog::Show(
+    "You are not activate Disable Driver Signature Enforcement Mode at Boot Configuration Data. " + $NewLine + $NewLine +
+    "You must restart in advanced startup setting, select Disable Driver Signature Enforcement, " + $NewLine +
+    "run this installation and ignore this message. But if you don't restart, driver cannot be " + $NewLine +
+    "run after install and connect. Are you sure to continue this installation?", $Null,
     $MsgBoxButton::YesNo,
     $MsgBoxIcon::Information
     )
@@ -331,4 +335,5 @@ exit 0
     $MsgBoxIcon::Error
     ) | Out-Null
 }
+
 exit
