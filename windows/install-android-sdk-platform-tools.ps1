@@ -23,61 +23,59 @@
 
 param([switch][alias('h')]$Help)
 if(!($IsWindows -or ($env:OS -eq "Windows_NT"))) {
-    $ErrorMsg = 'This script only support running on Microsoft Windows Operating System.'
-    foreach($i in @('dialog', 'whiptail')) {if(Get-Command $i -ErrorAction Ignore) {$GUIBox = $i}}
-    if($env:DISPLAY -and (Get-Command kdialog -ErrorAction Ignore)) {$GUIBox = 'kdialog'}
+    $ErrorMsg = "This script only support running on Microsoft Windows Operating System."
+    foreach($i in @("dialog", "whiptail")) {if(Get-Command $i -ErrorAction Ignore) {$GUIBox = $i; $DialogType = "--msgbox"}}
+    if($env:DISPLAY -and (Get-Command kdialog -ErrorAction Ignore)) {$GUIBox = "kdialog"; $DialogType = "--error"}
     if(!($GUIBox)) {Write-Error $ErrorMsg}
-    else {& $GUIBox --msgbox $ErrorMsg 8 72}
+    else {& $GUIBox $DialogType $ErrorMsg 8 72}
     exit 1
 }
 
-$Android = 'android-sdk'
-$Title = 'platform-tools'
+$Android = "android-sdk"
+$Title = "platform-tools"
 $NewLine = [System.Environment]::NewLine
-$PwshShell = (Get-Process -id $PID).ProcessName
+$PwshShell = (Get-Process -id $PID).Path
 
 if($Help) {Get-Help "$($MyInvocation.MyCommand.Definition)" -detailed; exit 0}
-[Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent() |
-foreach{if($_.IsInRole([Security.Principal.WindowsBuiltinRole]::Administrator) -eq $false) {
+[System.Security.Principal.WindowsPrincipal][System.Security.Principal.WindowsIdentity]::GetCurrent() |
+foreach{if($_.IsInRole([System.Security.Principal.WindowsBuiltinRole]::Administrator) -eq $false) {
     if(Test-Path $MyInvocation.MyCommand.Definition) {
         Start-Process -verb RunAs `
-        $PwshShell "/noprofile /executionpolicy unrestricted /file `"$($MyInvocation.MyCommand.Definition)`""
+        "$PwshShell" "/noprofile /executionpolicy unrestricted /file `"$($MyInvocation.MyCommand.Definition)`""
     } else {
         Write-Host -ForegroundColor red $(@(
         "$(Split-Path -Leaf $MyInvocation.MyCommand.Definition): "
         "This command cannot be run as standard user. You must running as administrator first."
-        ) -join ' ')
+        ) -join " ")
     }
     exit
 }}
 
-$availableExecutionPolicy = @('Unrestricted', 'RemoteSigned', 'ByPass')
+$availableExecutionPolicy = @("Unrestricted", "RemoteSigned", "ByPass")
 if((Get-ExecutionPolicy).ToString() -notin $availableExecutionPolicy) {
     Write-Host -ForegroundColor red $(@(
     "$(Split-Path -Leaf $MyInvocation.MyCommand.Definition): "
     "PowerShell requires an execution policy in [$($availableExecutionPolicy -join ", ")] to run this script. "
     "For example, to set the execution policy to 'RemoteSigned' please run PowerShell as Administrator and type :" + $NewLine
     "'Set-ExecutionPolicy RemoteSigned'"
-    ) -join ' ')
+    ) -join " ")
     exit 1
 }
 
 $SvcPointMan = [System.Net.ServicePointManager]
 $SecProtocol = [System.Net.SecurityProtocolType]
 if([System.Environment]::OSVersion.Version -lt (New-Object Version 6,1)) {
-    if([System.Enum]::GetNames($SecProtocol) -notcontains 'Tls12') {
+    if([System.Enum]::GetNames($SecProtocol) -notcontains "Tls12") {
         Write-Host -ForegroundColor red $(@(
         "$(Split-Path -Leaf $MyInvocation.MyCommand.Definition): "
         "This script requires at least Microsoft .NET Framework 4.5."
-        ) -join ' ')
+        ) -join " ")
         exit 1
     }
     $SvcPointMan::SecurityProtocol = $SecProtocol::Tls12
 }
-foreach($value in 'SilentlyContinue') {
-    $ProgressPreference = $value
-    $ErrorActionPreference = $value
-}
+foreach($variable in @("ProgressPreference", "ErrorActionPreference"))
+{Set-Variable $variable "SilentlyContinue"}
 
 Add-Type -Assembly System.Windows.Forms | Out-Null
 Add-Type -Assembly System.IO.Compression.FileSystem | Out-Null
@@ -87,34 +85,34 @@ $MsgBoxIcon = [System.Windows.Forms.MessageBoxIcon]
 $ArchiveClient = [System.IO.Compression.ZipFile]
 $WebClient = New-Object System.Net.WebClient
 
-$TestSigning = $($(bcdedit | Select-String 'testsigning') -split ' * ')[1]
-$LoadOptions = $($(bcdedit | Select-String 'loadoptions') -split ' * ')[1]
-$NoIntegrityChecks = $($(bcdedit | Select-String 'nointegritychecks') -split ' * ')[1]
-if(($LoadOptions -notmatch 'DISABLE_INTEGRITY_CHECKS') -or `
-   ($NoIntegrityChecks -ne 'Yes') -or `
-   ($TestSigning -ne 'Yes')) {
-    $Options = $MsgBoxDialog::Show(
-    "You are not activate Disable Driver Signature Enforcement Mode at Boot Configuration Data." + $NewLine + $NewLine +
-    "You must restart in advanced startup setting, select Disable Driver Signature Enforcement, " +
-    "run this installation and ignore this message. But if you don't restart, driver cannot be " +
-    "run after install and connect. Are you sure to continue this installation?", $Null,
+$TestSigning = $($(bcdedit | Select-String "testsigning") -split " * ")[1]
+$LoadOptions = $($(bcdedit | Select-String "loadoptions") -split " * ")[1]
+$NoIntegrityChecks = $($(bcdedit | Select-String "nointegritychecks") -split " * ")[1]
+if(($LoadOptions -notmatch "DISABLE_INTEGRITY_CHECKS") -or `
+   ($NoIntegrityChecks -ne "Yes") -or `
+   ($TestSigning -ne "Yes")) {
+    $Options = $MsgBoxDialog::Show(@(
+    "You are not activate Disable Driver Signature Enforcement Mode at Boot Configuration Data. " + $NewLine
+    "You must restart in advanced startup setting, select Disable Driver Signature Enforcement, "
+    "run this installation and ignore this message. But if you don't restart, driver cannot be "
+    "run after install and connect. Are you sure to continue this installation?" -join $NewLine), $Null,
     $MsgBoxButton::YesNo,
     $MsgBoxIcon::Information
     )
-    if($Options -eq 'No') {exit 1}
+    if($Options -eq "No") {exit 1}
 }
 
 $target = $(
-if($env:PROCESSOR_ARCHITECTURE -ne 'X86') {${env:ProgramFiles(x86)}}
+if($env:PROCESSOR_ARCHITECTURE -ne "X86") {${env:ProgramFiles(x86)}}
 else {${env:ProgramFiles}}
 )
 
-foreach($exe in @('adb.exe', 'fastboot.exe')) {
+foreach($exe in @("adb.exe", "fastboot.exe")) {
 if(!(Get-Command $exe)) {
     if(!(Test-Path `
        -pathtype container `
        -literalpath "$target\Google\$Android\$Title")) {
-        foreach($dir in @('Google', "Google\$Android")) {
+        foreach($dir in @("Google", "Google\$Android")) {
         if(!(Test-Path `
            -pathtype container `
            -literalpath "$target\$dir")) {
@@ -139,26 +137,26 @@ if(!(Get-Command $exe)) {
 
     Write-Output "Creating symbolic link..."
     foreach($i in @(
-       'adb.exe', 'fastboot.exe',
-       'AdbWinApi.dll', 'AdbWinUsbApi.dll',
-       'mke2fs.exe', 'make_f2fs.exe',
-       'etc1tool.exe', 'dmtracedump.exe', 'sqlite3.exe'
+       "adb.exe", "fastboot.exe",
+       "AdbWinApi.dll", "AdbWinUsbApi.dll",
+       "mke2fs.exe", "make_f2fs.exe",
+       "etc1tool.exe", "dmtracedump.exe", "sqlite3.exe"
     )) {
         New-Item -itemtype SymbolicLink `
         -path "${env:SystemRoot}\system32\$i" `
         -target "$target\Google\$Android\$Title\$i" | Out-Null
-        if($env:PROCESSOR_ARCHITECTURE -ne 'X86') {
+        if($env:PROCESSOR_ARCHITECTURE -ne "X86") {
             New-Item -itemtype SymbolicLink `
             -path "${env:SystemRoot}\SysWOW64\$i" `
             -target "${env:SystemRoot}\system32\$i" | Out-Null
         }
     }
-    Write-Output "$(($Android -split '-')[0])-$Title successfully placed."
+    Write-Output "$(($Android -split "-")[0])-$Title successfully placed."
     $InstallComplete = $true
     break
 } else {
     $MsgBoxDialog::Show(
-    "$(($Android -split '-')[0])-$Title already installed.", $Null,
+    "$(($Android -split "-")[0])-$Title already installed.", $Null,
     $MsgBoxButton::OK,
     $MsgBoxIcon::Error
     ) | Out-Null
@@ -183,8 +181,8 @@ if(!(Get-ChildItem `
     Write-Output "Installing driver..."
     pnputil -i -a "$target\Google\$Android\usb_driver\android_winusb.inf"
     $OEMDriverUninstall = $(pnputil -e |
-    Select-String -Context 1 'Driver package provider :\s+ Google, Inc.' |
-    foreach{($_.Context.PreContext[0] -split ' : +')[1]})
+    Select-String -Context 1 "Driver package provider :\s+ Google, Inc." |
+    foreach{($_.Context.PreContext[0] -split " : +")[1]})
 
     Write-Output "Deleting temporary download files..."
     Remove-Item -literalpath "${env:TMP}\usb_driver.zip"
@@ -192,9 +190,9 @@ if(!(Get-ChildItem `
     Write-Output "Driver successfully installed."
     $InstallComplete = $true
 } else {
-    $MsgBoxDialog::Show(
-    "Driver already installed. If you not sure install this driver before, " +
-    "remove first driver and this setup then running installation again.", $Null,
+    $MsgBoxDialog::Show(@(
+    "Driver already installed. If you not sure install this driver before, "
+    "remove first driver and this setup then running installation again." -join $NewLine), $Null,
     $MsgBoxButton::OK,
     $MsgBoxIcon::Error
     ) | Out-Null
@@ -205,7 +203,7 @@ if($InstallAlready) {exit}
 elseif($InstallComplete) {
     $UninstallRegPath =
     "HKLM:\SOFTWARE\" +
-    "Microsoft\Windows\CurrentVersion\Uninstall\$(($Android -split '-')[0])-$Title"
+    "Microsoft\Windows\CurrentVersion\Uninstall\$(($Android -split "-")[0])-$Title"
 
     foreach($UninstallFile in "$target\Google\$Android\$Title\uninstall.ps1") {
     if(!(Test-Path -literalpath $UninstallFile)) {
@@ -239,7 +237,7 @@ elseif($InstallComplete) {
 
 function Error-Dialog() {
     `$MsgBoxDialog::Show(
-    'Uninstallation failed.', `$Null,
+    "Uninstallation failed.", `$Null,
     `$MsgBoxButton::OK,
     `$MsgBoxIcon::Error
     ) | Out-Null
@@ -247,27 +245,27 @@ function Error-Dialog() {
 }
 
 if(!(`$IsWindows -or (`$env:OS -eq "Windows_NT"))) {
-    `$ErrorMsg = 'This script only support running on Microsoft Windows Operating System.'
-    foreach(`$i in @('dialog', 'whiptail')) {if(Get-Command `$i -ErrorAction Ignore) {`$GUIBox = `$i}}
-    if(`$env:DISPLAY -and (Get-Command kdialog -ErrorAction Ignore)) {`$GUIBox = 'kdialog'}
+    `$ErrorMsg = "This script only support running on Microsoft Windows Operating System."
+    foreach(`$i in @("dialog", "whiptail")) {if(Get-Command `$i -ErrorAction Ignore) {`$GUIBox = `$i; `$DialogType = "--msgbox"}}
+    if(`$env:DISPLAY -and (Get-Command kdialog -ErrorAction Ignore)) {`$GUIBox = "kdialog"; `$DialogType = "--error"}
     if(!(`$GUIBox)) {Write-Error `$ErrorMsg}
-    else {`& `$GUIBox --msgbox `$ErrorMsg 8 72}
+    else {`& `$GUIBox `$DialogType `$ErrorMsg 8 72}
     exit 1
 }
 
-`$Android = 'android-sdk'
-`$Title = 'platform-tools'
-`$PwshShell = (Get-Process -id `$PID).ProcessName
+`$Android = "android-sdk"
+`$Title = "platform-tools"
+`$PwshShell = (Get-Process -id `$PID).Path
 
-[Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent() |
-foreach{if(`$_.IsInRole([Security.Principal.WindowsBuiltinRole]::Administrator) -eq `$false) {
+[System.Security.Principal.WindowsPrincipal][System.Security.Principal.WindowsIdentity]::GetCurrent() |
+foreach{if(`$_.IsInRole([System.Security.Principal.WindowsBuiltinRole]::Administrator) -eq `$false) {
     Start-Process -verb RunAs ``
-    `$PwshShell "/noprofile /executionpolicy unrestricted /file ``"`$(`$MyInvocation.MyCommand.Definition)``""
+    "`$PwshShell" "/noprofile /executionpolicy unrestricted /file ``"`$(`$MyInvocation.MyCommand.Definition)``""
     exit
 }}
 
 `$target = `$(
-if(`$env:PROCESSOR_ARCHITECTURE -ne 'X86') {`${env:ProgramFiles(x86)}}
+if(`$env:PROCESSOR_ARCHITECTURE -ne "X86") {`${env:ProgramFiles(x86)}}
 else {`${env:ProgramFiles}}
 )
 
@@ -283,13 +281,13 @@ if(`$? -eq `$false) {
 }
 
 foreach(`$i in @(
-  'adb.exe', 'fastboot.exe',
-  'AdbWinApi.dll', 'AdbWinUsbApi.dll',
-  'mke2fs.exe', 'make_f2fs.exe',
-  'etc1tool.exe', 'dmtracedump.exe', 'sqlite3.exe'
+  "adb.exe", "fastboot.exe",
+  "AdbWinApi.dll", "AdbWinUsbApi.dll",
+  "mke2fs.exe", "make_f2fs.exe",
+  "etc1tool.exe", "dmtracedump.exe", "sqlite3.exe"
 )) {
     Remove-Item -literalpath "`${env:SystemRoot}\system32\`$i"
-    if(`$env:PROCESSOR_ARCHITECTURE -ne 'X86'`) {
+    if(`$env:PROCESSOR_ARCHITECTURE -ne "X86"`) {
         Remove-Item -literalpath "`${env:SystemRoot}\SysWOW64\`$i"
     }
 }
@@ -298,13 +296,13 @@ if(`$LASTEXITCODE -ne 0) {Error-Dialog}
 
 `$UninstallRegPath =
 "HKLM:\SOFTWARE\" +
-"Microsoft\Windows\CurrentVersion\Uninstall\`$((`$Android -split '-')[0])-`$Title"
+"Microsoft\Windows\CurrentVersion\Uninstall\`$((`$Android -split "-")[0])-`$Title"
 
 Remove-Item -recurse -literalpath "`$UninstallRegPath"
 Remove-Item -recurse -literalpath "`$target\Google\`$Android"
 
 `$MsgBoxDialog::Show(
-'Uninstallation completed.', `$Null,
+"Uninstallation completed.", `$Null,
 `$MsgBoxButton::OK,
 `$MsgBoxIcon::Information
 ) | Out-Null
@@ -328,13 +326,13 @@ exit 0
         New-ItemProperty -propertytype String `
         -literalpath $UninstallRegPath `
         -name UninstallString `
-        -value "`"$($(Get-Command $PwshShell).Source)`" -noprofile -executionpolicy unrestricted -file `"$UninstallFile`"" | Out-Null
+        -value "`"$PwshShell`" -noprofile -executionpolicy unrestricted -file `"$UninstallFile`"" | Out-Null
 
         if(!(Test-Path -literalpath $UninstallRegPath)) {
             Write-Output $(@(
             "Creating uninstall registry failed, but $UninstallFile "
             "already created so you must uninstall manually in PowerShell."
-            ) -join ' ')
+            ) -join " ")
             break
         } else {
             Write-Output "Creating uninstall registry successfully."
@@ -343,13 +341,13 @@ exit 0
     }}
 
     $MsgBoxDialog::Show(
-    'Installation completed.', $Null,
+    "Installation completed.", $Null,
     $MsgBoxButton::OK,
     $MsgBoxIcon::Information
     ) | Out-Null
 } else {
     $MsgBoxDialog::Show(
-    'Installation failed.', $Null,
+    "Installation failed.", $Null,
     $MsgBoxButton::OK,
     $MsgBoxIcon::Error
     ) | Out-Null
