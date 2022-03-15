@@ -22,13 +22,23 @@
 #>
 
 param([switch][alias('h')]$Help)
+$IsAdmin = if($IsWindows -or ($env:OS -eq "Windows_NT")) {
+    [System.Security.Principal.WindowsPrincipal][System.Security.Principal.WindowsIdentity]::GetCurrent() |
+    foreach{$_.IsInRole([System.Security.Principal.WindowsBuiltinRole]::Administrator)}
+} elseif($(whoami) -eq "root") {$true} else {$false}
+foreach($www in @(
+'bit.ly/install_adb'
+'github.com/thefirefox12537/raw/main/windows/install-android-sdk-platform-tools.ps1'
+'raw.githubusercontent.com/thefirefox12537/thefirefox-repositories/main/windows/install-android-sdk-platform-tools.ps1'
+)) {if(($IsAdmin -eq $true) -and ($MyInvocation.MyCommand.Definition -match $www)) {$Run_InvokeExpression = $true}}
 if(!($IsWindows -or ($env:OS -eq "Windows_NT"))) {
     $ErrorMsg = "This script only support running on Microsoft Windows Operating System."
     foreach($i in @("dialog", "whiptail")) {if(Get-Command $i -ErrorAction Ignore) {$GUIBox = $i; $DialogType = "--msgbox"}}
     if($env:DISPLAY -and (Get-Command kdialog -ErrorAction Ignore)) {$GUIBox = "kdialog"; $DialogType = "--error"}
     if(!($GUIBox)) {Write-Error $ErrorMsg}
     else {& $GUIBox $DialogType $ErrorMsg 8 72}
-    exit 1
+    if($Run_InvokeExpression) {pause}
+    exit()
 }
 
 $Android = "android-sdk"
@@ -36,11 +46,8 @@ $Title = "platform-tools"
 $NewLine = [System.Environment]::NewLine
 $PwshShell = (Get-Process -id $PID).Path
 
-echo $($MyInvocation.MyCommand.Definition)
-
 if($Help) {Get-Help "$($MyInvocation.MyCommand.Definition)" -detailed; exit 0}
-[System.Security.Principal.WindowsPrincipal][System.Security.Principal.WindowsIdentity]::GetCurrent() |
-foreach{if($_.IsInRole([System.Security.Principal.WindowsBuiltinRole]::Administrator) -eq $false) {
+if($IsAdmin -eq $false) {
     if(Test-Path $MyInvocation.MyCommand.Definition) {
         Start-Process -verb RunAs `
         "$PwshShell" "/noprofile /executionpolicy unrestricted /file `"$($MyInvocation.MyCommand.Definition)`""
@@ -50,18 +57,20 @@ foreach{if($_.IsInRole([System.Security.Principal.WindowsBuiltinRole]::Administr
         "This command cannot be run as standard user. You must running as administrator first."
         ) -join " ")
     }
-    exit
-}}
+    if($Run_InvokeExpression) {pause}
+    exit()
+}
 
 $availableExecutionPolicy = @("Unrestricted", "RemoteSigned", "ByPass")
 if((Get-ExecutionPolicy).ToString() -notin $availableExecutionPolicy) {
     Write-Host -ForegroundColor red $(@(
     "$(Split-Path -Leaf $MyInvocation.MyCommand.Definition): "
     "PowerShell requires an execution policy in [$($availableExecutionPolicy -join ", ")] to run this script. "
-    "For example, to set the execution policy to 'RemoteSigned' please run PowerShell as Administrator and type : $NewLine"
+    "For example, to set the execution policy to 'RemoteSigned' please run PowerShell as Administrator and type : $($NewLine)"
     "'Set-ExecutionPolicy RemoteSigned'"
     ) -join " ")
-    exit 1
+    if($Run_InvokeExpression) {pause}
+    exit()
 }
 
 $SvcPointMan = [System.Net.ServicePointManager]
@@ -72,7 +81,8 @@ if([System.Environment]::OSVersion.Version -lt (New-Object Version 6,1)) {
         "$(Split-Path -Leaf $MyInvocation.MyCommand.Definition): "
         "This script requires at least Microsoft .NET Framework 4.5."
         ) -join " ")
-        exit 1
+        if($Run_InvokeExpression) {pause}
+        exit()
     }
     $SvcPointMan::SecurityProtocol = $SecProtocol::Tls12
 }
@@ -94,14 +104,17 @@ if(($LoadOptions -notmatch "DISABLE_INTEGRITY_CHECKS") -or `
    ($NoIntegrityChecks -ne "Yes") -or `
    ($TestSigning -ne "Yes")) {
     $Options = $MsgBoxDialog::Show(@(
-    "You are not activate Disable Driver Signature Enforcement Mode at Boot Configuration Data. $NewLine"
+    "You are not activate Disable Driver Signature Enforcement Mode at Boot Configuration Data. $($NewLine)"
     "You must restart in advanced startup setting, select Disable Driver Signature Enforcement, "
     "run this installation and ignore this message. But if you don't restart, driver cannot be "
     "run after install and connect. Are you sure to continue this installation?" -join $NewLine), $Null,
     $MsgBoxButton::YesNo,
     $MsgBoxIcon::Information
     )
-    if($Options -eq "No") {exit 1}
+    if($Options -eq "No") {
+        if($Run_InvokeExpression) {pause}
+        exit()
+    }
 }
 
 $target = $(
@@ -201,7 +214,7 @@ if(!(Get-ChildItem `
     $InstallAlready = $true
 }
 
-if($InstallAlready) {exit}
+if($InstallAlready) {if($Run_InvokeExpression) {return} else {exit}}
 elseif($InstallComplete) {
     $UninstallRegPath =
     "HKLM:\SOFTWARE\" +
@@ -355,4 +368,4 @@ exit 0
     ) | Out-Null
 }
 
-exit
+exit()
