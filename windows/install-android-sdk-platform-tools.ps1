@@ -22,15 +22,18 @@
 #>
 
 param([switch][alias('h')]$Help)
-$IsAdmin = if($IsWindows -or ($env:OS -eq "Windows_NT")) {
-    [System.Security.Principal.WindowsPrincipal][System.Security.Principal.WindowsIdentity]::GetCurrent() |
-    foreach{$_.IsInRole([System.Security.Principal.WindowsBuiltinRole]::Administrator)}
-} elseif($(whoami) -eq "root") {$true} else {$false}
-foreach($www in @(
-'bit.ly/install_adb'
-'github.com/thefirefox12537/raw/main/windows/install-android-sdk-platform-tools.ps1'
-'raw.githubusercontent.com/thefirefox12537/thefirefox-repositories/main/windows/install-android-sdk-platform-tools.ps1'
-)) {if(($IsAdmin -eq $true) -and ($MyInvocation.MyCommand.Definition -match $www)) {$Run_InvokeExpression = $true}}
+$Github_Site = "github.com"
+$RawGithub = "raw.githubusercontent.com"
+$RepositoryName = "thefirefox12537/thefirefox-repositories"
+$RepositoryBranch = "main/windows"
+$AppFileName = "install-android-sdk-platform-tools.ps1"
+$IsAdmin = if($IsWindows -or ($env:OS -eq "Windows_NT")) {[System.Security.Principal.WindowsPrincipal][System.Security.Principal.WindowsIdentity]::GetCurrent() |
+foreach{$_.IsInRole([System.Security.Principal.WindowsBuiltinRole]::Administrator)}} elseif($(whoami) -eq "root") {$true} else {$false}
+$Run_InvokeExpression = foreach($iex in @("Invoke-Expression", "invoke-expression", "iex")) {
+@("bit.ly/install_adb", "$Github_Site/$RepositoryName/raw/$RepositoryBranch/$AppFileName", "$RawGithub/$RepositoryName/$RepositoryBranch/$AppFileName") |
+foreach{if(($MyInvocation.MyCommand.Definition -match $iex) -and ($MyInvocation.MyCommand.Definition -match $iex)) {$true}
+}}
+
 if(!($IsWindows -or ($env:OS -eq "Windows_NT"))) {
     $ErrorMsg = "This script only support running on Microsoft Windows Operating System."
     foreach($i in @("dialog", "whiptail")) {if(Get-Command $i -ErrorAction Ignore) {$GUIBox = $i; $DialogType = "--msgbox"}}
@@ -38,7 +41,7 @@ if(!($IsWindows -or ($env:OS -eq "Windows_NT"))) {
     if(!($GUIBox)) {Write-Error $ErrorMsg}
     else {& $GUIBox $DialogType $ErrorMsg 8 72}
     if($Run_InvokeExpression) {pause}
-    exit()
+    exit
 }
 
 $Android = "android-sdk"
@@ -58,7 +61,7 @@ if($IsAdmin -eq $false) {
         ) -join " ")
     }
     if($Run_InvokeExpression) {pause}
-    exit()
+    exit
 }
 
 $availableExecutionPolicy = @("Unrestricted", "RemoteSigned", "ByPass")
@@ -70,7 +73,7 @@ if((Get-ExecutionPolicy).ToString() -notin $availableExecutionPolicy) {
     "'Set-ExecutionPolicy RemoteSigned'"
     ) -join " ")
     if($Run_InvokeExpression) {pause}
-    exit()
+    exit
 }
 
 $SvcPointMan = [System.Net.ServicePointManager]
@@ -82,7 +85,7 @@ if([System.Environment]::OSVersion.Version -lt (New-Object Version 6,1)) {
         "This script requires at least Microsoft .NET Framework 4.5."
         ) -join " ")
         if($Run_InvokeExpression) {pause}
-        exit()
+        exit
     }
     $SvcPointMan::SecurityProtocol = $SecProtocol::Tls12
 }
@@ -113,7 +116,7 @@ if(($LoadOptions -notmatch "DISABLE_INTEGRITY_CHECKS") -or `
     )
     if($Options -eq "No") {
         if($Run_InvokeExpression) {pause}
-        exit()
+        exit
     }
 }
 
@@ -368,4 +371,4 @@ exit 0
     ) | Out-Null
 }
 
-exit()
+exit
