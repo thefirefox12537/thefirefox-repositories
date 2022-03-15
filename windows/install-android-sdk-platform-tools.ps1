@@ -29,6 +29,7 @@ $RepositoryName = "thefirefox12537/thefirefox-repositories"
 $RepositoryBranch = "main/windows/$AppFileName"
 $Android = "android-sdk"
 $Title = "platform-tools"
+$MainArgument = "$($MyInvocation.MyCommand.Definition)"
 $PwshShell = (Get-Process -id $PID).Path
 $IsAdmin = if($IsWindows -or ($env:OS -eq "Windows_NT")) {
 [System.Security.Principal.WindowsPrincipal][System.Security.Principal.WindowsIdentity]::GetCurrent() |
@@ -37,8 +38,8 @@ foreach{$_.IsInRole([System.Security.Principal.WindowsBuiltinRole]::Administrato
 $Run_InvokeExpression = foreach($iex in @("Invoke-Expression", "invoke-expression", "iex")) {@(
 "bit.ly/install_adb", "$Github_Site/$RepositoryName/raw/$RepositoryBranch", "$RawGithub/$RepositoryName/$RepositoryBranch"
 ) |
-foreach{if(($MyInvocation.MyCommand.Definition -match $iex) -and ($MyInvocation.MyCommand.Definition -match $_)) {$true}}}
-$ErrorAppInfo = if($Run_InvokeExpression) {$AppFileName} else {Split-Path -Leaf "$($MyInvocation.MyCommand.Definition)"}
+foreach{if(($MainArgument -match $iex) -and ($MainArgument -match $_)) {$true}}}
+$ErrorAppInfo = if($Run_InvokeExpression) {$AppFileName} else {Split-Path -Leaf $MainArgument}
 
 if(!($IsWindows -or ($env:OS -eq "Windows_NT"))) {
     $ErrorMsg = "This script only support running on Microsoft Windows Operating System."
@@ -51,11 +52,11 @@ if(!($IsWindows -or ($env:OS -eq "Windows_NT"))) {
 
 $NewLine = [System.Environment]::NewLine
 
-if($Help) {Get-Help "$($MyInvocation.MyCommand.Definition)" -detailed; exit 0}
+if($Help) {Get-Help $MainArgument -detailed; exit 0}
 if($IsAdmin -eq $false) {
-    if(Test-Path $MyInvocation.MyCommand.Definition) {
+    if(Test-Path $MainArgument) {
         Start-Process -verb RunAs `
-        "$PwshShell" "/noprofile /executionpolicy unrestricted /file `"$($MyInvocation.MyCommand.Definition)`""
+        "$PwshShell" "/noprofile /executionpolicy bypass /file `"$MainArgument`""
     } else {
         Write-Host -ForegroundColor red "${ErrorAppInfo}: This command cannot be run as standard user. You must running as administrator first."
     }
@@ -252,7 +253,7 @@ if(!(`$IsWindows -or (`$env:OS -eq "Windows_NT"))) {
 [System.Security.Principal.WindowsPrincipal][System.Security.Principal.WindowsIdentity]::GetCurrent() |
 foreach{if(`$_.IsInRole([System.Security.Principal.WindowsBuiltinRole]::Administrator) -eq `$false) {
     Start-Process -verb RunAs ``
-    "`$PwshShell" "/noprofile /executionpolicy unrestricted /file ``"`$(`$MyInvocation.MyCommand.Definition)``""
+    "`$PwshShell" "/noprofile /executionpolicy bypass /file ``"`$(`$MyInvocation.MyCommand.Definition)``""
     exit
 }}
 `$target = `$(
@@ -309,7 +310,7 @@ exit 0
         New-ItemProperty -propertytype String `
         -literalpath $UninstallRegPath `
         -name UninstallString `
-        -value "`"$PwshShell`" -noprofile -executionpolicy unrestricted -file `"$UninstallFile`"" | Out-Null
+        -value "`"$PwshShell`" -noprofile -executionpolicy bypass -file `"$UninstallFile`"" | Out-Null
         if(!(Test-Path -literalpath $UninstallRegPath)) {
             Write-Output $(@(
             "Creating uninstall registry failed, but $UninstallFile "
