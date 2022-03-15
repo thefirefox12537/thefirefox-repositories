@@ -36,6 +36,8 @@ $Title = "platform-tools"
 $NewLine = [System.Environment]::NewLine
 $PwshShell = (Get-Process -id $PID).Path
 
+echo $($MyInvocation.MyCommand.Definition)
+
 if($Help) {Get-Help "$($MyInvocation.MyCommand.Definition)" -detailed; exit 0}
 [System.Security.Principal.WindowsPrincipal][System.Security.Principal.WindowsIdentity]::GetCurrent() |
 foreach{if($_.IsInRole([System.Security.Principal.WindowsBuiltinRole]::Administrator) -eq $false) {
@@ -56,7 +58,7 @@ if((Get-ExecutionPolicy).ToString() -notin $availableExecutionPolicy) {
     Write-Host -ForegroundColor red $(@(
     "$(Split-Path -Leaf $MyInvocation.MyCommand.Definition): "
     "PowerShell requires an execution policy in [$($availableExecutionPolicy -join ", ")] to run this script. "
-    "For example, to set the execution policy to 'RemoteSigned' please run PowerShell as Administrator and type :" + $NewLine
+    "For example, to set the execution policy to 'RemoteSigned' please run PowerShell as Administrator and type : $NewLine"
     "'Set-ExecutionPolicy RemoteSigned'"
     ) -join " ")
     exit 1
@@ -85,14 +87,14 @@ $MsgBoxIcon = [System.Windows.Forms.MessageBoxIcon]
 $ArchiveClient = [System.IO.Compression.ZipFile]
 $WebClient = New-Object System.Net.WebClient
 
-$TestSigning = $($(bcdedit | Select-String "testsigning") -split " * ")[1]
-$LoadOptions = $($(bcdedit | Select-String "loadoptions") -split " * ")[1]
-$NoIntegrityChecks = $($(bcdedit | Select-String "nointegritychecks") -split " * ")[1]
+$TestSigning = $($(bcdedit | where{$_ -match "testsigning"}) -split "\s+")[1]
+$LoadOptions = $($(bcdedit | where{$_ -match "loadoptions"}) -split "\s+")[1]
+$NoIntegrityChecks = $($(bcdedit | where{$_ -match "nointegritychecks"}) -split "\s+")[1]
 if(($LoadOptions -notmatch "DISABLE_INTEGRITY_CHECKS") -or `
    ($NoIntegrityChecks -ne "Yes") -or `
    ($TestSigning -ne "Yes")) {
     $Options = $MsgBoxDialog::Show(@(
-    "You are not activate Disable Driver Signature Enforcement Mode at Boot Configuration Data. " + $NewLine
+    "You are not activate Disable Driver Signature Enforcement Mode at Boot Configuration Data. $NewLine"
     "You must restart in advanced startup setting, select Disable Driver Signature Enforcement, "
     "run this installation and ignore this message. But if you don't restart, driver cannot be "
     "run after install and connect. Are you sure to continue this installation?" -join $NewLine), $Null,
