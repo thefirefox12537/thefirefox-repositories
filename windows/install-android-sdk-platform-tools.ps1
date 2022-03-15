@@ -106,9 +106,10 @@ if(($LoadOptions -notmatch "DISABLE_INTEGRITY_CHECKS") -or `
    ($NoIntegrityChecks -ne "Yes") -or `
    ($TestSigning -ne "Yes")) {
     $Options = $MsgBoxDialog::Show(
-    "You are not activate Disable Driver Signature Enforcement Mode at Boot Configuration Data. " + $NewLine + $NewLine +
-    "You must restart in advanced startup setting, select Disable Driver Signature Enforcement, " + $NewLine +
-    "run this installation and ignore this message. But if you don't restart, driver cannot be " + $NewLine +
+    "You are not activate Disable Driver Signature Enforcement Mode at Boot Configuration Data. " +
+    for($i=1; $i -le 2; $i++) {$NewLine} +
+    "You must restart in advanced startup setting, select Disable Driver Signature Enforcement, " +
+    "run this installation and ignore this message. But if you don't restart, driver cannot be " +
     "run after install and connect. Are you sure to continue this installation?", $Null,
     $MsgBoxButton::YesNo,
     $MsgBoxIcon::Information
