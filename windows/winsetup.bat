@@ -11,15 +11,16 @@ if not errorlevel 1 goto windos_2
 goto msdos
 
 :runwinnt
-setlocal
+@setlocal
+@break on
 for %%v in (Daytona Cairo Hydra Neptune NT) do ^
 ver|find "%%v" > nul & ^
 if not errorlevel 1 (set OLD_WINNT=1)
 if %OLD_WINNT%!==1! (goto ntold) ^
 else (setlocal EnableExtensions EnableDelayedExpansion)
 for /f "tokens=4-6 delims=[.NT] " %%v in ('ver') do (
-for %%a in (00 01) do if "%%w.%%x"=="5.%%a" (goto :ntold)
-for %%b in (1 2 3) do if "%%v.%%w"=="5.%%b" (goto :ntold)
+for %%a in (00 10 1) do if "%%w.%%x"=="5.%%a" (goto :ntold)
+for %%b in (1 2 3 4) do if "%%v.%%w"=="5.%%b" (goto :ntold)
 )
 
 set "drive=CDEFGHIJKLMNOPQRSTUVWXYZ"
@@ -45,8 +46,8 @@ if "%1"=="" goto :help
 if "%1"=="/?" goto :help
 
 set "REGDIR=%SystemRoot%\system32\config"
-if "%SystemRoot:~0,2%"=="X:" (bcdedit /store %REGDIR%\bcd-template > nul 2>&1) ^
-else (icacls %REGDIR%\system > nul 2>&1)
+if not "%SystemRoot:~0,2%"=="X:" (icacls %REGDIR%\system > nul 2>&1) ^
+else (bcdedit /store %REGDIR%\bcd-template > nul 2>&1)
 if %ERRORLEVEL% NEQ 0 (
 echo Access denied.
 endlocal
@@ -56,6 +57,7 @@ goto :eof
 if "%_PARAM%"=="/install" goto :install
 if "%_PARAM%"=="/adduser" goto :adduser
 if "%_PARAM%"=="/addadmin" goto :addadmin
+if "%_PARAM%"=="/skipoobenew" goto :skipoobenew
 if "%_PARAM%"=="/skipoobe" goto :skipoobe
 
 :install
@@ -65,22 +67,24 @@ endlocal
 goto :eof
 )
 for %%a in (BypassTPMCheck BypassSecureBootCheck BypassRAMCheck BypassCPUCheck) do ^
-reg add HKLM\Setup\LabConfig /V %%a /D 1 /T REG_DWORD > nul 2>&1
-reg add HKLM\System\Setup /V AllowUpgradesWithUnsupportedTPMOrCPU /D 1 /T REG_DWORD > nul 2>&1
+reg add HKLM\Setup\LabConfig /v %%a /d 1 /t REG_DWORD /f > nul 2>&1
+reg add HKLM\System\Setup /v AllowUpgradesWithUnsupportedTPMOrCPU /d 1 /t REG_DWORD /f > nul 2>&1
 ::IMAGEX
+for %%i in (imagex.exe) do ^
 for /l %%d in (0,1,23) do ^
-if exist "!drive:~%%d,1!:\sources\imagex.exe" (set "imagexcd=!drive:~%%d,1!:\sources\imagex.exe")
-for %%f in ("%~dp0\imagex.exe" %imagexcd% %SystemRoot%\system32\imagex.exe) do ^
+if exist "!drive:~%%d,1!:\sources\%%i" (set "imagexcd=!drive:~%%d,1!:\sources\%%i")
+for %%f in ("%~dp0\%%i" %imagexcd% %SystemRoot%\system32\%%i) do ^
 if exist %%f (
 set "imagex=%%f"
 )
 if defined imagex (set "imaging=imagex" & goto :next)
 ::DISM
-if exist %SystemRoot%\system32\dism.exe (
-for /f "usebackq tokens=2-3 delims=:. " %%v in (`%SystemRoot%\system32\dism^|find "Version:"`) do ^
+for %%d in (dism.exe) do ^
+if exist %%~$PATH:d (
+for /f "usebackq tokens=2-3 delims=:. " %%v in (`%%~$PATH:d^|find "Version:"`) do ^
 if %%v EQU 6 if %%w LSS 2 (goto :ntold) else ^
 if %%v LSS 6 (goto :ntold)
-set "dism=%SystemRoot%\system32\dism.exe"
+set "dism=%%~$PATH:d"
 )
 if defined dism (set "imaging=dism" & goto :next)
 
@@ -144,8 +148,8 @@ if "%INDEX%"=="!alpha:~%%s,1!" (echo Invalid edition selected.& goto :loopinstal
 if %INDEX% EQU 0 (echo Invalid edition selected.& goto :loopinstall)
 
 echo Expanding Windows...
-if "%imaging%"=="dism" %dism% /apply-image /%opt%:"%installsrc%" %dismswm% /index:%INDEX% /applydir:%2\
-if "%imaging%"=="imagex" %imagex% /apply "%installsrc%" %imagexswm% %INDEX% %2\
+if "%imaging%"=="dism" call %dism% /apply-image /%opt%:"%installsrc%" %dismswm% /index:%INDEX% /applydir:%2\
+if "%imaging%"=="imagex" call %imagex% /apply "%installsrc%" %imagexswm% %INDEX% %2\
 if %ERRORLEVEL% NEQ 0 goto :installerror
 if not exist %2\Windows\nul goto :installerror
 
@@ -156,7 +160,7 @@ autoexec.* config.* command.*
 io.* msdos.* ibmbio.* ibmdos.*
 bootsect.bak bootsect.dos
 bootmgr BOOTNXT BOOTTGT
-boot.ini ntdetect.com ntldr
+boot.ini NTDETECT.COM NTLDR
 ) do (
 del /f /ashr /q %2\%%i > nul 2>&1
 del /f /ashr /q %3\%%i > nul 2>&1
@@ -182,22 +186,46 @@ if "%_DRV2%"=="/MBR" (
 %SystemRoot%\system32\bcdboot %2\Windows /f BIOS > nul 2>&1
 %SystemRoot%\system32\bootsect /nt60 %2 /mbr > nul 2>&1
 ) else ^
+if "%_DRV2%"=="/MBR2K3" (
+set NT5DIR=2K3
+echo >  %2\boot.ini [boot loader]
+echo >> %2\boot.ini timeout=30
+echo >> %2\boot.ini default=multi^(0^)disk^(0^)rdisk^(0^)partition^(1^)\WINDOWS
+echo.>> %2\boot.ini
+echo >> %2\boot.ini [operating systems]
+echo >> %2\boot.ini multi^(0^)disk^(0^)rdisk^(0^)partition^(1^)\WINDOWS="Microsoft Windows Server 2003" /noexecute=optin /fastdetect
+) else ^
 if "%_DRV2%"=="/MBRXP" (
-copy "%~dp0\nt5boot\NTDETECT.COM" %2\ > nul 2>&1
-copy "%~dp0\nt5boot\ntldr" %2\ > nul 2>&1
->  %2\boot.ini echo [boot loader]
->> %2\boot.ini echo timeout=30
->> %2\boot.ini echo default=multi^(0^)disk^(0^)rdisk^(0^)partition^(1^)\WINDOWS
->> %2\boot.ini echo.
->> %2\boot.ini echo [operating systems]
->> %2\boot.ini echo multi^(0^)disk^(0^)rdisk^(0^)partition^(1^)\WINDOWS="Microsoft Windows XP" /noexecute=optin /fastdetect
-attrib +s +h +r %2\NTDETECT.COM > nul 2>&1
-attrib +s +h +r %2\ntldr > nul 2>&1
+set NT5DIR=XP
+echo >  %2\boot.ini [boot loader]
+echo >> %2\boot.ini timeout=30
+echo >> %2\boot.ini default=multi^(0^)disk^(0^)rdisk^(0^)partition^(1^)\WINDOWS
+echo.>> %2\boot.ini
+echo >> %2\boot.ini [operating systems]
+echo >> %2\boot.ini multi^(0^)disk^(0^)rdisk^(0^)partition^(1^)\WINDOWS="Microsoft Windows XP" /noexecute=optin /fastdetect
+) else ^
+if "%_DRV2%"=="/MBR2K" (
+set NT5DIR=2K
+echo >  %2\boot.ini [boot loader]
+echo >> %2\boot.ini timeout=30
+echo >> %2\boot.ini default=multi^(0^)disk^(0^)rdisk^(0^)partition^(1^)\WINNT
+echo.>> %2\boot.ini
+echo >> %2\boot.ini [operating systems]
+echo >> %2\boot.ini multi^(0^)disk^(0^)rdisk^(0^)partition^(1^)\WINNT="Microsoft Windows 2000" /noexecute=optin /fastdetect
+)
+for %%s in (MBR2K MBRXP MBR2K3) do ^
+if "%_DRV2%"=="/%%s" (
+for /l %%d in (0,1,23) do ^
+copy "!drive:~%%d,1!:\sources\nt5boot\%NT5DIR%\NTDETECT.COM" %2\ > nul 2>&1 && ^
+copy "!drive:~%%d,1!:\sources\nt5boot\%NT5DIR%\NTLDR" %2\ > nul 2>&1
 attrib +s +h -r %2\boot.ini > nul 2>&1
+attrib +s +h +r %2\NTDETECT.COM > nul 2>&1
+attrib +s +h +r %2\NTLDR > nul 2>&1
 %SystemRoot%\system32\bootsect /nt52 %2 /mbr > nul 2>&1
 )
 
 echo Install Windows successfully completed.
+copy /y "%~dpf0" %2\Windows\system32\oobe\%~f0 > nul 2>&1
 for /f %%c in ('copy /z "%~dpf0" nul') do set CR=%%c
 for /l %%s in (10,-1,1) do (
 if %%s EQU 1 (set /p "=This script will be restart automatically in 1 second...  !CR!" < nul) ^
@@ -268,6 +296,16 @@ echo/
 set "%~1=%_password%"
 goto :eof
 
+:skipoobenew
+for %%a in (OOBEInProgress RestartSetup SetupPhase SetupType SystemSetupInProgress) do ^
+reg add HKLM\SYSTEM\Setup /v %%a /d 0 /t REG_DWORD /f > nul 2>&1
+for %%b in (SkipMachineOOBE SkipUserOOBE) do ^
+reg add HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\OOBE /v %%b /d 1 /t REG_DWORD /f > nul 2>&1
+echo Success added registry to skipping OOBE. This script will be reboot automatically.
+shutdown /r /t 0 > nul 2>&1
+endlocal
+goto :eof
+
 :skipoobe
 taskkill /f /im msoobe.exe
 start explorer.exe
@@ -280,14 +318,15 @@ echo.
 echo WINSETUP [/INSTALL 'Target Path' ['Reserved Drive' /MBR ^| /EFI ^| /ALL]]
 echo          [/ADDUSER] [/ADDADMIN] [/SKIPOOBE]
 echo.
-echo    /INSTALL      Install Windows
-echo       /MBR       Read Master Boot Record during installing Windows
-echo       /EFI       Read EFI Boot during installing Windows
-echo       /ALL       Read all boot (MBR and EFI) during installing Windows
-echo    /ADDUSER      Add user if you were on Out-Of the Box Experience
-echo    /ADDADMIN     Activate Administrator user if you were on Out-Of the
-echo                  Box Experience
-echo    /SKIPOOBE     Skip Out-Of the Box Experience and quick start Explorer
+echo    /INSTALL       Install Windows
+echo       /MBR        Read Master Boot Record during installing Windows
+echo       /EFI        Read EFI Boot during installing Windows
+echo       /ALL        Read all boot (MBR and EFI) during installing Windows
+echo    /ADDUSER       Add user if you were on Out-Of the Box Experience
+echo    /ADDADMIN      Activate Administrator user if you were on Out-Of the
+echo                   Box Experience
+echo    /SKIPOOBENEW   Skip Out-Of the Box Experience (New method)
+echo    /SKIPOOBE      Skip Out-Of the Box Experience and quick start Explorer
 echo.
 echo NOTE:  Before installing Windows, make sure you prepare the partition
 echo        first.
