@@ -51,7 +51,7 @@ if(!($IsWindows -or ($env:OS -eq "Windows_NT"))) {
     if($env:DISPLAY -and (Get-Command kdialog -ErrorAction Ignore)) {$GUIBox = "kdialog"; $DialogType = "error"}
     if(!($GUIBox)) {Write-Host -BackgroundColor $ErrorBGC -ForegroundColor $ErrorFGC "${ErrorAppInfo}: $ErrorMsg"}
     else {& $GUIBox --$DialogType $ErrorMsg 8 72}
-    break script
+    break
 }
 
 if((Test-Path -literalpath $MainArgument) -and $Help) {Get-Help $MainArgument -detailed; break}
@@ -64,9 +64,8 @@ if($_ -eq $false) {
     } else {
         Write-Host -BackgroundColor $ErrorBGC -ForegroundColor $ErrorFGC `
         "${ErrorAppInfo}: Access denied. Run as administrator required."
-        if($Run_InvokeExpression) {Invoke-Pause}
     }
-    break script
+    break
 }})
 
 if((Get-ExecutionPolicy).ToString() -notin $AvailableExecutionPolicy) {
@@ -76,8 +75,7 @@ if((Get-ExecutionPolicy).ToString() -notin $AvailableExecutionPolicy) {
     "For example, to set the execution policy to 'ByPass' please run PowerShell as Administrator and type : "
     "'Set-ExecutionPolicy ByPass'"
     ) -join " ")
-    if($Run_InvokeExpression) {Invoke-Pause}
-    break script
+    break
 }
 
 $SvcPointMan = [System.Net.ServicePointManager]
@@ -86,8 +84,7 @@ if([System.Environment]::OSVersion.Version -lt (New-Object Version 6,1)) {
     if([System.Enum]::GetNames($SecProtocol) -notcontains $SecProtocol::Tls12) {
         Write-Host -BackgroundColor $ErrorBGC -ForegroundColor $ErrorFGC `
         "${ErrorAppInfo}: This script requires at least Microsoft .NET Framework 4.5."
-        if($Run_InvokeExpression) {Invoke-Pause}
-        break script
+        break
     }
     $SvcPointMan::SecurityProtocol = $SecProtocol::Tls12
 }
@@ -248,7 +245,7 @@ elseif($InstallComplete) {
       Android Platform Tools with USB Driver uninstaller for Windows
 #>
  
-function Error-Dialog() {[void]`$MsgBoxDialog::Show("Uninstallation failed.", `$Null, `$MsgBoxButton::OK, `$MsgBoxIcon::Error); exit 1}
+function Error-Dialog() {[void]`$MsgBoxDialog::Show("Uninstallation failed.", `$Null, `$MsgBoxButton::OK, `$MsgBoxIcon::Error); break}
 function Invoke-Pause() {Write-Host -NoNewLine "Press any key to continue . . ."; [void][System.Console]::ReadKey(`$true)}
 foreach(`$variable in @("ProgressPreference", "ErrorActionPreference")) {Set-Variable `$variable "SilentlyContinue"}
  
@@ -266,7 +263,7 @@ if(!(`$IsWindows -or (`$env:OS -eq "Windows_NT"))) {
     if(`$env:DISPLAY -and (Get-Command kdialog -ErrorAction Ignore)) {`$GUIBox = "kdialog"; `$DialogType = "error"}
     if(!(`$GUIBox)) {Write-Host -BackgroundColor `$ErrorBGC -ForegroundColor `$ErrorFGC "`${ErrorAppInfo}: `$ErrorMsg"}
     else {`& `$GUIBox --`$DialogType `$ErrorMsg 8 72}
-    exit 1
+    break
 }
  
 `$(`$([System.Security.Principal.WindowsPrincipal][System.Security.Principal.WindowsIdentity]::GetCurrent()).foreach({
@@ -313,8 +310,6 @@ Remove-Item -recurse -literalpath "`$target\Google\`$Android"
 `$MsgBoxButton::OK,
 `$MsgBoxIcon::Information
 ) | Out-Null
- 
-exit 0
 "@ | Out-Null
 
         New-Item -path $UninstallRegPath | Out-Null
@@ -359,5 +354,3 @@ exit 0
     $MsgBoxIcon::Error
     ) | Out-Null
 }
-
-break
