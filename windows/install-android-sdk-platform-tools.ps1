@@ -35,7 +35,8 @@ $RawGithub = "raw.githubusercontent.com"
 $RepositoryName = "thefirefox12537/thefirefox-repositories"
 $RepositoryBranch = "main/windows/$AppFileName"
 $MainArgument = $MyInvocation.MyCommand.Definition
-$PwshShell = (Get-Process -id $PID).Path
+$PSVersionRequire = 4,0
+$PSShell = (Get-Process -id $PID).Path
 $NewLine = [System.Environment]::NewLine
 $Run_InvokeExpression = foreach($iex in @("Invoke-Expression", "invoke-expression", "iex"))
 {@("bit.ly/install_adb", "$Github_Site/$RepositoryName/raw/$RepositoryBranch", "$RawGithub/$RepositoryName/$RepositoryBranch") |
@@ -59,13 +60,19 @@ $_.IsInRole([System.Security.Principal.WindowsBuiltinRole]::Administrator)})).fo
 if($_ -eq $false) {
     if(Test-Path -literalpath $MainArgument) {
         Start-Process -verb RunAs `
-        "$PwshShell" "-noprofile -executionpolicy ByPass -file `"$MainArgument`""
+        "$PSShell" "-noprofile -executionpolicy ByPass -file `"$MainArgument`""
     } else {
         Write-Host -BackgroundColor $ErrorBGC -ForegroundColor $ErrorFGC `
         "${ErrorAppInfo}: Access denied. Run as administrator required."
     }
     break
 }})
+
+if($PSVersionTable.PSVersion -lt (New-Object Version $PSVersionRequire)) {
+    Write-Host -BackgroundColor $ErrorBGC -ForegroundColor $ErrorFGC `
+    "${ErrorAppInfo}: This PowerShell version is outdated. Up to version $($PSVersionRequire -join ",") or newer required."
+    break
+}
 
 $SvcPointMan = [System.Net.ServicePointManager]
 $SecProtocol = [System.Net.SecurityProtocolType]
@@ -240,7 +247,7 @@ foreach(`$variable in @("ProgressPreference", "ErrorActionPreference")) {Set-Var
  
 `$Android = "android-sdk"
 `$Title = "platform-tools"
-`$PwshShell = (Get-Process -id `$PID).Path
+`$PSShell = (Get-Process -id `$PID).Path
 `$MainArgument = `$MyInvocation.MyCommand.Definition
 `$ErrorAppInfo = Split-Path -Leaf `$MainArgument
 `$ErrorFGC = `$host.PrivateData.ErrorForegroundColor
@@ -259,7 +266,7 @@ if(!(`$IsWindows -or (`$env:OS -eq "Windows_NT"))) {
 `$_.IsInRole([System.Security.Principal.WindowsBuiltinRole]::Administrator)}).foreach({
 if(`$_ -eq `$false) {
     Start-Process -verb RunAs ``
-    "`$PwshShell" "-noprofile -executionpolicy ByPass -file ``"`$MainArgument``""
+    "`$PSShell" "-noprofile -executionpolicy ByPass -file ``"`$MainArgument``""
     
 }})
  
@@ -317,7 +324,7 @@ Remove-Item -recurse -literalpath "`$target\Google\`$Android"
         New-ItemProperty -propertytype String `
         -literalpath $UninstallRegPath `
         -name UninstallString `
-        -value "`"$PwshShell`" -noprofile -executionpolicy bypass -file `"$UninstallFile`"" | Out-Null
+        -value "`"$PSShell`" -noprofile -executionpolicy bypass -file `"$UninstallFile`"" | Out-Null
 
         if(!(Test-Path -literalpath $UninstallRegPath)) {
             Write-Output $(@(
