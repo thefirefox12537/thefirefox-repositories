@@ -34,7 +34,6 @@ $Github_Site = "github.com"
 $RawGithub = "raw.githubusercontent.com"
 $RepositoryName = "thefirefox12537/thefirefox-repositories"
 $RepositoryBranch = "main/windows/$AppFileName"
-$AvailableExecutionPolicy = @("Unrestricted", "RemoteSigned", "ByPass")
 $MainArgument = $MyInvocation.MyCommand.Definition
 $PwshShell = (Get-Process -id $PID).Path
 $NewLine = [System.Environment]::NewLine
@@ -67,16 +66,6 @@ if($_ -eq $false) {
     }
     break
 }})
-
-if((Get-ExecutionPolicy).ToString() -notin $AvailableExecutionPolicy) {
-    Write-Host -BackgroundColor $ErrorBGC -ForegroundColor $ErrorFGC $(@(
-    "${ErrorAppInfo}:"
-    "PowerShell requires an execution policy in [$($AvailableExecutionPolicy -join ", ")] to run this script."
-    "For example, to set the execution policy to 'ByPass' please run PowerShell as Administrator and type : "
-    "'Set-ExecutionPolicy ByPass'"
-    ) -join " ")
-    break
-}
 
 $SvcPointMan = [System.Net.ServicePointManager]
 $SecProtocol = [System.Net.SecurityProtocolType]
