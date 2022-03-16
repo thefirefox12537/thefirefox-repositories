@@ -68,12 +68,6 @@ if($_ -eq $false) {
     break
 }})
 
-if($PSVersionTable.PSVersion -lt (New-Object Version $PSVersionRequire)) {
-    Write-Host -BackgroundColor $ErrorBGC -ForegroundColor $ErrorFGC `
-    "${ErrorAppInfo}: This PowerShell version is outdated. Up to version $($PSVersionRequire -join ",") or newer required."
-    break
-}
-
 $SvcPointMan = [System.Net.ServicePointManager]
 $SecProtocol = [System.Net.SecurityProtocolType]
 if([System.Environment]::OSVersion.Version -lt (New-Object Version 6,1)) {
@@ -85,8 +79,15 @@ if([System.Environment]::OSVersion.Version -lt (New-Object Version 6,1)) {
     $SvcPointMan::SecurityProtocol = $SecProtocol::Tls12
 }
 
-Add-Type -Assembly System.Windows.Forms | Out-Null
+if($PSVersionTable.PSVersion -lt (New-Object Version $PSVersionRequire)) {
+    Write-Host -BackgroundColor $ErrorBGC -ForegroundColor $ErrorFGC `
+    "${ErrorAppInfo}: This PowerShell version is outdated. Up to version $($PSVersionRequire -join ".") or newer required."
+    break
+}
+
 Add-Type -Assembly System.IO.Compression.FileSystem | Out-Null
+Add-Type -Assembly System.Windows.Forms | Out-Null
+[void][System.Windows.Forms.Application]::EnableVisualStyles()
 
 $MsgBoxDialog = [System.Windows.Forms.MessageBox]
 $MsgBoxButton = [System.Windows.Forms.MessageBoxButtons]
@@ -164,11 +165,11 @@ if(!(Get-Command $exe)) {
     $InstallComplete = $true
     break
 } else {
-    $MsgBoxDialog::Show(
+    [void]$MsgBoxDialog::Show(
     "$(($Android -split "-")[0])-$Title already installed.", $Null,
     $MsgBoxButton::OK,
     $MsgBoxIcon::Error
-    ) | Out-Null
+    )
     $InstallAlready = $true
     break
 }}
@@ -199,12 +200,12 @@ if(!(Get-ChildItem `
     Write-Output "Driver successfully installed."
     $InstallComplete = $true
 } else {
-    $MsgBoxDialog::Show(
+    [void]$MsgBoxDialog::Show(
     "Driver already installed. If you not sure install this driver before, " +
     "remove first driver and this setup then running installation again.", $Null,
     $MsgBoxButton::OK,
     $MsgBoxIcon::Error
-    ) | Out-Null
+    )
     $InstallAlready = $true
 }
 
@@ -267,10 +268,11 @@ if(!(`$IsWindows -or (`$env:OS -eq "Windows_NT"))) {
 if(`$_ -eq `$false) {
     Start-Process -verb RunAs ``
     "`$PSShell" "-noprofile -executionpolicy ByPass -file ``"`$MainArgument``""
-    
+    break
 }})
  
 Add-Type -Assembly System.Windows.Forms | Out-Null
+[void][System.Windows.Forms.Application]::EnableVisualStyles()
 
 `$MsgBoxDialog = [System.Windows.Forms.MessageBox]
 `$MsgBoxButton = [System.Windows.Forms.MessageBoxButtons]
@@ -301,11 +303,11 @@ if(`$LASTEXITCODE -ne 0) {Error-Dialog}
 Remove-Item -recurse -literalpath "`$UninstallRegPath"
 Remove-Item -recurse -literalpath "`$target\Google\`$Android"
  
-`$MsgBoxDialog::Show(
+[void]`$MsgBoxDialog::Show(
 "Uninstallation completed.", `$Null,
 `$MsgBoxButton::OK,
 `$MsgBoxIcon::Information
-) | Out-Null
+)
 "@ | Out-Null
 
         New-Item -path $UninstallRegPath | Out-Null
@@ -338,15 +340,15 @@ Remove-Item -recurse -literalpath "`$target\Google\`$Android"
         }
     }}
 
-    $MsgBoxDialog::Show(
+    [void]$MsgBoxDialog::Show(
     "Installation completed.", $Null,
     $MsgBoxButton::OK,
     $MsgBoxIcon::Information
-    ) | Out-Null
+    )
 } else {
-    $MsgBoxDialog::Show(
+    [void]$MsgBoxDialog::Show(
     "Installation failed.", $Null,
     $MsgBoxButton::OK,
     $MsgBoxIcon::Error
-    ) | Out-Null
+    )
 }
