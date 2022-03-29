@@ -23,7 +23,7 @@
 #>
 
 param([switch][alias('h')]$Help)
-function Error-Dialog() {[void]$MsgBoxDialog::Show("Installation failed.", $Null, $MsgBoxButton::OK, $MsgBoxIcon::Error); break}
+function Error-Dialog() {[void]$MsgBoxDialog::Show("Installation failed.", $Null, $MsgBoxButton::OK, $MsgBoxIcon::Error); exit(1)}
 function Invoke-Pause() {Write-Host -NoNewLine "Press any key to continue . . ."; [void][System.Console]::ReadKey($true)}
 foreach($variable in @("ProgressPreference", "ErrorActionPreference")) {Set-Variable $variable "SilentlyContinue"}
 
@@ -51,10 +51,10 @@ if(!($IsWindows -or ($env:OS -eq "Windows_NT"))) {
     if($env:DISPLAY -and (Get-Command kdialog -ErrorAction Ignore)) {$GUIBox = "kdialog"; $DialogType = "error"}
     if(!($GUIBox)) {Write-Host -BackgroundColor $ErrorBGC -ForegroundColor $ErrorFGC "${ErrorAppInfo}: $ErrorMsg"}
     else {& $GUIBox --$DialogType $ErrorMsg 8 72}
-    break
+    exit(1)
 }
 
-if((Test-Path -literalpath $MainArgument) -and $Help) {Get-Help $MainArgument -detailed; break}
+if((Test-Path -literalpath $MainArgument) -and $Help) {Get-Help $MainArgument -detailed; exit(0)}
 $($([System.Security.Principal.WindowsPrincipal][System.Security.Principal.WindowsIdentity]::GetCurrent()).foreach({
 $_.IsInRole([System.Security.Principal.WindowsBuiltinRole]::Administrator)})).foreach({
 if($_ -eq $false) {
@@ -65,7 +65,7 @@ if($_ -eq $false) {
         Write-Host -BackgroundColor $ErrorBGC -ForegroundColor $ErrorFGC `
         "${ErrorAppInfo}: Access denied. Run as administrator required."
     }
-    break
+    exit
 }})
 
 $SvcPointMan = [System.Net.ServicePointManager]
@@ -74,7 +74,7 @@ if([System.Environment]::OSVersion.Version -lt (New-Object Version 6,1)) {
     if([System.Enum]::GetNames($SecProtocol) -notcontains $SecProtocol::Tls12) {
         Write-Host -BackgroundColor $ErrorBGC -ForegroundColor $ErrorFGC `
         "${ErrorAppInfo}: This script requires at least Microsoft .NET Framework 4.5."
-        break
+        exit(1)
     }
     $SvcPointMan::SecurityProtocol = $SecProtocol::Tls12
 }
@@ -82,7 +82,7 @@ if([System.Environment]::OSVersion.Version -lt (New-Object Version 6,1)) {
 if($PSVersionTable.PSVersion -lt (New-Object Version $PSVersionRequire)) {
     Write-Host -BackgroundColor $ErrorBGC -ForegroundColor $ErrorFGC `
     "${ErrorAppInfo}: This PowerShell version is outdated. Up to version $($PSVersionRequire -join ".") or newer required."
-    break
+    exit(1)
 }
 
 Add-Type -Assembly System.IO.Compression.FileSystem | Out-Null
@@ -111,7 +111,7 @@ if(($LoadOptions -notmatch "DISABLE_INTEGRITY_CHECKS") -or `
         $MsgBoxIcon::Information
     )) {
         "Yes" {$Null}
-        "No" {break}
+        "No" {exit}
     }
 }
 
@@ -209,7 +209,7 @@ if(!(Get-ChildItem `
     $InstallAlready = $true
 }
 
-if($InstallAlready) {break}
+if($InstallAlready) {exit(0)}
 elseif($InstallComplete) {
     $UninstallRegPath = "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(($Android -split "-")[0])-$Title"
 
@@ -242,7 +242,7 @@ elseif($InstallComplete) {
       Android Platform Tools with USB Driver uninstaller for Windows
 #>
  
-function Error-Dialog() {[void]`$MsgBoxDialog::Show("Uninstallation failed.", `$Null, `$MsgBoxButton::OK, `$MsgBoxIcon::Error); break}
+function Error-Dialog() {[void]`$MsgBoxDialog::Show("Uninstallation failed.", `$Null, `$MsgBoxButton::OK, `$MsgBoxIcon::Error); exit(1)}
 function Invoke-Pause() {Write-Host -NoNewLine "Press any key to continue . . ."; [void][System.Console]::ReadKey(`$true)}
 foreach(`$variable in @("ProgressPreference", "ErrorActionPreference")) {Set-Variable `$variable "SilentlyContinue"}
  
@@ -260,7 +260,7 @@ if(!(`$IsWindows -or (`$env:OS -eq "Windows_NT"))) {
     if(`$env:DISPLAY -and (Get-Command kdialog -ErrorAction Ignore)) {`$GUIBox = "kdialog"; `$DialogType = "error"}
     if(!(`$GUIBox)) {Write-Host -BackgroundColor `$ErrorBGC -ForegroundColor `$ErrorFGC "`${ErrorAppInfo}: `$ErrorMsg"}
     else {`& `$GUIBox --`$DialogType `$ErrorMsg 8 72}
-    break
+    exit(1)
 }
  
 `$(`$([System.Security.Principal.WindowsPrincipal][System.Security.Principal.WindowsIdentity]::GetCurrent()).foreach({
@@ -268,7 +268,7 @@ if(!(`$IsWindows -or (`$env:OS -eq "Windows_NT"))) {
 if(`$_ -eq `$false) {
     Start-Process -verb RunAs ``
     "`$PSShell" "-noprofile -executionpolicy ByPass -file ``"`$MainArgument``""
-    break
+    exit(0)
 }})
  
 Add-Type -Assembly System.Windows.Forms | Out-Null
@@ -308,6 +308,8 @@ Remove-Item -recurse -literalpath "`$target\Google\`$Android"
 `$MsgBoxButton::OK,
 `$MsgBoxIcon::Information
 )
+ 
+exit(0)
 "@ | Out-Null
 
         New-Item -path $UninstallRegPath | Out-Null
@@ -352,3 +354,5 @@ Remove-Item -recurse -literalpath "`$target\Google\`$Android"
     $MsgBoxIcon::Error
     )
 }
+
+exit(0)
