@@ -293,7 +293,7 @@ function Error-Dialog() {
     )
     Invoke-ExitScript 1
 }
-
+ 
 function IsAdmin() {
     ([System.Security.Principal.WindowsPrincipal]``
      [System.Security.Principal.WindowsIdentity]::GetCurrent()
@@ -304,7 +304,7 @@ function Invoke-PauseScript() {
     Write-Host -NoNewLine "Press any key to continue . . . "
     [void][System.Console]::ReadKey(`$True)
 }
-
+ 
 function Invoke-ExitScript([int32][AllowNull()]`$ErrorLevel) {
     `$host.UI.RawUI.WindowTitle = `$RestoreTitle
     exit(`$ErrorLevel)
@@ -350,7 +350,7 @@ if(`$(IsAdmin) -eq `$False) {
  
 [void][System.Reflection.Assembly]::LoadWithPartialName("System.Windows.Forms")
 [void][System.Windows.Forms.Application]::EnableVisualStyles()
-
+ 
 `$MsgBoxDialog = [System.Windows.Forms.MessageBox]
 `$MsgBoxButton = [System.Windows.Forms.MessageBoxButtons]
 `$MsgBoxIcon = [System.Windows.Forms.MessageBoxIcon]
