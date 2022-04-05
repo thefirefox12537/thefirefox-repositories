@@ -68,7 +68,7 @@ $PSShell = (Get-Process -id $PID).foreach({@{
     FullPath = $_.Path
     ShortName = $_.ProcessName
 }})
-$Run_InvokeExpression = @($IexCommand, $Site).foreach({if($MainArgument -match $_) {$True}})
+$Run_InvokeExpression = @($IexCommand, $Site).foreach({if("${MainArgument}" -match "$_") {$True}})
 $ErrorAppInfo = if($Run_InvokeExpression) {$AppFileName} else {Split-Path -leaf $MainArgument}
 $ErrorFGC = $host.PrivateData.ErrorForegroundColor
 $ErrorBGC = $host.PrivateData.ErrorBackgroundColor
