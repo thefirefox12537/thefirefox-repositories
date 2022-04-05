@@ -53,24 +53,21 @@ Remove-Variable ErrorActionPreference -ErrorAction Ignore
 $script:ErrorActionPreference = "Ignore"
 $script:ProgressPreference = "SilentlyContinue"
 
-$MyInvocation.MyCommand.Definition
-
 $RestoreTitle = [System.String]$host.UI.RawUI.WindowTitle
 $host.UI.RawUI.WindowTitle = "Android SDK Platform Tools installer"
 $Android = "android-sdk"
 $Title = "platform-tools"
 $AppFileName = "install-$Android-$Title.ps1"
-$IexCommand = "Invoke-Expression", "iex"
-$Site = "bit.ly", "install_adb", "thefirefox12537/thefirefox-repositories", "main/windows/$AppFileName"
-$NewLine = [System.Environment]::NewLine
+$SelectedArgument = "Invoke-Expression", "iex", "bit.ly", "install_adb", "thefirefox12537/thefirefox-repositories", "main/windows/$AppFileName"
 $MainArgument = $MyInvocation.MyCommand.Definition
+$NewLine = [System.Environment]::NewLine
 $PSVersionRequire = 5,0
 $PSShell = (Get-Process -id $PID).foreach({@{
     FileName = Split-Path -leaf $_.Path
     FullPath = $_.Path
     ShortName = $_.ProcessName
 }})
-$Run_InvokeExpression = @($IexCommand, $Site).foreach({if($MainArgument -match $_) {$True}})
+$Run_InvokeExpression = $SelectedArgument.foreach({if($MainArgument -match $_) {$True}})
 $ErrorAppInfo = if($Run_InvokeExpression) {$AppFileName} else {Split-Path -leaf $MainArgument}
 $ErrorFGC = $host.PrivateData.ErrorForegroundColor
 $ErrorBGC = $host.PrivateData.ErrorBackgroundColor
