@@ -53,11 +53,7 @@ function Invoke-ExitScript([int32][AllowNull()]$ErrorLevel) {
     exit($ErrorLevel)
 }
 
-Remove-Variable ErrorActionPreference -ErrorAction Ignore
-$script:ErrorActionPreference = "Ignore"
-$script:ProgressPreference = "SilentlyContinue"
-
-$RestoreTitle = [System.String]$Host.UI.RawUI.WindowTitle
+$RestoreTitle = $Host.UI.RawUI.WindowTitle
 $Host.UI.RawUI.WindowTitle = "Android SDK Platform Tools installer"
 $Android = "android-sdk"
 $Title = "platform-tools"
@@ -72,15 +68,26 @@ $SelectedArgument = @(
 $MainArgument = $MyInvocation.MyCommand.Definition
 $NewLine = [System.Environment]::NewLine
 $PSVersionRequire = 5,0
+$Run_InvokeExpression = $SelectedArgument | ForEach-Object {if($MainArgument -match $_) {$True}}
+$ErrorAppInfo = if($Run_InvokeExpression) {$AppFileName} else {Split-Path -leaf $MainArgument}
+$ErrorFGC = $Host.PrivateData.ErrorForegroundColor
+$ErrorBGC = $Host.PrivateData.ErrorBackgroundColor
+
+if($PSVersionTable.PSVersion -lt (New-Object System.Version $PSVersionRequire)) {
+    Write-Host -BackgroundColor $ErrorBGC -ForegroundColor $ErrorFGC `
+    "${ErrorAppInfo}: This PowerShell version is outdated. Up to version $($PSVersionRequire -join ".") or newer required."
+    Invoke-ExitScript 1
+}
+
+Remove-Variable ErrorActionPreference -ErrorAction Ignore
+$script:ErrorActionPreference = "Ignore"
+$script:ProgressPreference = "SilentlyContinue"
+
 $PSShell = (Get-Process -id $PID).foreach({@{
     FileName = Split-Path -leaf $_.Path
     FullPath = $_.Path
     ShortName = $_.ProcessName
 }})
-$Run_InvokeExpression = $SelectedArgument.foreach({if($MainArgument -match $_) {$True}})
-$ErrorAppInfo = if($Run_InvokeExpression) {$AppFileName} else {Split-Path -leaf $MainArgument}
-$ErrorFGC = $Host.PrivateData.ErrorForegroundColor
-$ErrorBGC = $Host.PrivateData.ErrorBackgroundColor
 
 if(!($IsWindows -or $env:OS -eq "Windows_NT")) {
     $ErrorMsg = "This script only support running on Microsoft Windows Operating System."
@@ -133,12 +140,6 @@ if([System.Environment]::OSVersion.Version -lt [System.Version]::New(6,1)) {
     } else {
         $SecurityProtocolList = $SecurityProtocolList -bor $Tls12
     }
-}
-
-if($PSVersionTable.PSVersion -lt [System.Version]::New($PSVersionRequire)) {
-    Write-Host -BackgroundColor $ErrorBGC -ForegroundColor $ErrorFGC `
-    "${ErrorAppInfo}: This PowerShell version is outdated. Up to version $($PSVersionRequire -join ".") or newer required."
-    Invoke-ExitScript 1
 }
 
 $Null = [System.Reflection.Assembly]::LoadWithPartialName("System.IO.Compression.FileSystem")
