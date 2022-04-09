@@ -25,7 +25,7 @@
 param([switch][alias('h')]$Help)
 
 function Error-Dialog() {
-    [void]$MsgBoxDialog::Show(
+    $Null = $MsgBoxDialog::Show(
     "Installation failed.", $Null,
     $MsgBoxButton::OK,
     $MsgBoxIcon::Error
@@ -34,18 +34,22 @@ function Error-Dialog() {
 }
 
 function IsAdmin() {
-    ([System.Security.Principal.WindowsPrincipal]`
-     [System.Security.Principal.WindowsIdentity]::GetCurrent()
-    ).IsInRole([System.Security.Principal.WindowsBuiltinRole]::Administrator)
+    (
+        [System.Security.Principal.WindowsPrincipal]`
+        [System.Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole(
+        [System.Security.Principal.WindowsBuiltinRole]::Administrator
+    )
 }
 
 function Invoke-PauseScript() {
+    $Null = $(
     Write-Host -NoNewLine "Press any key to continue . . . "
-    [void][System.Console]::ReadKey($True)
+    [System.Console]::ReadKey($True)
+    )
 }
 
 function Invoke-ExitScript([int32][AllowNull()]$ErrorLevel) {
-    $host.UI.RawUI.WindowTitle = $RestoreTitle
+    $Host.UI.RawUI.WindowTitle = $RestoreTitle
     exit($ErrorLevel)
 }
 
@@ -53,12 +57,18 @@ Remove-Variable ErrorActionPreference -ErrorAction Ignore
 $script:ErrorActionPreference = "Ignore"
 $script:ProgressPreference = "SilentlyContinue"
 
-$RestoreTitle = [System.String]$host.UI.RawUI.WindowTitle
-$host.UI.RawUI.WindowTitle = "Android SDK Platform Tools installer"
+$RestoreTitle = [System.String]$Host.UI.RawUI.WindowTitle
+$Host.UI.RawUI.WindowTitle = "Android SDK Platform Tools installer"
 $Android = "android-sdk"
 $Title = "platform-tools"
+$AppTitle = "Android SDK Platform Tools with USB drivers"
 $AppFileName = "install-$Android-$Title.ps1"
-$SelectedArgument = "Invoke-Expression", "iex", "bit.ly", "install_adb", "thefirefox12537/thefirefox-repositories", "main/windows/$AppFileName"
+$ProgramGroups = "${env:AppData}\Microsoft\Windows\Start Menu\Programs"
+$SelectedArgument = @(
+    "Invoke-Expression", "Invoke-WebRequest", "Invoke-RestMethod",
+    "iex", "iwr", "irm", "New-Object", "Net.WebClient",
+    "bit.ly/install_adb", "thefirefox-repositories", "main/windows/$AppFileName"
+)
 $MainArgument = $MyInvocation.MyCommand.Definition
 $NewLine = [System.Environment]::NewLine
 $PSVersionRequire = 5,0
@@ -69,10 +79,10 @@ $PSShell = (Get-Process -id $PID).foreach({@{
 }})
 $Run_InvokeExpression = $SelectedArgument.foreach({if($MainArgument -match $_) {$True}})
 $ErrorAppInfo = if($Run_InvokeExpression) {$AppFileName} else {Split-Path -leaf $MainArgument}
-$ErrorFGC = $host.PrivateData.ErrorForegroundColor
-$ErrorBGC = $host.PrivateData.ErrorBackgroundColor
+$ErrorFGC = $Host.PrivateData.ErrorForegroundColor
+$ErrorBGC = $Host.PrivateData.ErrorBackgroundColor
 
-if(!($IsWindows -or ($env:OS -eq "Windows_NT"))) {
+if(!($IsWindows -or $env:OS -eq "Windows_NT")) {
     $ErrorMsg = "This script only support running on Microsoft Windows Operating System."
     @("dialog", "whiptail").foreach({if(Get-Command $i) {
         $GUIBox = $i
@@ -82,43 +92,47 @@ if(!($IsWindows -or ($env:OS -eq "Windows_NT"))) {
         $GUIBox = "kdialog"
         $DialogType = "error"
     }
-    if(!($GUIBox)) {
+    if(!$GUIBox) {
         Write-Host -BackgroundColor $ErrorBGC -ForegroundColor $ErrorFGC `
         "${ErrorAppInfo}: $ErrorMsg"
     } else {
-        & $GUIBox --$DialogType `
-        $ErrorMsg 8 72
+        & $GUIBox --$DialogType $ErrorMsg 8 72
     }
     Invoke-ExitScript 1
 }
 
-if((Test-Path -literalpath $MainArgument) -and $Help) {
+if([System.IO.File]::Exists($MainArgument) -and $Help) {
     Get-Help $MainArgument -detailed
     Invoke-ExitScript
 }
 
 if($(IsAdmin) -eq $False) {
-    if(Test-Path -literalpath $MainArgument) {
+    $RedirectionScript = "([System.Net.WebClient]::New()).DownloadString('https://bit.ly/install_adb')"
+    if([System.IO.File]::Exists($MainArgument)) {
         Start-Process -verb RunAs `
-        $PSShell.FullPath "-exec bypass", "-noprofile", "-file `"$MainArgument`""
-        $ErrorLevel = 0
+        $PSShell.FullPath "-noprofile", "-exec bypass", "-file `"$MainArgument`""
     } else {
-        Write-Host -BackgroundColor $ErrorBGC -ForegroundColor $ErrorFGC `
-        "${ErrorAppInfo}: Access denied. Run as administrator required."
-        $ErrorLevel = 1
+        Start-Process -verb RunAs `
+        $PSShell.FullPath "-noprofile", "-command",
+        "[System.Net.ServicePointManager]::SecurityProtocol = [System.Enum]::ToObject([System.Net.SecurityProtocolType], 3072);
+         Invoke-Expression $RedirectionScript"
     }
-    Invoke-ExitScript $ErrorLevel
+    Invoke-ExitScript
 }
 
-$SvcPointMan = [System.Net.ServicePointManager]
-$SecProtocol = [System.Net.SecurityProtocolType]
+$SecurityProtocolList = [System.Net.ServicePointManager]::SecurityProtocol
+$SecurityProtocolType = [System.Net.SecurityProtocolType]
+$Tls12 = [System.Enum]::ToObject($SecurityProtocolType, 3072)
+$WebClient = [System.Net.WebClient]::New()
+
 if([System.Environment]::OSVersion.Version -lt [System.Version]::New(6,1)) {
-    if([System.Enum]::GetNames($SecProtocol) -notcontains $SecProtocol::Tls12) {
+    if([System.Enum]::GetNames($SecurityProtocolType) -notcontains $Tls12) {
         Write-Host -BackgroundColor $ErrorBGC -ForegroundColor $ErrorFGC `
         "${ErrorAppInfo}: This script requires at least Microsoft .NET Framework 4.5."
         Invoke-ExitScript 1
+    } else {
+        $SecurityProtocolList = $SecurityProtocolList -bor $Tls12
     }
-    $SvcPointMan::SecurityProtocol = $SecProtocol::Tls12
 }
 
 if($PSVersionTable.PSVersion -lt [System.Version]::New($PSVersionRequire)) {
@@ -127,22 +141,20 @@ if($PSVersionTable.PSVersion -lt [System.Version]::New($PSVersionRequire)) {
     Invoke-ExitScript 1
 }
 
-[void][System.Reflection.Assembly]::LoadWithPartialName("System.IO.Compression.FileSystem")
-[void][System.Reflection.Assembly]::LoadWithPartialName("System.Windows.Forms")
-[void][System.Windows.Forms.Application]::EnableVisualStyles()
+$Null = [System.Reflection.Assembly]::LoadWithPartialName("System.IO.Compression.FileSystem")
+$Null = [System.Reflection.Assembly]::LoadWithPartialName("System.Windows.Forms")
+$Null = [System.Windows.Forms.Application]::EnableVisualStyles()
 
 $MsgBoxDialog = [System.Windows.Forms.MessageBox]
 $MsgBoxButton = [System.Windows.Forms.MessageBoxButtons]
 $MsgBoxIcon = [System.Windows.Forms.MessageBoxIcon]
 $ArchiveClient = [System.IO.Compression.ZipFile]
-$WebClient = [System.Net.WebClient]::New()
 
 $TestSigning = $($(bcdedit.exe | where{$_ -match "testsigning"}) -split "\s+")[1]
 $LoadOptions = $($(bcdedit.exe | where{$_ -match "loadoptions"}) -split "\s+")[1]
 $NoIntegrityChecks = $($(bcdedit.exe | where{$_ -match "nointegritychecks"}) -split "\s+")[1]
-if(($LoadOptions -notmatch "DISABLE_INTEGRITY_CHECKS") -or `
-   ($NoIntegrityChecks -ne "Yes") -or `
-   ($TestSigning -ne "Yes")) {
+
+if(($LoadOptions -notmatch "DISABLE_INTEGRITY_CHECKS") -or ($NoIntegrityChecks -ne "Yes") -or ($TestSigning -ne "Yes")) {
     switch ($MsgBoxDialog::Show(
         "You are not activate Disable Driver Signature Enforcement Mode at Boot Configuration Data. " +
         $(for($i=1; $i -le 2; $i++) {$NewLine}) +
@@ -158,29 +170,22 @@ if(($LoadOptions -notmatch "DISABLE_INTEGRITY_CHECKS") -or `
 }
 
 $target = if($env:PROCESSOR_ARCHITECTURE -ne "X86") {${env:ProgramFiles(x86)}} else {${env:ProgramFiles}}
+
 foreach($exe in @("adb.exe", "fastboot.exe")) {
 if(!(Get-Command $exe)) {
-    if(!(Test-Path `
-       -pathtype container `
-       -literalpath "$target\Google\$Android\$Title")) {
+    if(![System.IO.Directory]::Exists("$target\Google\$Android\$Title")) {
+        $UriLink = "http://dl.google.com/android/repository/$Title-latest-windows.zip"
+
         foreach($dir in @("Google", "Google\$Android")) {
-        if(!(Test-Path `
-           -pathtype container `
-           -literalpath "$target\$dir")) {
-            New-Item -itemtype Directory `
-            -path "$target\$dir" | Out-Null
-        }}
+        if(![System.IO.Directory]::Exists("$target\$dir"))
+       {$Null = New-Item -itemtype Directory -path "$target\$dir"}
+        }
 
         Write-Output "Downloading Android SDK Platform Tools..."
-        [void]$WebClient.DownloadFile(
-        "http://dl.google.com/android/repository/$Title-latest-windows.zip",
-        "${env:TMP}\$Title.zip"
-        )
+        $Null = $WebClient.DownloadFile($UriLink, "${env:TMP}\$Title.zip")
 
         Write-Output "Extracting Android SDK Platform Tools..."
-        [void]$ArchiveClient::ExtractToDirectory(
-        "${env:TMP}\$Title.zip", "$target\Google\$Android"
-        )
+        $Null = $ArchiveClient::ExtractToDirectory("${env:TMP}\$Title.zip", "$target\Google\$Android")
 
         Write-Output "Deleting temporary download files..."
         Remove-Item -literalpath "${env:TMP}\$Title.zip"
@@ -193,21 +198,16 @@ if(!(Get-Command $exe)) {
         "mke2fs.exe", "make_f2fs.exe",
         "etc1tool.exe", "dmtracedump.exe", "sqlite3.exe"
     )) {
-        New-Item -itemtype SymbolicLink `
-        -path "${env:SystemRoot}\system32\$i" `
-        -target "$target\Google\$Android\$Title\$i" | Out-Null
-        if($env:PROCESSOR_ARCHITECTURE -ne "X86") {
-            New-Item -itemtype SymbolicLink `
-            -path "${env:SystemRoot}\SysWOW64\$i" `
-            -target "${env:SystemRoot}\system32\$i" | Out-Null
-        }
+        $Null = New-Item -itemtype SymbolicLink -path "${env:SystemRoot}\system32\$i" -target "$target\Google\$Android\$Title\$i"
+        if($env:PROCESSOR_ARCHITECTURE -ne "X86")
+       {$Null = New-Item -itemtype SymbolicLink -path "${env:SystemRoot}\SysWOW64\$i" -target "${env:SystemRoot}\system32\$i"}
     }
 
     Write-Output "$(($Android -split "-")[0])-$Title successfully placed."
     $InstallComplete = $True
     break
 } else {
-    [void]$MsgBoxDialog::Show(
+    $Null = $MsgBoxDialog::Show(
     "$(($Android -split "-")[0])-$Title already installed.", $Null,
     $MsgBoxButton::OK,
     $MsgBoxIcon::Error
@@ -216,26 +216,20 @@ if(!(Get-Command $exe)) {
     break
 }}
 
-if(!(Get-ChildItem `
-   -path "${env:SystemRoot}\system32\DriverStore\FileRepository" `
-   -filter android_winusb.inf -recurse)) {
+if(!(Get-ChildItem -path "${env:SystemRoot}\system32\DriverStore\FileRepository" -filter android_winusb.inf -recurse)) {
+    $UriLink = "http://dl.google.com/android/repository/latest_usb_driver_windows.zip"
+
     Write-Output "Downloading USB Debugging drivers..."
-    [void]$WebClient.DownloadFile(
-    "http://dl.google.com/android/repository/latest_usb_driver_windows.zip",
-    "${env:TMP}\usb_driver.zip"
-    )
+    $Null = $WebClient.DownloadFile($UriLink, "${env:TMP}\usb_driver.zip")
 
     Write-Output "Extracting ADB and Fastboot drivers..."
-    [void]$ArchiveClient::ExtractToDirectory(
-    "${env:TMP}\usb_driver.zip", "$target\Google\$Android"
-    )
+    $Null = $ArchiveClient::ExtractToDirectory("${env:TMP}\usb_driver.zip", "$target\Google\$Android")
 
     Write-Output "Installing driver..."
     & pnputil.exe -i -a "$target\Google\$Android\usb_driver\android_winusb.inf"
     $OEMDriverUninstall = $(
-	$(pnputil.exe -e | Select-String -Context 1 "Driver package provider :\s+ Google, Inc.").foreach({
-    ($_.Context.PreContext[0] -split " : +")[1]
-    }))
+    $(pnputil.exe -e | Select-String -Context 1 "Driver package provider :\s+ Google, Inc.").Context.PreContext[0] -split " : +"
+    )[1]
 
     Write-Output "Deleting temporary download files..."
     Remove-Item -literalpath "${env:TMP}\usb_driver.zip"
@@ -243,7 +237,7 @@ if(!(Get-ChildItem `
     Write-Output "Driver successfully installed."
     $InstallComplete = $True
 } else {
-    [void]$MsgBoxDialog::Show(
+    $Null = $MsgBoxDialog::Show(
     "Driver already installed. If you not sure install this driver before, " +
     "remove first driver and this setup then running installation again.", $Null,
     $MsgBoxButton::OK,
@@ -252,16 +246,17 @@ if(!(Get-ChildItem `
     $InstallAlready = $True
 }
 
-if($InstallAlready) {Invoke-ExitScript 1}
-elseif($InstallComplete) {
+if($InstallAlready) {
+    Invoke-ExitScript 1
+} elseif($InstallComplete) {
+    $StartupFile = "$ProgramGroups\Startup\Start ADB services.lnk"
     $UninstallRegPath = "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(($Android -split "-")[0])-$Title"
+    $UninstallPathCommand = "`"$($PSShell.FullPath)`" -noprofile -exec bypass -file `"$UninstallFile`""
 
     foreach($UninstallFile in "$target\Google\$Android\$Title\uninstall.ps1") {
-    if(!(Test-Path -literalpath $UninstallFile)) {
-        Write-Output "Creating uninstall registry..."
-        New-Item -itemtype File `
-        -path $UninstallFile `
-        -value @"
+    if(![System.IO.File]::Exists($UninstallFile)) {
+        Write-Output "Creating uninstall registry and startup..."
+        $Null = New-Item -itemtype File -path $UninstallFile -value @"
 #requires -version 4
  
 <#PSScriptInfo
@@ -286,7 +281,7 @@ elseif($InstallComplete) {
 #>
  
 function Error-Dialog() {
-    [void]`$MsgBoxDialog::Show(
+    `$Null = `$MsgBoxDialog::Show(
     "Uninstallation failed.", `$Null,
     `$MsgBoxButton::OK,
     `$MsgBoxIcon::Error
@@ -295,18 +290,22 @@ function Error-Dialog() {
 }
  
 function IsAdmin() {
-    ([System.Security.Principal.WindowsPrincipal]``
-     [System.Security.Principal.WindowsIdentity]::GetCurrent()
-    ).IsInRole([System.Security.Principal.WindowsBuiltinRole]::Administrator)
+    (
+        [System.Security.Principal.WindowsPrincipal]``
+        [System.Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole(
+        [System.Security.Principal.WindowsBuiltinRole]::Administrator
+    )
 }
  
 function Invoke-PauseScript() {
+    `$Null = `$(
     Write-Host -NoNewLine "Press any key to continue . . . "
-    [void][System.Console]::ReadKey(`$True)
+    [System.Console]::ReadKey(`$True)
+    )
 }
  
 function Invoke-ExitScript([int32][AllowNull()]`$ErrorLevel) {
-    `$host.UI.RawUI.WindowTitle = `$RestoreTitle
+    `$Host.UI.RawUI.WindowTitle = `$RestoreTitle
     exit(`$ErrorLevel)
 }
  
@@ -314,7 +313,8 @@ Remove-Variable ErrorActionPreference
 `$script:ErrorActionPreference = "Ignore"
 `$script:ProgressPreference = "SilentlyContinue"
  
-`$RestoreTitle = "Android SDK Platform Tools uninstaller"
+`$RestoreTitle = [System.String]`$Host.UI.RawUI.WindowTitle
+`$Host.UI.RawUI.WindowTitle = "Android SDK Platform Tools uninstaller"
 `$Android = "android-sdk"
 `$Title = "platform-tools"
 `$PSShell = (Get-Process -id `$PID).foreach({@{
@@ -324,10 +324,10 @@ Remove-Variable ErrorActionPreference
 }})
 `$MainArgument = `$MyInvocation.MyCommand.Definition
 `$ErrorAppInfo = Split-Path -leaf `$MainArgument
-`$ErrorFGC = `$host.PrivateData.ErrorForegroundColor
-`$ErrorBGC = `$host.PrivateData.ErrorBackgroundColor
+`$ErrorFGC = `$Host.PrivateData.ErrorForegroundColor
+`$ErrorBGC = `$Host.PrivateData.ErrorBackgroundColor
  
-if(!(`$IsWindows -or (`$env:OS -eq "Windows_NT"))) {
+if(!(`$IsWindows -or `$env:OS -eq "Windows_NT")) {
     `$ErrorMsg = "This script only support running on Microsoft Windows Operating System."
     @("dialog", "whiptail").foreach({if(Get-Command `$i) {
         `$GUIBox = `$i
@@ -337,19 +337,23 @@ if(!(`$IsWindows -or (`$env:OS -eq "Windows_NT"))) {
         `$GUIBox = "kdialog"
         `$DialogType = "error"
     }
-    if(!(`$GUIBox)) {Write-Host -BackgroundColor `$ErrorBGC -ForegroundColor `$ErrorFGC "`${ErrorAppInfo}: `$ErrorMsg"}
-    else {`& `$GUIBox --`$DialogType `$ErrorMsg 8 72}
+    if(!`$GUIBox) {
+        Write-Host -BackgroundColor `$ErrorBGC -ForegroundColor `$ErrorFGC `
+        "`${ErrorAppInfo}: `$ErrorMsg"
+    } else {
+        `& `$GUIBox --`$DialogType `$ErrorMsg 8 72
+    }
     Invoke-ExitScript 1
 }
  
 if(`$(IsAdmin) -eq `$False) {
     Start-Process -verb RunAs ``
-    `$PSShell.FullPath "-exec bypass", "-noprofile", "-file ``"`$MainArgument``""
+    `$PSShell.FullPath "-noprofile", "-exec bypass", "-file ``"`$MainArgument``""
     Invoke-ExitScript
 }
  
-[void][System.Reflection.Assembly]::LoadWithPartialName("System.Windows.Forms")
-[void][System.Windows.Forms.Application]::EnableVisualStyles()
+`$Null = [System.Reflection.Assembly]::LoadWithPartialName("System.Windows.Forms")
+`$Null = [System.Windows.Forms.Application]::EnableVisualStyles()
  
 `$MsgBoxDialog = [System.Windows.Forms.MessageBox]
 `$MsgBoxButton = [System.Windows.Forms.MessageBoxButtons]
@@ -358,8 +362,8 @@ if(`$(IsAdmin) -eq `$False) {
  
 Stop-Process -id (Get-Process adb).Id
 if(`$? -eq `$False) {
-    adb kill-server 2`>`&1 | Out-Null
-    if(`$LASTEXITCODE -ne 0) {Errror-Dialog}
+    `$ProcessApp = Start-Process -wait -passthru -windowstyle minimized adb.exe "kill-server"
+    if(`$ProcessApp.exitcode -ne 0) {Errror-Dialog}
 }
  
 foreach(`$i in @(
@@ -373,59 +377,56 @@ foreach(`$i in @(
    {Remove-Item -literalpath "`${env:SystemRoot}\SysWOW64\`$i"}
 }
  
-& pnputil.exe -d $OEMDriverUninstall
-if(`$LASTEXITCODE -ne 0) {Error-Dialog}
+`$ProcessApp = Start-Process -wait -passthru pnputil.exe "-d $OEMDriverUninstall"
+if(`$ProcessApp.exitcode -ne 0) {Error-Dialog}
  
 `$UninstallRegPath = "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\`$((`$Android -split "-")[0])-`$Title"
+Remove-Item -literalpath "$StartupFile"
 Remove-Item -recurse -literalpath "`$UninstallRegPath"
 Remove-Item -recurse -literalpath "`$target\Google\`$Android"
  
-[void]`$MsgBoxDialog::Show(
+`$Null = `$MsgBoxDialog::Show(
 "Uninstallation completed.", `$Null,
 `$MsgBoxButton::OK,
 `$MsgBoxIcon::Information
 )
  
 Invoke-ExitScript
-"@ | Out-Null
+"@
 
-        New-Item -path $UninstallRegPath | Out-Null
-        New-ItemProperty -propertytype String `
-        -literalpath $UninstallRegPath `
-        -name DisplayName `
-        -value "Android SDK Platform Tools with USB drivers" | Out-Null
-        New-ItemProperty -propertytype String `
-        -literalpath $UninstallRegPath `
-        -name DisplayVersion `
-        -value "1.1.0.0" | Out-Null
-        New-ItemProperty -propertytype String `
-        -literalpath $UninstallRegPath `
-        -name InstallLocation `
-        -value "$target\Google\$Android" | Out-Null
-        New-ItemProperty -propertytype String `
-        -literalpath $UninstallRegPath `
-        -name UninstallString `
-        -value "`"$($PSShell.FullPath)`" -noprofile -executionpolicy bypass -file `"$UninstallFile`"" | Out-Null
+        $RegKey = "DisplayName", "DisplayVersion", "InstallLocation", "UninstallString"
+		$RegKey = $RegKey.GetEnumerator()
+		$RegValue = $AppTitle, "1.1.0.0", "$target\Google\$Android", $UninstallPathCommand
+		$RegValue = $RegValue.GetEnumerator()
 
-        if(!(Test-Path -literalpath $UninstallRegPath)) {
+        $Null = New-Item -path $UninstallRegPath
+        while($RegKey.MoveNext() -and $RegValue.MoveNext())
+       {$Null = New-ItemProperty -propertytype String -literalpath $UninstallRegPath -name $RegKey.Current -value $RegValue.Current}
+
+        $MakeShortcut = (New-Object -ComObject WScript.Shell).CreateShortcut($StartupFile)
+        $MakeShortcut.TargetPath = "${env:SystemRoot}\system32\adb.exe"
+        $MakeShortcut.Arguments = "start-server"
+        $MakeShortcut.Save()
+
+        if(![System.IO.File]::Exists($UninstallRegPath)) {
             Write-Output $(@(
             "Creating uninstall registry failed, but $UninstallFile"
             "already created so you must uninstall manually in PowerShell."
             ) -join " ")
             break
         } else {
-            Write-Output "Creating uninstall registry successfully."
+            Write-Output "Creating uninstall registry and startup successfully."
             break
         }
     }}
 
-    [void]$MsgBoxDialog::Show(
+    $Null = $MsgBoxDialog::Show(
     "Installation completed.", $Null,
     $MsgBoxButton::OK,
     $MsgBoxIcon::Information
     )
 } else {
-    [void]$MsgBoxDialog::Show(
+    $Null = $MsgBoxDialog::Show(
     "Installation failed.", $Null,
     $MsgBoxButton::OK,
     $MsgBoxIcon::Error
