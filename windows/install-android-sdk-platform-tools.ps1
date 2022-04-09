@@ -50,15 +50,8 @@ function Invoke-PauseScript {
 
 function Invoke-ExitScript {
     param([int32][AllowNull()]$ErrorLevel)
-
     $Host.UI.RawUI.WindowTitle = $RestoreTitle
-    if($ErrorLevel -eq 1 -and $ErrorMsg) {
-        if($PSVersionTable.PSVersion -lt (New-Object System.Version 5,0))
-       {$ErrorActionPreference = "Stop"} else {$script:ErrorActionPreference = "Stop"}
-        throw $ErrorMsg
-    } else {
-        exit($ErrorLevel)
-    }
+    exit($ErrorLevel)
 }
 
 $RestoreTitle = $Host.UI.RawUI.WindowTitle
@@ -71,15 +64,15 @@ $ProgramGroups = "${env:AppData}\Microsoft\Windows\Start Menu\Programs"
 $SelectedArguments = @("iex", "irm", "iwr", "wget", "Invoke-Expression", "Invoke-RestMethod", "Invoke-WebRequest", "New-Object", "Net.WebClient", "bit.ly/install_adb", "thefirefox-repositories", "main/windows/$AppFileName")
 $MainArgument = $MyInvocation.MyCommand.Definition
 $NewLine = [System.Environment]::NewLine
-$PSVersionRequire = 3,0
-$Run_InvokeExpression = $SelectedArguments | ForEach-Object {if($MainArgument -match $_) {$True}}
+$PSVersionRequire = 2,0
+$Run_InvokeExpression = foreach($i in $SelectedArguments) {if($MainArgument -match $i) {$True; break}}
 $ErrorAppInfo = if($Run_InvokeExpression) {$AppFileName} else {Split-Path -leaf $MainArgument}
 $ErrorFGC = $Host.PrivateData.ErrorForegroundColor
 $ErrorBGC = $Host.PrivateData.ErrorBackgroundColor
 
 if($PSVersionTable.PSVersion -lt (New-Object System.Version $PSVersionRequire)) {
-    # Write-Host -BackgroundColor $ErrorBGC -ForegroundColor $ErrorFGC `
-    $ErrorMsg = "${ErrorAppInfo}: This PowerShell version is outdated. Up to version $($PSVersionRequire -join ".") or newer required."
+    Write-Host -BackgroundColor $ErrorBGC -ForegroundColor $ErrorFGC `
+    "${ErrorAppInfo}: This PowerShell version is outdated. Up to version $($PSVersionRequire -join ".") or newer required."
     Invoke-ExitScript 1
 }
 
@@ -109,8 +102,8 @@ if(!($IsWindows -or $env:OS -eq "Windows_NT")) {
         $DialogType = "error"
     }
     if(!$GUIBox) {
-        # Write-Host -BackgroundColor $ErrorBGC -ForegroundColor $ErrorFGC `
-        $ErrorMsg = "${ErrorAppInfo}: $ErrorMsg"
+        Write-Host -BackgroundColor $ErrorBGC -ForegroundColor $ErrorFGC `
+        "${ErrorAppInfo}: $ErrorMsg"
     } else {
         & $GUIBox --$DialogType $ErrorMsg 8 72
     }
@@ -123,13 +116,11 @@ if([System.IO.File]::Exists($MainArgument) -and $Help) {
 }
 
 if($(IsAdmin) -eq $False) {
-    $RedirectionScript = "(New-Object System.Net.WebClient).DownloadString('https://bit.ly/install_adb')"
     if([System.IO.File]::Exists($MainArgument)) {
-        Start-Process -verb RunAs `
-        $PSShell.FullPath "-noprofile", "-exec bypass", "-file `"$MainArgument`""
+        Start-Process -verb RunAs $PSShell.FullPath "-noprofile", "-exec bypass", "-file `"$MainArgument`""
     } else {
-        Start-Process -verb RunAs `
-        $PSShell.FullPath "-noprofile", "-command",
+        $RedirectionScript = "(New-Object System.Net.WebClient).DownloadString('https://bit.ly/install_adb')"
+        Start-Process -verb RunAs $PSShell.FullPath "-noprofile", "-command",
         "[System.Net.ServicePointManager]::SecurityProtocol = [System.Enum]::ToObject([System.Net.SecurityProtocolType], 3072);
          Invoke-Expression $RedirectionScript"
     }
@@ -160,7 +151,7 @@ $TestSigning = ($(bcdedit.exe) -match "testsigning" -split "\s+")[1]
 $LoadOptions = ($(bcdedit.exe) -match "loadoptions" -split "\s+")[1]
 $NoIntegrityChecks = ($(bcdedit.exe) -match "nointegritychecks" -split "\s+")[1]
 
-if(($LoadOptions -notmatch "DISABLE_INTEGRITY_CHECKS") -or ($NoIntegrityChecks -ne "Yes") -or ($TestSigning -ne "Yes")) {
+if($LoadOptions -notmatch "DISABLE_INTEGRITY_CHECKS" -or $NoIntegrityChecks -ne "Yes" -or $TestSigning -ne "Yes") {
     switch ($MsgBoxDialog::Show(
         "You are not activate Disable Driver Signature Enforcement Mode at Boot Configuration Data. " +
         $(for($i=1; $i -le 2; $i++) {$NewLine}) +
@@ -307,15 +298,8 @@ function Invoke-PauseScript {
  
 function Invoke-ExitScript {
     param([int32][AllowNull()]`$ErrorLevel)
-
     `$Host.UI.RawUI.WindowTitle = `$RestoreTitle
-    if(`$ErrorLevel -eq 1 -and `$ErrorMsg) {
-        if(`$PSVersionTable.PSVersion -lt (New-Object System.Version 5,0))
-       {`$ErrorActionPreference = "Stop"} else {`$script:ErrorActionPreference = "Stop"}
-        throw `$ErrorMsg
-    } else {
-        exit(`$ErrorLevel)
-    }
+    exit(`$ErrorLevel)
 }
  
 `$RestoreTitle = `$Host.UI.RawUI.WindowTitle
@@ -353,8 +337,8 @@ if(!(`$IsWindows -or `$env:OS -eq "Windows_NT")) {
         `$DialogType = "error"
     }
     if(!`$GUIBox) {
-        # Write-Host -BackgroundColor `$ErrorBGC -ForegroundColor `$ErrorFGC `
-        `$ErrorMsg = "`${ErrorAppInfo}: `$ErrorMsg"
+        Write-Host -BackgroundColor `$ErrorBGC -ForegroundColor `$ErrorFGC `
+        "`${ErrorAppInfo}: `$ErrorMsg"
     } else {
         `& `$GUIBox --`$DialogType `$ErrorMsg 8 72
     }
@@ -421,10 +405,7 @@ Invoke-ExitScript
         $MakeShortcut.Save()
 
         if(![System.IO.File]::Exists($UninstallRegPath)) {
-            Write-Output $(@(
-            "Creating uninstall registry failed, but $UninstallFile"
-            "already created so you must uninstall manually in PowerShell."
-            ) -join " ")
+            Write-Output "Creating uninstall registry failed, but $UninstallFile already created so you must uninstall manually in PowerShell."
             break
         } else {
             Write-Output "Creating uninstall registry and startup successfully."
