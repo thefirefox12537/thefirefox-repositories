@@ -14,17 +14,17 @@ REM  Program requirement:   DISM.EXE IMAGEX.EXE NET.EXE
 
 REM  VersionInfo:
 REM
-REM    File version:      6,0,6000,0
-REM    Product Version:   6,0,6000,0
+REM    File version:      10,0,22000,120
+REM    Product Version:   10,0,22000,120
 REM
 REM    CompanyName:       Microsoft Corporation
 REM    FileDescription:   Windows Setup
-REM    FileVersion:       6.0.6000.0
+REM    FileVersion:       10.0.22000.120 (WinBuild.160101.0800)
 REM    InternalName:      winsetup
 REM    LegalCopyright:    © Microsoft Corporation. All rights reserved.
 REM    OriginalFileName:  WINSETUP.BAT
 REM    ProductName:       Microsoft® Windows® Operating System
-REM    ProductVersion:    6.0.6000.0
+REM    ProductVersion:    10.0.22000.120 (WinBuild.160101.0800)
 
 
 :start
@@ -96,7 +96,7 @@ else (bcdedit.exe /store %%~dpd\bcd-template > nul 2>&1)
 if %ERRORLEVEL% NEQ 0 (goto :require_admin)
 
 set drive=CDEFGHIJKLMNOPQRSTUVWXYZ
-set alpha=abcdefghijklmnopqrstuvwyz0
+set alpha=ABCDEFGHIJKLMNOPQRSTUVWYZ0
 
 if defined stepgoto (goto :%stepgoto%)
 goto :help
@@ -111,17 +111,18 @@ if not defined diskmgmt ^
 for %%f in (diskpart.exe) do ^
 if exist %%~$PATH:f (set diskmgmt=%%f)
 
-@call %diskmgmt% & echo off
-@goto end_of_exit
+@call %diskmgmt%
+@echo off & goto end_of_exit
 
 :install
+set "BASEFILE=%~dpf0"
 if not "%SystemRoot:~0,2%"=="X:" (goto :require_winpe)
+if not "%BASEFILE:~0,2%"=="X:" (goto :winpe_redirect)
 for %%a in ("Setup" "Setup\MoSetup") do ^
 reg.exe add HKLM\SYSTEM\%%~a /f /t REG_DWORD /v AllowUpgradesWithUnsupportedTPMOrCPU /d 1 > nul 2>&1
-for %%a in (BypassTPMCheck BypassStorageCheck BypassSecureBootCheck BypassRAMCheck BypassCPUCheck) do (
-reg.exe add HKLM\SYSTEM\Setup\LabConfig /f /t REG_DWORD /v %%a /d 1 > nul 2>&1
-reg.exe add HKLM\Setup\LabConfig /f /t REG_DWORD /v %%a /d 1 > nul 2>&1
-)
+for %%a in ("Setup" "SYSTEM\Setup") do ^
+for %%b in (BypassTPMCheck BypassStorageCheck BypassSecureBootCheck BypassRAMCheck BypassCPUCheck) do ^
+reg.exe add HKLM\%%~a\LabConfig /f /t REG_DWORD /v %%b /d 1 > nul 2>&1
 ::IMAGEX
 for %%i in ("imagex.exe") do ^
 for /l %%d in (0,1,23) do ^
@@ -252,6 +253,13 @@ ping.exe -n 2 127.0.0.1 > nul
 echo.
 wpeutil.exe reboot
 goto :end_of_exit
+
+:winpe_redirect
+copy /y "%~dpf0" "%tmp%\%~nx0" > nul 2>&1
+copy /y "%~dpn0.exe" "%tmp%\%~n0.exe" > nul 2>&1
+@cd /d "%tmp%" & call "%tmp%\%~n0" %*
+@cd /d "%~dp0"
+@echo off & goto :end_of_exit
 
 :make_bootnt5
 for %%a in (NTDETECT.COM NTLDR) do (
@@ -430,7 +438,7 @@ goto :enroll
 set "MSG=Enroll successfully changed."
 
 if not defined flightreboot echo %MSG%
-if defined flightreboot ^
+if defined flightreboot (
 for %%a in (%_ARGS%) do ^
 if "%%a"=="/norestart" set norestart=1
 if defined norestart (
@@ -439,7 +447,7 @@ echo %MSG%
 echo %MSG% This script will be reboot automatically.
 timeout.exe /nobreak /t 3 > nul 2>&1
 shutdown.exe /r /t 0 > nul 2>&1
-)
+))
 goto :end_of_exit
 
 
@@ -510,17 +518,17 @@ for %%a in (BypassTPMCheck BypassStorageCheck BypassSecureBootCheck BypassRAMChe
 reg.exe add HKLM\SYSTEM\Setup\LabConfig /f /t REG_DWORD /v %%a /d 1 > nul 2>&1
 reg.exe add HKCU\SOFTWARE\Microsoft\PCHC /f /t REG_DWORD /v UpgradeEligibility /d 1 > nul 2>&1
 
-> "%temp%\rollingmessage.reg" echo Windows Registry Editor Version 5.00
->> "%temp%\rollingmessage.reg" ^
-if %BUILD% LSS 21990 (
+if %BUILD% LSS 21990 > "%temp%\rollingmessage.reg" (
+echo Windows Registry Editor Version 5.00
 echo.
 echo [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsSelfHost\UI\Strings]
-echo "StickyXaml"="<StackPanel xmlns=\"http://schemas.microsoft.com/winfx/2006/xaml/presentation\"><TextBlock Style=\"{StaticResource BodyTextBlockStyle }\">This device has been enrolled to the Windows Insider program using winsetup.bat. If you want to change settings of the enrollment or stop receiving Insider Preview builds, open Terminal and join prompt to directory of winsetup.bat placed, then type <Span FontWeight=\"SemiBold\">winsetup /rollinsider [ dev | beta | rp | stop ]</Span>.</TextBlock><TextBlock Text=\"Applied configuration\" Margin=\"0,20,0,10\" Style=\"{StaticResource SubtitleTextBlockStyle}\" /><TextBlock Style=\"{StaticResource BodyTextBlockStyle }\" Margin=\"0,0,0,5\"><Run FontFamily=\"Segoe MDL2 Assets\">&#xECA7;</Run> <Span FontWeight=\"SemiBold\">%Fancy%</Span></TextBlock><TextBlock Text=\"Channel: %Channel%\" Style=\"{StaticResource BodyTextBlockStyle }\" /><TextBlock Text=\"Content: %Content%\" Style=\"{StaticResource BodyTextBlockStyle }\" /><TextBlock Text=\"Telemetry settings notice\" Margin=\"0,20,0,10\" Style=\"{StaticResource SubtitleTextBlockStyle}\" /><TextBlock Style=\"{StaticResource BodyTextBlockStyle }\">Windows Insider Program requires your diagnostic data collection settings to be set to <Span FontWeight=\"SemiBold\">Full</Span>. You can verify or modify your current settings in <Span FontWeight=\"SemiBold\">Diagnostics &amp; feedback</Span>.</TextBlock><Button Command=\"{StaticResource ActivateUriCommand}\" CommandParameter=\"ms-settings:privacy-feedback\" Margin=\"0,10,0,0\"><TextBlock Margin=\"5,0,5,0\">Open Diagnostics &amp; feedback</TextBlock></Button></StackPanel>"
+echo "StickyXaml"="<StackPanel xmlns=\"http://schemas.microsoft.com/winfx/2006/xaml/presentation\"><TextBlock Style=\"{StaticResource BodyTextBlockStyle }\">This device has been enrolled to the Windows Insider program using winsetup.bat. If you want to change settings of the enrollment or stop receiving Insider Preview builds, open Terminal and join prompt to directory of winsetup.bat placed, then type <Span FontWeight=\"Bold\">winsetup /rollinsider [ dev | beta | rp | stop ]</Span>.</TextBlock><TextBlock Text=\"Applied configuration\" Margin=\"0,20,0,10\" Style=\"{StaticResource SubtitleTextBlockStyle}\" /><TextBlock Style=\"{StaticResource BodyTextBlockStyle }\" Margin=\"0,0,0,5\"><Run FontFamily=\"Segoe MDL2 Assets\">&#xECA7;</Run> <Span FontWeight=\"SemiBold\">%Fancy%</Span></TextBlock><TextBlock Text=\"Channel: %Channel%\" Style=\"{StaticResource BodyTextBlockStyle }\" /><TextBlock Text=\"Content: %Content%\" Style=\"{StaticResource BodyTextBlockStyle }\" /><TextBlock Text=\"Telemetry settings notice\" Margin=\"0,20,0,10\" Style=\"{StaticResource SubtitleTextBlockStyle}\" /><TextBlock Style=\"{StaticResource BodyTextBlockStyle }\">Windows Insider Program requires your diagnostic data collection settings to be set to <Span FontWeight=\"SemiBold\">Full</Span>. You can verify or modify your current settings in <Span FontWeight=\"SemiBold\">Diagnostics &amp; feedback</Span>.</TextBlock><Button Command=\"{StaticResource ActivateUriCommand}\" CommandParameter=\"ms-settings:privacy-feedback\" Margin=\"0,10,0,0\"><TextBlock Margin=\"5,0,5,0\">Open Diagnostics &amp; feedback</TextBlock></Button></StackPanel>"
 echo.
-) else (
+) else > "%temp%\rollingmessage.reg" (
+echo Windows Registry Editor Version 5.00
 echo.
 echo [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsSelfHost\UI\Strings]
-echo "StickyMessage"="{\"Message\":\"Device enrolled using winsetup.bat\",\"LinkTitle\":\"\",\"LinkUrl\":\"\",\"DynamicXaml\":\"^<StackPanel xmlns=\\\"http://schemas.microsoft.com/winfx/2006/xaml/presentation\\\"^>^<TextBlock Style=\\\"{StaticResource BodyTextBlockStyle }\\\"^>This device has been enrolled to the Windows Insider program using winsetup.bat. If you want to change settings of the enrollment or stop receiving Insider Preview builds, open Terminal and join prompt to directory of winsetup.bat placed, then type ^<Span FontWeight=\\\"SemiBold\\\"^>winsetup /rollinsider [ dev ^| beta ^| rp ^| stop ]^</Span^>.^</TextBlock^>^<TextBlock Text=\\\"Applied configuration\\\" Margin=\\\"0,20,0,10\\\" Style=\\\"{StaticResource SubtitleTextBlockStyle}\\\" /^>^<TextBlock Style=\\\"{StaticResource BodyTextBlockStyle }\\\" Margin=\\\"0,0,0,5\\\"^>^<Run FontFamily=\\\"Segoe MDL2 Assets\\\"^>^&#xECA7;^</Run^> ^<Span FontWeight=\\\"SemiBold\\\"^>%Fancy%^</Span^>^</TextBlock^>^<TextBlock Text=\\\"Channel: %Channel%\\\" Style=\\\"{StaticResource BodyTextBlockStyle }\\\" /^>^<TextBlock Text=\\\"Content: %Content%\\\" Style=\\\"{StaticResource BodyTextBlockStyle }\\\" /^>^<TextBlock Text=\\\"Telemetry settings notice\\\" Margin=\\\"0,20,0,10\\\" Style=\\\"{StaticResource SubtitleTextBlockStyle}\\\" /^>^<TextBlock Style=\\\"{StaticResource BodyTextBlockStyle }\\\"^>Windows Insider Program requires your diagnostic data collection settings to be set to ^<Span FontWeight=\\\"SemiBold\\\"^>Full^</Span^>. You can verify or modify your current settings in ^<Span FontWeight=\\\"SemiBold\\\"^>Diagnostics ^&amp; feedback^</Span^>.^</TextBlock^>^<Button Command=\\\"{StaticResource ActivateUriCommand}\\\" CommandParameter=\\\"ms-settings:privacy-feedback\\\" Margin=\\\"0,10,0,0\\\"^>^<TextBlock Margin=\\\"5,0,5,0\\\"^>Open Diagnostics ^&amp; feedback^</TextBlock^>^</Button^>^</StackPanel^>\",\"Severity\":0}"
+echo "StickyMessage"="{\"Message\":\"Device enrolled using winsetup.bat\",\"LinkTitle\":\"\",\"LinkUrl\":\"\",\"DynamicXaml\":\"^<StackPanel xmlns=\\\"http://schemas.microsoft.com/winfx/2006/xaml/presentation\\\"^>^<TextBlock Style=\\\"{StaticResource BodyTextBlockStyle }\\\"^>This device has been enrolled to the Windows Insider program using winsetup.bat. If you want to change settings of the enrollment or stop receiving Insider Preview builds, open Terminal and join prompt to directory of winsetup.bat placed, then type ^<Span FontWeight=\\\"Bold\\\"^>winsetup /rollinsider [ dev ^| beta ^| rp ^| stop ]^</Span^>.^</TextBlock^>^<TextBlock Text=\\\"Applied configuration\\\" Margin=\\\"0,20,0,10\\\" Style=\\\"{StaticResource SubtitleTextBlockStyle}\\\" /^>^<TextBlock Style=\\\"{StaticResource BodyTextBlockStyle }\\\" Margin=\\\"0,0,0,5\\\"^>^<Run FontFamily=\\\"Segoe MDL2 Assets\\\"^>^&#xECA7;^</Run^> ^<Span FontWeight=\\\"SemiBold\\\"^>%Fancy%^</Span^>^</TextBlock^>^<TextBlock Text=\\\"Channel: %Channel%\\\" Style=\\\"{StaticResource BodyTextBlockStyle }\\\" /^>^<TextBlock Text=\\\"Content: %Content%\\\" Style=\\\"{StaticResource BodyTextBlockStyle }\\\" /^>^<TextBlock Text=\\\"Telemetry settings notice\\\" Margin=\\\"0,20,0,10\\\" Style=\\\"{StaticResource SubtitleTextBlockStyle}\\\" /^>^<TextBlock Style=\\\"{StaticResource BodyTextBlockStyle }\\\"^>Windows Insider Program requires your diagnostic data collection settings to be set to ^<Span FontWeight=\\\"SemiBold\\\"^>Full^</Span^>. You can verify or modify your current settings in ^<Span FontWeight=\\\"SemiBold\\\"^>Diagnostics ^&amp; feedback^</Span^>.^</TextBlock^>^<Button Command=\\\"{StaticResource ActivateUriCommand}\\\" CommandParameter=\\\"ms-settings:privacy-feedback\\\" Margin=\\\"0,10,0,0\\\"^>^<TextBlock Margin=\\\"5,0,5,0\\\"^>Open Diagnostics ^&amp; feedback^</TextBlock^>^</Button^>^</StackPanel^>\",\"Severity\":0}"
 echo.
 )
 regedit.exe /s "%temp%\rollingmessage.reg" > nul 2>&1
