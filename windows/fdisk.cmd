@@ -3,90 +3,125 @@
 REM  Disk Partition Console Manager Program
 REM  Copyright (C) Microsoft Corporation. All rights reserved.
 REM
-REM  Date created:
-REM   10/27/2021  11:22am
-REM
-REM  System created:
-REM   Windows 11 Pro (Windows NT 10.0 Build 22000.258)
+REM  Date created:    10/27/2021  11:22am
+REM  System created:  Windows 11 Pro
 REM
 REM  This script created by:
-REM   Faizal Hamzah
-REM   The Firefox Flasher
+REM    Faizal Hamzah
+REM    The Firefox Flasher
 REM
 REM  Program requirement:   DISKPART.EXE
+
+REM  VersionInfo:
+REM
+REM    File version:      10,0,22000,120
+REM    Product Version:   10,0,22000,120
+REM
+REM    CompanyName:       Microsoft Corporation
+REM    FileDescription:   Disk Partition Console Manager
+REM    FileVersion:       10.0.22000.120 (WinBuild.160101.0800)
+REM    InternalName:      fdisk
+REM    LegalCopyright:    © Microsoft Corporation. All rights reserved.
+REM    OriginalFileName:  FDISK.EXE
+REM    ProductName:       Microsoft® Windows® Operating System
+REM    ProductVersion:    10.0.22000.120 (WinBuild.160101.0800)
+
 
 :runit
 if %OS%! == Windows_NT! goto runwinnt
 
 :runos_2
-ver|find "Operating System/2" > nul
+ver | find "Operating System/2" > nul
 if not errorlevel 1 goto windos_2
+
 :runwindos
 if exist %windir%\..\msdos.sys find "WinDir" %windir%\..\msdos.sys > nul
 if not errorlevel 1 goto windos_2
 goto msdos
+
 :runwinnt
-setlocal
+@setlocal
+@break on
 for %%v in (Daytona Cairo Hydra Neptune NT) do ^
-ver|find "%%v" > nul & ^
+ver | find "%%v" > nul & ^
 if not errorlevel 1 (set OLD_WINNT=1)
+
 if %OLD_WINNT%! == 1! (goto ntold) ^
 else (setlocal EnableExtensions EnableDelayedExpansion)
+
 for /f "tokens=4-7 delims=[.NT] " %%v in ('ver') do ^
-set "WINVER=%%v.%%w.%%x" && ^
+set "WINVER=%%v.%%w.%%x" & ^
 if "%%v.%%w" == "10.0" (
 if %%x GTR 15063 (set "WINVER=%%v.%%w.%%x.%%y") ^
 else (set "WINVER=%%v.%%w.%%x.1")
 ) else (
-for %%a in (00 10) do if "%%w.%%x" == "5.%%a" goto ntold
-for %%a in (1 2 3) do if "%%v.%%w" == "5.%%a" goto ntold
+for %%a in (5.00 5.10 5.1 5.2 5.3 5.4) do ^
+if "%%w.%%x" == "%%a" (goto ntold) else ^
+if "%%x.%%y" == "%%a" (goto ntold)
 )
 
-set "_UCASE=ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-set "_LCASE=abcdefghijklmnopqrstuvwxyz"
-set "_STRING=%~n0"
-set "_PARAM=%1"
-for /l %%a in (0,1,25) do ^
-call set "_from=%%_LCASE:~%%a,1%%" & ^
-call set "_to=%%_UCASE:~%%a,1%%" & ^
-call set "_STRING=%%_STRING:!_from!=!_to!%%" & ^
-call set "_PARAM=%%_PARAM:!_from!=!_to!%%"
 
+:: begin
+
+set "_1=ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+set "_2=abcdefghijklmnopqrstuvwxyz"
+
+set "_FOREACH_LOOP= for /l %%a in (0,1,25) do"
+set "_CONVERT_UPPERCASE= %_FOREACH_LOOP% call set "_from=%%_2:~%%~a,1%%" & call set "_to=%%_1:~%%~a,1%%" & call set"
+set "_CONVERT_LOWERCASE= %_FOREACH_LOOP% call set "_from=%%_1:~%%~a,1%%" & call set "_to=%%_2:~%%~a,1%%" & call set"
+
+:chkadmin
+for %%c in ("%SystemRoot%\system32\config\default") do ^
+if not "%SystemRoot:~0,2%" == "X:" (icacls.exe %%~dpc\system > nul 2>&1) ^
+else (bcdedit.exe /store %%~dpc\bcd-template > nul 2>&1)
+if %ERRORLEVEL% EQU 0 (goto :getadmin)
+
+for %%p in ("powershell.exe") do ^
+if exist %%~$PATH:p (
+set "Shell_Arguments=/exec unrestricted /noprofile /file"
+set "Shell_Execution=%%~p"
+set "Shell_File=%tmp%\runas.ps1"
+>> "%tmp%\runas.ps1" echo Start-Process -wait -verb runas -windowstyle normal `
+>> "%tmp%\runas.ps1" echo -filepath '%comspec%' -argumentlist '/c "%~dpf0" %*'
+) else ^
+for %%w in ("cscript.exe") do ^
+if exist %%~$PATH:w (
+set "Shell_Arguments=//nologo //e:vbscript"
+set "Shell_Execution=%%~w"
+set "Shell_File=%tmp%\runas.vbs"
+>> "%tmp%\runas.vbs" echo CreateObject^("Shell.Application"^).ShellExecute _
+>> "%tmp%\runas.vbs" echo "%comspec%", "/c ""%~dpf0"" %*", "", "runas", ^1
+)
+
+call %Shell_Execution% %Shell_Arguments% "%Shell_File%"
+del /q "%Shell_File%" > nul 2>&1
+goto end_of_exit
+
+:getadmin
+set "_PARAM=%1"
+set "_STRING=%~n0"
+
+%_CONVERT_UPPERCASE% "_PARAM=%%_PARAM:!_from!=!_to!%%"
+%_CONVERT_UPPERCASE% "_STRING=%%_STRING:!_from!=!_to!%%"
+
+:usage
 if "%1" == "/?" (
 echo Configures a physical disk for use with Windows.
 echo.
 echo %_STRING% [/STATUS]
 echo.
 echo   /STATUS  Display partition information.
-endlocal
-call :end
-goto :eof
+goto :end_of_exit
 )
 
-set "REGDIR=%SystemRoot%\system32\config"
-if "%SystemRoot:~0,2%" == "X:" (bcdedit /store %REGDIR%\bcd-template > nul 2>&1) ^
-else (cacls %REGDIR%\system > nul 2>&1)
-
-if %ERRORLEVEL% NEQ 0 (
-if exist %SystemRoot%\system32\WindowsPowerShell\v1.0\powershell.exe (
-call powershell.exe -noprofile -command ^
-$ShellApplication = New-Object -ComObject Shell.Application ;^
-$ShellApplication.ShellExecute^('%SystemRoot%\system32\cmd.exe', '/c "%~dpf0" %*', '', 'RunAs', 1^)
+:chkdiskpart
+for %%d in ("diskpart.exe") do ^
+if exist %%~$PATH:d (
+set "%%~nd=%%~d"
+%_CONVERT_UPPERCASE% "%%~nd=%%%%~nd:!_from!=!_to!%%"
 ) else (
-echo >> "%tmp%\getrunas.vbs" CreateObject^("Shell.Application"^).ShellExecute _
-echo >> "%tmp%\getrunas.vbs" "%SystemRoot%\system32\cmd.exe", "/c ""%~dpf0"" %*", "", "RunAs", ^1
-call %SystemRoot%\system32\cscript.exe //nologo //e:vbscript "%tmp%\getrunas.vbs"
-del /q "%tmp%\getrunas.vbs" > nul 2>&1
-) & endlocal
-call :end
-goto :eof
-)
-
-if not exist %SystemRoot%\system32\diskpart.exe (
-echo This script required diskpart.exe.
-endlocal
-call :end
-goto :eof
+echo This script required %%~d.
+goto :end_of_exit
 )
 
 if "%_PARAM%" == "/STATUS" (
@@ -94,13 +129,41 @@ call :listdiskandpart
 call :listvol
 call :listvdisk
 call :rundiskpart
-endlocal
-goto :eof
+goto :end_of_exit
 )
+
 goto :start
+
+
 
 ;dummy
 ;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx1
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxa
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxb
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxc
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxd
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxe
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxf
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxg
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxh
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxi
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxj
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxk
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxl
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxm
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxn
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxo
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxp
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxq
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxr
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxs
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxt
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxu
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxv
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxw
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxy
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxz
 ;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxa
 ;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxb
 ;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxc
@@ -789,120 +852,173 @@ goto :start
 
 
 :listdisk
-echo list disk >> "%tmp%\%~n0.ini"
+>> "%tmp%\%~n0.ini" echo list disk
 goto :eof
 
 :listpar
-echo list partition >> "%tmp%\%~n0.ini"
+>> "%tmp%\%~n0.ini" echo list partition
 goto :eof
+
+:listvol
+>> "%tmp%\%~n0.ini" echo list volume
+goto :eof
+
+:listvdisk
+>> "%tmp%\%~n0.ini" echo list vdisk
+goto :eof
+
+:seldisk
+>> "%tmp%\%~n0.ini" echo select disk %disk%
+goto :eof
+
+:selvol
+>> "%tmp%\%~n0.ini" echo select volume %vol%
+goto :eof
+
+:clean
+>> "%tmp%\%~n0.ini" echo clean
+goto :eof
+
+:convertdisk
+>> "%tmp%\%~n0.ini" echo convert %typedisk%
+goto :eof
+
+:detaildisk
+>> "%tmp%\%~n0.ini" echo detail disk
+goto :eof
+
+:delpart
+>> "%tmp%\%~n0.ini" echo delete partition
+goto :eof
+
+:detailpart
+>> "%tmp%\%~n0.ini" echo detail partition
+goto :eof
+
+:createpart
+>> "%tmp%\%~n0.ini" echo create partition %type% %size%
+goto :eof
+
+:formatpart
+>> "%tmp%\%~n0.ini" echo format quick fs=%fs% %label%
+goto :eof
+
+:shrinkpart
+>> "%tmp%\%~n0.ini" echo shrink desired=%size%
+goto :eof
+
+:expandpart
+>> "%tmp%\%~n0.ini" echo extend size=%size%
+goto :eof
+
+:activepart
+>> "%tmp%\%~n0.ini" echo active
+goto :eof
+
+:mount
+>> "%tmp%\%~n0.ini" echo %letter%
+goto :eof
+
+:setid
+>> "%tmp%\%~n0.ini" echo set id=%UUID%
+goto :eof
+
 
 :listdiskandpart
 call :listdisk
-%SystemRoot%\system32\diskpart.exe /s "%tmp%\%~n0.ini" > "%tmp%\%~n0.list"
+call :rundiskpart > "%tmp%\%~n0.list"
 for /l %%l in (0,1,23) do ^
-for /f "tokens=1-2 delims= " %%a in ('type "%tmp%\%~n0.list"^|find "Disk %%l"') do set "disk=%%b" & ^
+for /f "tokens=1-2 delims= " %%a in ('type "%tmp%\%~n0.list" ^| find /i "Disk %%l"') do ^
+set "disk=%%b" & ^
 call :seldisk %%b & ^
 call :listpar
 del /q "%tmp%\%~n0.list" > nul 2>&1
 goto :eof
 
-:listvol
-echo list volume >> "%tmp%\%~n0.ini"
-goto :eof
-
-:listvdisk
-echo list vdisk >> "%tmp%\%~n0.ini"
-goto :eof
-
-:seldisk
-echo select disk %disk% >> "%tmp%\%~n0.ini"
-goto :eof
-
-:selvol
-echo select volume %vol% >> "%tmp%\%~n0.ini"
-goto :eof
-
-:clean
-echo clean >> "%tmp%\%~n0.ini"
-goto :eof
-
-:delpart
-echo delete partition >> "%tmp%\%~n0.ini"
-goto :eof
-
 :bootmgr
-if not "%letter%" == "assign" set "letter=assign letter^=%letter%"
->> "%tmp%\%~n0.ini" (
-echo create partition primary size=100
-echo format quick fs=ntfs label="System Reserved"
-echo %letter%
-)
-goto :eof
-
-:efisys
-if not "%letter%" == "assign" set "letter=assign letter^=%letter%"
->> "%tmp%\%~n0.ini" (
-echo create partition primary size=100
-echo format quick fs=fat32 label="EFISYS"
-echo %letter%
-echo set id=c12a7328-f81f-11d2-ba4b-00a0c93ec93b
-)
+set "fs=ntfs"
+set "type=primary"
+set "size=size=100"
+set "label=label="System Reserved""
+if not "%letter%" == "assign" (set "letter=assign letter=%letter%")
+call :createpart %type% %size%
+call :formatpart %fs% %label%
+call :mount %letter%
 goto :eof
 
 :msr
->> "%tmp%\%~n0.ini" (
-echo create partition primary size=16
-echo set id=e3c9e316-0b5c-4db8-817d-f92df00215ae
-)
+set "type=msr"
+set "size=size=16"
+call :createpart %type% %size%
+goto :eof
+
+:efisys
+set "fs=fat32"
+set "type=primary"
+set "size=size=100"
+set "label=label="EFISYS""
+set "UUID=c12a7328-f81f-11d2-ba4b-00a0c93ec93b"
+if not "%letter%" == "assign" (set "letter=assign letter=%letter%")
+call :createpart %type% %size%
+call :formatpart %fs% %label%
+call :setid %UUID%
+call :mount %letter%
 goto :eof
 
 :recovery
->> "%tmp%\%~n0.ini" (
-echo create partition primary size=640
-echo format quick fs=ntfs label="RECOVERY"
-echo assign letter=R
-echo set id=de94bba4-06d1-4d40-a16a-bfd50179d6ac
-)
+set "fs=ntfs"
+set "type=primary"
+set "size=size=640"
+set "label=label="RECOVERY""
+set "letter=assign letter=R"
+set "UUID=de94bba4-06d1-4d40-a16a-bfd50179d6ac"
+call :createpart %type% %size%
+call :formatpart %fs% %label%
+call :mount %letter%
+call :setid %UUID%
 goto :eof
 
 :winos
-if defined size set "size=size^=%size%"
-if defined label set "label=label^=^"%label%^""
-if not "%letter%" == "assign" set "letter=assign letter^=%letter%"
->> "%tmp%\%~n0.ini" (
-echo create partition primary %size%
-echo format quick fs=ntfs %label%
-echo %letter%
-)
+set "fs=ntfs"
+set "type=primary"
+if defined size (set "size=size=%size%")
+if defined label (set "label=label="%label%"")
+if not "%letter%" == "assign" (set "letter=assign letter=%letter%")
+call :createpart %type% %size%
+call :formatpart %fs% %label%
+call :mount %letter%
 goto :eof
 
 :other
-if defined label set "label=label^=^"%label%^""
-if not "%letter%" == "assign" set "letter=assign letter^=%letter%"
->> "%tmp%\%~n0.ini" (
-echo create partition primary size=%size%
-echo format quick fs=%fs% %label%
-echo %letter%
-)
+set "type=primary"
+set "size=size=%size%"
+if defined label (set "label=label="%label%"")
+if not "%letter%" == "assign" (set "letter=assign letter=%letter%")
+call :createpart %type% %size%
+call :formatpart %fs% %label%
+call :mount %letter%
 goto :eof
 
 :raw
-echo create partition primary size=%size% >> "%tmp%\%~n0.ini"
+set "type=primary"
+set "size=size=%size%"
+call :createpart %type% %size%
 goto :eof
 
 :extended
-if defined size set "size=size^=%size%"
-echo create partition extended %size% >> "%tmp%\%~n0.ini"
+set "type=extended"
+if defined size (set "size=size=%size%")
+call :createpart %type% %size%
 goto :eof
 
 :logical
-if defined label set "label=label^=^"%label%^""
-if not "%letter%" == "assign" set "letter=assign letter^=%letter%"
->> "%tmp%\%~n0.ini" (
-echo create partition logical size=%size%
-echo format quick fs=%fs% %label%
-echo %letter%
-)
+set "type=logical"
+set "size=size=%size%"
+if defined label (set "label=label="%label%"")
+if not "%letter%" == "assign" (set "letter=assign letter=%letter%")
+call :createpart %type% %size%
+call :formatpart %fs% %label%
+call :mount %letter%
 goto :eof
 
 :viewfs
@@ -914,13 +1030,13 @@ echo.
 goto :eof
 
 :setfs
-if %fs%? == 1? set fs=ntfs
-if %fs%? == 2? set fs=fat32
-if %fs%? == 3? set fs=exfat
+if %fs%? == 1? (set fs=ntfs)
+if %fs%? == 2? (set fs=fat32)
+if %fs%? == 3? (set fs=exfat)
 goto :eof
 
 :rundiskpart
-%SystemRoot%\system32\diskpart.exe /s "%tmp%\%~n0.ini"
+call diskpart.exe /s "%tmp%\%~n0.ini"
 del /q "%tmp%\%~n0.ini"
 goto :eof
 
@@ -929,17 +1045,17 @@ goto :eof
 for %%i in (
 crepart syspart convert delete options shrext viewmenu
 prompts canceldel diskp detail volume vdisk backmenu
-disk vol size fs label letter
+disk vol size fs label letter type typedisk UUID var
 ) do set "%%i="
 cls
-if not defined started (
-echo Microsoft Windows version %WINVER%
-echo Disk Partition Console Manager Program
-echo Powered by DISKPART.EXE
-echo.
-echo Copyright ^(C^) Microsoft Corporation. All rights reserved.
-echo On computer: %COMPUTERNAME%
-)
+>> "%tmp%\title.txt" echo Microsoft Windows version %WINVER%
+>> "%tmp%\title.txt" echo Disk Partition Console Manager Program
+>> "%tmp%\title.txt" echo Powered by %diskpart%
+>> "%tmp%\title.txt" echo.
+>> "%tmp%\title.txt" echo Copyright ^(C^) Microsoft Corporation. All rights reserved.
+>> "%tmp%\title.txt" echo On computer: %COMPUTERNAME%
+if not defined started (type "%tmp%\title.txt")
+del /q "%tmp%\title.txt"
 echo.
 echo 1.  Create partition or logical drive
 echo 2.  Set active partition
@@ -950,21 +1066,23 @@ echo 6.  Display disk or partition information
 echo 7.  Exit this setup
 echo.
 set /p "options=Choose one of the following> "
+cls
 if %options%? == 1? (goto :crepartmenu)
 if %options%? == 2? (goto :setactive)
 if %options%? == 3? (goto :deletemenu)
 if %options%? == 4? (goto :shrextmenu)
 if %options%? == 5? (goto :convertmenu)
-if %options%? == 6? (cls & goto :viewmenu)
-if %options%? == 7? (cls & endlocal & goto :eof)
+if %options%? == 6? (goto :viewmenu)
+if %options%? == 7? (goto :end_of_exit)
 goto :start
+
 
 :viewmenu
 set started=1
 for %%i in (
 crepart syspart convert delete options shrext viewmenu
 prompts canceldel diskp detail volume vdisk backmenu
-disk vol size fs label letter
+disk vol size fs label letter type typedisk UUID var
 ) do set "%%i="
 cls
 echo.
@@ -975,33 +1093,38 @@ echo 4.  Show virtual disk
 echo 5.  Go back to main menu
 echo.
 set /p "viewmenu=Choose one of the following> "
-if %viewmenu%? == 1? (set "diskp=1" & set "volume=1" & set "vdisk=1" & goto :viewdiskvol)
-if %viewmenu%? == 2? (set "diskp=1" & set "backmenu=1" & goto :viewdiskvol)
+cls
+if %viewmenu%? == 1? (set "diskpt=1" & set "volume=1" & set "vtdisk=1" & goto :viewdiskvol)
+if %viewmenu%? == 2? (set "diskpt=1" & set "backmenu=1" & goto :viewdiskvol)
 if %viewmenu%? == 3? (set "volume=1" & set "backmenu=1" & goto :viewdiskvol)
-if %viewmenu%? == 4? (set "vdisk=1" & set "backmenu=1" & goto :viewdiskvol)
-if %viewmenu%? == 5? goto :start
+if %viewmenu%? == 4? (set "vtdisk=1" & set "backmenu=1" & goto :viewdiskvol)
+if %viewmenu%? == 5? (goto :start)
 goto :viewmenu
 
 :viewdiskvol
-if defined diskp (
+if defined diskpt (
 cls
 echo Getting disk drive and partition information...
 call :listdiskandpart
-call :rundiskpart & echo.& pause
-if defined backmenu goto :start
+call :rundiskpart
+echo.& pause
+if defined backmenu (goto :start)
 )
 if defined volume (
 cls
 echo Getting volume, letter, and file system information...
 call :listvol
-call :rundiskpart & echo.& pause
-if defined backmenu goto :start
+call :rundiskpart
+echo.& pause
+if defined backmenu (goto :start)
 )
-if defined vdisk (
+if defined vtdisk (
 cls
 echo Getting virtual disk information...
 call :listvdisk
-call :rundiskpart & echo.& pause & goto :start
+call :rundiskpart
+echo.& pause
+goto :start
 )
 
 
@@ -1010,24 +1133,25 @@ set started=1
 for %%i in (
 crepart syspart convert delete options shrext viewmenu
 prompts canceldel diskp detail volume vdisk backmenu
-disk vol size fs label letter
+disk vol size fs label letter type typedisk UUID var
 ) do set "%%i="
 cls
 echo.
 echo 1.  Create System Partition
 echo 2.  Create Primary Partition
-echo 3.  Create Raw Partition (No formatted)
+echo 3.  Create Raw Partition ^(No formatted^)
 echo 4.  Create Extended Partition
 echo 5.  Create Logical Drive in the Extended Partition
 echo 6.  Go back to main menu
 echo.
 set /p "crepart=Choose one of the following> "
-if %crepart%? == 1? goto :syspartmenu
-if %crepart%? == 2? goto :creprimary
-if %crepart%? == 3? goto :creraw
-if %crepart%? == 4? goto :creext
-if %crepart%? == 5? goto :crelogical
-if %crepart%? == 6? goto :start
+cls
+if %crepart%? == 1? (goto :syspartmenu)
+if %crepart%? == 2? (goto :creprimary)
+if %crepart%? == 3? (goto :creraw)
+if %crepart%? == 4? (goto :creext)
+if %crepart%? == 5? (goto :crelogical)
+if %crepart%? == 6? (goto :start)
 goto :crepartmenu
 
 :creprimary
@@ -1035,55 +1159,59 @@ call :listdisk
 call :rundiskpart
 echo.
 set /p "disk=Choose disk to create partition> "
-call :seldisk %disk%
 set /p "size=How much size the partition [M]> "
-call :viewfs
 set /p "fs=Set file system to format the new partition> "
-call :setfs
 set /p "label=Set partition label> "
-if "%label%" == "" (set "label=")
 set /p "letter=Set partition letter to mount> "
+if "%label%" == "" (set "label=")
 if "%letter%" == "" (set "letter=assign")
+call :seldisk %disk%
+call :viewfs
+call :setfs
 call :other %label% %letter% %fs% %size%
-call :rundiskpart & pause & goto :start
+call :rundiskpart
+pause & goto :start
 
 :creraw
 call :listdisk
 call :rundiskpart
 echo.
 set /p "disk=Choose disk to create partition> "
-call :seldisk %disk%
 set /p "size=How much size the partition [M]> "
+call :seldisk %disk%
 call :raw %size%
-call :rundiskpart & pause & goto :start
+call :rundiskpart
+pause & goto :start
 
 :creext
 call :listdisk
 call :rundiskpart
 echo.
 set /p "disk=Choose disk to create partition> "
-call :seldisk %disk%
 set /p "size=How much size the partition [M] (Empty to all in)> "
 if "%size%" == "" (set "size=")
+call :seldisk %disk%
 call :extended %size%
-call :rundiskpart & pause & goto :start
+call :rundiskpart
+pause & goto :start
 
 :crelogical
 call :listdisk
 call :rundiskpart
 echo.
 set /p "disk=Choose disk to create partition> "
-call :seldisk %disk%
 set /p "size=How much size the partition [M]> "
-call :viewfs
 set /p "fs=Set file system to format the new partition> "
-call :setfs
 set /p "label=Set partition label> "
-if "%label%" == "" (set "label=")
 set /p "letter=Set partition letter to mount> "
+if "%label%" == "" (set "label=")
 if "%letter%" == "" (set "letter=assign")
+call :seldisk %disk%
+call :viewfs
+call :setfs
 call :logical %label% %letter% %fs% %size%
-call :rundiskpart & pause & goto :start
+call :rundiskpart
+pause & goto :start
 
 
 :syspartmenu
@@ -1091,24 +1219,25 @@ set started=1
 for %%i in (
 crepart syspart convert delete options shrext viewmenu
 prompts canceldel diskp detail volume vdisk backmenu
-disk vol size fs label letter
+disk vol size fs label letter type typedisk UUID var
 ) do set "%%i="
 cls
 echo.
 echo 1.  System Reserved
-echo 2.  EFI System Partition (GPT)
-echo 3.  EFI MSR Partition (GPT)
+echo 2.  EFI System Partition ^(GPT^)
+echo 3.  EFI MSR Partition ^(GPT^)
 echo 4.  OEM Recovery
 echo 5.  Windows Partition
 echo 6.  Go back to Create partition or logical drive
 echo.
 set /p "syspart=Choose one of the following> "
-if %syspart%? == 1? goto :cresysreserved
-if %syspart%? == 2? goto :creefisys
-if %syspart%? == 3? goto :creefimsr
-if %syspart%? == 4? goto :creefirecovery
-if %syspart%? == 5? goto :crewinos
-if %syspart%? == 6? goto :crepartmenu
+cls
+if %syspart%? == 1? (goto :cresysreserved)
+if %syspart%? == 2? (goto :creefisys)
+if %syspart%? == 3? (goto :creefimsr)
+if %syspart%? == 4? (goto :creefirecovery)
+if %syspart%? == 5? (goto :crewinos)
+if %syspart%? == 6? (goto :crepartmenu)
 goto :syspartmenu
 
 :cresysreserved
@@ -1116,22 +1245,24 @@ call :listdisk
 call :rundiskpart
 echo.
 set /p "disk=Choose disk to create partition> "
-call :seldisk %disk%
 set /p "letter=Set partition letter to mount> "
 if "%letter%" == "" (set "letter=assign")
+call :seldisk %disk%
 call :bootmgr %letter%
-call :rundiskpart & pause & goto :start
+call :rundiskpart
+pause & goto :start
 
 :creefisys
 call :listdisk
 call :rundiskpart
 echo.
 set /p "disk=Choose disk to create partition> "
-call :seldisk %disk%
 set /p "letter=Set partition letter to mount> "
 if "%letter%" == "" (set "letter=assign")
+call :seldisk %disk%
 call :efisys %letter%
-call :rundiskpart & goto :start
+call :rundiskpart
+pause & goto :start
 
 :creefimsr
 call :listdisk
@@ -1140,7 +1271,8 @@ echo.
 set /p "disk=Choose disk to create partition> "
 call :seldisk %disk%
 call :msr
-call :rundiskpart & goto :start
+call :rundiskpart
+pause & goto :start
 
 :creefirecovery
 call :listdisk
@@ -1149,22 +1281,24 @@ echo.
 set /p "disk=Choose disk to create partition> "
 call :seldisk %disk%
 call :recovery
-call :rundiskpart & goto :start
+call :rundiskpart
+pause & goto :start
 
 :crewinos
 call :listdisk
 call :rundiskpart
 echo.
 set /p "disk=Choose disk to create partition> "
-call :seldisk %disk%
 set /p "size=How much size the partition [M] (Empty to all in)> "
-if "%size%" == "" (set "size=")
 set /p "label=Set partition label> "
-if "%label%" == "" (set "label=")
 set /p "letter=Set partition letter to mount> "
+if "%size%" == "" (set "size=")
+if "%label%" == "" (set "label=")
 if "%letter%" == "" (set "letter=assign")
+call :seldisk %disk%
 call :winos %label% %letter% %size%
-call :rundiskpart & pause & goto :start
+call :rundiskpart
+pause & goto :start
 
 
 :setactive
@@ -1173,10 +1307,9 @@ call :rundiskpart
 echo.
 set /p "vol=Choose partition volume to set active> "
 call :selvol %vol%
-echo active >> "%tmp%\%~n0.ini"
+call :activepart
 call :rundiskpart
-pause
-goto :start
+pause & goto :start
 
 
 :shrextmenu
@@ -1184,7 +1317,7 @@ set started=1
 for %%i in (
 crepart syspart convert delete options shrext viewmenu
 prompts canceldel diskp detail volume vdisk backmenu
-disk vol size fs label letter
+disk vol size fs label letter type typedisk UUID var
 ) do set "%%i="
 cls
 echo.
@@ -1193,34 +1326,33 @@ echo 2.  Extend partition
 echo 3.  Go back to main menu
 echo.
 set /p "shrext=Choose one of the following> "
-if %shrext%? == 3? goto :start
+cls
+if %shrext%? == 3? (goto :start)
 for %%a in (1 2) do ^
 if %convert%? == %%a? (call :listvol & call :rundiskpart)
-if %shrext%? == 1? goto :shrink
-if %shrext%? == 2? goto :extend
+if %shrext%? == 1? (goto :shrink)
+if %shrext%? == 2? (goto :extend)
 goto :shrextmenu
 
 :shrink
 echo.
 set /p "vol=Choose partition volume> "
 set /p "size=How much size to shrink [M]> "
-if "%size%" == "" goto :shrext
+if "%size%" == "" (goto :shrext)
 call :selvol %vol%
-echo shrink desired=%size% >> "%tmp%\%~n0.ini"
+call :shrinkpart %size%
 call :rundiskpart
-pause
-goto :start
+pause & goto :start
 
 :extend
 echo.
 set /p "vol=Choose partition volume> "
 set /p "size=How much size to extend [M]> "
-if "%size%" == "" goto :shrext
+if "%size%" == "" (goto :shrext)
 call :selvol %vol%
-echo extend size=%size% >> "%tmp%\%~n0.ini"
+call :expandpart %size%
 call :rundiskpart
-pause
-goto :start
+pause & goto :start
 
 
 :convertmenu
@@ -1228,45 +1360,46 @@ set started=1
 for %%i in (
 crepart syspart convert delete options shrext viewmenu
 prompts canceldel diskp detail volume vdisk backmenu
-disk vol size fs label letter
+disk vol size fs label letter type typedisk UUID var
 ) do set "%%i="
 cls
 echo.
-echo 1.  Convert to Master Boot Record (MBR)
-echo 2.  Convert to GUID Partition Table (GPT)
+echo 1.  Convert to Master Boot Record ^(MBR^)
+echo 2.  Convert to GUID Partition Table ^(GPT^)
 echo 3.  Go back to main menu
 echo.
 set /p "convert=Choose one of the following> "
-if %convert%? == 3? goto :start
+cls
+if %convert%? == 3? (goto :start)
 for %%a in (1 2) do ^
 if %convert%? == %%a? (call :listdisk & call :rundiskpart)
-if %convert%? == 1? goto :convertmbr
-if %convert%? == 2? goto :convertgpt
+if %convert%? == 1? (goto :convertmbr)
+if %convert%? == 2? (goto :convertgpt)
 goto :convertmenu
 
 :convertmbr
+set "typedisk=mbr"
 echo.
 set /p "disk=Choose disk to convert to MBR> "
-set /p "prompts=All of data on the disk selected will be erase> "
-for %%n in (N n) do if "%prompts%" == "%%n" (pause & goto :start)
+call :promptsdel
+if "%canceldel%" == "yes" (goto :start)
 call :seldisk %disk%
-echo clean >> "%tmp%\%~n0.ini"
-echo convert mbr >> "%tmp%\%~n0.ini"
+call :clean
+call :convertdisk mbr
 call :rundiskpart
-pause
-goto :start
+pause & goto :start
 
 :convertgpt
+set "typedisk=gpt"
 echo.
 set /p "disk=Choose disk to convert to GPT> "
-set /p "prompts=All of data on the disk selected will be erase> "
-for %%n in (N n) do if "%prompts%" == "%%n" (pause & goto :start)
+call :promptsdel
+if "%canceldel%" == "yes" (goto :start)
 call :seldisk %disk%
-echo clean >> "%tmp%\%~n0.ini"
-echo convert gpt >> "%tmp%\%~n0.ini"
+call :clean
+call :convertdisk gpt
 call :rundiskpart
-pause
-goto :start
+pause & goto :start
 
 
 :deletemenu
@@ -1274,7 +1407,7 @@ set started=1
 for %%i in (
 crepart syspart convert delete options shrext viewmenu
 prompts canceldel diskp detail volume vdisk backmenu
-disk vol size fs label letter
+disk vol size fs label letter type typedisk UUID var
 ) do set "%%i="
 cls
 echo.
@@ -1283,9 +1416,10 @@ echo 2.  Delete all
 echo 3.  Go back to main menu
 echo.
 set /p "delete=Choose one of the following> "
-if %delete%? == 1? goto :delpart1
-if %delete%? == 2? goto :delall
-if %delete%? == 3? goto :start
+cls
+if %delete%? == 1? (goto :delpart1)
+if %delete%? == 2? (goto :delall)
+if %delete%? == 3? (goto :start)
 goto :deletemenu
 
 :delpart1
@@ -1294,12 +1428,11 @@ call :rundiskpart
 echo.
 set /p "vol=Choose partition volume to delete> "
 call :promptsdel
-if "%canceldel%" == "yes" goto :start
+if "%canceldel%" == "yes" (goto :start)
 call :selvol %vol%
 call :delpart
 call :rundiskpart
-pause
-goto :start
+pause & goto :start
 
 :delall
 call :listdisk
@@ -1307,17 +1440,17 @@ call :rundiskpart
 echo.
 set /p "disk=Choose disk to delete> "
 call :promptsdel
-if "%canceldel%" == "yes" goto :start
+if "%canceldel%" == "yes" (goto :start)
 call :seldisk %disk%
 call :clean
 call :rundiskpart
-pause
-goto :start
+pause & goto :start
 
 :promptsdel
 set /p "prompts=All of data on the partition selected will be erase> "
-for %%n in (N n) do if "%prompts%" == "%%n" (pause & set canceldel=yes & goto :eof)
-for %%y in (Y y) do if "%prompts%" == "%%y" (goto :eof)
+%_CONVERT_UPPERCASE% "prompts=%%prompts:!_from!=!_to!%%"
+for %%y in (Y YES) do if "%prompts%" == "%%y" (goto :eof)
+for %%n in (N NO) do if "%prompts%" == "%%n" (pause & set "canceldel=yes" & goto :eof)
 goto :promptsdel
 
 
@@ -2060,6 +2193,32 @@ goto :promptsdel
 ;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxy
 ;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxz
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxa
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxb
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxc
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxd
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxe
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxf
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxg
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxh
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxi
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxj
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxk
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxl
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxm
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxn
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxo
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxp
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxq
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxr
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxs
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxt
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxu
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxv
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxw
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxy
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxz
 ;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx0
 
 # SIG # Begin signature block
@@ -2095,18 +2254,22 @@ goto :promptsdel
 # SIG # End signature block
 
 
+:: end
 
-:ntold
-echo This script requires a newer version of Windows NT.
+:end_of_exit
 endlocal
 goto end
 
+:ntold
+echo This program requires a newer version of Windows NT.
+goto end_of_exit
+
 :windos_2
-echo This script requires Microsoft Windows NT.
+echo This program requires Microsoft Windows NT.
 goto end
 
 :msdos
-echo This script cannot be run in DOS mode.
+echo This program cannot be run in DOS mode.
 goto end
 
 :end
