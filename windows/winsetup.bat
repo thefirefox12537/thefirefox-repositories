@@ -10,21 +10,21 @@ REM  This script created by:
 REM    Faizal Hamzah
 REM    The Firefox Flasher
 REM
-REM  Program requirement:   DISM.EXE IMAGEX.EXE NET.EXE
+REM  Program requirement:   DISM.EXE IMAGEX.EXE WIMLIB-IMAGEX.EXE NET.EXE
 
 REM  VersionInfo:
 REM
-REM    File version:      10,0,22000,120
-REM    Product Version:   10,0,22000,120
+REM    File version:      10,0,22000,1
+REM    Product Version:   10,0,22000,1
 REM
 REM    CompanyName:       Microsoft Corporation
 REM    FileDescription:   Windows Setup
-REM    FileVersion:       10.0.22000.120 (WinBuild.160101.0800)
+REM    FileVersion:       10.0.22000.1 (WinBuild.160101.0800)
 REM    InternalName:      winsetup
 REM    LegalCopyright:    © Microsoft Corporation. All rights reserved.
 REM    OriginalFileName:  WINSETUP.BAT
 REM    ProductName:       Microsoft® Windows® Operating System
-REM    ProductVersion:    10.0.22000.120 (WinBuild.160101.0800)
+REM    ProductVersion:    10.0.22000.1
 
 
 :start
@@ -65,7 +65,8 @@ call set "_2=%%_LOWER:~%%~a,1%%" ^& ^
 call set
 
 set _ARGS=%*
-set _FILE=%~n0
+set _NAME=%~n0
+set _FILE=%~dpf0
 set _PARAM=%~1
 set _DRV1=%~2
 set _DRV2=%~3
@@ -74,16 +75,11 @@ set _TYPE=%~4
 if defined _ARGS (
 set _ARGS=%_ARGS:"=%
 for %%s in (ARGS PARAM) do %_CONVERT_STRING% "_%%~s=%%_%%~s:!_1!=!_2!%%"
-for %%s in (FILE DRV1 DRV2 TYPE) do %_CONVERT_STRING% "_%%~s=%%_%%~s:!_2!=!_1!%%"
+for %%s in (NAME DRV1 DRV2 TYPE) do %_CONVERT_STRING% "_%%~s=%%_%%~s:!_2!=!_1!%%"
 )
 
 for %%a in (%_ARGS%) do (
-for %%b in (
-fdisk install
-adduser addadmin
-bypassnro skipoobe
-skipoobenew rollinsider
-) do ^
+for %%b in (fdisk install upgrade adduser addadmin bypassnro skipoobe skipoobenew rollinsider) do ^
 if "%%a"=="/%%~b" (set "stepgoto=%%~b")
 if "%%a"=="/?" (goto :help)
 if "%%a"=="" (goto :help)
@@ -101,39 +97,60 @@ set alpha=ABCDEFGHIJKLMNOPQRSTUVWYZ0
 if defined stepgoto (goto :%stepgoto%)
 goto :help
 
+
 :fdisk
 for %%a in (%PATHEXT:.=%) do ^
 for %%f in (fdisk.%%a) do ^
-if exist %%~$PATH:f (set diskmgmt=%%f) else ^
-if exist %%~dpff (set diskmgmt=%%f)
+if exist "%%~$PATH:f" (set diskmgmt=%%f) else ^
+if exist "%%~dpff" (set diskmgmt=%%f)
 
 if not defined diskmgmt ^
 for %%f in (diskpart.exe) do ^
-if exist %%~$PATH:f (set diskmgmt=%%f)
+if exist "%%~$PATH:f" (set diskmgmt=%%f)
 
 @call %diskmgmt%
 @echo off & goto end_of_exit
 
+
+:upgrade
+@goto no_upgrade
+@goto end_of_exit
+
+
 :install
-set "BASEFILE=%~dpf0"
-if not "%SystemRoot:~0,2%"=="X:" (goto :require_winpe)
-if not "%BASEFILE:~0,2%"=="X:" (goto :winpe_redirect)
+if /i not "%SystemRoot:~0,2%"=="X:" (goto :require_winpe)
+if /i not "%_FILE:~0,2%"=="X:" (goto :media_redirect)
 for %%a in ("Setup" "Setup\MoSetup") do ^
 reg.exe add HKLM\SYSTEM\%%~a /f /t REG_DWORD /v AllowUpgradesWithUnsupportedTPMOrCPU /d 1 > nul 2>&1
 for %%a in ("Setup" "SYSTEM\Setup") do ^
 for %%b in (BypassTPMCheck BypassStorageCheck BypassSecureBootCheck BypassRAMCheck BypassCPUCheck) do ^
 reg.exe add HKLM\%%~a\LabConfig /f /t REG_DWORD /v %%b /d 1 > nul 2>&1
+::WIMLIB-IMAGEX
+for %%i in ("wimlib-imagex.exe") do ^
+for %%a in ("sources" "sources\wimlib" "sources\wimlib-imagex") do ^
+for /l %%d in (0,1,23) do ^
+if exist "!drive:~%%~d,1!:\%%~a\%%~i" (set "wimlibcd=!drive:~%%~d,1!:\%%~a\%%~i")
+for %%i in ("wimlib-imagex.exe") do ^
+for %%f in (
+"%wimlibcd%" "%%~$PATH:i" "%~dp0\%%~i"
+"%~dp0\wimlib\%%~i" "%~dp0\wimlib-imagex\%%~i"
+"%SystemRoot%\wimlib\%%~i" "%SystemRoot%\wimlib-imagex\%%~i"
+"%SystemDrive%\wimlib\%%~i" "%SystemDrive%\wimlib-imagex\%%~i"
+) do ^
+if exist "%%~f" if exist "%%~dpf\libwim*.dll" (set "wimlib=%%~f")
+if defined wimlib (set "imaging=wimlib" & goto :next1)
 ::IMAGEX
 for %%i in ("imagex.exe") do ^
 for /l %%d in (0,1,23) do ^
 if exist "!drive:~%%~d,1!:\sources\%%~i" (set "imagexcd=!drive:~%%~d,1!:\sources\%%~i")
-for %%f in ("%~dp0\%%~i" %imagexcd% %%~$PATH:i) do ^
+for %%i in ("imagex.exe") do ^
+for %%f in ("%imagexcd%" "%%~$PATH:i" "%~dp0\%%~i") do ^
 if exist "%%~f" (set "imagex=%%~f")
 if defined imagex (set "imaging=imagex" & goto :next1)
 ::DISM
 for %%d in ("dism.exe") do ^
-if exist %%~$PATH:d ^
-for /f "usebackq tokens=2-3 delims=:. " %%v in (`call %%~$PATH:d^|find /i "Version:"`) do ^
+if exist "%%~$PATH:d" ^
+for /f "usebackq tokens=2-3 delims=:. " %%v in (`call "%%~$PATH:d"^|find /i "Version:"`) do ^
 if %%v EQU 6 (if %%w LSS 2 (goto :ntold)) else ^
 if %%v LSS 6 (goto :ntold) ^
 else (set "dism=%%~$PATH:d")
@@ -155,8 +172,9 @@ set "installsrc=!drive:~%%~d,1!:\sources\install.wim"
 if exist "!drive:~%%~d,1!:\%%~a.swm" (
 set "opt=imagefile"
 set "installsrc=!drive:~%%~d,1!:\sources\install.swm"
-set "imagexswm=/ref ^"!drive:~%%~d,1!:\sources\install*.swm^""
-set "dismswm=/swmfile:^"!drive:~%%~d,1!:\sources\install*.swm^""
+if /i "%imaging%"=="wimlib" set "swm=--ref=^"!drive:~%%~d,1!:\sources\install*.swm^""
+if /i "%imaging%"=="imagex" set "swm=/ref ^"!drive:~%%~d,1!:\sources\install*.swm^""
+if /i "%imaging%"=="dism" set "swm=/swmfile:^"!drive:~%%~d,1!:\sources\install*.swm^""
 ) else ^
 if exist "!drive:~%%~d,1!:\%%~a.esd" (
 set "opt=imagefile"
@@ -174,26 +192,33 @@ echo Type the available index number to install Windows.
 echo.
 echo Install source: %installsrc%
 echo Available edition:
-if "%imaging%"=="dism" ^
-for /f "tokens=2* delims=:" %%a in ('call %dism% /get-imageinfo /%opt%:"%installsrc%"^|find /i "Name"') do ^
+if /i "%imaging%"=="wimlib" ^
+for /f "tokens=3* delims=: " %%a in ('call "%wimlib%" info "%installsrc%"^|find /i "Display Name:"') do ^
+echo.  %%~a %%~b >> "%tmp%\%~n0.txt"
+if /i "%imaging%"=="imagex" ^
+for /f "tokens=3* delims=><" %%a in ('call "%imagex%" /info "%installsrc%"^|find /i "<NAME>"') do ^
 if "%%~a"=="%SPACE%" (echo.  NOT IDENTIFIED EDITION >> "%tmp%\%~n0.txt") ^
 else (echo  %%~a >> "%tmp%\%~n0.txt")
-if "%imaging%"=="imagex" ^
-for /f "tokens=3* delims=><" %%a in ('call %imagex% /info "%installsrc%"^|find /i "<NAME>"') do ^
+if /i "%imaging%"=="dism" ^
+for /f "tokens=2* delims=:" %%a in ('call "%dism%" /get-imageinfo /%opt%:"%installsrc%"^|find /i "Name"') do ^
 if "%%~a"=="%SPACE%" (echo.  NOT IDENTIFIED EDITION >> "%tmp%\%~n0.txt") ^
 else (echo  %%~a >> "%tmp%\%~n0.txt")
-type "%tmp%\%~n0.txt"|find /n "%SPACE%" && del /f /q "%tmp%\%~n0.txt" > nul 2>&1
+if not exist "%tmp%\%~n0.txt" echo [ERROR]  Not shown edition name of image. You must get image information manually.
+type "%tmp%\%~n0.txt" 2> nul|find /n "%SPACE%" && del /f /q "%tmp%\%~n0.txt" > nul 2>&1
 echo.
+:loopindex
 set /p "INDEX=INDEX> "
 if defined INDEX (%_CONVERT_STRING% "INDEX=%%INDEX:!_2!=!_1!%%") ^
-else (goto :invalid_edition)
+else (goto :loopindex)
+if "%INDEX%"=="%SPACE%" (goto :loopindex)
 for /l %%s in (0,1,25) do ^
 if %INDEX%?==!alpha:~%%~s,1!? (goto :invalid_edition)
 if %INDEX%?==X? (echo Exitting...& goto :end_of_exit)
 
 echo Expanding Windows...
-if "%imaging%"=="dism" (call %dism% /apply-image /%opt%:"%installsrc%" %dismswm% /index:%INDEX% /applydir:%_DRV1%\)
-if "%imaging%"=="imagex" (call %imagex% /apply "%installsrc%" %imagexswm% %INDEX% %_DRV1%\)
+if /i "%imaging%"=="wimlib" (call "%wimlib%" apply "%installsrc%" %INDEX% %_DRV1%\ %swm%)
+if /i "%imaging%"=="imagex" (call "%imagex%" /apply "%installsrc%" %swm% %INDEX% %_DRV1%\)
+if /i "%imaging%"=="dism" (call "%dism%" /apply-image /%opt%:"%installsrc%" %swm% /index:%INDEX% /applydir:%_DRV1%\)
 if %ERRORLEVEL% NEQ 0 (goto :installerror)
 if not exist %_DRV1%\Windows (goto :installerror)
 
@@ -237,9 +262,9 @@ call %SystemRoot%\system32\bootsect.exe /nt60 %_DRV1% /mbr > nul 2>&1
 ))
 ))
 
-if "%nt5%"=="2K3" (call :make_bootnt5 2K3 WINDOWS "Microsoft Windows Server 2003")
-if "%nt5%"=="XP" (call :make_bootnt5 XP WINDOWS "Microsoft Windows XP")
-if "%nt5%"=="2K" (call :make_bootnt5 2K WINNT "Microsoft Windows 2000")
+if /i "%nt5%"=="2K3" (call :make_bootnt5 2K3 WINDOWS "Microsoft Windows Server 2003")
+if /i "%nt5%"=="XP" (call :make_bootnt5 XP WINDOWS "Microsoft Windows XP")
+if /i "%nt5%"=="2K" (call :make_bootnt5 2K WINNT "Microsoft Windows 2000")
 
 echo Install Windows successfully completed.
 copy "%~dpf0" %SystemRoot%\system32\oobe\%~nx0 > nul 2>&1
@@ -254,11 +279,11 @@ echo.
 wpeutil.exe reboot
 goto :end_of_exit
 
-:winpe_redirect
+:media_redirect
 copy /y "%~dpf0" "%tmp%\%~nx0" > nul 2>&1
 copy /y "%~dpn0.exe" "%tmp%\%~n0.exe" > nul 2>&1
-@cd /d "%tmp%" & call "%tmp%\%~n0" %*
-@cd /d "%~dp0"
+@cd /d "%tmp%" & call "%~n0" %*
+@cd /d "%~dp0" & for %%a in ("%tmp%\%~nx0" "%tmp%\%~n0.exe") do @del /f /q "%%~a" > nul 2>&1
 @echo off & goto :end_of_exit
 
 :make_bootnt5
@@ -299,7 +324,7 @@ goto :end_of_exit
 
 
 :addadmin
-net.exe user Administrator 2>&1|find /i "Account active"|find /i "Yes" > nul
+net.exe user Administrator 2>&1|findstr /i /r /c:"Account active"|findstr /i /r /c:"Yes" > nul
 if %ERRORLEVEL% EQU 0 (echo Administrator already actived.& goto :end_of_exit)
 
 net.exe user /active Administrator > nul 2>&1
@@ -606,6 +631,10 @@ goto :loopinstall
 
 :installerror
 echo Error install Windows. Please try again.
+goto end_of_exit
+
+:no_upgrade
+echo This command unavailable to upgrade your Windows.
 goto end_of_exit
 
 :no_optroll
