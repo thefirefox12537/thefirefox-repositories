@@ -14,17 +14,17 @@ REM  Program requirement:   DISKPART.EXE
 
 REM  VersionInfo:
 REM
-REM    File version:      10,0,22000,120
-REM    Product Version:   10,0,22000,120
+REM    File version:      10,0,22000,1
+REM    Product Version:   10,0,22000,1
 REM
 REM    CompanyName:       Microsoft Corporation
 REM    FileDescription:   Disk Partition Console Manager
-REM    FileVersion:       10.0.22000.120 (WinBuild.160101.0800)
+REM    FileVersion:       10.0.22000.1 (WinBuild.160101.0800)
 REM    InternalName:      fdisk
 REM    LegalCopyright:    © Microsoft Corporation. All rights reserved.
 REM    OriginalFileName:  FDISK.EXE
 REM    ProductName:       Microsoft® Windows® Operating System
-REM    ProductVersion:    10.0.22000.120 (WinBuild.160101.0800)
+REM    ProductVersion:    10.0.22000.1
 
 
 :runit
@@ -63,6 +63,8 @@ if "%%x.%%y" == "%%a" (goto ntold)
 
 :: begin
 
+if not defined exe (goto dump)
+
 set "_1=ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 set "_2=abcdefghijklmnopqrstuvwxyz"
 
@@ -80,21 +82,24 @@ for %%p in ("powershell.exe") do ^
 if exist %%~$PATH:p (
 set "Shell_Arguments=/exec unrestricted /noprofile /file"
 set "Shell_Execution=%%~p"
-set "Shell_File=%tmp%\runas.ps1"
+set "Shell_Ext=ps1"
+>> "%tmp%\runas.ps1" echo $ErrorActionPreference = 'SilentlyContinue'
 >> "%tmp%\runas.ps1" echo Start-Process -wait -verb runas -windowstyle normal `
 >> "%tmp%\runas.ps1" echo -filepath '%comspec%' -argumentlist '/c "%~dpf0" %*'
+>> "%tmp%\runas.ps1" echo Remove-Item -path '%tmp%\runas.ps1'
 ) else ^
 for %%w in ("cscript.exe") do ^
 if exist %%~$PATH:w (
 set "Shell_Arguments=//nologo //e:vbscript"
 set "Shell_Execution=%%~w"
-set "Shell_File=%tmp%\runas.vbs"
+set "Shell_Ext=vbs"
 >> "%tmp%\runas.vbs" echo CreateObject^("Shell.Application"^).ShellExecute _
 >> "%tmp%\runas.vbs" echo "%comspec%", "/c ""%~dpf0"" %*", "", "runas", ^1
+>> "%tmp%\runas.vbs" echo CreateObject^("Scripting.FileSystemObject"^).DeleteFile _
+>> "%tmp%\runas.vbs" echo "%tmp%\runas.vbs"
 )
 
-call %Shell_Execution% %Shell_Arguments% "%Shell_File%"
-del /q "%Shell_File%" > nul 2>&1
+call %Shell_Execution% %Shell_Arguments% "%tmp%\runas.%Shell_Ext%"
 goto end_of_exit
 
 :getadmin
@@ -1106,6 +1111,8 @@ if defined diskpt (
 cls
 echo Getting disk drive and partition information...
 call :listdiskandpart
+if not exist "%tmp%\%~n0.ini" ^
+call :listdisk
 call :rundiskpart
 echo.& pause
 if defined backmenu (goto :start)
@@ -1160,13 +1167,13 @@ call :rundiskpart
 echo.
 set /p "disk=Choose disk to create partition> "
 set /p "size=How much size the partition [M]> "
+call :viewfs
 set /p "fs=Set file system to format the new partition> "
 set /p "label=Set partition label> "
 set /p "letter=Set partition letter to mount> "
 if "%label%" == "" (set "label=")
 if "%letter%" == "" (set "letter=assign")
 call :seldisk %disk%
-call :viewfs
 call :setfs
 call :other %label% %letter% %fs% %size%
 call :rundiskpart
@@ -1201,13 +1208,13 @@ call :rundiskpart
 echo.
 set /p "disk=Choose disk to create partition> "
 set /p "size=How much size the partition [M]> "
+call :viewfs
 set /p "fs=Set file system to format the new partition> "
 set /p "label=Set partition label> "
 set /p "letter=Set partition letter to mount> "
 if "%label%" == "" (set "label=")
 if "%letter%" == "" (set "letter=assign")
 call :seldisk %disk%
-call :viewfs
 call :setfs
 call :logical %label% %letter% %fs% %size%
 call :rundiskpart
@@ -2259,6 +2266,10 @@ goto :promptsdel
 :end_of_exit
 endlocal
 goto end
+
+:dump
+echo Core dumped
+goto end_of_exit
 
 :ntold
 echo This program requires a newer version of Windows NT.
