@@ -63,7 +63,11 @@ if "%%x.%%y" == "%%a" (goto ntold)
 
 :: begin
 
-if not defined exe (goto dump)
+::dumped::
+for /f "tokens=*" %%a in ('dir /b /s "%tmp%\*.bat" 2^> nul') do ^
+for /f %%b in ('type "%%a" 2^> nul ^| find /i "::dumped::"') do ^
+if "%%b" == "::dumped::" (set "nodump=1")
+if not defined nodump (goto :dump)
 
 set "_1=ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 set "_2=abcdefghijklmnopqrstuvwxyz"
@@ -113,9 +117,11 @@ set "_STRING=%~n0"
 if "%1" == "/?" (
 echo Configures a physical disk for use with Windows.
 echo.
-echo %_STRING% [/STATUS]
+echo %_STRING% [/STATUS ^| /^(UN^)ASSIGN]
 echo.
-echo   /STATUS  Display partition information.
+echo   /STATUS    Display partition information.
+echo   /ASSIGN    Assign unmounted partition.
+echo   /UNASSIGN  Unassign mounted partition.
 goto :end_of_exit
 )
 
@@ -129,13 +135,9 @@ echo This script required %%~d.
 goto :end_of_exit
 )
 
-if "%_PARAM%" == "/STATUS" (
-call :listdiskandpart
-call :listvol
-call :listvdisk
-call :rundiskpart
-goto :end_of_exit
-)
+if "%_PARAM%" == "/STATUS" (goto :viewstats)
+if "%_PARAM%" == "/ASSIGN" (goto :mountpar)
+if "%_PARAM%" == "/UNASSIGN" (goto :unmountpar)
 
 goto :start
 
@@ -924,6 +926,10 @@ goto :eof
 >> "%tmp%\%~n0.ini" echo %letter%
 goto :eof
 
+:umount
+>> "%tmp%\%~n0.ini" echo remove
+goto :eof
+
 :setid
 >> "%tmp%\%~n0.ini" echo set id=%UUID%
 goto :eof
@@ -983,8 +989,7 @@ call :mount %letter%
 call :setid %UUID%
 goto :eof
 
-:winos
-set "fs=ntfs"
+:primary
 set "type=primary"
 if defined size (set "size=size=%size%")
 if defined label (set "label=label="%label%"")
@@ -994,19 +999,8 @@ call :formatpart %fs% %label%
 call :mount %letter%
 goto :eof
 
-:other
-set "type=primary"
-set "size=size=%size%"
-if defined label (set "label=label="%label%"")
-if not "%letter%" == "assign" (set "letter=assign letter=%letter%")
-call :createpart %type% %size%
-call :formatpart %fs% %label%
-call :mount %letter%
-goto :eof
-
 :raw
-set "type=primary"
-set "size=size=%size%"
+if defined size (set "size=size=%size%")
 call :createpart %type% %size%
 goto :eof
 
@@ -1018,7 +1012,7 @@ goto :eof
 
 :logical
 set "type=logical"
-set "size=size=%size%"
+if defined size (set "size=size=%size%")
 if defined label (set "label=label="%label%"")
 if not "%letter%" == "assign" (set "letter=assign letter=%letter%")
 call :createpart %type% %size%
@@ -1034,10 +1028,22 @@ echo 3.  exFAT
 echo.
 goto :eof
 
+:viewtype
+echo.
+echo 1.  Primary Partition
+echo 2.  Logical Partition
+echo.
+goto :eof
+
 :setfs
 if %fs%? == 1? (set fs=ntfs)
 if %fs%? == 2? (set fs=fat32)
 if %fs%? == 3? (set fs=exfat)
+goto :eof
+
+:settype
+if %type%? == 1? (set type=primary)
+if %type%? == 2? (set type=logical)
 goto :eof
 
 :rundiskpart
@@ -1049,8 +1055,8 @@ goto :eof
 :start
 for %%i in (
 crepart syspart convert delete options shrext viewmenu
-prompts canceldel diskp detail volume vdisk backmenu
-disk vol size fs label letter type typedisk UUID var
+prompts cancel diskp detail volume vdisk backmenu disk
+vol size fs label letter type typedisk UUID var MSG
 ) do set "%%i="
 cls
 >> "%tmp%\title.txt" echo Microsoft Windows version %WINVER%
@@ -1082,12 +1088,41 @@ if %options%? == 7? (goto :end_of_exit)
 goto :start
 
 
+:mountpar
+call :listvol
+call :rundiskpart
+echo.
+set /p "vol=Choose volume partition> "
+if "%vol%" == "" (set "MSG=Invalid volume partition inserted." & goto :errmsg)
+set /p "letter=Set partition letter to mount> "
+if "%letter%" == "" (set "MSG=Invalid drive letter inserted." & goto :errmsg)
+set "letter=assign letter=%letter%"
+call :selvol %vol%
+call :mount %letter%
+call :rundiskpart
+goto :end_of_exit
+
+:unmountpar
+call :listvol
+call :rundiskpart
+echo.
+set /p "vol=Choose volume partition> "
+if "%vol%" == "" (set "MSG=Invalid volume partition inserted." & goto :errmsg)
+set "MSG=Make sure you save all works on partition selected before unassign"
+call :prompts
+if "%cancel%" == "yes" (goto :end_of_exit)
+call :selvol %vol%
+call :umount
+call :rundiskpart
+goto :end_of_exit
+
+
 :viewmenu
 set started=1
 for %%i in (
 crepart syspart convert delete options shrext viewmenu
-prompts canceldel diskp detail volume vdisk backmenu
-disk vol size fs label letter type typedisk UUID var
+prompts cancel diskp detail volume vdisk backmenu disk
+vol size fs label letter type typedisk UUID var MSG
 ) do set "%%i="
 cls
 echo.
@@ -1105,6 +1140,13 @@ if %viewmenu%? == 3? (set "volume=1" & set "backmenu=1" & goto :viewdiskvol)
 if %viewmenu%? == 4? (set "vtdisk=1" & set "backmenu=1" & goto :viewdiskvol)
 if %viewmenu%? == 5? (goto :start)
 goto :viewmenu
+
+:viewstats
+call :listdiskandpart
+call :listvol
+call :listvdisk
+call :rundiskpart
+goto :end_of_exit
 
 :viewdiskvol
 if defined diskpt (
@@ -1139,14 +1181,14 @@ goto :start
 set started=1
 for %%i in (
 crepart syspart convert delete options shrext viewmenu
-prompts canceldel diskp detail volume vdisk backmenu
-disk vol size fs label letter type typedisk UUID var
+prompts cancel diskp detail volume vdisk backmenu disk
+vol size fs label letter type typedisk UUID var MSG
 ) do set "%%i="
 cls
 echo.
 echo 1.  Create System Partition
-echo 2.  Create Primary Partition
-echo 3.  Create Raw Partition ^(No formatted^)
+echo 2.  Create Raw Partition ^(No formatted^)
+echo 3.  Create Primary Partition
 echo 4.  Create Extended Partition
 echo 5.  Create Logical Drive in the Extended Partition
 echo 6.  Go back to main menu
@@ -1154,39 +1196,48 @@ echo.
 set /p "crepart=Choose one of the following> "
 cls
 if %crepart%? == 1? (goto :syspartmenu)
-if %crepart%? == 2? (goto :creprimary)
-if %crepart%? == 3? (goto :creraw)
+if %crepart%? == 2? (goto :creraw)
+if %crepart%? == 3? (goto :creprimary)
 if %crepart%? == 4? (goto :creext)
 if %crepart%? == 5? (goto :crelogical)
 if %crepart%? == 6? (goto :start)
 goto :crepartmenu
+
+:creraw
+echo.
+echo NOTE:  Create a new Raw partition, you must format the partition manually.
+call :listdisk
+call :rundiskpart
+echo.
+set /p "disk=Choose disk to create partition> "
+if "%disk%" == "" (set "MSG=Invalid disk inserted." & goto :errmsg)
+set /p "size=How much size the partition [M] (Empty to all in)> "
+call :viewtype
+set /p "type=Set partition type to create> "
+if "%size%" == "" (set "size=")
+call :seldisk %disk%
+call :settype
+call :raw %type% %size%
+call :rundiskpart
+pause & goto :start
 
 :creprimary
 call :listdisk
 call :rundiskpart
 echo.
 set /p "disk=Choose disk to create partition> "
-set /p "size=How much size the partition [M]> "
+if "%disk%" == "" (set "MSG=Invalid disk inserted." & goto :errmsg)
+set /p "size=How much size the partition [M] (Empty to all in)> "
 call :viewfs
 set /p "fs=Set file system to format the new partition> "
 set /p "label=Set partition label> "
 set /p "letter=Set partition letter to mount> "
+if "%size%" == "" (set "size=")
 if "%label%" == "" (set "label=")
 if "%letter%" == "" (set "letter=assign")
 call :seldisk %disk%
 call :setfs
-call :other %label% %letter% %fs% %size%
-call :rundiskpart
-pause & goto :start
-
-:creraw
-call :listdisk
-call :rundiskpart
-echo.
-set /p "disk=Choose disk to create partition> "
-set /p "size=How much size the partition [M]> "
-call :seldisk %disk%
-call :raw %size%
+call :primary %label% %letter% %fs% %size%
 call :rundiskpart
 pause & goto :start
 
@@ -1195,6 +1246,7 @@ call :listdisk
 call :rundiskpart
 echo.
 set /p "disk=Choose disk to create partition> "
+if "%disk%" == "" (set "MSG=Invalid disk inserted." & goto :errmsg)
 set /p "size=How much size the partition [M] (Empty to all in)> "
 if "%size%" == "" (set "size=")
 call :seldisk %disk%
@@ -1207,11 +1259,13 @@ call :listdisk
 call :rundiskpart
 echo.
 set /p "disk=Choose disk to create partition> "
-set /p "size=How much size the partition [M]> "
+if "%disk%" == "" (set "MSG=Invalid disk inserted." & goto :errmsg)
+set /p "size=How much size the partition [M] (Empty to all in)> "
 call :viewfs
 set /p "fs=Set file system to format the new partition> "
 set /p "label=Set partition label> "
 set /p "letter=Set partition letter to mount> "
+if "%size%" == "" (set "size=")
 if "%label%" == "" (set "label=")
 if "%letter%" == "" (set "letter=assign")
 call :seldisk %disk%
@@ -1225,8 +1279,8 @@ pause & goto :start
 set started=1
 for %%i in (
 crepart syspart convert delete options shrext viewmenu
-prompts canceldel diskp detail volume vdisk backmenu
-disk vol size fs label letter type typedisk UUID var
+prompts cancel diskp detail volume vdisk backmenu disk
+vol size fs label letter type typedisk UUID var MSG
 ) do set "%%i="
 cls
 echo.
@@ -1234,8 +1288,7 @@ echo 1.  System Reserved
 echo 2.  EFI System Partition ^(GPT^)
 echo 3.  EFI MSR Partition ^(GPT^)
 echo 4.  OEM Recovery
-echo 5.  Windows Partition
-echo 6.  Go back to Create partition or logical drive
+echo 5.  Go back to Create partition or logical drive
 echo.
 set /p "syspart=Choose one of the following> "
 cls
@@ -1243,8 +1296,7 @@ if %syspart%? == 1? (goto :cresysreserved)
 if %syspart%? == 2? (goto :creefisys)
 if %syspart%? == 3? (goto :creefimsr)
 if %syspart%? == 4? (goto :creefirecovery)
-if %syspart%? == 5? (goto :crewinos)
-if %syspart%? == 6? (goto :crepartmenu)
+if %syspart%? == 5? (goto :crepartmenu)
 goto :syspartmenu
 
 :cresysreserved
@@ -1252,6 +1304,7 @@ call :listdisk
 call :rundiskpart
 echo.
 set /p "disk=Choose disk to create partition> "
+if "%disk%" == "" (set "MSG=Invalid disk inserted." & goto :errmsg)
 set /p "letter=Set partition letter to mount> "
 if "%letter%" == "" (set "letter=assign")
 call :seldisk %disk%
@@ -1264,6 +1317,7 @@ call :listdisk
 call :rundiskpart
 echo.
 set /p "disk=Choose disk to create partition> "
+if "%disk%" == "" (set "MSG=Invalid disk inserted." & goto :errmsg)
 set /p "letter=Set partition letter to mount> "
 if "%letter%" == "" (set "letter=assign")
 call :seldisk %disk%
@@ -1276,6 +1330,7 @@ call :listdisk
 call :rundiskpart
 echo.
 set /p "disk=Choose disk to create partition> "
+if "%disk%" == "" (set "MSG=Invalid disk inserted." & goto :errmsg)
 call :seldisk %disk%
 call :msr
 call :rundiskpart
@@ -1286,24 +1341,9 @@ call :listdisk
 call :rundiskpart
 echo.
 set /p "disk=Choose disk to create partition> "
+if "%disk%" == "" (set "MSG=Invalid disk inserted." & goto :errmsg)
 call :seldisk %disk%
 call :recovery
-call :rundiskpart
-pause & goto :start
-
-:crewinos
-call :listdisk
-call :rundiskpart
-echo.
-set /p "disk=Choose disk to create partition> "
-set /p "size=How much size the partition [M] (Empty to all in)> "
-set /p "label=Set partition label> "
-set /p "letter=Set partition letter to mount> "
-if "%size%" == "" (set "size=")
-if "%label%" == "" (set "label=")
-if "%letter%" == "" (set "letter=assign")
-call :seldisk %disk%
-call :winos %label% %letter% %size%
 call :rundiskpart
 pause & goto :start
 
@@ -1312,7 +1352,8 @@ pause & goto :start
 call :listvol
 call :rundiskpart
 echo.
-set /p "vol=Choose partition volume to set active> "
+set /p "vol=Choose volume partition to set active> "
+if "%vol%" == "" (set "MSG=Invalid volume partition inserted." & goto :errmsg)
 call :selvol %vol%
 call :activepart
 call :rundiskpart
@@ -1323,8 +1364,8 @@ pause & goto :start
 set started=1
 for %%i in (
 crepart syspart convert delete options shrext viewmenu
-prompts canceldel diskp detail volume vdisk backmenu
-disk vol size fs label letter type typedisk UUID var
+prompts cancel diskp detail volume vdisk backmenu disk
+vol size fs label letter type typedisk UUID var MSG
 ) do set "%%i="
 cls
 echo.
@@ -1343,9 +1384,11 @@ goto :shrextmenu
 
 :shrink
 echo.
-set /p "vol=Choose partition volume> "
+set "MSG=Invalid size to shrunk."
+set /p "vol=Choose volume partition> "
+if "%vol%" == "" (set "MSG=Invalid volume partition inserted." & goto :errmsg)
 set /p "size=How much size to shrink [M]> "
-if "%size%" == "" (goto :shrext)
+if "%size%" == "" (set "MSG=Invalid size to shrunk." & goto :errmsg)
 call :selvol %vol%
 call :shrinkpart %size%
 call :rundiskpart
@@ -1353,9 +1396,11 @@ pause & goto :start
 
 :extend
 echo.
-set /p "vol=Choose partition volume> "
+set "MSG=Invalid size to extended."
+set /p "vol=Choose volume partition> "
+if "%vol%" == "" (set "MSG=Invalid volume partition inserted." & goto :errmsg)
 set /p "size=How much size to extend [M]> "
-if "%size%" == "" (goto :shrext)
+if "%size%" == "" (set "MSG=Invalid size to extended." & goto :errmsg)
 call :selvol %vol%
 call :expandpart %size%
 call :rundiskpart
@@ -1366,8 +1411,8 @@ pause & goto :start
 set started=1
 for %%i in (
 crepart syspart convert delete options shrext viewmenu
-prompts canceldel diskp detail volume vdisk backmenu
-disk vol size fs label letter type typedisk UUID var
+prompts cancel diskp detail volume vdisk backmenu disk
+vol size fs label letter type typedisk UUID var MSG
 ) do set "%%i="
 cls
 echo.
@@ -1388,8 +1433,10 @@ goto :convertmenu
 set "typedisk=mbr"
 echo.
 set /p "disk=Choose disk to convert to MBR> "
-call :promptsdel
-if "%canceldel%" == "yes" (goto :start)
+if "%disk%" == "" (set "MSG=Invalid disk inserted." & goto :errmsg)
+set "MSG=All of data on the partition selected will be erase"
+call :prompts
+if "%cancel%" == "yes" (goto :start)
 call :seldisk %disk%
 call :clean
 call :convertdisk mbr
@@ -1400,8 +1447,10 @@ pause & goto :start
 set "typedisk=gpt"
 echo.
 set /p "disk=Choose disk to convert to GPT> "
-call :promptsdel
-if "%canceldel%" == "yes" (goto :start)
+if "%disk%" == "" (set "MSG=Invalid disk inserted." & goto :errmsg)
+set "MSG=All of data on the partition selected will be erase"
+call :prompts
+if "%cancel%" == "yes" (goto :start)
 call :seldisk %disk%
 call :clean
 call :convertdisk gpt
@@ -1413,8 +1462,8 @@ pause & goto :start
 set started=1
 for %%i in (
 crepart syspart convert delete options shrext viewmenu
-prompts canceldel diskp detail volume vdisk backmenu
-disk vol size fs label letter type typedisk UUID var
+prompts cancel diskp detail volume vdisk backmenu disk
+vol size fs label letter type typedisk UUID var MSG
 ) do set "%%i="
 cls
 echo.
@@ -1433,9 +1482,11 @@ goto :deletemenu
 call :listvol
 call :rundiskpart
 echo.
-set /p "vol=Choose partition volume to delete> "
-call :promptsdel
-if "%canceldel%" == "yes" (goto :start)
+set /p "vol=Choose volume partition to delete> "
+if "%vol%" == "" (set "MSG=Invalid volume partition inserted." & goto :errmsg)
+set "MSG=All of data on the partition selected will be erase"
+call :prompts
+if "%cancel%" == "yes" (goto :start)
 call :selvol %vol%
 call :delpart
 call :rundiskpart
@@ -1446,19 +1497,21 @@ call :listdisk
 call :rundiskpart
 echo.
 set /p "disk=Choose disk to delete> "
-call :promptsdel
-if "%canceldel%" == "yes" (goto :start)
+if "%disk%" == "" (set "MSG=Invalid disk inserted." & goto :errmsg)
+set "MSG=All of data on the partition selected will be erase"
+call :prompts
+if "%cancel%" == "yes" (goto :start)
 call :seldisk %disk%
 call :clean
 call :rundiskpart
 pause & goto :start
 
-:promptsdel
-set /p "prompts=All of data on the partition selected will be erase> "
+:prompts
+set /p "prompts=%MSG%> "
 %_CONVERT_UPPERCASE% "prompts=%%prompts:!_from!=!_to!%%"
 for %%y in (Y YES) do if "%prompts%" == "%%y" (goto :eof)
-for %%n in (N NO) do if "%prompts%" == "%%n" (pause & set "canceldel=yes" & goto :eof)
-goto :promptsdel
+for %%n in (N NO) do if "%prompts%" == "%%n" (pause & set "cancel=yes" & goto :eof)
+goto :prompts
 
 
 
@@ -2263,12 +2316,16 @@ goto :promptsdel
 
 :: end
 
+:errmsg
+echo %MSG%
+if defined started (pause & goto :start)
+
 :end_of_exit
 endlocal
 goto end
 
 :dump
-echo Core dumped
+echo Core dump.
 goto end_of_exit
 
 :ntold
