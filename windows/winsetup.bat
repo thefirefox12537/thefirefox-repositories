@@ -282,7 +282,7 @@ goto :end_of_exit
 :media_redirect
 copy /y "%~dpf0" "%tmp%\%~nx0" > nul 2>&1
 copy /y "%~dpn0.exe" "%tmp%\%~n0.exe" > nul 2>&1
-@cd /d "%tmp%" & call "%~n0" %*
+@cd /d "%tmp%" & %~n0 %*
 @cd /d "%~dp0" & for %%a in ("%tmp%\%~nx0" "%tmp%\%~n0.exe") do @del /f /q "%%~a" > nul 2>&1
 @echo off & goto :end_of_exit
 
