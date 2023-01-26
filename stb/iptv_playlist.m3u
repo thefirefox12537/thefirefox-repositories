@@ -13,7 +13,7 @@ https://liveaneviadev.mncnow.id/live/eds/PemersatuBangsa/sa_dash_vmx/PemersatuBa
 
 #KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
 #KODIPROP:inputstream.adaptive.license_key=https://mrpw.ptmnc01.verspective.net/?deviceId=NDIzMDJhZmUtYWRjMi0zNGJkLTkyN2EtYmE1ZDFlZWIwODEz
-#EXTINF:-1 group-title="Lokal/Daerah;TVRI" tvg-id="tvrijatim.id" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/TVRIJatimLogo2019.svg/640px-TVRIJatimLogo2019.svg.png",TVRI Jawa Timur
+#EXTINF:-1 group-title="Lokal/Daerah;TVRI" tvg-id="tvrijatimsurabaya.id" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/TVRIJatimLogo2019.svg/640px-TVRIJatimLogo2019.svg.png",TVRI Jawa Timur
 http://118.97.50.107/Content/HLS/Live/Channel(TVRIJATIMSURABAYA)/index.m3u8
 
 #KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
@@ -791,16 +791,16 @@ http://higherpro.xyz:8080/restreambestlive/w4e7kFKr29Ya/37959
 #EXTINF:-1 group-title="Sports" tvg-logo="https://www.digitaltveurope.com/files/2017/09/ELEVEN-SPORTS-logo1.png",Eleven Sports 2
 http://higherpro.xyz:8080/restreambestlive/w4e7kFKr29Ya/37960
 
-#EXTINF:-1 group-title="Sports" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/ESPN_wordmark.svg/640px-ESPN_wordmark.svg.png",ESPN 1 US
+#EXTINF:-1 group-title="Sports" tv-id="espn.us" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/ESPN_wordmark.svg/640px-ESPN_wordmark.svg.png",ESPN 1 US
 http://obsfullhd.tv:25461/@woiptv/GD2sDVghPRtk/36908
 
-#EXTINF:-1 group-title="Sports" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/ESPN2_logo.svg/640px-ESPN2_logo.svg.png",ESPN 2 US
+#EXTINF:-1 group-title="Sports" tv-id="espn2.us" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/ESPN2_logo.svg/640px-ESPN2_logo.svg.png",ESPN 2 US
 http://obsfullhd.tv:25461/@woiptv/GD2sDVghPRtk/36909
 
-#EXTINF:-1 group-title="Sports" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/5/51/ESPN3_Logo.png",ESPN Deportes
+#EXTINF:-1 group-title="Sports" tv-id="espn3.us" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/5/51/ESPN3_Logo.png",ESPN Deportes
 http://clientSportsals.com:80/f778W3He/yj7FXRjr/133798
 
-#EXTINF:-1 group-title="Sports" tvg-logo="https://secure.espncdn.com/watchespn/images/channels/500b1f7c-dad5-33f9-907c-87427babe201.png",ESPNU
+#EXTINF:-1 group-title="Sports" tv-id="espnu.us" tvg-logo="https://secure.espncdn.com/watchespn/images/channels/500b1f7c-dad5-33f9-907c-87427babe201.png",ESPNU
 http://clientSportsals.com:80/f778W3He/yj7FXRjr/45747
 
 #KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
