@@ -74,24 +74,24 @@ https://cdn-livetv-studio.metube.id/inewstv.m3u8
 
 #EXTINF:-1 group-title="Nasional" tvg-id="indosiar.id" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Indosiar_2015.svg/617px-Indosiar_2015.svg.png",Indosiar
 http://210.210.155.37/qwr9ew/s/s04/01.m3u8
-https://app-etslive-2.vidio.com/live/205/master.m3u8
+https://app-etslive-2.vidio.com/live/205/master.m3u8|Referer=https://vidio.com
 https://www.seulangatv-online.ml/vidio/indosiar.m3u8
 https://visionplus-stream.visionplus.id/live/eds/INDOSIAR-ryzen/sa_hls/INDOSIAR-ryzen.m3u8
 
 #EXTINF:-1 group-title="Nasional" tvg-id="sctv.id" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/SCTV_Logo.svg/640px-SCTV_Logo.svg.png",SCTV
 http://210.210.155.37/qwr9ew/s/s03/01.m3u8
-https://app-etslive-2.vidio.com/live/204/master.m3u8
+https://app-etslive-2.vidio.com/live/204/master.m3u8|Referer=https://vidio.com
 https://www.seulangatv-online.ml/vidio/sctv.m3u8
 http://nonton.wap.sh/id/009.m3u8
 https://visionplus-stream.visionplus.id/live/eds/SCTV-intel/sa_hls/SCTV-intel.m3u8
 
 #EXTINF:-1 group-title="Nasional" tvg-id="ochannel.id" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Moji_blue.svg/640px-Moji_blue.svg.png",Moji
 http://210.210.155.35/qwr9ew/s/s41/01.m3u8
-https://app-etslive-2.vidio.com/live/206/master.m3u8
+https://app-etslive-2.vidio.com/live/206/master.m3u8|Referer=https://vidio.com
 https://www.seulangatv-online.ml/vidio/OChannel.m3u8
 
 #EXTINF:-1 group-title="Nasional;Kids" tvg-id="mentaritv.id" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/7/78/Mentari_TV.png",Mentari TV
-https://app-etslive-2.vidio.com/live/8237/master.m3u8
+https://app-etslive-2.vidio.com/live/8237/master.m3u8|Referer=https://vidio.com
 https://www.seulangatv-online.ml/vidio/mentaritv.m3u8
 
 ====VIVA GROUP====
