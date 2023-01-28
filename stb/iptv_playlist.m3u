@@ -263,7 +263,6 @@ https://liveaneviadev.mncnow.id/live/eds/NickJr-HDD/sa_dash_vmx/NickJr-HDD.mpd
 https://liveaneviadev.mncnow.id/live/eds/Nickelodeon/sa_dash_vmx/Nickelodeon.mpd
 
 #EXTINF:-1 group-title="Kids" tvg-logo="https://upload.wikimedia.org/wikipedia/id/thumb/e/e3/Spacetoon.png/640px-Spacetoon.png",SpaceToon
-http://stream1.ninmedia.tv:1935/spacetoon/udp.stream_360p/playlist.m3u8
 rtmp://$OPT:rtmp-raw=rtmp://www.arabic-toons.com/animetv playpath=spacetoon?code=abcdefgh swfUrl=http://www.arabic-toons.com/flowplayer-3.2.7.swf live=1 pageUrl=http://www.arabic-toons.com/
 
 #EXTINF:-1 group-title="Kids" tvg-logo="https://www.awn.com/sites/default/files/styles/original/public/image/featured/toonzkids.jpg?itok=FVmJe15S",Toonz Kids
