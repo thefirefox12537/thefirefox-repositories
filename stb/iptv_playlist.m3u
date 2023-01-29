@@ -191,7 +191,7 @@ https://liveaneviadev.mncnow.id/live/eds/TV9/sa_dash_vmx/TV9.mpd
 https://liveaneviadev.mncnow.id/live/eds/Animax/sa_dash_vmx/Animax.mpd
 
 #EXTINF:-1 group-title="Kids" tvg-logo="https://i.ibb.co/XtS10LN/Aniplushd.png",Aniplus
-http://rr1.dens.tv/h/h02/01.m3u8?chname=ANIPLUS_HD
+https://cdn.renotv.my.id/get.m3u8?ch=NTliZDU3OTliM2ExNzVhOTc0OXhNcG05QWhSNmJTT3N0THZIL3BCUXpGUVlOR3JUNWhLZTBzbENFcnQ1VXFKdXc2YjdUWkFQclppRzM5SnYvZTllVHVRWHl6VjFHcit4NHYrVnhXU1YzMzRIc0EycW5qOExXdk9jU3hBPQ==
 
 #KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
 #KODIPROP:inputstream.adaptive.license_key=https://mrpw.ptmnc01.verspective.net/?deviceId=MTI3MTQzMjItYjdkNi0zNGVkLThkZjEtNDVkOWFkNDUwZDJh
@@ -242,7 +242,7 @@ https://legochannel-roku.amagi.tv/playlist.m3u8
 #EXTINF:-1 group-title="Kids" tvg-id="miaomi.hk" tvg-logo="https://miaomi-tv.com/Public/images/miao-mi-logo-color.png",Miao Mi
 https://liveaneviadev.mncnow.id/live/eds/MiaoMi/sa_dash_vmx/MiaoMi.mpd
 
-#EXTINF:-0 group-title="Kids" tvg-id="mykidz.id" tvg-logo="https://i.ibb.co/GFmh7Wm/20220530-141531.jpg",My Kidz
+#EXTINF:-0 group-title="Kids" tvg-id="mykidz.id" tvg-logo="https://subsystem.indihome.co.id/cms-ih/assets/uploads/channel_list/UPLOAD-1655920070-.png",My Kidz
 http://rr.dens.tv/h/h191/index.m3u8?app_type=web&userid=50n13N0v14nd1&tkn=829341hrjhaq0q30q&chname=My_Kidz_HD
 
 #EXTINF:-1 group-title="Kids" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Nickelodeon_2009_logo.svg/640px-Nickelodeon_2009_logo.svg.png",Nick (Pluto TV)
@@ -297,6 +297,9 @@ https://live.cnbcindonesia.com/livecnbc/smil:cnbctv.smil/chunklist_w1352897452_b
 
 #EXTINF:-1 group-title="News" tvg-id="magnachannel.id" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/8/83/MagnaChannel.png",Magna Channel
 https://edge.medcom.id/live-edge/smil:magna.smil/chunklist_w657754957_b3884000_sleng.m3u8
+
+#EXTINF:-1 group-title="News" tvg-id="metroglobenetwork.id" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/2/2d/Metro_Globe_Network.png",Metro Globe Network
+https://edge.medcom.id/live-edge/smil:mgnch.smil/playlist.m3u8
 
 #KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
 #KODIPROP:inputstream.adaptive.license_key=https://mrpw.ptmnc01.verspective.net/?deviceId=MTI3MTQzMjItYjdkNi0zNGVkLThkZjEtNDVkOWFkNDUwZDJh
@@ -627,7 +630,10 @@ https://liveaneviadev.mncnow.id/live/eds/OKTV/sa_dash_vmx/OKTV.mpd
 https://liveaneviadev.mncnow.id/live/eds/SetOne/sa_dash_vmx/SetOne.mpd
 
 #EXTINF:-1 group-title="Entertainment" tvg-id"rockentertainment.sg" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Rock_Entertainment.png/640px-Rock_Entertainment.png",Rock Entertainment
-http://rr1.dens.tv/h/h16/index.m3u8
+https://cdn.renotv.my.id/get.m3u8?ch=M2MxYmQ4ZWMyNjU4YTVlYWdabmI4UlZiN1ZEZml2WmNxN2VVcmI3ai90bFNhMWdQQTlPT09Lcmp4REF3UitaNW5kQkhqWlpQaS9qTS94ZUt3YlkwaW9BbUNCZ0ljRmxnbTlnY1BKNXdsTjFhTHJnaDJkTzRIZnAwbVV3PQ==
+
+#EXTINF:-1 group-title="Entertainment" tvg-id"rockextreme.sg" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/d/d4/RockExtreme.png/revision/latest/scale-to-width-down/250?cb=20221207131910",Rock Extreme
+https://cdn.renotv.my.id/get.m3u8?ch=Zjk3MGNiOWM5ZjgyYjY0MVdQWGhJekpCTXdRUURFaDI1Z05zN3ptYjZqYmdwQ2wxTFVqYjVBYjMzdkRiUzB3R0cwQjg2MVMxcWZvSERoRm96ZG9rQUo3YXZ2c3hwK0YrRHNCYzBEM29NbHVGeVRWengrTFJ0TWdmK0FRPQ==
 
 #KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
 #KODIPROP:inputstream.adaptive.license_key=https://mrpw.ptmnc01.verspective.net/?deviceId=MTI3MTQzMjItYjdkNi0zNGVkLThkZjEtNDVkOWFkNDUwZDJh
@@ -660,10 +666,10 @@ https://cdn.renotv.my.id/get.m3u8?ch=NzliZGY5ZGViMzljODRiM2hkdHNVNllsbDAwL3h3MC8
 #EXTINF:-1 group-title="Entertainment" tvg-id="citraculinarytravel.id" tvg-logo="https://thumbor.prod.vidiocdn.com/HEFuOmTP4vknwzgnc_VrIhn6nis=/112x112/filters:strip_icc():quality(70)/vidio-web-prod-livestreaming/uploads/livestreaming/square_image/8558/15f712.jpg",Citra Culinary Travel
 https://cdn.renotv.my.id/get.m3u8?ch=YTg5NTc4MmIzZmNiNTM2Y0JyaUVBNkE4VU9MWUZOdkp6TU0wVytBZTdNZUpWK25jNTd2WGpGd2Q1L0U0YzVRdXNoekZrdHpiaXZERit5ZjgwWGFtc2xra281SlRHUGYxNUdUWDg2SW9YNTJOYnJXa3RmcVl2UTZROFJONVh6WHlRZDBPZ0NEMlZNM2JOUDdj
 
-#EXTINF:-1 group-title="Entertainment" tvg-id="useephoto.id" tvg-logo="https://vmp-cms.telkomsel.com/sites/default/files/entry/0_4gurw79a/banner_xxhdpi.jpg",UseePhoto
+#EXTINF:-1 group-title="Entertainment" tvg-id="useephoto.id" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/7/70/Logo_IndiHome_TV.png",UseePhoto
 https://cdn-telkomsel-01.akamaized.net/Content/DASH/Live/channel(f1b6e507-d639-4d66-858a-e457d55ddbb2)/manifest.mpd
 
-#EXTINF:-1 group-title="Entertainment" tvg-id="useeprime.id" tvg-logo="https://vmp-cms.telkomsel.com/sites/default/files/entry/0_psqdb637/banner_xxhdpi.jpg",UseePrime
+#EXTINF:-1 group-title="Entertainment" tvg-id="useeprime.id" tvg-logo="https://images.useetv.com/logo_useeprime_ver1.png",UseePrime
 https://cdn-telkomsel-01.akamaized.net/Content/DASH/Live/channel(18564c27-ff44-4d62-9fab-dcb417fcb93f)/manifest.mpd
 
 ====SPORTS====
@@ -1249,6 +1255,9 @@ https://liveaneviadev.mncnow.id/live/eds/TVMuhammadiyah/sa_dash_vmx/TVMuhammadiy
 
 #EXTINF:-1 group-title="Religion" tvg-id="citramuslim.id" tvg-logo="https://3.bp.blogspot.com/-jRs5Ue8yxak/XYS2X1QfLtI/AAAAAAAAoi8/zuIgaW7B41QHrbR5vhKQcBA0pVXZbZGlwCLcBGAsYHQ/s1600/citra-muslim-tv-channel-logo.png",Citra Muslim
 https://cdn.renotv.my.id/get.m3u8?ch=MzJjNTkxM2EyZGJmNGIxMGwxMU9vSzM3VzdMMi90OTBwTDl3eWQ5S01YTmNYK3FvOTJJeVF1bFZsWVFOR0xFbHlKazlDdnJkQ2xiaDNPV3dKSWp5b2R1MlpYSUNQRXhyZWpLK2FTM3RYUWtjL3JVZ1RGUGJBbmtyYThRPQ==
+
+#EXTINF:-1 group-title="Religion" tvg-id="uchannel.id" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/U-Channel_id.png/640px-U-Channel_id.png",U-Channel
+https://cdn.renotv.my.id/get.m3u8?ch=ZmZjMDdmZmM5MmNiZTBkZFZlaVJrSVg3eUtVRi9ZT1A1RVdHalR5aTJHYThVMnduOHVMMDRaOG50Z2xRWkFSdGpETUNoT2ZEa1h2bnU2YktYaTgzTU9JNElEYjI3RVhiWFlBOVczeWNseE5pNDdVbzYvUGY1Nno1aG9RPQ==
 
 ====OTHER====
 
