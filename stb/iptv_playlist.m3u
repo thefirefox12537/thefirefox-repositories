@@ -749,9 +749,6 @@ http://warkop.cf/80/bein/16.m3u8
 #EXTINF:-1 group-title="Sports" tvg-id="bein1.id" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Logo_bein_sports_1.png/800px-Logo_bein_sports_1.png",beIN Sports Indonesia 1
 https://cdn.renotv.my.id/get.mpd?ch=YTgwMTczZTllMzZlZmE1M1ZnNlNWeVZzaE9KRFB3eGxucExCdVBBS09kb0lVa2xNbE95bTlndWFzeUpTS3ZGajFrSHZwbEk3cWo1a2htYmN2OVNiMDhneTNKVTRFRDFjditDUGhwZk1NalBDSmJ2NEJ4cWo0MGo5YnY0PQ==
 
-#EXTINF:-1 group-title="Sports" tvg-id="bein2.id" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Logo_bein_sports_2.png/800px-Logo_bein_sports_2.png",beIN Sports Indonesia 2
-https://cdn.renotv.my.id/ts.m3u8?ch=M2JiY2FjMjc3MGZmYzllOGEzSUN5U1E1cmdyWlBmN2VSazBLTDlVK0JCRUh5bGVHOEdHbW0rdEsxVUZScGErTmJPRWx4Uy9YbldkVkFYZ0pCL3d1TDdGZms3d3VNQ0R6ZVBURnViNnE2RFpKeCszZ1R6YUNNQTZNb3BBPQ==
-
 #KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
 #KODIPROP:inputstream.adaptive.license_key=https://cdn.renotv.my.id/cenc/?key=NDY1ZTdkNDI5NmMxMmU5MCs0TVJJR05hcHE5Z0I0OWprMFhpK0pneEVMaTdFRGppa1JnWEl0eHRYK1hqUnRJZ05UdVhyalpwQ04zMkxNQ08wcitwRDBPQXFlaFdqN2xqNDhZeHN0QlV3UmxXTmk0aXFTei9PSkUvTlFvPQ==
 #EXTINF:-1 group-title="Sports" tvg-id="bein3.id" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Logo_bein_sports_3.png/800px-Logo_bein_sports_3.png",beIN Sports Indonesia 3
