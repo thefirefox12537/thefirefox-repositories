@@ -191,7 +191,7 @@ https://liveaneviadev.mncnow.id/live/eds/TV9/sa_dash_vmx/TV9.mpd
 https://liveaneviadev.mncnow.id/live/eds/Animax/sa_dash_vmx/Animax.mpd
 
 #EXTINF:-1 group-title="Kids" tvg-logo="https://i.ibb.co/XtS10LN/Aniplushd.png",Aniplus
-https://cdn.renotv.my.id/get.m3u8?ch=NTliZDU3OTliM2ExNzVhOTc0OXhNcG05QWhSNmJTT3N0THZIL3BCUXpGUVlOR3JUNWhLZTBzbENFcnQ1VXFKdXc2YjdUWkFQclppRzM5SnYvZTllVHVRWHl6VjFHcit4NHYrVnhXU1YzMzRIc0EycW5qOExXdk9jU3hBPQ==
+http://210.210.155.35/dr9445/h/h02/01.m3u8
 
 #KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
 #KODIPROP:inputstream.adaptive.license_key=https://mrpw.ptmnc01.verspective.net/?deviceId=MTI3MTQzMjItYjdkNi0zNGVkLThkZjEtNDVkOWFkNDUwZDJh
@@ -227,7 +227,7 @@ http://bit.ly/2CEM73C
 http://top-iptv.zapto.org:8000/live/Aria/Aria/558.m3u8
 
 #EXTINF:-1 group-title="Kids" tvg-id="dreamworks.id" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/DreamWorks_Channel_Logo.svg/640px-DreamWorks_Channel_Logo.svg.png",Dreamworks
-https://cdn.renotv.my.id/ts.m3u8?ch=ZDVmYjRiMjA5YTFkYTMxMVZNU2FIZ2dKSzhMcitISG9Zdnl0REVobnB3K0FsS0xOOW5TNEN6WnlNcXBzUVRKQjdhcDVTK3RUZUZkMUpJdE5NVVlabHB4NmVnNm1mQlVqL2xuNlkvMkFlZFJ4OWYzSE1QTUxKaDQ0Zmc0PQ==
+https://cdn.renotv.my.id/ts.m3u8?ch=ZTM4Y2M0ODc5ZDEwYzg5MFJKaE1lZGdKV05ib2JpWUtVeFo2OThZNE5XbkJJcG4vbUt1b0dNZFR2M1ArYjdwZHloSEtRa2hBYVFabXlzWkJIYkVtQ0dYK0c4VXFMQURXOE82SzJkREpDV0Zpd05JUm5kTUhxY3hLSTBjPQ==
 
 #KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
 #KODIPROP:inputstream.adaptive.license_key=https://mrpw.ptmnc01.verspective.net/?deviceId=MTI3MTQzMjItYjdkNi0zNGVkLThkZjEtNDVkOWFkNDUwZDJh
@@ -525,7 +525,7 @@ https://liveaneviadev.mncnow.id/live/eds/tvNMovies/sa_dash_vmx/tvNMovies.mpd
 https://liveaneviadev.mncnow.id/live/eds/ZeeBIOSKOP/sa_dash_vmx/ZeeBIOSKOP.mpd
 
 #EXTINF:-1 group-title="Movies" tvg-id="citrabioskop.id" tvg-logo="https://1.bp.blogspot.com/-nBglMMe-UwM/XYTVyvQBUKI/AAAAAAAAojg/RMUFuuH7N3cqMJsGKEDhqY8sYAoEMhihwCLcBGAsYHQ/s1600/citra-bioskop-channel-tv-logo.png",Citra Bioskop
-https://cdn.renotv.my.id/get.m3u8?ch=MWU0YWNhMDgxMDNjOGMzNEtrQ1hpeDhYVzB6UjNoODQzZTZDcW5KYkVIRjRzQ2pZdVVQdytVcnZrdEt3Z3JGMHl5c1hkQnpIR0MwREs2VmFrbmFNRWpOU0xGSE15a3hBdEV4Q05mS3BrUW5mS3o4M3dKa0VVaGlZcGlRPQ==
+https://cdn.renotv.my.id/get.m3u8?ch=OTA5OWRkNGI5NThhZGMxYk9CV3Eyb2VFNnVrNzBwNlYxRjBRaUhvVStyWDFyWE9rUVkydW5uZzc3QnFMdzlBRVc5czBhVTdBY3I1OEg5Ti9TUUZxdkdxK21EWVc2c3dLNmdjRW5wNG1yOElBaXpEM2hCdTFjc053bWtBPQ==
 
 ====Entertainment====
 
@@ -630,10 +630,10 @@ https://liveaneviadev.mncnow.id/live/eds/OKTV/sa_dash_vmx/OKTV.mpd
 https://liveaneviadev.mncnow.id/live/eds/SetOne/sa_dash_vmx/SetOne.mpd
 
 #EXTINF:-1 group-title="Entertainment" tvg-id"rockentertainment.sg" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Rock_Entertainment.png/640px-Rock_Entertainment.png",Rock Entertainment
-https://cdn.renotv.my.id/get.m3u8?ch=M2MxYmQ4ZWMyNjU4YTVlYWdabmI4UlZiN1ZEZml2WmNxN2VVcmI3ai90bFNhMWdQQTlPT09Lcmp4REF3UitaNW5kQkhqWlpQaS9qTS94ZUt3YlkwaW9BbUNCZ0ljRmxnbTlnY1BKNXdsTjFhTHJnaDJkTzRIZnAwbVV3PQ==
+http://rr1.dens.tv/h/h16/index.m3u8
 
 #EXTINF:-1 group-title="Entertainment" tvg-id"rockextreme.sg" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/d/d4/RockExtreme.png/revision/latest/scale-to-width-down/250?cb=20221207131910",Rock Extreme
-https://cdn.renotv.my.id/get.m3u8?ch=Zjk3MGNiOWM5ZjgyYjY0MVdQWGhJekpCTXdRUURFaDI1Z05zN3ptYjZqYmdwQ2wxTFVqYjVBYjMzdkRiUzB3R0cwQjg2MVMxcWZvSERoRm96ZG9rQUo3YXZ2c3hwK0YrRHNCYzBEM29NbHVGeVRWengrTFJ0TWdmK0FRPQ==
+http://rr1.dens.tv/h/h15/index.m3u8
 
 #KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
 #KODIPROP:inputstream.adaptive.license_key=https://mrpw.ptmnc01.verspective.net/?deviceId=MTI3MTQzMjItYjdkNi0zNGVkLThkZjEtNDVkOWFkNDUwZDJh
@@ -661,10 +661,10 @@ https://liveaneviadev.mncnow.id/live/eds/WarnerTV/sa_dash_vmx/WarnerTV.mpd
 https://liveaneviadev.mncnow.id/live/eds/XingKongTV/sa_dash_vmx/XingKongTV.mpd
 
 #EXTINF:-1 group-title="Entertainment" tvg-id="citradrama.id" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/7/72/Citra_Drama.PNG/revision/latest?cb=20210307072503",Citra Drama
-https://cdn.renotv.my.id/get.m3u8?ch=NzliZGY5ZGViMzljODRiM2hkdHNVNllsbDAwL3h3MC8xcUFqenpqU0V0S3RMbXRWQjBuUDI3S1JESXdyNkFzeW1LTXlpTHIrRHN0WGxhSzdnZXJ6UGRmTEYzU3pJRUltN2FQcGhOQ21QWGZhUFFKVlVtNzVsVXRLVnZFPQ==
+https://cdn.renotv.my.id/get.m3u8?ch=ODY1MzdjOWYxZDY2YTRmNUdUQm02UXV3cUlUZzVkYkdwQ1d4aVRHOTdiVFVPZzhYWDl5RWRWS0lxd1ZCaEdqUklVSmJwTjdKdlZza2V1L0tQTFI0NkxEdGI5ZnZTeDRwOTNIKzVHQnRIbXV6M2FSTjIzTUVqTkc5S3FBPQ==
 
 #EXTINF:-1 group-title="Entertainment" tvg-id="citraculinarytravel.id" tvg-logo="https://thumbor.prod.vidiocdn.com/HEFuOmTP4vknwzgnc_VrIhn6nis=/112x112/filters:strip_icc():quality(70)/vidio-web-prod-livestreaming/uploads/livestreaming/square_image/8558/15f712.jpg",Citra Culinary Travel
-https://cdn.renotv.my.id/get.m3u8?ch=YTg5NTc4MmIzZmNiNTM2Y0JyaUVBNkE4VU9MWUZOdkp6TU0wVytBZTdNZUpWK25jNTd2WGpGd2Q1L0U0YzVRdXNoekZrdHpiaXZERit5ZjgwWGFtc2xra281SlRHUGYxNUdUWDg2SW9YNTJOYnJXa3RmcVl2UTZROFJONVh6WHlRZDBPZ0NEMlZNM2JOUDdj
+https://cdn.renotv.my.id/get.m3u8?ch=OTgyNTE2NjI1MDJjNTAyMGkycEVxQmJ5RHZTNkQ1QWhBRUZDTDNDeG5JRkY1YUVCZlVoRHE5OWtZdUtPRTBiUTBKcDBRQTJENDlvcXZBWmxwRWZCSTRjWU9tQ0dUb1RqSFlscittZzc5OXFQbHJsaHBSeWJhSFgwNXVGaWFLcEZmdXJKVWYvV2RhK1J2R2la
 
 #EXTINF:-1 group-title="Entertainment" tvg-id="useephoto.id" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/7/70/Logo_IndiHome_TV.png",UseePhoto
 https://cdn-telkomsel-01.akamaized.net/Content/DASH/Live/channel(f1b6e507-d639-4d66-858a-e457d55ddbb2)/manifest.mpd
@@ -751,14 +751,14 @@ http://warkop.cf/80/bein/15.m3u8
 http://warkop.cf/80/bein/16.m3u8
 
 #KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
-#KODIPROP:inputstream.adaptive.license_key=https://cdn.renotv.my.id/cenc/?key=YjU2MzM4NjM3YTNjYjAyNW95Y0Y0dm1CNzAwRTVWMldDblYrcGRHUTNUZ1l6YmdIdDhrQ3VxMW9IZVRvaWZOM0ZYelNuNDR6eXIxbHpIS0JTWklhSGc3MlFnTm54K3VyU091eTFGaXZCa1NORW01QjY4amt5Z0E0M0RNPQ==
+#KODIPROP:inputstream.adaptive.license_key=https://cdn.renotv.my.id/cenc/?key=YmIzYjlhODg4ZWVhNzFiN0RhVHozcUNQSUh0Y2JJKzJucy9NOXBydS80ekdNY0VWQTRaQkNtK0dyN2NqL3BLTGpHU0xTUndFcjR0WjJ2T25tWmk1T0M5bksxRVdkS21jajZyVEVWdnhTRXF4SDFIMGNlYjdDUzA0Y1M4PQ==
 #EXTINF:-1 group-title="Sports" tvg-id="bein1.id" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Logo_bein_sports_1.png/800px-Logo_bein_sports_1.png",beIN Sports Indonesia 1
-https://cdn.renotv.my.id/get.mpd?ch=YTgwMTczZTllMzZlZmE1M1ZnNlNWeVZzaE9KRFB3eGxucExCdVBBS09kb0lVa2xNbE95bTlndWFzeUpTS3ZGajFrSHZwbEk3cWo1a2htYmN2OVNiMDhneTNKVTRFRDFjditDUGhwZk1NalBDSmJ2NEJ4cWo0MGo5YnY0PQ==
+https://cdn.renotv.my.id/get.mpd?ch=MDdjN2I0ODhlYTRhNTRhMm1MYXZIUVV6V2dlYkQ4eFJ6MzI2NmxyMnpJdzhwS3ltajUyL2Nob1RPVGwvbVcvK05SbFQ5ZlRPdUFkNGtKd2I0V0hJenE3aFdYU0ZpWnhKZXlrbWMzYlQ5cVY5bE9mWGhqbDA4c04rbGVJPQ==
 
 #KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
-#KODIPROP:inputstream.adaptive.license_key=https://cdn.renotv.my.id/cenc/?key=NDY1ZTdkNDI5NmMxMmU5MCs0TVJJR05hcHE5Z0I0OWprMFhpK0pneEVMaTdFRGppa1JnWEl0eHRYK1hqUnRJZ05UdVhyalpwQ04zMkxNQ08wcitwRDBPQXFlaFdqN2xqNDhZeHN0QlV3UmxXTmk0aXFTei9PSkUvTlFvPQ==
+#KODIPROP:inputstream.adaptive.license_key=https://cdn.renotv.my.id/cenc/?key=MzY0N2E4Y2M4ZTYxYTlmMjNobzE2bDlLNE9rc29mS3VtUmM3VmZrK2JJMU9VSWI4dytWQ2VTdGZuSkw1M0I2L015VnJ3M1hKc1BweFd1VENzdHhXMFc4U1JNdXJyVkxTeWI4bU43SVFucXRENnZhUHFubERXV2RXbk9jPQ==
 #EXTINF:-1 group-title="Sports" tvg-id="bein3.id" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Logo_bein_sports_3.png/800px-Logo_bein_sports_3.png",beIN Sports Indonesia 3
-https://cdn.renotv.my.id/get.mpd?ch=NDE1ZjFlOWQ3OGNkMWU5OXJ3blpRejNtQnYwdExPdE5aRjViWXFVcS84aVdNa2k4QmRnSktwaGx2UXhKcHZMOEJWRy9jMk1RQVpaZmUybXRrSFFiTHFqMm5sN2dsUnUrTi84SHF2NnNlSFhWaVRRbUp0ZXlKMWRSMDBjPQ==
+https://cdn.renotv.my.id/get.mpd?ch=MWY2N2Q2ZTlkNDg2MDFjZVdHdVhLV2UrR2xBYmltcGo0K2FYVVJZWUJPYS9XYnhlTkN0akMzNWcyUkRuVW00SVBIOGRwUWRyL3NJMEswWXhyTExrdWlqZkVMaWorM0RWRFpiMm1PejBieHczellCeksxT0JKdVpoTXBNPQ==
 
 #EXTINF:-1 group-title="Sports" tvg-id="beinsportpremium1.qa" tvg-logo="https://i.goalzz.com/?i=o%2Fh%2F1%2F892%2Fbein-sports-premium-1.png",beIN Sports Premium 1
 http://obsfullhd.tv:25461/@woiptv/GD2sDVghPRtk/47269
@@ -1208,13 +1208,13 @@ https://cdn.renotv.my.id/ts.m3u8?ch=MjQ2ODgxOWJmM2I2MDUzZVFZM09GcUwxSUZQZGt5eDd4
 https://liveaneviadev.mncnow.id/live/eds/MusicChannel/sa_dash_vmx/MusicChannel.mpd
 
 #EXTINF:-1 group-title="Music" tvg-id="mtvlive.id" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/MTV_2021_%28brand_version%29.svg/640px-MTV_2021_%28brand_version%29.svg.png",MTV Live
-https://cdn.renotv.my.id/ts.m3u8?ch=YmFlZjBhNWY1MGFmNjIwNzB0VDZpakZIYnlnL1JDOFdzNmFHdVhpSmZFc2hvK1hFM3NwWU0xL2llOW9Id2VzamdBdVZtOENjTHpQSzN2ZGtDUWxvcjJaTEs2VnRCbmszUTAweU1IUTJoayt6S2RIclNkOTBJSHVYeGpZPQ==
+https://cdn.renotv.my.id/ts.m3u8?ch=N2FhMjZiNGM4MzVkOGIzZFFpbWZXekh1TXJlbWxBY1AyazhRcEMwb3Q1VnNHUENWbjllSXVzTnVvdzdMV2ZxSkxvdWVvZC9kTTVpanZZYTl5YzFzRy9JTnN4MnJ1dzlob0tMYkFnU052Q3JjbGJjbzRlMW94Nko0RjVRPQ==
 
-#EXTINF:-1 group-title="Music" tvg-id="citradangdut.id" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/7/72/Citra_Drama.PNG/revision/latest?cb=20210307072503",Citra Dangdut
-https://cdn.renotv.my.id/get.m3u8?ch=ZTY3MjIyNTgzMjE0Y2U2MDc1WHNuN3Z5SUg1eklvOHRlMTRQTUxuOGVLaEcvZStnLzBWNHNURnhyQWZMNG1VdnVBekdwVEFrU2QrSzR2QXlCaUgybTl3ZWFQUFFhRW55Z3FaU2xhem1ualhxUUY5enJzZTliWlBrSFBBPQ==
+#EXTINF:-1 group-title="Music" tvg-id="citradangdut.id" tvg-logo="https://3.bp.blogspot.com/-la6YeqyulhE/XMjH4FqqcYI/AAAAAAAAnyQ/zvZFsDvg3LEwtNc8UHwMcVYn9s954kEBwCLcBGAs/s1600/citra-dangdut-tv-channel-logo.png",Citra Dangdut
+https://cdn.renotv.my.id/get.m3u8?ch=ZTcxNWNkZmFlZDcxZTk5NW9IMWhMcGhhVDkzTTQxR3JCb2VlRkZGNlJzYzlST0ZQQ0RybC9pcTUwOW1HZkI4QjBhSEtvOFhmcEJwQUFIclF1QWpBS09FdEVOeTBkN2RaSXZXL1FWdk5XRUpiWGFHcXIyNktFd0g2VXJNPQ==
 
 #EXTINF:-1 group-title="Music" tvg-id="pramborstv.id" tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/6/64/Prambors_%28logo%29.svg/754px-Prambors_%28logo%29.svg.png",Prambors TV
-https://cdn.renotv.my.id/ts.m3u8?ch=N2YyNDExZjk1ZmQzOGUzZkZJb3IvZGN3VjNNMjdNQk5JY0hxbE8rQUdxVFBYNFJTSkRYMjhtZXBzQTJZbE9Kb3l0T3dVc3ZwL2Q4bnNvWHlYV09XOUl4NlVyb01YRm1CVEp6VGZpR1dnOXdpbUxFZTZ3cjYvWEU3NHJrPQ==
+https://cdn.renotv.my.id/ts.m3u8?ch=ODc0YjQyMGM3N2U0NDkxYW1hK2hFOGREUjN2UEVmLzdubm83dURFenRhNXIyY2x5Z3lFUno0OU0veFBaMVNqWmVmRW5GS3YxOEhtZGNGZnZRekNtZ1lxNGF4RVE4VTJIQmQ2dEhueGRhbmdMek5ITzlSaXdIY0p6QnRVPQ==
 
 ====RELIGION====
 
@@ -1254,15 +1254,15 @@ https://liveaneviadev.mncnow.id/live/eds/TawafTV/sa_dash_vmx/TawafTV.mpd
 https://liveaneviadev.mncnow.id/live/eds/TVMuhammadiyah/sa_dash_vmx/TVMuhammadiyah.mpd
 
 #EXTINF:-1 group-title="Religion" tvg-id="citramuslim.id" tvg-logo="https://3.bp.blogspot.com/-jRs5Ue8yxak/XYS2X1QfLtI/AAAAAAAAoi8/zuIgaW7B41QHrbR5vhKQcBA0pVXZbZGlwCLcBGAsYHQ/s1600/citra-muslim-tv-channel-logo.png",Citra Muslim
-https://cdn.renotv.my.id/get.m3u8?ch=MzJjNTkxM2EyZGJmNGIxMGwxMU9vSzM3VzdMMi90OTBwTDl3eWQ5S01YTmNYK3FvOTJJeVF1bFZsWVFOR0xFbHlKazlDdnJkQ2xiaDNPV3dKSWp5b2R1MlpYSUNQRXhyZWpLK2FTM3RYUWtjL3JVZ1RGUGJBbmtyYThRPQ==
+https://cdn.renotv.my.id/get.m3u8?ch=ZGFiODBkZGI4NzQ5YjFhYzN6QjMxU0JwZTBxNlQzblVZaEtpRldBZWhEbWRjZjQ4bUFCbmxBa3BWM2NDcDFTcG9hQWI1d3V3L1c4clQyYyszOTlWYmprMTYxcEVub0tJOHloNG1uRlU4OTQ0djlYbExpUXJUYkwzaEdJPQ==
 
 #EXTINF:-1 group-title="Religion" tvg-id="uchannel.id" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/U-Channel_id.png/640px-U-Channel_id.png",U-Channel
-https://cdn.renotv.my.id/get.m3u8?ch=ZmZjMDdmZmM5MmNiZTBkZFZlaVJrSVg3eUtVRi9ZT1A1RVdHalR5aTJHYThVMnduOHVMMDRaOG50Z2xRWkFSdGpETUNoT2ZEa1h2bnU2YktYaTgzTU9JNElEYjI3RVhiWFlBOVczeWNseE5pNDdVbzYvUGY1Nno1aG9RPQ==
+http://45.126.83.51/qwr9ew/s/s41/index.m3u8
 
 ====OTHER====
 
 #EXTINF:-1 group-title="Undefined" tvg-id="rrinet.id" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/8/88/Logo_RRI_NET.png",RRI Net
-https://cdn.renotv.my.id/ts.m3u8?ch=MDZhNDEyN2Q4NjE1MGY4ZjBGR2FXOE1aREp3T0hra2RnRlZvQUhaMW0rMUR5b1lpNHYvLzBhd3gyWno0QjVRTGRKVEdCWVVHM2d6V29aTllPTC9HT0lWSmh5cEhKNWhRTHRNY3R6UjUxbFY0NDZqNGF0N1pJWVdjTWdrPQ==
+http://36.89.47.217:11935/rrinet/live/index.m3u8
 
 #EXTINF:-1 group-title="Undefined" tvg-id="tvrparlemen.id" tvg-logo="https://i.imgur.com/2XYpmHL.png",TVR Parlemen
 https://ssv1.dpr.go.id/golive/livestream/playlist.m3u8
