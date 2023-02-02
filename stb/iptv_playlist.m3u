@@ -219,12 +219,10 @@ https://liveaneviadev.mncnow.id/live/eds/CartoonNetwork/sa_dash_vmx/CartoonNetwo
 https://liveaneviadev.mncnow.id/live/eds/Cbeebies/sa_dash_vmx/Cbeebies.mpd
 
 #EXTINF:-1 group-title="Kids" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Disney_channel_2019.png/800px-Disney_channel_2019.png",Disney Channel
-https://bit.ly/2MRuYKZ
+http://198.16.106.62:8278/streams/d/Disneyxd/playlist.m3u8
 
 #EXTINF:-1 group-title="Kids" tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/b/bb/Disney_Junior.svg/640px-Disney_Junior.svg.png",Disney Jr.
-http://103.47.132.164/PLTV/88888888/224/3221226011/04.m3u8
-http://bit.ly/2CEM73C
-http://top-iptv.zapto.org:8000/live/Aria/Aria/558.m3u8
+http://198.16.106.62:8278/streams/d/Disneyjr/playlist.m3u8
 
 #EXTINF:-1 group-title="Kids" tvg-id="dreamworkschannelasia.us" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/DreamWorks_Channel_Logo.svg/640px-DreamWorks_Channel_Logo.svg.png",Dreamworks
 https://cdn.renotv.my.id/ts.m3u8?ch=ZTM4Y2M0ODc5ZDEwYzg5MFJKaE1lZGdKV05ib2JpWUtVeFo2OThZNE5XbkJJcG4vbUt1b0dNZFR2M1ArYjdwZHloSEtRa2hBYVFabXlzWkJIYkVtQ0dYK0c4VXFMQURXOE82SzJkREpDV0Zpd05JUm5kTUhxY3hLSTBjPQ==
@@ -390,6 +388,9 @@ https://liveaneviadev.mncnow.id/live/eds/TV5/sa_dash_vmx/TV5.mpd
 #EXTINF:-1 group-title="News;International" tvg-id="trtworld.tr" tvg-logo="https://kids.kiddle.co/images/4/4f/TRT_World_logosu.png",TRT World
 https://liveaneviadev.mncnow.id/live/eds/TRTWorld/sa_dash_vmx/TRTWorld.mpd
 
+#EXTINF:-1 group-title="News;International" tvg-id="voa.us" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/VOA_logo.svg/640px-VOA_logo.svg.png",Voice Of America
+https://cdn.renotv.my.id/ts.m3u8?ch=ODI4NzQyNjA1MTI5YTJhOFpNbE90ZzRwU2dycmZnSk5LWUtObGx1NmwzWGdMRm9TZXdNZWZLSnVMdVN1K1BqTXRUTFhzV3VDdm9LekloRlc1eUdWUDNrbEhrQVg1RjI4V0YxbDZnPT0=
+
 ====KNOWLEDGE====
 
 #KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
@@ -447,7 +448,7 @@ https://dai2.xumo.com/xumocdn/p=redbox&deviceid=&is_lat=&subp=RedboxdesktopWebWi
 #EXTINF:-1 group-title="Knowledge;International" tvg-logo="https://i.postimg.cc/RVfC96Dm/SMITHSONIAN.png",Smithsonian Channel
 https://smithsonianaus-samsungau.amagi.tv/playlist720p.m3u8?checkedby:iptvcat.com
 
-#EXTINF:-1 group-title="Knowledge;International" tvg-id="NASATVPublic.us" tvg-country="US" tvg-language="English" tvg-logo="https://seeklogo.com/images/N/NASA-logo-9411797223-seeklogo.com.png",NASA TV 
+#EXTINF:-1 group-title="Knowledge;International" tvg-id="nasatvpublic.us" tvg-logo="https://seeklogo.com/images/N/NASA-logo-9411797223-seeklogo.com.png",NASA TV 
 https://ntv1.akamaized.net/hls/live/2014075/NASA-NTV1-HLS/master_2000.m3u8
 
 #EXTINF:-1 group-title="Knowledge" tvg-id="tvedukasi.id" tvg-logo="https://i.imgur.com/XX5wGHQ.png",TV Edukasi
