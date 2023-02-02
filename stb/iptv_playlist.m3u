@@ -190,7 +190,7 @@ https://liveaneviadev.mncnow.id/live/eds/TV9/sa_dash_vmx/TV9.mpd
 #EXTINF:-1 group-title="Kids" tvg-id="animaxasia.sg" tvg-logo="https://www.mncvision.id/userfiles/image/channel/Animax_150x150.png",Animax
 https://liveaneviadev.mncnow.id/live/eds/Animax/sa_dash_vmx/Animax.mpd
 
-#EXTINF:-1 group-title="Kids" tvg-id="aniplusasia.sg" tvg-logo="https://i.ibb.co/XtS10LN/Aniplushd.png",Aniplus
+#EXTINF:-1 group-title="Kids" tvg-id="aniplus.th" tvg-logo="https://i.ibb.co/XtS10LN/Aniplushd.png",Ani+
 http://210.210.155.35/dr9445/h/h02/01.m3u8
 
 #KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
@@ -258,8 +258,8 @@ https://liveaneviadev.mncnow.id/live/eds/NickJr-HDD/sa_dash_vmx/NickJr-HDD.mpd
 #EXTINF:-1 group-title="Kids" tvg-id="nickelodeonasia.sg" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Nickelodeon_2009_logo.svg/640px-Nickelodeon_2009_logo.svg.png",Nickelodeon
 https://liveaneviadev.mncnow.id/live/eds/Nickelodeon/sa_dash_vmx/Nickelodeon.mpd
 
-#EXTINF:-1 group-title="Kids" tvg-logo="https://upload.wikimedia.org/wikipedia/id/thumb/e/e3/Spacetoon.png/640px-Spacetoon.png",SpaceToon
-rtmp://$OPT:rtmp-raw=rtmp://www.arabic-toons.com/animetv playpath=spacetoon?code=abcdefgh swfUrl=http://www.arabic-toons.com/flowplayer-3.2.7.swf live=1 pageUrl=http://www.arabic-toons.com/
+#EXTINF:-1 group-title="Kids" tvg-id="spacetoonarabic.ae" tvg-logo="https://upload.wikimedia.org/wikipedia/id/thumb/e/e3/Spacetoon.png/640px-Spacetoon.png",SpaceToon (Arabic)
+https://shls-spacetoon-prod-dub.shahid.net/out/v1/6240b773a3f34cca95d119f9e76aec02/index.m3u8
 
 #EXTINF:-1 group-title="Kids" tvg-logo="https://www.awn.com/sites/default/files/styles/original/public/image/featured/toonzkids.jpg?itok=FVmJe15S",Toonz Kids
 http://210.210.155.37/x6bnqe/s/s81/01.m3u8?app_type=web&userid=4rr0w&tkn=bl4ck&chname=Toonz_Kids
@@ -356,6 +356,9 @@ https://liveaneviadev.mncnow.id/live/eds/FoxNews/sa_dash_vmx/FoxNews.mpd
 #EXTINF:-1 group-title="News;International" tvg-id="france24english.fr" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/France24.png/635px-France24.png",France 24
 https://liveaneviadev.mncnow.id/live/eds/France24/sa_dash_vmx/France24.mpd
 
+#EXTINF:-1 group-title="International" tvg-id="kbskorea.kr" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/KBS_logo.svg/640px-KBS_logo.svg.png",KBS Korea
+https://cdn.renotv.my.id/ts.m3u8?ch=NWNlODA0ZjIyZjcxYzZjZG9qSWtOeVRIMTVFeCtVMEtXM0dMSDk5aHBvZkVqa3U0SmNQQy9CVDltdndqaW9HeEhHMUppZHgwUE1aaFJnSTg5aEFoMEkzblFqQ1hLU2VGQlpyYTl0Y1c4d3FqRnJabng5aGdhWUVuNjVjPQ==
+
 #KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
 #KODIPROP:inputstream.adaptive.license_key=https://mrpw.ptmnc01.verspective.net/?deviceId=MTI3MTQzMjItYjdkNi0zNGVkLThkZjEtNDVkOWFkNDUwZDJh
 #EXTINF:-1 group-title="News;International" tvg-id="nhkworldjapan.jp" tvg-logo="https://static.wikia.nocookie.net/tvfanon6528/images/b/b5/NHK_World_%282015-.n.v.%29.png/revision/latest?cb=20180213080237",NHK World Japan
@@ -365,6 +368,12 @@ https://liveaneviadev.mncnow.id/live/eds/NHKWorldTV/sa_dash_vmx/NHKWorldTV.mpd
 #KODIPROP:inputstream.adaptive.license_key=https://mrpw.ptmnc01.verspective.net/?deviceId=MTI3MTQzMjItYjdkNi0zNGVkLThkZjEtNDVkOWFkNDUwZDJh
 #EXTINF:-1 group-title="News;International" tvg-id="nhkworldpremium.jp" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/9/90/Logo_NHK_World_Premium.jpg",NHK World Premium
 https://liveaneviadev.mncnow.id/live/eds/NHKWorldPremium/sa_dash_vmx/NHKWorldPremium.mpd
+
+#EXTINF:-1 group-title="International" tvg-id="nippontv.jp" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Nippon_Television_Holdings_logo.svg/640px-Nippon_Television_Holdings_logo.svg.png",Nippon TV
+https://cdn.renotv.my.id/ts.m3u8?ch=Y2ZhYjFjY2NlZmRmMDA4MWVsdjdhYzF6OHZITUhZWVVWN28wK1F0Z1BnMjBOWUI4V21Xd3JQTWx6Y1UzdmJuU3BoT0ZuQnBvVklnZzZETjhnVDY3ZE9SbnU5SU9aQVZaSHVqcHhPcHFyNm51V2p2K0xyemxya1hzT2wwPQ==
+
+#EXTINF:-1 group-title="International" tvg-id="raiitalia.it" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Logo_of_RAI_%282016%29.svg/512px-Logo_of_RAI_%282016%29.svg.png",RAI Italia
+https://cdn.renotv.my.id/ts.m3u8?ch=MDZjM2MxODI2NDQ5OWZiM1NTRzdEbU9lOGt1eTRiWGpiVXZpWDNmRXhoSjZOK2NrTEt3L01ZcTkycm9pNTE4S0xWampzWVNmSTg4Z2tCZGt6VE9maFVORVlDdVdzc242Q1Q4M2Vqc245VDJJS2xmenlFc1VJdG54ODJNPQ==
 
 #KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
 #KODIPROP:inputstream.adaptive.license_key=https://mrpw.ptmnc01.verspective.net/?deviceId=MTI3MTQzMjItYjdkNi0zNGVkLThkZjEtNDVkOWFkNDUwZDJh
@@ -739,15 +748,15 @@ https://newtest.webtv1.lol/lb/premium90/index.m3u8|Referer=https://widevine.lice
 https://newtest.webtv1.lol/lb/premium46/index.m3u8|Referer=https://widevine.licenses4.me/
 
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36
-#EXTINF:-1 group-title="Sports" tvg-id="beinsport1france.fr" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Logo_bein_sports_1.png/800px-Logo_bein_sports_1.png",beIN Sports France 1
+#EXTINF:-1 group-title="Sports" tvg-id="beinsportsfrench1.qa" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Logo_bein_sports_1.png/800px-Logo_bein_sports_1.png",beIN Sports France 1
 http://warkop.cf/80/bein/14.m3u8
 
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36
-#EXTINF:-1 group-title="Sports" tvg-id="beinsport2france.fr" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Logo_bein_sports_2.png/800px-Logo_bein_sports_2.png",beIN Sports France 2
+#EXTINF:-1 group-title="Sports" tvg-id="beinsportsfrench2.qa" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Logo_bein_sports_2.png/800px-Logo_bein_sports_2.png",beIN Sports France 2
 http://warkop.cf/80/bein/15.m3u8
 
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36
-#EXTINF:-1 group-title="Sports" tvg-id="beinsport3france.fr" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Logo_bein_sports_3.png/800px-Logo_bein_sports_3.png",beIN Sports France 3
+#EXTINF:-1 group-title="Sports" tvg-id="beinsportsfrench3.qa" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Logo_bein_sports_3.png/800px-Logo_bein_sports_3.png",beIN Sports France 3
 http://warkop.cf/80/bein/16.m3u8
 
 #KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
@@ -760,13 +769,13 @@ https://cdn.renotv.my.id/get.mpd?ch=MDdjN2I0ODhlYTRhNTRhMm1MYXZIUVV6V2dlYkQ4eFJ6
 #EXTINF:-1 group-title="Sports" tvg-id="beinsports3indonesia.id" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Logo_bein_sports_3.png/800px-Logo_bein_sports_3.png",beIN Sports Indonesia 3
 https://cdn.renotv.my.id/get.mpd?ch=MWY2N2Q2ZTlkNDg2MDFjZVdHdVhLV2UrR2xBYmltcGo0K2FYVVJZWUJPYS9XYnhlTkN0akMzNWcyUkRuVW00SVBIOGRwUWRyL3NJMEswWXhyTExrdWlqZkVMaWorM0RWRFpiMm1PejBieHczellCeksxT0JKdVpoTXBNPQ==
 
-#EXTINF:-1 group-title="Sports" tvg-id="beinsportpremium1.qa" tvg-logo="https://i.goalzz.com/?i=o%2Fh%2F1%2F892%2Fbein-sports-premium-1.png",beIN Sports Premium 1
+#EXTINF:-1 group-title="Sports" tvg-id="beinsportspremium1.qa" tvg-logo="https://i.goalzz.com/?i=o%2Fh%2F1%2F892%2Fbein-sports-premium-1.png",beIN Sports Premium 1
 http://obsfullhd.tv:25461/@woiptv/GD2sDVghPRtk/47269
 
-#EXTINF:-1 group-title="Sports" tvg-id="beinsportpremium2.qa" tvg-logo="https://i.goalzz.com/?i=o%2Fh%2F1%2F893%2Fbein-sports-premium-1.png",beIN Sports Premium 2
+#EXTINF:-1 group-title="Sports" tvg-id="beinsportspremium2.qa" tvg-logo="https://i.goalzz.com/?i=o%2Fh%2F1%2F893%2Fbein-sports-premium-1.png",beIN Sports Premium 2
 http://obsfullhd.tv:25461/@woiptv/GD2sDVghPRtk/47270
 
-#EXTINF:-1 group-title="Sports" tvg-id="beinsportpremium3.qa" tvg-logo="https://i.goalzz.com/?i=o%2Fh%2F1%2F894%2Fbein-sports-premium-1.png",beIN Sports Premium 3
+#EXTINF:-1 group-title="Sports" tvg-id="beinsportspremium3.qa" tvg-logo="https://i.goalzz.com/?i=o%2Fh%2F1%2F894%2Fbein-sports-premium-1.png",beIN Sports Premium 3
 http://obsfullhd.tv:25461/@woiptv/GD2sDVghPRtk/47271
 
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.79 Safari/537.36 Maxthon/5.2.7.3000
