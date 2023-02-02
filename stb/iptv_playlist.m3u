@@ -190,7 +190,7 @@ https://liveaneviadev.mncnow.id/live/eds/TV9/sa_dash_vmx/TV9.mpd
 #EXTINF:-1 group-title="Kids" tvg-id="animaxasia.sg" tvg-logo="https://www.mncvision.id/userfiles/image/channel/Animax_150x150.png",Animax
 https://liveaneviadev.mncnow.id/live/eds/Animax/sa_dash_vmx/Animax.mpd
 
-#EXTINF:-1 group-title="Kids" tvg-logo="https://i.ibb.co/XtS10LN/Aniplushd.png",Aniplus
+#EXTINF:-1 group-title="Kids" tvg-id="aniplusasia.sg" tvg-logo="https://i.ibb.co/XtS10LN/Aniplushd.png",Aniplus
 http://210.210.155.35/dr9445/h/h02/01.m3u8
 
 #KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
@@ -226,7 +226,7 @@ http://103.47.132.164/PLTV/88888888/224/3221226011/04.m3u8
 http://bit.ly/2CEM73C
 http://top-iptv.zapto.org:8000/live/Aria/Aria/558.m3u8
 
-#EXTINF:-1 group-title="Kids" tvg-id="dreamworks.id" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/DreamWorks_Channel_Logo.svg/640px-DreamWorks_Channel_Logo.svg.png",Dreamworks
+#EXTINF:-1 group-title="Kids" tvg-id="dreamworkschannelasia.us" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/DreamWorks_Channel_Logo.svg/640px-DreamWorks_Channel_Logo.svg.png",Dreamworks
 https://cdn.renotv.my.id/ts.m3u8?ch=ZTM4Y2M0ODc5ZDEwYzg5MFJKaE1lZGdKV05ib2JpWUtVeFo2OThZNE5XbkJJcG4vbUt1b0dNZFR2M1ArYjdwZHloSEtRa2hBYVFabXlzWkJIYkVtQ0dYK0c4VXFMQURXOE82SzJkREpDV0Zpd05JUm5kTUhxY3hLSTBjPQ==
 
 #KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
@@ -752,12 +752,12 @@ http://warkop.cf/80/bein/16.m3u8
 
 #KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
 #KODIPROP:inputstream.adaptive.license_key=https://cdn.renotv.my.id/cenc/?key=YmIzYjlhODg4ZWVhNzFiN0RhVHozcUNQSUh0Y2JJKzJucy9NOXBydS80ekdNY0VWQTRaQkNtK0dyN2NqL3BLTGpHU0xTUndFcjR0WjJ2T25tWmk1T0M5bksxRVdkS21jajZyVEVWdnhTRXF4SDFIMGNlYjdDUzA0Y1M4PQ==
-#EXTINF:-1 group-title="Sports" tvg-id="bein1.id" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Logo_bein_sports_1.png/800px-Logo_bein_sports_1.png",beIN Sports Indonesia 1
+#EXTINF:-1 group-title="Sports" tvg-id="beinsports1indonesia.id" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Logo_bein_sports_1.png/800px-Logo_bein_sports_1.png",beIN Sports Indonesia 1
 https://cdn.renotv.my.id/get.mpd?ch=MDdjN2I0ODhlYTRhNTRhMm1MYXZIUVV6V2dlYkQ4eFJ6MzI2NmxyMnpJdzhwS3ltajUyL2Nob1RPVGwvbVcvK05SbFQ5ZlRPdUFkNGtKd2I0V0hJenE3aFdYU0ZpWnhKZXlrbWMzYlQ5cVY5bE9mWGhqbDA4c04rbGVJPQ==
 
 #KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
 #KODIPROP:inputstream.adaptive.license_key=https://cdn.renotv.my.id/cenc/?key=MzY0N2E4Y2M4ZTYxYTlmMjNobzE2bDlLNE9rc29mS3VtUmM3VmZrK2JJMU9VSWI4dytWQ2VTdGZuSkw1M0I2L015VnJ3M1hKc1BweFd1VENzdHhXMFc4U1JNdXJyVkxTeWI4bU43SVFucXRENnZhUHFubERXV2RXbk9jPQ==
-#EXTINF:-1 group-title="Sports" tvg-id="bein3.id" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Logo_bein_sports_3.png/800px-Logo_bein_sports_3.png",beIN Sports Indonesia 3
+#EXTINF:-1 group-title="Sports" tvg-id="beinsports3indonesia.id" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Logo_bein_sports_3.png/800px-Logo_bein_sports_3.png",beIN Sports Indonesia 3
 https://cdn.renotv.my.id/get.mpd?ch=MWY2N2Q2ZTlkNDg2MDFjZVdHdVhLV2UrR2xBYmltcGo0K2FYVVJZWUJPYS9XYnhlTkN0akMzNWcyUkRuVW00SVBIOGRwUWRyL3NJMEswWXhyTExrdWlqZkVMaWorM0RWRFpiMm1PejBieHczellCeksxT0JKdVpoTXBNPQ==
 
 #EXTINF:-1 group-title="Sports" tvg-id="beinsportpremium1.qa" tvg-logo="https://i.goalzz.com/?i=o%2Fh%2F1%2F892%2Fbein-sports-premium-1.png",beIN Sports Premium 1
@@ -1207,13 +1207,13 @@ https://cdn.renotv.my.id/ts.m3u8?ch=MjQ2ODgxOWJmM2I2MDUzZVFZM09GcUwxSUZQZGt5eDd4
 #EXTINF:-1 group-title="Music" tvg-id="musictv.id" tvg-logo="https://www.mncchannels.com/timthumb.php?zc=3&w=378&h=129&src=/files/logo/1579059453_logo_music%20tv.png",Music Channel
 https://liveaneviadev.mncnow.id/live/eds/MusicChannel/sa_dash_vmx/MusicChannel.mpd
 
-#EXTINF:-1 group-title="Music" tvg-id="mtvlive.id" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/MTV_2021_%28brand_version%29.svg/640px-MTV_2021_%28brand_version%29.svg.png",MTV Live
+#EXTINF:-1 group-title="Music" tvg-id="mtvlive.uk" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/MTV_2021_%28brand_version%29.svg/640px-MTV_2021_%28brand_version%29.svg.png",MTV Live
 https://cdn.renotv.my.id/ts.m3u8?ch=N2FhMjZiNGM4MzVkOGIzZFFpbWZXekh1TXJlbWxBY1AyazhRcEMwb3Q1VnNHUENWbjllSXVzTnVvdzdMV2ZxSkxvdWVvZC9kTTVpanZZYTl5YzFzRy9JTnN4MnJ1dzlob0tMYkFnU052Q3JjbGJjbzRlMW94Nko0RjVRPQ==
 
 #EXTINF:-1 group-title="Music" tvg-id="citradangdut.id" tvg-logo="https://3.bp.blogspot.com/-la6YeqyulhE/XMjH4FqqcYI/AAAAAAAAnyQ/zvZFsDvg3LEwtNc8UHwMcVYn9s954kEBwCLcBGAs/s1600/citra-dangdut-tv-channel-logo.png",Citra Dangdut
 https://cdn.renotv.my.id/get.m3u8?ch=ZTcxNWNkZmFlZDcxZTk5NW9IMWhMcGhhVDkzTTQxR3JCb2VlRkZGNlJzYzlST0ZQQ0RybC9pcTUwOW1HZkI4QjBhSEtvOFhmcEJwQUFIclF1QWpBS09FdEVOeTBkN2RaSXZXL1FWdk5XRUpiWGFHcXIyNktFd0g2VXJNPQ==
 
-#EXTINF:-1 group-title="Music" tvg-id="pramborstv.id" tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/6/64/Prambors_%28logo%29.svg/754px-Prambors_%28logo%29.svg.png",Prambors TV
+#EXTINF:-1 group-title="Music" tvg-id="prambors.id" tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/6/64/Prambors_%28logo%29.svg/754px-Prambors_%28logo%29.svg.png",Prambors TV
 https://cdn.renotv.my.id/ts.m3u8?ch=ODc0YjQyMGM3N2U0NDkxYW1hK2hFOGREUjN2UEVmLzdubm83dURFenRhNXIyY2x5Z3lFUno0OU0veFBaMVNqWmVmRW5GS3YxOEhtZGNGZnZRekNtZ1lxNGF4RVE4VTJIQmQ2dEhueGRhbmdMek5ITzlSaXdIY0p6QnRVPQ==
 
 ====RELIGION====
