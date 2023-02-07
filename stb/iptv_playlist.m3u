@@ -1,5 +1,5 @@
-#EXTM3U url-tvg="https://iptv-org.github.io/epg/guides/id/mncvision.id.xml,https://iptv-org.github.io/epg/guides/id/vidio.com.xml,https://iptv-org.github.io/epg/guides/id/transvision.co.id.xml,https://iptv-org.github.io/epg/guides/id/indihometv.com.xml"
-#EXTM3U x-tvg-url="https://iptv-org.github.io/epg/guides/ad/andorradifusio.ad.epg.xml,https://iptv-org.github.io/epg/guides/ae-ar/osn.com.epg.xml,https://iptv-org.github.io/epg/guides/af/arianaafgtv.com.epg.xml,https://iptv-org.github.io/epg/guides/af/arianatelevision.com.epg.xml,https://iptv-org.github.io/epg/guides/al/ipko.com.epg.xml,https://iptv-org.github.io/epg/guides/am/tv.mail.ru.epg.xml,https://iptv-org.github.io/epg/guides/ao/guide.dstv.com.epg.xml,https://iptv-org.github.io/epg/guides/ar/directv.com.ar.epg.xml,https://iptv-org.github.io/epg/guides/ar/mi.tv.epg.xml,https://iptv-org.github.io/epg/guides/at/magentatv.at.epg.xml,https://iptv-org.github.io/epg/guides/au/ontvtonight.com.epg.xml,https://iptv-org.github.io/epg/guides/az/tv.mail.ru.epg.xml,https://iptv-org.github.io/epg/guides/ba/mtel.ba.epg.xml,https://iptv-org.github.io/epg/guides/be/telenettv.be.epg.xml,https://iptv-org.github.io/epg/guides/bf/canalplus-afrique.com.epg.xml,https://iptv-org.github.io/epg/guides/bg/tv.dir.bg.epg.xml,https://iptv-org.github.io/epg/guides/bi/startimestv.com.epg.xml,https://iptv-org.github.io/epg/guides/bl/canalplus-caraibes.com.epg.xml,https://iptv-org.github.io/epg/guides/bo/comteco.com.bo.epg.xml,https://iptv-org.github.io/epg/guides/br/mi.tv.epg.xml,https://iptv-org.github.io/epg/guides/bs/rev.bs.epg.xml,https://iptv-org.github.io/epg/guides/by/tv.mail.ru.epg.xml,https://iptv-org.github.io/epg/guides/ca/tvhebdo.com.epg.xml,https://iptv-org.github.io/epg/guides/ca/tvtv.us.epg.xml,https://iptv-org.github.io/epg/guides/cd/startimestv.com.epg.xml,https://iptv-org.github.io/epg/guides/ch/tv.blue.ch.epg.xml,https://iptv-org.github.io/epg/guides/cl/gatotv.com.epg.xml,https://iptv-org.github.io/epg/guides/cl/mi.tv.epg.xml,https://iptv-org.github.io/epg/guides/cn/tv.cctv.com.epg.xml,https://iptv-org.github.io/epg/guides/co/gatotv.com.epg.xml,https://iptv-org.github.io/epg/guides/co/mi.tv.epg.xml,https://iptv-org.github.io/epg/guides/co/siba.com.co.epg.xml,https://iptv-org.github.io/epg.xml,https://iptv-org.github.io/epg/guides/ad/andorradifusio.ad.epg.xml,https://iptv-org.github.io/epg/guides/ae-ar/osn.com.epg.xml,https://iptv-org.github.io/epg/guides/af/arianaafgtv.com.epg.xml,https://iptv-org.github.io/epg/guides/af/arianatelevision.com.epg.xml,https://iptv-org.github.io/epg/guides/al/ipko.com.epg.xml,https://iptv-org.github.io/epg/guides/am/tv.mail.ru.epg.xml,https://iptv-org.github.io/epg/guides/ao/guide.dstv.com.epg.xml,https://iptv-org.github.io/epg/guides/ar/directv.com.ar.epg.xml,https://iptv-org.github.io/epg/guides/ar/mi.tv.epg.xml,https://iptv-org.github.io/epg/guides/at/magentatv.at.epg.xml,https://iptv-org.github.io/epg/guides/au/ontvtonight.com.epg.xml,https://iptv-org.github.io/epg/guides/az/tv.mail.ru.epg.xml,https://iptv-org.github.io/epg/guides/ba/mtel.ba.epg.xml,https://iptv-org.github.io/epg/guides/be/telenettv.be.epg.xml,https://iptv-org.github.io/epg/guides/bf/canalplus-afrique.com.epg.xml,https://iptv-org.github.io/epg/guides/bg/tv.dir.bg.epg.xml,https://iptv-org.github.io/epg/guides/bi/startimestv.com.epg.xml,https://iptv-org.github.io/epg/guides/bl/canalplus-caraibes.com.epg.xml,https://iptv-org.github.io/epg/guides/bo/comteco.com.bo.epg.xml,https://iptv-org.github.io/epg/guides/br/mi.tv.epg.xml,https://iptv-org.github.io/epg/guides/bs/rev.bs.epg.xml,https://iptv-org.github.io/epg/guides/by/tv.mail.ru.epg.xml,https://iptv-org.github.io/epg/guides/ca/tvhebdo.com.epg.xml,https://iptv-org.github.io/epg/guides/ca/tvtv.us.epg.xml,https://iptv-org.github.io/epg/guides/cd/startimestv.com.epg.xml,https://iptv-org.github.io/epg/guides/ch/tv.blue.ch.epg.xml,https://iptv-org.github.io/epg/guides/cl/gatotv.com.epg.xml,https://iptv-org.github.io/epg/guides/cl/mi.tv.epg.xml,https://iptv-org.github.io/epg/guides/cn/tv.cctv.com.epg.xml,https://iptv-org.github.io/epg/guides/co/gatotv.com.epg.xml,https://iptv-org.github.io/epg/guides/co/mi.tv.epg.xml,https://iptv-org.github.io/epg/guides/co/siba.com.co.epg.xml,https://iptv-org.github.io/epg/guides/cz/m.tv.sms.cz.epg.xml,https://iptv-org.github.io/epg/guides/de/hd-plus.de.epg.xml,https://iptv-org.github.io/epg/guides/de/horizon.tv.epg.xml,https://iptv-org.github.io/epg/guides/dk/allente.se.epg.xml,https://iptv-org.github.io/epg/guides/do/gatotv.com.epg.xml,https://iptv-org.github.io/epg/guides/ec/gatotv.com.epg.xml,https://iptv-org.github.io/epg/guides/ee-en/teliatv.ee.epg.xml,https://iptv-org.github.io/epg/guides/eg-ar/elcinema.com.epg.xml,https://iptv-org.github.io/epg/guides/en/mncvision.id.xml,https://iptv-org.github.io/epg/guides/en/nowplayer.now.com.xml,https://iptv-org.github.io/epg/guides/en/starhubtvplus.com.xml,https://iptv-org.github.io/epg/guides/en/directv.com.xml,https://iptv-org.github.io/epg/guides/es/gatotv.com.epg.xml,https://iptv-org.github.io/epg/guides/es/movistarplus.es.epg.xml,https://iptv-org.github.io/epg/guides/et/guide.dstv.com.epg.xml,https://iptv-org.github.io/epg/guides/fi/telkussa.fi.epg.xml,https://iptv-org.github.io/epg/guides/fo/kvf.fo.epg.xml,https://iptv-org.github.io/epg/guides/fr/canalplus.com.epg.xml,https://iptv-org.github.io/epg/guides/fr/chaines-tv.orange.fr.epg.xml,https://iptv-org.github.io/epg/guides/fr/programme-tv.net.epg.xml,https://iptv-org.github.io/epg/guides/fr/telecablesat.fr.epg.xml,https://iptv-org.github.io/epg/guides/ga/startimestv.com.epg.xml,https://iptv-org.github.io/epg/guides/ge/magticom.ge.epg.xml,https://iptv-org.github.io/epg/guides/gr/cosmote.gr.epg.xml,https://iptv-org.github.io/epg/guides/gt/gatotv.com.epg.xml,https://iptv-org.github.io/epg/guides/gt/mi.tv.epg.xml,https://iptv-org.github.io/epg/guides/hk-en/nowplayer.now.com.epg.xml,https://iptv-org.github.io/epg/guides/hn/gatotv.com.epg.xml,https://iptv-org.github.io/epg/guides/hn/mi.tv.epg.xml,https://iptv-org.github.io/epg/guides/hr/maxtv.hrvatskitelekom.hr.epg.xml,https://iptv-org.github.io/epg/guides/hu/mediaklikk.hu.epg.xml,https://iptv-org.github.io/epg/guides/hu/musor.tv.epg.xml,https://iptv-org.github.io/epg/guides/id/indihometv.com.xml,https://iptv-org.github.io/epg/guides/id/mncvision.id.xml,https://iptv-org.github.io/epg/guides/id/transvision.co.id.xml,https://iptv-org.github.io/epg/guides/id/useetv.com.xml,https://iptv-org.github.io/epg/guides/id/vidio.com.xml,https://iptv-org.github.io/epg/guides/ie/ontvtonight.com.epg.xml,https://iptv-org.github.io/epg/guides/il/9tv.co.il.epg.xml,https://iptv-org.github.io/epg/guides/il/i24news.tv.epg.xml,https://iptv-org.github.io/epg/guides/il/kan.org.il.epg.xml,https://iptv-org.github.io/epg/guides/in/dishtv.in.epg.xml,https://iptv-org.github.io/epg/guides/it/guidatv.sky.it.epg.xml,https://iptv-org.github.io/epg/guides/it/mediaset.it.epg.xml,https://iptv-org.github.io/epg/guides/jp/tvguide.myjcom.jp.epg.xml,https://iptv-org.github.io/epg/guides/km/canalplus-reunion.com.epg.xml,https://iptv-org.github.io/epg/guides/kr/seezntv.com.epg.xml,https://iptv-org.github.io/epg/guides/kr/wavve.com.epg.xml,https://iptv-org.github.io/epg/guides/kz/tv.yandex.ru.epg.xml,https://iptv-org.github.io/epg/guides/mk/maxtvgo.mk.epg.xml,https://iptv-org.github.io/epg/guides/mt/melita.com.epg.xml,https://iptv-org.github.io/epg/guides/mw/guide.dstv.com.epg.xml,https://iptv-org.github.io/epg/guides/mx/gatotv.com.epg.xml,https://iptv-org.github.io/epg/guides/my/astro.com.my.epg.xml,https://iptv-org.github.io/epg/guides/mz/guide.dstv.com.epg.xml,https://iptv-org.github.io/epg/guides/ng/dstv.com.epg.xml,https://iptv-org.github.io/epg/guides/ni/gatotv.com.epg.xml,https://iptv-org.github.io/epg/guides/nl/delta.nl.epg.xml,https://iptv-org.github.io/epg/guides/nl/ziggogo.tv.epg.xml,https://iptv-org.github.io/epg/guides/no/allente.se.epg.xml,https://iptv-org.github.io/epg/guides/no/frikanalen.no.epg.xml,https://iptv-org.github.io/epg/guides/pa/gatotv.com.epg.xml,https://iptv-org.github.io/epg/guides/pe/gatotv.com.epg.xml,https://iptv-org.github.io/epg/guides/pe/mi.tv.epg.xml,https://iptv-org.github.io/epg/guides/ph/clickthecity.com.epg.xml,https://iptv-org.github.io/epg/guides/pl/programtv.onet.pl.epg.xml,https://iptv-org.github.io/epg/guides/pt/meo.pt.epg.xml,https://iptv-org.github.io/epg/guides/py/gatotv.com.epg.xml,https://iptv-org.github.io/epg/guides/qa/bein.com.epg.xml,https://iptv-org.github.io/epg/guides/qa/beinsports.com.epg.xml,https://iptv-org.github.io/epg/guides/ro/programetv.ro.epg.xml,https://iptv-org.github.io/epg/guides/rs/mts.rs.epg.xml,https://iptv-org.github.io/epg/guides/ru/tv.yandex.ru.epg.xml,https://iptv-org.github.io/epg/guides/se/allente.se.epg.xml,https://iptv-org.github.io/epg/guides/se/tv.nu.epg.xml,https://iptv-org.github.io/epg/guides/sg/mewatch.sg.epg.xml,https://iptv-org.github.io/epg/guides/sg/starhubtvplus.com.epg.xml,https://iptv-org.github.io/epg/guides/si/tv2go.t-2.net.epg.xml,https://iptv-org.github.io/epg/guides/sv/mi.tv.epg.xml,https://iptv-org.github.io/epg/guides/th/tv.trueid.net.epg.xml,https://iptv-org.github.io/epg/guides/tr/digiturk.com.tr.epg.xml,https://iptv-org.github.io/epg/guides/tr/dsmart.com.tr.epg.xml,https://iptv-org.github.io/epg/guides/tr/tvplus.com.tr.epg.xml,https://iptv-org.github.io/epg/guides/tz/startimestv.com.epg.xml,https://iptv-org.github.io/epg/guides/uk/bt.com.epg.xml,https://iptv-org.github.io/epg/guides/uk/ontvtonight.com.epg.xml,https://iptv-org.github.io/epg/guides/uk/sky.com.epg.xml,https://iptv-org.github.io/epg/guides/uk/virginmedia.com.epg.xml,https://iptv-org.github.io/epg/guides/us-local/tvtv.us.epg.xml,https://iptv-org.github.io/epg/guides/us-pluto/i.mjh.nz.epg.xml,https://iptv-org.github.io/epg/guides/us/directv.com.epg.xml,https://iptv-org.github.io/epg/guides/us/ontvtonight.com.epg.xml,https://iptv-org.github.io/epg/guides/us/tvguide.com.epg.xml,https://iptv-org.github.io/epg/guides/us/tvtv.us.epg.xml,https://iptv-org.github.io/epg/guides/za/guide.dstv.com.epg.xml" refresh="1440" max-conn="1" refresh="24"
+#EXTM3U url-tvg="https://iptv-org.github.io/epg/guides/id/mncvision.id.xml,https://iptv-org.github.io/epg/guides/id/vidio.com.xml,https://iptv-org.github.io/epg/guides/id/transvision.co.id.xml,https://iptv-org.github.io/epg/guides/id/indihometv.com.xml" refresh="3600"
+#EXTM3U x-tvg-url="https://iptv-org.github.io/epg/guides/ad/andorradifusio.ad.epg.xml,https://iptv-org.github.io/epg/guides/ae-ar/osn.com.epg.xml,https://iptv-org.github.io/epg/guides/af/arianaafgtv.com.epg.xml,https://iptv-org.github.io/epg/guides/af/arianatelevision.com.epg.xml,https://iptv-org.github.io/epg/guides/al/ipko.com.epg.xml,https://iptv-org.github.io/epg/guides/am/tv.mail.ru.epg.xml,https://iptv-org.github.io/epg/guides/ao/guide.dstv.com.epg.xml,https://iptv-org.github.io/epg/guides/ar/directv.com.ar.epg.xml,https://iptv-org.github.io/epg/guides/ar/mi.tv.epg.xml,https://iptv-org.github.io/epg/guides/at/magentatv.at.epg.xml,https://iptv-org.github.io/epg/guides/au/ontvtonight.com.epg.xml,https://iptv-org.github.io/epg/guides/az/tv.mail.ru.epg.xml,https://iptv-org.github.io/epg/guides/ba/mtel.ba.epg.xml,https://iptv-org.github.io/epg/guides/be/telenettv.be.epg.xml,https://iptv-org.github.io/epg/guides/bf/canalplus-afrique.com.epg.xml,https://iptv-org.github.io/epg/guides/bg/tv.dir.bg.epg.xml,https://iptv-org.github.io/epg/guides/bi/startimestv.com.epg.xml,https://iptv-org.github.io/epg/guides/bl/canalplus-caraibes.com.epg.xml,https://iptv-org.github.io/epg/guides/bo/comteco.com.bo.epg.xml,https://iptv-org.github.io/epg/guides/br/mi.tv.epg.xml,https://iptv-org.github.io/epg/guides/bs/rev.bs.epg.xml,https://iptv-org.github.io/epg/guides/by/tv.mail.ru.epg.xml,https://iptv-org.github.io/epg/guides/ca/tvhebdo.com.epg.xml,https://iptv-org.github.io/epg/guides/ca/tvtv.us.epg.xml,https://iptv-org.github.io/epg/guides/cd/startimestv.com.epg.xml,https://iptv-org.github.io/epg/guides/ch/tv.blue.ch.epg.xml,https://iptv-org.github.io/epg/guides/cl/gatotv.com.epg.xml,https://iptv-org.github.io/epg/guides/cl/mi.tv.epg.xml,https://iptv-org.github.io/epg/guides/cn/tv.cctv.com.epg.xml,https://iptv-org.github.io/epg/guides/co/gatotv.com.epg.xml,https://iptv-org.github.io/epg/guides/co/mi.tv.epg.xml,https://iptv-org.github.io/epg/guides/co/siba.com.co.epg.xml,https://iptv-org.github.io/epg.xml,https://iptv-org.github.io/epg/guides/ad/andorradifusio.ad.epg.xml,https://iptv-org.github.io/epg/guides/ae-ar/osn.com.epg.xml,https://iptv-org.github.io/epg/guides/af/arianaafgtv.com.epg.xml,https://iptv-org.github.io/epg/guides/af/arianatelevision.com.epg.xml,https://iptv-org.github.io/epg/guides/al/ipko.com.epg.xml,https://iptv-org.github.io/epg/guides/am/tv.mail.ru.epg.xml,https://iptv-org.github.io/epg/guides/ao/guide.dstv.com.epg.xml,https://iptv-org.github.io/epg/guides/ar/directv.com.ar.epg.xml,https://iptv-org.github.io/epg/guides/ar/mi.tv.epg.xml,https://iptv-org.github.io/epg/guides/at/magentatv.at.epg.xml,https://iptv-org.github.io/epg/guides/au/ontvtonight.com.epg.xml,https://iptv-org.github.io/epg/guides/az/tv.mail.ru.epg.xml,https://iptv-org.github.io/epg/guides/ba/mtel.ba.epg.xml,https://iptv-org.github.io/epg/guides/be/telenettv.be.epg.xml,https://iptv-org.github.io/epg/guides/bf/canalplus-afrique.com.epg.xml,https://iptv-org.github.io/epg/guides/bg/tv.dir.bg.epg.xml,https://iptv-org.github.io/epg/guides/bi/startimestv.com.epg.xml,https://iptv-org.github.io/epg/guides/bl/canalplus-caraibes.com.epg.xml,https://iptv-org.github.io/epg/guides/bo/comteco.com.bo.epg.xml,https://iptv-org.github.io/epg/guides/br/mi.tv.epg.xml,https://iptv-org.github.io/epg/guides/bs/rev.bs.epg.xml,https://iptv-org.github.io/epg/guides/by/tv.mail.ru.epg.xml,https://iptv-org.github.io/epg/guides/ca/tvhebdo.com.epg.xml,https://iptv-org.github.io/epg/guides/ca/tvtv.us.epg.xml,https://iptv-org.github.io/epg/guides/cd/startimestv.com.epg.xml,https://iptv-org.github.io/epg/guides/ch/tv.blue.ch.epg.xml,https://iptv-org.github.io/epg/guides/cl/gatotv.com.epg.xml,https://iptv-org.github.io/epg/guides/cl/mi.tv.epg.xml,https://iptv-org.github.io/epg/guides/cn/tv.cctv.com.epg.xml,https://iptv-org.github.io/epg/guides/co/gatotv.com.epg.xml,https://iptv-org.github.io/epg/guides/co/mi.tv.epg.xml,https://iptv-org.github.io/epg/guides/co/siba.com.co.epg.xml,https://iptv-org.github.io/epg/guides/cz/m.tv.sms.cz.epg.xml,https://iptv-org.github.io/epg/guides/de/hd-plus.de.epg.xml,https://iptv-org.github.io/epg/guides/de/horizon.tv.epg.xml,https://iptv-org.github.io/epg/guides/dk/allente.se.epg.xml,https://iptv-org.github.io/epg/guides/do/gatotv.com.epg.xml,https://iptv-org.github.io/epg/guides/ec/gatotv.com.epg.xml,https://iptv-org.github.io/epg/guides/ee-en/teliatv.ee.epg.xml,https://iptv-org.github.io/epg/guides/eg-ar/elcinema.com.epg.xml,https://iptv-org.github.io/epg/guides/en/mncvision.id.xml,https://iptv-org.github.io/epg/guides/en/nowplayer.now.com.xml,https://iptv-org.github.io/epg/guides/en/starhubtvplus.com.xml,https://iptv-org.github.io/epg/guides/en/directv.com.xml,https://iptv-org.github.io/epg/guides/es/gatotv.com.epg.xml,https://iptv-org.github.io/epg/guides/es/movistarplus.es.epg.xml,https://iptv-org.github.io/epg/guides/et/guide.dstv.com.epg.xml,https://iptv-org.github.io/epg/guides/fi/telkussa.fi.epg.xml,https://iptv-org.github.io/epg/guides/fo/kvf.fo.epg.xml,https://iptv-org.github.io/epg/guides/fr/canalplus.com.epg.xml,https://iptv-org.github.io/epg/guides/fr/chaines-tv.orange.fr.epg.xml,https://iptv-org.github.io/epg/guides/fr/programme-tv.net.epg.xml,https://iptv-org.github.io/epg/guides/fr/telecablesat.fr.epg.xml,https://iptv-org.github.io/epg/guides/ga/startimestv.com.epg.xml,https://iptv-org.github.io/epg/guides/ge/magticom.ge.epg.xml,https://iptv-org.github.io/epg/guides/gr/cosmote.gr.epg.xml,https://iptv-org.github.io/epg/guides/gt/gatotv.com.epg.xml,https://iptv-org.github.io/epg/guides/gt/mi.tv.epg.xml,https://iptv-org.github.io/epg/guides/hk-en/nowplayer.now.com.epg.xml,https://iptv-org.github.io/epg/guides/hn/gatotv.com.epg.xml,https://iptv-org.github.io/epg/guides/hn/mi.tv.epg.xml,https://iptv-org.github.io/epg/guides/hr/maxtv.hrvatskitelekom.hr.epg.xml,https://iptv-org.github.io/epg/guides/hu/mediaklikk.hu.epg.xml,https://iptv-org.github.io/epg/guides/hu/musor.tv.epg.xml,https://iptv-org.github.io/epg/guides/id/indihometv.com.xml,https://iptv-org.github.io/epg/guides/id/mncvision.id.xml,https://iptv-org.github.io/epg/guides/id/transvision.co.id.xml,https://iptv-org.github.io/epg/guides/id/useetv.com.xml,https://iptv-org.github.io/epg/guides/id/vidio.com.xml,https://iptv-org.github.io/epg/guides/ie/ontvtonight.com.epg.xml,https://iptv-org.github.io/epg/guides/il/9tv.co.il.epg.xml,https://iptv-org.github.io/epg/guides/il/i24news.tv.epg.xml,https://iptv-org.github.io/epg/guides/il/kan.org.il.epg.xml,https://iptv-org.github.io/epg/guides/in/dishtv.in.epg.xml,https://iptv-org.github.io/epg/guides/it/guidatv.sky.it.epg.xml,https://iptv-org.github.io/epg/guides/it/mediaset.it.epg.xml,https://iptv-org.github.io/epg/guides/jp/tvguide.myjcom.jp.epg.xml,https://iptv-org.github.io/epg/guides/km/canalplus-reunion.com.epg.xml,https://iptv-org.github.io/epg/guides/kr/seezntv.com.epg.xml,https://iptv-org.github.io/epg/guides/kr/wavve.com.epg.xml,https://iptv-org.github.io/epg/guides/kz/tv.yandex.ru.epg.xml,https://iptv-org.github.io/epg/guides/mk/maxtvgo.mk.epg.xml,https://iptv-org.github.io/epg/guides/ms/astro.com.my.xml,https://iptv-org.github.io/epg/guides/mt/melita.com.epg.xml,https://iptv-org.github.io/epg/guides/mw/guide.dstv.com.epg.xml,https://iptv-org.github.io/epg/guides/mx/gatotv.com.epg.xml,https://iptv-org.github.io/epg/guides/my/astro.com.my.epg.xml,https://iptv-org.github.io/epg/guides/mz/guide.dstv.com.epg.xml,https://iptv-org.github.io/epg/guides/ng/dstv.com.epg.xml,https://iptv-org.github.io/epg/guides/ni/gatotv.com.epg.xml,https://iptv-org.github.io/epg/guides/nl/delta.nl.epg.xml,https://iptv-org.github.io/epg/guides/nl/ziggogo.tv.epg.xml,https://iptv-org.github.io/epg/guides/no/allente.se.epg.xml,https://iptv-org.github.io/epg/guides/no/frikanalen.no.epg.xml,https://iptv-org.github.io/epg/guides/pa/gatotv.com.epg.xml,https://iptv-org.github.io/epg/guides/pe/gatotv.com.epg.xml,https://iptv-org.github.io/epg/guides/pe/mi.tv.epg.xml,https://iptv-org.github.io/epg/guides/ph/clickthecity.com.epg.xml,https://iptv-org.github.io/epg/guides/pl/programtv.onet.pl.epg.xml,https://iptv-org.github.io/epg/guides/pt/meo.pt.epg.xml,https://iptv-org.github.io/epg/guides/py/gatotv.com.epg.xml,https://iptv-org.github.io/epg/guides/qa/bein.com.epg.xml,https://iptv-org.github.io/epg/guides/qa/beinsports.com.epg.xml,https://iptv-org.github.io/epg/guides/ro/programetv.ro.epg.xml,https://iptv-org.github.io/epg/guides/rs/mts.rs.epg.xml,https://iptv-org.github.io/epg/guides/ru/tv.yandex.ru.epg.xml,https://iptv-org.github.io/epg/guides/se/allente.se.epg.xml,https://iptv-org.github.io/epg/guides/se/tv.nu.epg.xml,https://iptv-org.github.io/epg/guides/sg/mewatch.sg.epg.xml,https://iptv-org.github.io/epg/guides/sg/starhubtvplus.com.epg.xml,https://iptv-org.github.io/epg/guides/si/tv2go.t-2.net.epg.xml,https://iptv-org.github.io/epg/guides/sv/mi.tv.epg.xml,https://iptv-org.github.io/epg/guides/th/tv.trueid.net.epg.xml,https://iptv-org.github.io/epg/guides/tr/digiturk.com.tr.epg.xml,https://iptv-org.github.io/epg/guides/tr/dsmart.com.tr.epg.xml,https://iptv-org.github.io/epg/guides/tr/tvplus.com.tr.epg.xml,https://iptv-org.github.io/epg/guides/tz/startimestv.com.epg.xml,https://iptv-org.github.io/epg/guides/uk/bt.com.epg.xml,https://iptv-org.github.io/epg/guides/uk/ontvtonight.com.epg.xml,https://iptv-org.github.io/epg/guides/uk/sky.com.epg.xml,https://iptv-org.github.io/epg/guides/uk/virginmedia.com.epg.xml,https://iptv-org.github.io/epg/guides/us-local/tvtv.us.epg.xml,https://iptv-org.github.io/epg/guides/us-pluto/i.mjh.nz.epg.xml,https://iptv-org.github.io/epg/guides/us/directv.com.epg.xml,https://iptv-org.github.io/epg/guides/us/ontvtonight.com.epg.xml,https://iptv-org.github.io/epg/guides/us/tvguide.com.epg.xml,https://iptv-org.github.io/epg/guides/us/tvtv.us.epg.xml,https://iptv-org.github.io/epg/guides/za/guide.dstv.com.epg.xml" refresh="3600"max-conn="1"
 
 
 ====NASIONAL/LOKAL====
@@ -83,7 +83,7 @@ http://210.210.155.35/qwr9ew/s/s41/01.m3u8
 https://app-etslive-2.vidio.com/live/206/master.m3u8|Referer=https://vidio.com
 
 #EXTINF:-1 group-title="General (National);Kids" tvg-id="mentaritv.id" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/7/78/Mentari_TV.png",Mentari TV
-https://cdn.renotv.my.id/ts.m3u8?ch=ZDM0NzJiNTkzNDQ1MDQ3ZWR2eXlHZGZGVXhhZU1ZOEVDc1U0bWtHWWxyNTFTMS9DQzc3REV3VnJ0aHJHL1pYRkNWVXgvWnBqUW40SEhaM0c1U2xqWEcyYVJJYUtoQ21Sc2VnOVpqM1p0VWNWNS9Ta1Z2VmVaeFloZVVFPQ==
+https://cdn.thomasandi.my.id/vidio/mulai.php?id=8237
 https://app-etslive-2.vidio.com/live/8237/master.m3u8|Referer=https://vidio.com
 
 ====VIVA GROUP====
@@ -187,10 +187,10 @@ https://av-live-cdn.mncnow.id/live/eds/TV9/sa_dash_vmx/TV9.mpd
 
 #KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
 #KODIPROP:inputstream.adaptive.license_key=https://mrpw.ptmnc01.verspective.net/?deviceId=MTI3MTQzMjItYjdkNi0zNGVkLThkZjEtNDVkOWFkNDUwZDJh
-#EXTINF:-1 group-title="Kids" tvg-id="animaxasia.sg" tvg-logo="https://www.mncvision.id/userfiles/image/channel/Animax_150x150.png",Animax
+#EXTINF:-1 group-title="Kids;International" tvg-id="animaxasia.sg" tvg-logo="https://www.mncvision.id/userfiles/image/channel/Animax_150x150.png",Animax
 https://av-live-cdn.mncnow.id/live/eds/Animax/sa_dash_vmx/Animax.mpd
 
-#EXTINF:-1 group-title="Kids" tvg-id="aniplus.th" tvg-logo="https://i.ibb.co/XtS10LN/Aniplushd.png",Ani+
+#EXTINF:-1 group-title="Kids;International" tvg-id="aniplus.th" tvg-logo="https://i.ibb.co/XtS10LN/Aniplushd.png",Ani+
 http://210.210.155.35/dr9445/h/h02/01.m3u8
 
 #KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
@@ -205,60 +205,72 @@ https://av-live-cdn.mncnow.id/live/eds/BeSmart/sa_dash_vmx/BeSmart.mpd
 
 #KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
 #KODIPROP:inputstream.adaptive.license_key=https://mrpw.ptmnc01.verspective.net/?deviceId=MTI3MTQzMjItYjdkNi0zNGVkLThkZjEtNDVkOWFkNDUwZDJh
-#EXTINF:-1 group-title="Kids" tvg-id="boomerangsoutheastasia.us" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Boomerang_tv_logo.png/607px-Boomerang_tv_logo.png",Boomerang
+#EXTINF:-1 group-title="Kids;International" tvg-id="boomerangsoutheastasia.us" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Boomerang_tv_logo.png/607px-Boomerang_tv_logo.png",Boomerang
 https://av-live-cdn.mncnow.id/live/eds/Boomerang/sa_dash_vmx/Boomerang.mpd
 
 #KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
 #KODIPROP:inputstream.adaptive.license_key=https://mrpw.ptmnc01.verspective.net/?deviceId=MTI3MTQzMjItYjdkNi0zNGVkLThkZjEtNDVkOWFkNDUwZDJh
-#EXTINF:-1 group-title="Kids" tvg-id="cartoonnetworkasia.sg" tvg-logo="https://www.mncvision.id/userfiles/image/channel/cartoon_network.png",Cartoon Network
+#EXTINF:-1 group-title="Kids;International" tvg-id="cartoonnetworkasia.sg" tvg-logo="https://www.mncvision.id/userfiles/image/channel/cartoon_network.png",Cartoon Network
 https://av-live-cdn.mncnow.id/live/eds/CartoonNetwork/sa_dash_vmx/CartoonNetwork.mpd
 
 #KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
 #KODIPROP:inputstream.adaptive.license_key=https://mrpw.ptmnc01.verspective.net/?deviceId=MTI3MTQzMjItYjdkNi0zNGVkLThkZjEtNDVkOWFkNDUwZDJh
-#EXTINF:-1 group-title="Kids" tvg-id="cbeebiesasia.uk" tvg-logo="https://upload.wikimedia.org/wikipedia/en/e/e2/CBeebies_logo_2022.png",CBeebies
+#EXTINF:-1 group-title="Kids;International" tvg-id="cbeebiesasia.uk" tvg-logo="https://upload.wikimedia.org/wikipedia/en/e/e2/CBeebies_logo_2022.png",CBeebies
 https://av-live-cdn.mncnow.id/live/eds/Cbeebies/sa_dash_vmx/Cbeebies.mpd
 
-#EXTINF:-1 group-title="Kids" tvg-id="disneychanneleast.us" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Disney_channel_2019.png/800px-Disney_channel_2019.png",Disney Channel
+#KODIPROP:inputstream.adaptive.license_type=org.w3.clearkey
+#KODIPROP:inputstream.adaptive.license_key=https://clearkey-base64-2-hex-json.herokuapp.com/results.php?#EXTINF:-1 group-title="Kids;International" tvg-id="disneychanneleast.us" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Disney_channel_2019.png/800px-Disney_channel_2019.png",Disney Channel
+#https://cdn.cvattv.com.ar/live/c3eds/DisneyChannelHD/SA_Live_dash_enc_2A/DisneyChannelHD.mpd
+https://webudi.onlinewebtv.lol/lb/premium312/index.m3u8|referer=https://widevine.licenses4.me/
+keyid=bd29c4a538f28845ce33581111749428&key=46d9589f41a11c3637c07c604956deac
 http://rv.therevenge.co:80/live/242424/242424/81029.m3u8?checkedby:dailyfreeiptvlist.com
 http://198.16.106.62:8278/streams/d/Disneyxd/playlist.m3u8
 
-#EXTINF:-1 group-title="Kids" tvg-id="disneyjunioreast.us" tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/b/bb/Disney_Junior.svg/640px-Disney_Junior.svg.png",Disney Jr.
+#EXTINF:-1 group-title="Kids;International" tvg-id="disneyjunioreast.us" tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/b/bb/Disney_Junior.svg/640px-Disney_Junior.svg.png",Disney Jr.
+https://webudi.onlinewebtv.lol/lb/premium313/index.m3u8|referer=https://widevine.licenses4.me/
 http://rv.therevenge.co:80/565656/565656/81030?checkedby:dailyfreeiptvlist.com
 http://198.16.106.62:8278/streams/d/Disneyjr/playlist.m3u8
 
-#EXTINF:-1 group-title="Kids" tvg-id="dreamworkschannelasia.us" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/DreamWorks_Channel_Logo.svg/640px-DreamWorks_Channel_Logo.svg.png",Dreamworks
+#EXTINF:-1 group-title="Kids;International" tvg-id="disneyxdeast.us" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Disney_XD_-_2015.svg/640px-Disney_XD_-_2015.svg.png",Disney XD
+https://webudi.onlinewebtv.lol/lb/premium314/index.m3u8|referer=https://widevine.licenses4.me/
+
+#EXTINF:-1 group-title="Kids;International" tvg-id="dreamworkschannelasia.us" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/DreamWorks_Channel_Logo.svg/640px-DreamWorks_Channel_Logo.svg.png",Dreamworks
+https://cdn.renotv.my.id/ts.m3u8?ch=MGI1YTNiNzAzZDVjZWRjYS8xampJdlhSRTcxdnFZRTZyM0czWFdiZS9DT1MxY21jdmh0TVAyMEhwaHVSMXRsMTJJTVVIdnFQRVdvQVVQM3UvMmlEa0pUd1lrVjFLbVhNT3dNNTA5QXdKRHpkSzdjQTZKSFphWTNsS3FRPQ==
 https://cdn.renotv.my.id/ts.m3u8?ch=ZTM4Y2M0ODc5ZDEwYzg5MFJKaE1lZGdKV05ib2JpWUtVeFo2OThZNE5XbkJJcG4vbUt1b0dNZFR2M1ArYjdwZHloSEtRa2hBYVFabXlzWkJIYkVtQ0dYK0c4VXFMQURXOE82SzJkREpDV0Zpd05JUm5kTUhxY3hLSTBjPQ==
+
+#EXTINF:-1 group-title="Kids;International" tvg-id="kbskids.kr" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/f/f8/Screenshot_2020-07-26_at_3.49.37_PM.png/revision/latest?cb=20200726075020",KBS Kids
+http://ye23.vip/z7z8/2021/kbs2020.php?id=9
 
 #KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
 #KODIPROP:inputstream.adaptive.license_key=https://mrpw.ptmnc01.verspective.net/?deviceId=MTI3MTQzMjItYjdkNi0zNGVkLThkZjEtNDVkOWFkNDUwZDJh
 #EXTINF:-1 group-title="Kids" tvg-id="kidstv.id" tvg-logo="https://upload.wikimedia.org/wikipedia/id/7/7f/Kids_TV_%282020%29.png",Kids TV
 https://av-live-cdn.mncnow.id/live/eds/KidsChannel/sa_dash_vmx/KidsChannel.mpd
 
-#EXTINF:-1 group-title="Kids" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXOITYpX3j7YdrBcudY1WUaIfFHcpG0fHbDg&usqp=CAU",Lego Channel
+#EXTINF:-1 group-title="Kids;International" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXOITYpX3j7YdrBcudY1WUaIfFHcpG0fHbDg&usqp=CAU",Lego Channel
 https://legochannel-roku.amagi.tv/playlist.m3u8
 
 #KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
 #KODIPROP:inputstream.adaptive.license_key=https://mrpw.ptmnc01.verspective.net/?deviceId=MTI3MTQzMjItYjdkNi0zNGVkLThkZjEtNDVkOWFkNDUwZDJh
-#EXTINF:-1 group-title="Kids" tvg-id="miaomi.hk" tvg-logo="https://miaomi-tv.com/Public/images/miao-mi-logo-color.png",Miao Mi
+#EXTINF:-1 group-title="Kids;International" tvg-id="miaomi.hk" tvg-logo="https://miaomi-tv.com/Public/images/miao-mi-logo-color.png",Miao Mi
 https://av-live-cdn.mncnow.id/live/eds/MiaoMi/sa_dash_vmx/MiaoMi.mpd
 
 #EXTINF:-0 group-title="Kids" tvg-id="mykidz.id" tvg-logo="https://subsystem.indihome.co.id/cms-ih/assets/uploads/channel_list/UPLOAD-1655920070-.png",My Kidz
 http://rr.dens.tv/h/h191/index.m3u8?app_type=web&userid=50n13N0v14nd1&tkn=829341hrjhaq0q30q&chname=My_Kidz_HD
 
-#EXTINF:-1 group-title="Kids" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Nickelodeon_2009_logo.svg/640px-Nickelodeon_2009_logo.svg.png",Nick (Pluto TV)
+#EXTINF:-1 group-title="Kids;International" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Nickelodeon_2009_logo.svg/640px-Nickelodeon_2009_logo.svg.png",Nick (Pluto TV)
 https://siloh.pluto.tv/lilo/production/Nick/01/master_1.m3u8
 
 #KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
 #KODIPROP:inputstream.adaptive.license_key=https://mrpw.ptmnc01.verspective.net/?deviceId=MTI3MTQzMjItYjdkNi0zNGVkLThkZjEtNDVkOWFkNDUwZDJh
-#EXTINF:-1 group-title="Kids" tvg-id="nickjrasia.sg" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/f/fc/Nick-Jr-old-logo.png",Nick Jr.
+#EXTINF:-1 group-title="Kids;International" tvg-id="nickjrasia.sg" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/f/fc/Nick-Jr-old-logo.png",Nick Jr.
 https://av-live-cdn.mncnow.id/live/eds/NickJr-HDD/sa_dash_vmx/NickJr-HDD.mpd
 
 #KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
 #KODIPROP:inputstream.adaptive.license_key=https://mrpw.ptmnc01.verspective.net/?deviceId=MTI3MTQzMjItYjdkNi0zNGVkLThkZjEtNDVkOWFkNDUwZDJh
-#EXTINF:-1 group-title="Kids" tvg-id="nickelodeonasia.sg" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Nickelodeon_2009_logo.svg/640px-Nickelodeon_2009_logo.svg.png",Nickelodeon
+#EXTINF:-1 group-title="Kids;International" tvg-id="nickelodeonasia.sg" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Nickelodeon_2009_logo.svg/640px-Nickelodeon_2009_logo.svg.png",Nickelodeon
 https://av-live-cdn.mncnow.id/live/eds/Nickelodeon/sa_dash_vmx/Nickelodeon.mpd
 
-#EXTINF:-1 group-title="Kids" tvg-id="spacetoonarabic.ae" tvg-logo="https://upload.wikimedia.org/wikipedia/id/thumb/e/e3/Spacetoon.png/640px-Spacetoon.png",SpaceToon (Arabic)
+#EXTINF:-1 group-title="Kids;International" tvg-id="spacetoonarabic.ae" tvg-logo="https://upload.wikimedia.org/wikipedia/id/thumb/e/e3/Spacetoon.png/640px-Spacetoon.png",SpaceToon (Arabic)
 https://shls-spacetoon-prod-dub.shahid.net/out/v1/6240b773a3f34cca95d119f9e76aec02/index.m3u8
 
 #EXTINF:-1 group-title="Kids" tvg-logo="https://www.awn.com/sites/default/files/styles/original/public/image/featured/toonzkids.jpg?itok=FVmJe15S",Toonz Kids
@@ -316,6 +328,15 @@ https://av-live-cdn.mncnow.id/live/eds/BBCWorldNews/sa_dash_vmx/BBCWorldNews.mpd
 #EXTINF:-1 group-title="News;International" tvg-id="bloombergtvasia.hk" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/New_Bloomberg_Logo.svg/640px-New_Bloomberg_Logo.svg.png",Bloomberg TV
 https://av-live-cdn.mncnow.id/live/eds/Bloomberg/sa_dash_vmx/Bloomberg.mpd
 
+#EXTINF:-1 group-title="News;International" tvg-id="cctvplus1.cn" tvg-logo="https://www.thefootagecompany.tv//siteowner/artwork/portraits/CCTV+%20Logo%20-%20cropped%20v2.png",CCTV+ 1
+https://cd-live-stream.news.cctvplus.com/live/smil:CHANNEL1.smil/playlist.m3u8
+
+#EXTINF:-1 group-title="News;International" tvg-id="cctvplus2.cn" tvg-logo="https://www.thefootagecompany.tv//siteowner/artwork/portraits/CCTV+%20Logo%20-%20cropped%20v2.png",CCTV+ 2
+https://cd-live-stream.news.cctvplus.com/live/smil:CHANNEL2.smil/playlist.m3u8
+
+#EXTINF:-1 group-title="News;International" tvg-id="cctv5plus.cn" tvg-logo="https://www.thefootagecompany.tv//siteowner/artwork/portraits/CCTV+%20Logo%20-%20cropped%20v2.png",CCTV-5 Plus
+http://39.134.115.163:8080/PLTV/88888910/224/3221225649/index.m3u8
+
 #KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
 #KODIPROP:inputstream.adaptive.license_key=https://mrpw.ptmnc01.verspective.net/?deviceId=MTI3MTQzMjItYjdkNi0zNGVkLThkZjEtNDVkOWFkNDUwZDJh
 #EXTINF:-1 group-title="News;International" tvg-id="cgtn.cn" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/CGTN.svg/800px-CGTN.svg.png",CGTN
@@ -356,8 +377,19 @@ https://av-live-cdn.mncnow.id/live/eds/FoxNews/sa_dash_vmx/FoxNews.mpd
 #EXTINF:-1 group-title="News;International" tvg-id="france24english.fr" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/France24.png/635px-France24.png",France 24
 https://av-live-cdn.mncnow.id/live/eds/France24/sa_dash_vmx/France24.mpd
 
-#EXTINF:-1 group-title="International" tvg-id="kbskorea.kr" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/KBS_logo.svg/640px-KBS_logo.svg.png",KBS Korea
-https://cdn.renotv.my.id/ts.m3u8?ch=NWNlODA0ZjIyZjcxYzZjZG9qSWtOeVRIMTVFeCtVMEtXM0dMSDk5aHBvZkVqa3U0SmNQQy9CVDltdndqaW9HeEhHMUppZHgwUE1aaFJnSTg5aEFoMEkzblFqQ1hLU2VGQlpyYTl0Y1c4d3FqRnJabng5aGdhWUVuNjVjPQ==
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=https://ck-dash-mpd.astradamy.com/dash-ck/linear/2306
+#EXTINF:-1 group-title="International" tvg-id="kbsworld.kr" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/4/4e/KBS_WORLD_logo_%282009-present%29.svg/revision/latest?cb=20210714043627",KBS World
+https://kntl69.kutubusuk.workers.dev/dash-wv/linear/2306/default_primary.mpd
+
+#EXTINF:-1 group-title="International" tvg-id="kbs1tv.kr" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/KBS_logo.svg/640px-KBS_logo.svg.png",KBS 1
+http://ye23.vip/z7z8/2021/kbs2020.php?id=1
+
+#EXTINF:-1 group-title="International" tvg-id="kbs2tv.kr" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/KBS_logo.svg/640px-KBS_logo.svg.png",KBS 2
+http://ye23.vip/z7z8/2021/kbs2020.php?id=2
+
+#EXTINF:-1 group-title="News;International" tvg-id="kbsnewsd.kr" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/8/8a/Kbs-news-d-kr.svg/revision/latest?cb=20220916131000" group-title="TV Dunia",KBS News D
+http://ye23.vip/z7z8/2021/kbs2020.php?id=4
 
 #KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
 #KODIPROP:inputstream.adaptive.license_key=https://mrpw.ptmnc01.verspective.net/?deviceId=MTI3MTQzMjItYjdkNi0zNGVkLThkZjEtNDVkOWFkNDUwZDJh
@@ -370,7 +402,10 @@ https://av-live-cdn.mncnow.id/live/eds/NHKWorldTV/sa_dash_vmx/NHKWorldTV.mpd
 https://av-live-cdn.mncnow.id/live/eds/NHKWorldPremium/sa_dash_vmx/NHKWorldPremium.mpd
 
 #EXTINF:-1 group-title="International" tvg-id="nippontv.jp" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Nippon_Television_Holdings_logo.svg/640px-Nippon_Television_Holdings_logo.svg.png",Nippon TV
-https://cdn.renotv.my.id/ts.m3u8?ch=Y2ZhYjFjY2NlZmRmMDA4MWVsdjdhYzF6OHZITUhZWVVWN28wK1F0Z1BnMjBOWUI4V21Xd3JQTWx6Y1UzdmJuU3BoT0ZuQnBvVklnZzZETjhnVDY3ZE9SbnU5SU9aQVZaSHVqcHhPcHFyNm51V2p2K0xyemxya1hzT2wwPQ==
+https://stream01.willfonk.com/live_playlist.m3u8?cid=BS294&r=FHD&ccode=JP&m=d0:20:20:04:35:cc&t=0d6938cb3dcf4b79848bc1753a59daf1
+
+#EXTINF:-1 group-title="News;International" tvg-id="ntvnews24.jp" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/News24.svg/640px-News24.svg.png",NTV News 24
+https://n24-cdn-live-b.ntv.co.jp/ch01/index.m3u8
 
 #EXTINF:-1 group-title="International" tvg-id="raiitalia.it" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Logo_of_RAI_%282016%29.svg/512px-Logo_of_RAI_%282016%29.svg.png",RAI Italia
 https://cdn.renotv.my.id/ts.m3u8?ch=MDZjM2MxODI2NDQ5OWZiM1NTRzdEbU9lOGt1eTRiWGpiVXZpWDNmRXhoSjZOK2NrTEt3L01ZcTkycm9pNTE4S0xWampzWVNmSTg4Z2tCZGt6VE9maFVORVlDdVdzc242Q1Q4M2Vqc245VDJJS2xmenlFc1VJdG54ODJNPQ==
@@ -453,6 +488,9 @@ https://smithsonianaus-samsungau.amagi.tv/playlist720p.m3u8?checkedby:iptvcat.co
 #EXTINF:-1 group-title="Knowledge;International" tvg-id="nasatvpublic.us" tvg-logo="https://seeklogo.com/images/N/NASA-logo-9411797223-seeklogo.com.png",NASA TV 
 https://ntv1.akamaized.net/hls/live/2014075/NASA-NTV1-HLS/master_2000.m3u8
 
+#EXTINF:-1 group-title="Knowledge;International" tvg-id="nhkeducationaltv.jp" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/NHK_Educational_TV_logo.svg/640px-NHK_Educational_TV_logo.svg.png",NHK Educational TV
+https://stream01.willfonk.com/live_playlist.m3u8?cid=BS292&r=FHD&ccode=JP&m=d0:20:20:04:35:cc&t=0d6938cb3dcf4b79848bc1753a59daf1
+
 #EXTINF:-1 group-title="Knowledge" tvg-id="tvedukasi.id" tvg-logo="https://i.imgur.com/XX5wGHQ.png",TV Edukasi
 http://118.98.229.118:1935/live/tve.stream/playlist.m3u8
 
@@ -521,8 +559,10 @@ https://av-live-cdn.mncnow.id/live/eds/IndonesiaMovieChannels-HD/sa_dash_vmx/Ind
 #EXTINF:-1 group-title="Movies" tvg-id="kplus.sg" tvg-logo="https://i.ibb.co/smpNq8Z/xgnf.png",K+
 http://210.210.155.35/uq2663/h/h08/01.m3u8?fluxustv.m3u8
 
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=https://ck-dash-mpd.astradamy.com/dash-ck/linear/5056
 #EXTINF:-1 group-title="Movies" tvg-id="paramountnetworkindonesia.id" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Paramount_Network.svg/482px-Paramount_Network.svg.png",Paramount Network
-http://play.fastkobar.my.id:8080/live/test77/87365/90.ts
+https://kntl69.kutubusuk.workers.dev/dash-wv/linear/5056/default_primary.mpd
 
 #KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
 #KODIPROP:inputstream.adaptive.license_key=https://mrpw.ptmnc01.verspective.net/?deviceId=NjcwYWI2ZGEtYzE4Yi0zZWFlLTljOWYtZGEzOGIwYWFjN2I1
@@ -546,23 +586,28 @@ https://cdn.renotv.my.id/get.m3u8?ch=OTA5OWRkNGI5NThhZGMxYk9CV3Eyb2VFNnVrNzBwNlY
 
 #KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
 #KODIPROP:inputstream.adaptive.license_key=https://mrpw.ptmnc01.verspective.net/?deviceId=MTI3MTQzMjItYjdkNi0zNGVkLThkZjEtNDVkOWFkNDUwZDJh
-#EXTINF:-1 group-title="Entertainment" tvg-id="abcaustralia.au" tvg-logo="https://www.mncvision.id/userfiles/image/channel/channel_350.png",ABC Australia Asia
+#EXTINF:-1 group-title="Entertainment;International" tvg-id="abcaustralia.au" tvg-logo="https://www.mncvision.id/userfiles/image/channel/channel_350.png",ABC Australia Asia
 https://av-live-cdn.mncnow.id/live/eds/AustraliaPlus/sa_dash_vmx/AustraliaPlus.mpd
 
 #KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
 #KODIPROP:inputstream.adaptive.license_key=https://mrpw.ptmnc01.verspective.net/?deviceId=MTI3MTQzMjItYjdkNi0zNGVkLThkZjEtNDVkOWFkNDUwZDJh
-#EXTINF:-1 group-title="Entertainment" tvg-logo="https://upload.wikimedia.org/wikipedia/en/3/39/Anhui_Television.png",Anhui TV
+#EXTINF:-1 group-title="Entertainment;International" tvg-logo="https://upload.wikimedia.org/wikipedia/en/3/39/Anhui_Television.png",Anhui TV
 https://av-live-cdn.mncnow.id/live/eds/AnhuiTV/sa_dash_vmx/AnhuiTV.mpd
 
 #KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
 #KODIPROP:inputstream.adaptive.license_key=https://mrpw.ptmnc01.verspective.net/?deviceId=MTI3MTQzMjItYjdkNi0zNGVkLThkZjEtNDVkOWFkNDUwZDJh
-#EXTINF:-1 group-title="Entertainment" tvg-id="arirangworld.kr" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/6/6a/TheWorldOnArirang.png",Arirang World
+#EXTINF:-1 group-title="Entertainment;International" tvg-id="arirangworld.kr" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/6/6a/TheWorldOnArirang.png",Arirang World
 https://av-live-cdn.mncnow.id/live/eds/Arirang/sa_dash_vmx/Arirang.mpd
 
 #KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
 #KODIPROP:inputstream.adaptive.license_key=https://mrpw.ptmnc01.verspective.net/?deviceId=MTI3MTQzMjItYjdkNi0zNGVkLThkZjEtNDVkOWFkNDUwZDJh
-#EXTINF:-1 group-title="Entertainment" tvg-id="asianfoodnetwork.sg" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Asian_Food_Network.svg/665px-Asian_Food_Network.svg.png",Asian Food Network
+#EXTINF:-1 group-title="Entertainment;International" tvg-id="asianfoodnetwork.sg" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Asian_Food_Network.svg/665px-Asian_Food_Network.svg.png",Asian Food Network
 https://av-live-cdn.mncnow.id/live/eds/AFN-HD/sa_dash_vmx/AFN-HD.mpd
+
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=https://aqfadtv.xyz/clearkey/dash-ck/linear/211/
+#EXTINF:-1 group-title="Entertainment;International" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/9/94/Astro_Citra.png/revision/latest?cb=20201215114818",Astro Citra
+https://aqfadtv.xyz/live/citra/index.mpd
 
 #KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
 #KODIPROP:inputstream.adaptive.license_key=https://mrpw.ptmnc01.verspective.net/?deviceId=NjcwYWI2ZGEtYzE4Yi0zZWFlLTljOWYtZGEzOGIwYWFjN2I1
@@ -571,7 +616,7 @@ https://av-live-cdn.mncnow.id/live/eds/AXN/sa_dash_vmx/AXN.mpd
 
 #KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
 #KODIPROP:inputstream.adaptive.license_key=https://mrpw.ptmnc01.verspective.net/?deviceId=MTI3MTQzMjItYjdkNi0zNGVkLThkZjEtNDVkOWFkNDUwZDJh
-#EXTINF:-1 group-title="Entertainment" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/7/7f/DragonTV_logo.png/revision/latest?cb=20220210080936",Dragon Shanghai TV
+#EXTINF:-1 group-title="Entertainment;International" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/7/7f/DragonTV_logo.png/revision/latest?cb=20220210080936",Dragon Shanghai TV
 https://av-live-cdn.mncnow.id/live/eds/ShanghaiDragonTV/sa_dash_vmx/ShanghaiDragonTV.mpd
 
 #KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
@@ -581,7 +626,7 @@ https://av-live-cdn.mncnow.id/live/eds/FMN/sa_dash_vmx/FMN.mpd
 
 #KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
 #KODIPROP:inputstream.adaptive.license_key=https://mrpw.ptmnc01.verspective.net/?deviceId=MTI3MTQzMjItYjdkNi0zNGVkLThkZjEtNDVkOWFkNDUwZDJh
-#EXTINF:-1 group-title="Entertainment" tvg-id="hgtvasia.us" tvg-logo="https://www.mncvision.id/userfiles/image/channel/HGTV_150x150px-01.png",HGTV Asia
+#EXTINF:-1 group-title="Entertainment;Internatioanl" tvg-id="hgtvasia.us" tvg-logo="https://www.mncvision.id/userfiles/image/channel/HGTV_150x150px-01.png",HGTV Asia
 https://av-live-cdn.mncnow.id/live/eds/HGTV/sa_dash_vmx/HGTV.mpd
 
 #KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
@@ -591,17 +636,29 @@ https://av-live-cdn.mncnow.id/live/eds/HITS/sa_dash_vmx/HITS.mpd
 
 #KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
 #KODIPROP:inputstream.adaptive.license_key=https://mrpw.ptmnc01.verspective.net/?deviceId=MTI3MTQzMjItYjdkNi0zNGVkLThkZjEtNDVkOWFkNDUwZDJh
-#EXTINF:-1 group-title="Entertainment" tvg-logo="https://www.strawbearentertainment.com/media/1254/%E6%B9%96%E5%8D%97%E5%8D%AB%E8%A7%86.png",Hunan TV
+#EXTINF:-1 group-title="Entertainment;International" tvg-logo="https://www.strawbearentertainment.com/media/1254/%E6%B9%96%E5%8D%97%E5%8D%AB%E8%A7%86.png",Hunan TV
 https://av-live-cdn.mncnow.id/live/eds/HunanTV/sa_dash_vmx/HunanTV.mpd
 
 #KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
 #KODIPROP:inputstream.adaptive.license_key=https://mrpw.ptmnc01.verspective.net/?deviceId=MTI3MTQzMjItYjdkNi0zNGVkLThkZjEtNDVkOWFkNDUwZDJh
-#EXTINF:-1 group-title="Entertainment" tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/d/dc/Jiangsu_Broadcasting_Corporation.svg/925px-Jiangsu_Broadcasting_Corporation.svg.png",Jiang Su TV
+#EXTINF:-1 group-title="Entertainment;International" tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/d/dc/Jiangsu_Broadcasting_Corporation.svg/925px-Jiangsu_Broadcasting_Corporation.svg.png",Jiang Su TV
 https://av-live-cdn.mncnow.id/live/eds/JiangsuTV/sa_dash_vmx/JiangsuTV.mpd
+
+#EXTINF:-1 group-title="Entertainment;International" tvg-id="kbsdrama.kr" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/b/b6/KBS_%EB%93%9C%EB%9D%BC%EB%A7%88_logo_%282006-present%29.svg/revision/latest?cb=20210106032103",KBS Drama
+http://ye23.vip/z7z8/2021/kbs2020.php?id=5
+
+#EXTINF:-1 group-title="Entertainment;International" tvg-id="kbsjoy.kr" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/8/88/KBSJoy.svg/revision/latest?cb=20201228144716",KBS Joy
+http://ye23.vip/z7z8/2021/kbs2020.php?id=6
+
+#EXTINF:-1 group-title="Entertainment;International" tvg-id="kbslife.kr" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/a/ae/KBS_Life_logo_%282021-present%29.svg/revision/latest?cb=20210626135721",KBS Life
+http://ye23.vip/z7z8/2021/kbs2020.php?id=7
+
+#EXTINF:-1 group-title="Entertainment;International" tvg-id="kbsstory.kr" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/6/64/KBS_Story_logo_%282021-present%29.svg/revision/latest?cb=20210505030622" group-title="TV Dunia",KBS Story
+http://ye23.vip/z7z8/2021/kbs2020.php?id=8
 
 #KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
 #KODIPROP:inputstream.adaptive.license_key=https://mrpw.ptmnc01.verspective.net/?deviceId=NjcwYWI2ZGEtYzE4Yi0zZWFlLTljOWYtZGEzOGIwYWFjN2I1
-#EXTINF:-1 group-title="Entertainment" tvg-id="kix.hk" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/KIX_logo.svg/2560px-KIX_logo.svg.png",KIX
+#EXTINF:-1 group-title="Entertainment;International" tvg-id="kix.hk" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/KIX_logo.svg/2560px-KIX_logo.svg.png",KIX
 https://av-live-cdn.mncnow.id/live/eds/KIX/sa_dash_vmx/KIX.mpd
 
 #KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
@@ -644,10 +701,10 @@ https://av-live-cdn.mncnow.id/live/eds/OKTV/sa_dash_vmx/OKTV.mpd
 #EXTINF:-1 group-title="Entertainment" tvg-id="onetvasia.sg" tvg-logo="https://upload.wikimedia.org/wikipedia/id/d/d6/Logo_One_TV_Asia_%282020%29.png",One TV
 https://av-live-cdn.mncnow.id/live/eds/SetOne/sa_dash_vmx/SetOne.mpd
 
-#EXTINF:-1 group-title="Entertainment" tvg-id"rockentertainment.sg" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Rock_Entertainment.png/640px-Rock_Entertainment.png",Rock Entertainment
+#EXTINF:-1 group-title="Entertainment;International" tvg-id"rockentertainment.sg" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Rock_Entertainment.png/640px-Rock_Entertainment.png",Rock Entertainment
 http://rr1.dens.tv/h/h16/index.m3u8
 
-#EXTINF:-1 group-title="Entertainment" tvg-id"rockextreme.sg" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/d/d4/RockExtreme.png/revision/latest/scale-to-width-down/250?cb=20221207131910",Rock Extreme
+#EXTINF:-1 group-title="Entertainment;International" tvg-id"rockextreme.sg" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/d/d4/RockExtreme.png/revision/latest/scale-to-width-down/250?cb=20221207131910",Rock Extreme
 http://rr1.dens.tv/h/h15/index.m3u8
 
 #EXTINF:-1 group-title="Entertainment;International" tvg-id="sonygemtvasia.jp" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Gem_TV_logo_2020.png/800px-Gem_TV_logo_2020.png",GEM TV
@@ -661,7 +718,7 @@ https://av-live-cdn.mncnow.id/live/eds/tvN/sa_dash_vmx/tvN.mpd
 
 #KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
 #KODIPROP:inputstream.adaptive.license_key=https://mrpw.ptmnc01.verspective.net/?deviceId=MTI3MTQzMjItYjdkNi0zNGVkLThkZjEtNDVkOWFkNDUwZDJh
-#EXTINF:-1 group-title="Entertainment" tvg-id="tlcsoutheastasia.sg" tvg-logo="https://assets.stickpng.com/images/622f4615ae7f8f3715381b48.png",TLC Southeast Asia
+#EXTINF:-1 group-title="Entertainment;International" tvg-id="tlcsoutheastasia.sg" tvg-logo="https://assets.stickpng.com/images/622f4615ae7f8f3715381b48.png",TLC Southeast Asia
 https://av-live-cdn.mncnow.id/live/eds/TLC/sa_dash_vmx/TLC.mpd
 
 #KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
@@ -676,11 +733,11 @@ https://av-live-cdn.mncnow.id/live/eds/WarnerTV/sa_dash_vmx/WarnerTV.mpd
 
 #KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
 #KODIPROP:inputstream.adaptive.license_key=https://mrpw.ptmnc01.verspective.net/?deviceId=MTI3MTQzMjItYjdkNi0zNGVkLThkZjEtNDVkOWFkNDUwZDJh
-#EXTINF:-1 group-title="Entertainment" tvg-logo="https://media.slid.es/uploads/jeonwoochi/images/789230/xingkong.png",Xing Kong TV
+#EXTINF:-1 group-title="Entertainment;International" tvg-logo="https://media.slid.es/uploads/jeonwoochi/images/789230/xingkong.png",Xing Kong TV
 https://av-live-cdn.mncnow.id/live/eds/XingKongTV/sa_dash_vmx/XingKongTV.mpd
 
 #EXTINF:-1 group-title="Entertainment" tvg-id="citradrama.id" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/7/72/Citra_Drama.PNG/revision/latest?cb=20210307072503",Citra Drama
-https://cdn.renotv.my.id/get.m3u8?ch=ODY1MzdjOWYxZDY2YTRmNUdUQm02UXV3cUlUZzVkYkdwQ1d4aVRHOTdiVFVPZzhYWDl5RWRWS0lxd1ZCaEdqUklVSmJwTjdKdlZza2V1L0tQTFI0NkxEdGI5ZnZTeDRwOTNIKzVHQnRIbXV6M2FSTjIzTUVqTkc5S3FBPQ==
+#http://iptvid.my.id/hmm/cdrama.m3u8
 
 #EXTINF:-1 group-title="Entertainment" tvg-id="citraculinarytravel.id" tvg-logo="https://thumbor.prod.vidiocdn.com/HEFuOmTP4vknwzgnc_VrIhn6nis=/112x112/filters:strip_icc():quality(70)/vidio-web-prod-livestreaming/uploads/livestreaming/square_image/8558/15f712.jpg",Citra Culinary Travel
 https://cdn.renotv.my.id/get.m3u8?ch=OTgyNTE2NjI1MDJjNTAyMGkycEVxQmJ5RHZTNkQ1QWhBRUZDTDNDeG5JRkY1YUVCZlVoRHE5OWtZdUtPRTBiUTBKcDBRQTJENDlvcXZBWmxwRWZCSTRjWU9tQ0dUb1RqSFlscittZzc5OXFQbHJsaHBSeWJhSFgwNXVGaWFLcEZmdXJKVWYvV2RhK1J2R2la
@@ -690,6 +747,49 @@ https://cdn-telkomsel-01.akamaized.net/Content/DASH/Live/channel(f1b6e507-d639-4
 
 #EXTINF:-1 group-title="Entertainment" tvg-id="useeprime.id" tvg-logo="https://images.useetv.com/logo_useeprime_ver1.png",UseePrime
 https://cdn-telkomsel-01.akamaized.net/Content/DASH/Live/channel(18564c27-ff44-4d62-9fab-dcb417fcb93f)/manifest.mpd
+
+#EXTINF:-1 group-title="International" tvg-id="jocxdtv.jp" tvg-logo="https://upload.wikimedia.org/wikipedia/id/thumb/e/e9/Fuji_TV_logo.svg/492px-Fuji_TV_logo.svg.png",Fuji TV
+http://redlabmcdn.s.llnwi.net/nv02/ryowa7hd/index.m3u8
+
+#EXTINF:-1 group-title="International" tvg-id="tvasahi.jp" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/TV_Asahi_Logo.svg/640px-TV_Asahi_Logo.svg.png",TV Asahi
+http://redlabmcdn.s.llnwi.net/nv02/ryowa4hd/index.m3u8
+
+#EXTINF:-1 group-title="International" tvg-id="jorxdtv.jp" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Tokyo_Broadcasting_System_logo_2020.svg/640px-Tokyo_Broadcasting_System_logo_2020.svg.png",TBS
+https://tbs2.mov3.co/hls/tbs.m3u8
+
+#EXTINF:-1 group-title="International" tvg-id="jomxdtv.jp" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Tokyo_metropolitan_television_logo_%28rainbow%29.svg/640px-Tokyo_metropolitan_television_logo_%28rainbow%29.svg.png",Tokyo MX1
+http://redlabmcdn.s.llnwi.net/nv02/ryowa8hd/index.m3u8
+
+#EXTINF:-1 group-title="International" tvg-id="jotxdtv.jp" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/TV_Tokyo_logo_20110629.svg/640px-TV_Tokyo_logo_20110629.svg.png",TV Tokyo
+http://redlabmcdn.s.llnwi.net/nv02/ryowa6hd/index.m3u8
+
+#EXTINF:-1 group-title="International" tvg-id="atx.jp" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/AT-X_logo.svg/640px-AT-X_logo.svg.png",AT-X
+https://sub2.neetball.net/live/neet.m3u8
+
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.63 Safari/537.36
+#EXTVLCOPT:http-referrer=https://rtmklik.rtm.gov.my/
+#EXTINF:-1 group-title="International"tvg-id="tv1.my" tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/f/f4/Logo_of_TV1_%28Malaysia%29.svg/640px-Logo_of_TV1_%28Malaysia%29.svg.png",TV1 Malaysia
+https://d25tgymtnqzu8s.cloudfront.net/smil:tv1/playlist.m3u8?id=1
+
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.63 Safari/537.36
+#EXTVLCOPT:http-referrer=https://rtmklik.rtm.gov.my/
+#EXTINF:-1 group-title="International" tvg-id="tv2.my" tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/7/71/TV2_%28Malaysia%29_logo.svg/640px-TV2_%28Malaysia%29_logo.svg.png",TV2 Malaysia
+https://d25tgymtnqzu8s.cloudfront.net/smil:tv2/playlist.m3u8?id=2
+
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.63 Safari/537.36
+#EXTVLCOPT:http-referrer=https://rtmklik.rtm.gov.my/
+#EXTINF:-1 group-title="International" tvg-id="tv6.my" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/d/dd/TV6_RTM.png",TV6 Malaysia
+https://d25tgymtnqzu8s.cloudfront.net/smil:tv6/playlist.m3u8?id=6
+
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=https://aqfadtv.xyz/clearkey/unifitv/8tv/
+#EXTINF:-1 group-title="International" tvg-id="8tv.my" tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/1/17/8TV_%28Malaysia%29_logo_in_Chinese.svg/640px-8TV_%28Malaysia%29_logo_in_Chinese.svg.png",TV8 Malaysia
+https://aqfadtv.xyz/live/8tv/index.mpd
+
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=https://aqfadtv.xyz/clearkey/unifitv/tv9/
+#EXTINF:-1 group-title="International" tvg-id="tv9.my" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/TV9_%28Malaysia%29_logo.svg/612px-TV9_%28Malaysia%29_logo.svg.png",TV9 Malaysia
+https://aqfadtv.xyz/live/tv9/index.mpd
 
 ====SPORTS====
 
@@ -723,27 +823,33 @@ http://clientSportsals.com:80/f778W3He/yj7FXRjr/115617
 #EXTINF:-1 group-title="Sports" tvg-id="astrosupersport4.my" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/2/2f/Astro_ASSP1.png",Astro SuperSports 4
 http://skylogic.site:8080/Houngst20001/XHK3BBKK4V8R8A20EQ/157558
 
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36
 #EXTINF:-1 group-title="Sports" tvg-id="beinsports.qa" tvg-logo="https://assets.bein.com/mena/sites/3/2015/06/beIN_SPORTS1_DIGITAL_Mono.png",beIN Sports 1
-http://clientSportsals.com:2095/f778W3He/yj7FXRjr/94486
+https://webudi.onlinewebtv.lol/lb/premium91/index.m3u8|referer=https://widevine.licenses4.me/
 
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36
 #EXTINF:-1 group-title="Sports" tvg-id="beinsports2.qa" tvg-logo="https://assets.bein.com/mena/sites/3/2015/06/beIN_SPORTS2_DIGITAL_Mono.png",beIN Sports 2
-http://clientSportsals.com:2095/f778W3He/yj7FXRjr/94482
+https://webudi.onlinewebtv.lol/lb/premium92/index.m3u8|referer=https://widevine.licenses4.me/
 
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36
 #EXTINF:-1 group-title="Sports" tvg-id="beinsports3.qa" tvg-logo="https://assets.bein.com/mena/sites/3/2015/06/beIN_SPORTS3_DIGITAL_Mono.png",beIN Sports 3
-http://clientSportsals.com:2095/f778W3He/yj7FXRjr/94478
+https://webudi.onlinewebtv.lol/lb/premium93/index.m3u8|referer=https://widevine.licenses4.me/
 
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36
 #EXTINF:-1 group-title="Sports" tvg-id="beinsports4.qa" tvg-logo="https://assets.bein.com/mena/sites/3/2015/06/beIN_SPORTS4_DIGITAL_Mono.png",beIN Sports 4
-http://clientSportsals.com:2095/f778W3He/yj7FXRjr/94474
+https://webudi.onlinewebtv.lol/lb/premium94/index.m3u8|referer=https://widevine.licenses4.me/
 
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36
 #EXTINF:-1 group-title="Sports" tvg-id="beinsports5.qa" tvg-logo="https://assets.bein.com/mena/sites/3/2015/06/beIN_SPORTS5_DIGITAL_Mono.png",beIN Sports 5
-http://obsfullhd.tv:25461/@woiptv/GD2sDVghPRtk/47279
+https://webudi.onlinewebtv.lol/lb/premium95/index.m3u8|referer=https://widevine.licenses4.me/
 
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36
 #EXTINF:-1 group-title="Sports" tvg-id="beinsports6.qa" tvg-logo="https://assets.bein.com/mena/sites/3/2015/06/beIN_SPORTS6_DIGITAL_Mono.png",beIN Sports 6
-http://obsfullhd.tv:25461/@woiptv/GD2sDVghPRtk/47280
+https://webudi.onlinewebtv.lol/lb/premium96/index.m3u8|referer=https://widevine.licenses4.me/
 
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36
 #EXTINF:-1 group-title="Sports" tvg-id="beinsports7.qa" tvg-logo="https://assets.bein.com/mena/sites/3/2015/06/beIN_SPORTS7_DIGITAL_Mono.png",beIN Sports 7
-https://newtest.webtv1.lol/lb/premium97/index.m3u8|Referer=https://widevine.licenses4.me/
+https://webudi.onlinewebtv.lol/lb/premium97/index.m3u8|referer=https://widevine.licenses4.me/
 
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36
 #EXTINF:-1 group-title="Sports" tvg-id="beinsportsenglish1.qa" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Logo_bein_sports_1.png/800px-Logo_bein_sports_1.png",beIN Sports English 1
@@ -1204,10 +1310,10 @@ http://clientSportsals.com:80/f778W3He/yj7FXRjr/37331
 http://clientSportsals.com:80/f778W3He/yj7FXRjr/37330
 
 #EXTINF:-1 group-title="Sports" tvg-id="useesport.id" tvg-logo="https://images.useetv.com/logo_useesport_ver1.png",UseeSport
-https://cdn.renotv.my.id/ts.m3u8?ch=MWUxNTM1YTMxNjQ1OTA3ZE1hMGRDdXF2Nm8wdU9JcVhWNm9sNG5nYmhvQzVnRmhMN0c4MCtDYWNlcytYdmdUUGlubmdMamJmaElzdk0zWUsvVmlaclZpNnZ3S2NrVFByeHFxTm0yZ2YxVDNOMExzTWE3NDNzUGcvTDU0PQ==
+https://miraeindaeyo.masuk.id/empede/masuk.m3u8?token2=burgerkingkong&channel=useesport&token=5dc9378e9db86735ee72bd8450c0e1af4b64af99bfca545a5f2d0f3105fbd245
 
 #EXTINF:-1 group-title="Sports" tvg-id="useesport2.id" tvg-logo="https://images.useetv.com/logo_useesports2_ver1.png",UseeSports 2
-https://cdn.renotv.my.id/ts.m3u8?ch=MjQ2ODgxOWJmM2I2MDUzZVFZM09GcUwxSUZQZGt5eDd4VkZLTFQ1cFE1akZuU01rdStPUmw1bTdqV24ycEl0dW0zRSt2MlB1a2JIejkvVWVOMVdHV3JFT2oxYTlpRlh6SzRiTXE2ZDRiYXVCNEk1anVvVno1R216d0djPQ==
+https://miraeindaeyo.masuk.id/empede/masuk.m3u8?token2=burgerkingkong&channel=useesport2&token=5dc9378e9db86735ee72bd8450c0e1af4b64af99bfca545a5f2d0f3105fbd245
 
 ====MUSIC====
 
@@ -1220,7 +1326,7 @@ https://av-live-cdn.mncnow.id/live/eds/MusicChannel/sa_dash_vmx/MusicChannel.mpd
 https://cdn.renotv.my.id/ts.m3u8?ch=N2FhMjZiNGM4MzVkOGIzZFFpbWZXekh1TXJlbWxBY1AyazhRcEMwb3Q1VnNHUENWbjllSXVzTnVvdzdMV2ZxSkxvdWVvZC9kTTVpanZZYTl5YzFzRy9JTnN4MnJ1dzlob0tMYkFnU052Q3JjbGJjbzRlMW94Nko0RjVRPQ==
 
 #EXTINF:-1 group-title="Music" tvg-id="citradangdut.id" tvg-logo="https://3.bp.blogspot.com/-la6YeqyulhE/XMjH4FqqcYI/AAAAAAAAnyQ/zvZFsDvg3LEwtNc8UHwMcVYn9s954kEBwCLcBGAs/s1600/citra-dangdut-tv-channel-logo.png",Citra Dangdut
-https://cdn.renotv.my.id/get.m3u8?ch=ZTcxNWNkZmFlZDcxZTk5NW9IMWhMcGhhVDkzTTQxR3JCb2VlRkZGNlJzYzlST0ZQQ0RybC9pcTUwOW1HZkI4QjBhSEtvOFhmcEJwQUFIclF1QWpBS09FdEVOeTBkN2RaSXZXL1FWdk5XRUpiWGFHcXIyNktFd0g2VXJNPQ==
+#http://iptvid.my.id/hmm/cdangdut.m3u8
 
 #EXTINF:-1 group-title="Music" tvg-id="prambors.id" tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/6/64/Prambors_%28logo%29.svg/754px-Prambors_%28logo%29.svg.png",Prambors TV
 https://cdn.renotv.my.id/ts.m3u8?ch=ODc0YjQyMGM3N2U0NDkxYW1hK2hFOGREUjN2UEVmLzdubm83dURFenRhNXIyY2x5Z3lFUno0OU0veFBaMVNqWmVmRW5GS3YxOEhtZGNGZnZRekNtZ1lxNGF4RVE4VTJIQmQ2dEhueGRhbmdMek5ITzlSaXdIY0p6QnRVPQ==
