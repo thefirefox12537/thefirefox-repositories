@@ -344,7 +344,7 @@ https://v2.siar.us/aditv/livestream/playlist.m3u8
 #EXTINF:-1 group-title="National/Local;Undefined" tvg-logo="https://tvtpi.id/wp-content/uploads/2021/12/logo-250.png",TV Tanjung Pinang
 http://103.30.246.47:1935/tvtpi/smil:live.smil/playlist.m3u8
 
-#EXTINF:-1 group-title="National/Local;Undefined" tvg-id="batamtv.id" tvg-logo="https://i.imgur.com/lo7YXnW.png",Batam TV
+#EXTINF:-1 group-title="National/Local;Undefined" tvg-id="batamtv.id" tvg-logo="https://i.imgur.com/UmtOA2H.png",Batam TV
 http://122.248.43.138:1935/ch5/myStream/playlist.m3u8
 
 #EXTINF:-1 group-title="National/Local;News" tvg-id="jpmtv.id" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/6/69/Logo_JPM_TV.png",JPMTV
@@ -363,7 +363,7 @@ https://cdn.gunadarma.ac.id/streams/ugtv/ingestugtv_high.m3u8
 #EXTINF:-1 group-title="National/Local;Undefined" tvg-id="jogjaistimewatv.id" tvg-logo="https://i.imgur.com/wkK7YNx.png",JITV
 https://mam.jogjaprov.go.id:1937/tv/jitv_720p/playlist.m3u8
 
-#EXTINF:-1 group-title="National/Local;Undefined" tvg-id="dmtvmalang.id" tvg-logo="https://gdplayer.tv/assets/img/logo/dmtv.png",DMTV
+#EXTINF:-1 group-title="National/Local;Undefined" tvg-id="dmtvmalang.id" tvg-logo="https://i.imgur.com/KeaeR1g.png",DMTV
 https://h1.intechmedia.net/intech/ch51.m3u8
 
 #EXTINF:-1 group-title="National/Local;Undefined" tvg-id="batutv.id" tvg-logo="https://upload.wikimedia.org/wikipedia/id/4/4f/Batu_TV.png",Batu TV
