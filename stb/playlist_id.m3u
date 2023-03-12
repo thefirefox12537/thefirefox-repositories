@@ -16,7 +16,7 @@ http://ott.tvri.co.id/Content/HLS/Live/Channel(TVRINASIONAL)/index.m3u8
 #EXTINF:-1 group-title="TVRI;National/Local" tvg-logo="https://staging.tvri.go.id/assets/img_gallery/daerah/JAKARTA.png",TVRI Jakarta
 http://ott.tvri.co.id/Content/HLS/Live/Channel(TVRIDKI)/index.m3u8
 
-#EXTINF:-1 group-title="TVRI;National/Local;International" tvg-id="tvriworld.id" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/9/9e/TVRIWorld.png",TVRI World
+#EXTINF:-1 group-title="TVRI;National/Local;International" tvg-id="tvriworld.id" tvg-logo="https://i.imgur.com/PUkzrj0.png",TVRI World
 http://ott.tvri.co.id/Content/HLS/Live/Channel(TVRI3)/index.m3u8
 
 #EXTINF:-1 group-title="TVRI;National/Local;Sports" tvg-id="tvrisports.id" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/TVRI_Sport_2022.svg/640px-TVRI_Sport_2022.svg.png",TVRI Sport
@@ -235,8 +235,8 @@ https://v3.siar.us/surabayatv/live/playlist.m3u8
 #KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
 #KODIPROP:inputstream.adaptive.license_key=https://mrpw.ptmnc01.verspective.net/?deviceId=OTFmNDAwZWEtZjI5OC0zNTAzLWE0NzktZWI2NGIxMjRmMGFm
 #EXTINF:-1 group-title="National/Local;Religion" tvg-id="tv9nu.id" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/d/d9/TV9NUSANTARA1.png/revision/latest?cb=20220525022727",TV9 Nusantara
-https://nyanv-live-cdn.mncnow.id/live/eds/TV9/sa_dash_vmx/TV9.mpd
 https://5bf7b725107e5.streamlock.net/tv9/tv9/playlist.m3u8
+https://nyanv-live-cdn.mncnow.id/live/eds/TV9/sa_dash_vmx/TV9.mpd
 
 #KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
 #KODIPROP:inputstream.adaptive.license_key=https://mrpw.ptmnc01.verspective.net/?deviceId=OTFmNDAwZWEtZjI5OC0zNTAzLWE0NzktZWI2NGIxMjRmMGFm
@@ -278,7 +278,7 @@ https://stream.jogjatv.co.id/jtvlive/stream/index.m3u8
 #EXTINF:-1 group-title="National/Local;News" tvg-id="dutatv.id" tvg-logo="https://i.imgur.com/WHeb9Yt.png",Duta TV
 https://o1.siar.us/dutatv/live/playlist.m3u8
 
-#EXTINF:-1 group-title="National/Local;Undefined" tvg-id="jayatvjayapura.id" tvg-logo="https://i.imgur.com/NtlPZUI.png",Jaya TV
+#EXTINF:-1 group-title="National/Local;Undefined" tvg-id="jayatvjayapura.id" tvg-logo="https://i.imgur.com/H8BUxkx.png",Jaya TV
 https://h1.intechmedia.net/intech/ch52.m3u8
 
 #EXTINF:-1 group-title="National/Local;Undefined" tvg-id="betv.id" tvg-logo="https://upload.wikimedia.org/wikipedia/id/b/b7/BETV_Bengkulu.png",BETV
@@ -384,7 +384,7 @@ https://h1.intechmedia.net/intech/ch4.m3u8
 #EXTINF:-1 group-title="National/Local;Religion" tvg-id="hijrahtv.id" tvg-logo="https://i.imgur.com/bVN4zj2.png",Hijrah TV
 https://h1.intechmedia.net/intech/ch8.m3u8
 
-#EXTINF:-1 group-title="National/Local;Religion" tvg-id="insantv.id" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/c/c1/Insan_TV_2018.png/revision/latest/scale-to-width-down/300?cb=20180922123917",Insan TV
+#EXTINF:-1 group-title="National/Local;Religion" tvg-id="insantv.id" tvg-logo="https://i.imgur.com/bQfxkmq.png",Insan TV
 https://h1.intechmedia.net/intech/ch1.m3u8
 
 #EXTINF:-1 group-title="National/Local;Religion" tvg-id="rasyaadtv.id" tvg-logo="https://www.rasyaad.tv/wp-content/uploads/2020/07/logo-rasyaad.png",Rasyaad TV
@@ -448,7 +448,7 @@ https://nyanv-live-cdn.mncnow.id/live/eds/CartoonNetwork/sa_dash_vmx/CartoonNetw
 #KODIPROP:inputstream.adaptive.manifest_type=dash
 #KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
 #KODIPROP:inputstream.adaptive.license_key=https://lic.drmtoday.com/license-proxy-widevine/cenc/?specConform=true
-#EXTINF:-1 group-title="Kids" tvg-id="cartoontv.id" tvg-logo="https://www.transvision.co.id/img/channel/new/CARTOON%20TV.jpg",Cartoon TV
+#EXTINF:-1 group-title="Kids" tvg-id="cartoontv.id" tvg-logo="https://i.imgur.com/q1xIXnX.png",Cartoon TV
 https://cdnjkt2.transvision.co.id:1001/live/master/4/4028c6856c3db2cc016d144f21811dc9/manifest.mpd
 
 #KODIPROP:inputstreamaddon=inputstream.adaptive
@@ -456,7 +456,7 @@ https://cdnjkt2.transvision.co.id:1001/live/master/4/4028c6856c3db2cc016d144f218
 #KODIPROP:inputstream.adaptive.manifest_type=dash
 #KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
 #KODIPROP:inputstream.adaptive.license_key=https://lic.drmtoday.com/license-proxy-widevine/cenc/?specConform=true
-#EXTINF:-1 group-title="Kids" tvg-id="cartoontvclassics.id" tvg-logo="https://www.transvision.co.id/img/channel/new/CARTOON%20TV.jpg",Cartoon TV Classics
+#EXTINF:-1 group-title="Kids" tvg-id="cartoontvclassics.id" tvg-logo="https://i.imgur.com/q1xIXnX.png",Cartoon TV Classics
 https://cdnjkt2.transvision.co.id:1001/live/master/100/4028c685840ff0490184560100c34363/manifest.mpd
 
 #KODIPROP:inputstreamaddon=inputstream.adaptive
@@ -464,7 +464,7 @@ https://cdnjkt2.transvision.co.id:1001/live/master/100/4028c685840ff049018456010
 #KODIPROP:inputstream.adaptive.manifest_type=dash
 #KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
 #KODIPROP:inputstream.adaptive.license_key=https://lic.drmtoday.com/license-proxy-widevine/cenc/?specConform=true
-#EXTINF:-1 group-title="Kids" tvg-id="cartoontvpremium.id" tvg-logo="https://www.transvision.co.id/img/channel/new/CARTOON%20TV%20TAG%20PREMIUM.jpg",Cartoon TV Premium
+#EXTINF:-1 group-title="Kids" tvg-id="cartoontvpremium.id" tvg-logo="https://imgur.com/luJJbEL.png",Cartoon TV Premium
 https://cdnjkt2.transvision.co.id:1001/live/master/5/4028c6856b8d2390016b9c47b6f01de1/manifest.mpd
 
 #KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
@@ -585,7 +585,7 @@ https://shls-spacetoon-prod-dub.shahid.net/out/v1/6240b773a3f34cca95d119f9e76aec
 #EXTINF:-1 group-title="Kids;International" tvg-id="5c3f8f12a93c2d61b9990a4e" tvg-logo="https://cdn.shopify.com/s/files/1/0551/5955/4182/files/STS_Logo__Final__KRed__Texture.png",TokuSHOUTsu
 http://stitcher-ipv4.pluto.tv/v1/stitch/embed/hls/channel/5c3f8f12a93c2d61b9990a4elivestitch/master.m3u8?deviceType=samsung-tvplus&deviceMake=samsung&deviceModel=samsung&deviceVersion=unknown&appVersion=unknown&deviceLat=0&deviceLon=0&deviceDNT=%7BTARGETOPT%7D&deviceId=%7BPSID%7D&advertisingId=%7BPSID%7D&us_privacy=1YNY&samsung_app_domain=%7BAPP_DOMAIN%7D&samsung_app_name=%7BAPP_NAME%7D&profileLimit=&profileFloor=&embedPartner=samsung-tvplus&profilesFromStream=true
 
-#EXTINF:-1 group-title="Kids" tvg-logo="https://www.awn.com/sites/default/files/styles/original/public/image/featured/toonzkids.jpg?itok=FVmJe15S",Toonz Kids
+#EXTINF:-1 group-title="Kids" tvg-logo="https://i.imgur.com/gdlqRUy.png",Toonz Kids
 http://210.210.155.37/x6bnqe/s/s81/index.m3u8
 
 #EXTINF:-1 group-title="Kids;International" tvg-id="zoomoo.id" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/ZooMoo_logo.svg/572px-ZooMoo_logo.svg.png",Zoo Moo
@@ -1758,7 +1758,7 @@ https://stream.warpballsod.tv/trueSports2.m3u8?|Referer=https://www.youdooball.c
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.79 Safari/537.36 Maxthon/5.2.7.3000
 https://youdooball.livedoomovies.com:4432/02_Sports5_480p/chunklist.m3u8?|Referer=https://www.youdooball.com/
 
-#EXTINF:-1 group-title="Sports;International" tvg-id="tvnsportasia.hk" tvg-logo="https://imagesm.cj.net/upfiles/bbs/0000007039008003401286397.png",tvN Sport
+#EXTINF:-1 group-title="Sports;International" tvg-id="tvnsportasia.hk" tvg-logo="https://i.imgur.com/DNkR0is.png",tvN Sport
 https://cdn-us-154.cloudrsst.com/live/olivetv_540/playlist.m3u8
 
 #EXTINF:-1 group-title="Sports;International" tvg-id="unifisports1.my" tvg-logo="https://i.postimg.cc/VvfnNP7v/Unifi-TV-Logo.png",Unifi Sports 1
