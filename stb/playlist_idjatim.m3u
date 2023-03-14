@@ -1,6 +1,6 @@
 #EXTM3U
 #EXTM3U billed-msg="[PEMBARUAN STABIL]"
-#EXTM3U x-tvg-url="https://stavol.masuk.web.id/epg.xml,https://www.bevy.be/bevyfiles/arabia.xml,https://www.bevy.be/bevyfiles/australia.xml,https://www.bevy.be/bevyfiles/china.xml,https://www.bevy.be/bevyfiles/france.xml,https://www.bevy.be/bevyfiles/germany.xml,https://www.bevy.be/bevyfiles/hongkongpremium.xml,https://www.bevy.be/bevyfiles/india.xml,https://www.bevy.be/bevyfiles/indonesia.xml,https://www.bevy.be/bevyfiles/italy.xml,https://www.bevy.be/bevyfiles/japan.xml,https://www.bevy.be/bevyfiles/korea.xml,https://www.bevy.be/bevyfiles/malaysia.xml,https://www.bevy.be/bevyfiles/netherlands.xml,https://www.bevy.be/bevyfiles/netherlandspremium.xml,https://www.bevy.be/bevyfiles/poland.xml,https://www.bevy.be/bevyfiles/qatarpremium.xml,https://www.bevy.be/bevyfiles/russia.xml,https://www.bevy.be/bevyfiles/singaporepremium.xml,https://www.bevy.be/bevyfiles/southafrica.xml,https://www.bevy.be/bevyfiles/spain.xml,https://www.bevy.be/bevyfiles/thailand.xml,https://www.bevy.be/bevyfiles/turkey.xml,https://www.bevy.be/bevyfiles/uaepremium.xml,https://www.bevy.be/bevyfiles/unitedkingdom.xml,https://www.bevy.be/bevyfiles/unitedstates.xml,https://www.bevy.be/bevyfiles/unitedstatespremium1.xml,https://www.bevy.be/bevyfiles/unitedstatespremium2.xml,https://i.mjh.nz/all/epg.xml,https://i.mjh.nz/PlutoTV/all.xml,https://i.mjh.nz/SamsungTVPlus/all.xml" refresh="3600"
+#EXTM3U x-tvg-url="https://stavol.masuk.web.id/epg.xml,https://www.bevy.be/bevyfiles/arabia.xml,https://www.bevy.be/bevyfiles/australia.xml,https://www.bevy.be/bevyfiles/china.xml,https://www.bevy.be/bevyfiles/france.xml,https://www.bevy.be/bevyfiles/germany.xml,https://www.bevy.be/bevyfiles/hongkongpremium.xml,https://www.bevy.be/bevyfiles/india.xml,https://www.bevy.be/bevyfiles/indonesia.xml,https://www.bevy.be/bevyfiles/italy.xml,https://www.bevy.be/bevyfiles/japan.xml,https://www.bevy.be/bevyfiles/korea.xml,https://www.bevy.be/bevyfiles/malaysia.xml,https://www.bevy.be/bevyfiles/netherlands.xml,https://www.bevy.be/bevyfiles/netherlandspremium.xml,https://www.bevy.be/bevyfiles/poland.xml,https://www.bevy.be/bevyfiles/qatar.xml,https://www.bevy.be/bevyfiles/russia.xml,https://www.bevy.be/bevyfiles/singaporepremium.xml,https://www.bevy.be/bevyfiles/southafrica.xml,https://www.bevy.be/bevyfiles/spain.xml,https://www.bevy.be/bevyfiles/thailand.xml,https://www.bevy.be/bevyfiles/turkey.xml,https://www.bevy.be/bevyfiles/uae.xml,https://www.bevy.be/bevyfiles/unitedkingdom.xml,https://www.bevy.be/bevyfiles/unitedstates.xml,https://www.bevy.be/bevyfiles/unitedstatespremium1.xml,https://www.bevy.be/bevyfiles/unitedstatespremium2.xml,https://i.mjh.nz/all/epg.xml,https://i.mjh.nz/PlutoTV/all.xml,https://i.mjh.nz/SamsungTVPlus/all.xml" refresh="3600"
 
 
 ====NASIONAL/LOKAL====
@@ -9,17 +9,17 @@
 
 #KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
 #KODIPROP:inputstream.adaptive.license_key=https://mrpw.ptmnc01.verspective.net/?deviceId=NDIzMDJhZmUtYWRjMi0zNGJkLTkyN2EtYmE1ZDFlZWIwODEz
-#EXTINF:-1 group-title="TVRI;National/Local" tvg-id="tvrinasional.id" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/TVRILogo2019.svg/640px-TVRILogo2019.svg.png",TVRI Nasional
+#EXTINF:-1 group-title="National/Local" tvg-id="tvrinasional.id" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/TVRILogo2019.svg/640px-TVRILogo2019.svg.png",TVRI Nasional
 https://nyanv-live-cdn.mncnow.id/live/eds/PemersatuBangsa/sa_dash_vmx/PemersatuBangsa.mpd
 http://ott.tvri.co.id/Content/HLS/Live/Channel(TVRINASIONAL)/index.m3u8
 
-#EXTINF:-1 group-title="TVRI;National/Local;International" tvg-id="tvriworld.id" tvg-logo="https://i.imgur.com/K4S5a2w.png",TVRI World
+#EXTINF:-1 group-title="National/Local;International" tvg-id="tvriworld.id" tvg-logo="https://i.imgur.com/K4S5a2w.png",TVRI World
 http://ott.tvri.co.id/Content/HLS/Live/Channel(TVRI3)/index.m3u8
 
-#EXTINF:-1 group-title="TVRI;National/Local;Sports" tvg-id="tvrisports.id" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/TVRI_Sport_2022.svg/640px-TVRI_Sport_2022.svg.png",TVRI Sport
+#EXTINF:-1 group-title="National/Local;Sports" tvg-id="tvrisports.id" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/TVRI_Sport_2022.svg/640px-TVRI_Sport_2022.svg.png",TVRI Sport
 http://ott.tvri.co.id/Content/HLS/Live/Channel(TVRI4)/index.m3u8
 
-#EXTINF:-1 group-title="TVRI;National/Local" tvg-logo="https://staging.tvri.go.id/assets/img_gallery/daerah/JAWA%20TIMUR.png",TVRI Jawa Timur
+#EXTINF:-1 group-title="National/Local" tvg-logo="https://staging.tvri.go.id/assets/img_gallery/daerah/JAWA%20TIMUR.png",TVRI Jawa Timur
 http://ott.tvri.co.id/Content/HLS/Live/Channel(TVRIJATIMSURABAYA)/index.m3u8
 
 ====MNC GROUP====
@@ -255,6 +255,7 @@ https://nyanv-live-cdn.mncnow.id/live/eds/Cbeebies/sa_dash_vmx/Cbeebies.mpd
 https://contvanime.cinedigm.com/conapp-ssai/amagi_hls_data_xumo-host-contvanime-junction/CDN/master.m3u8
 
 #EXTINF:-1 group-title="Kids;Knowledge;International" tvg-id="davinci.id" tvg-logo="https://subsystem.indihome.co.id/cms-ih/assets/uploads/channel_list/UPLOAD-1648809023-.png",DaVinci
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.131 Safari/537.36
 https://vips-livecdn.fptplay.net/hda2/davincihd_vhls.smil/playlist.m3u8
 
 #EXTINF:-1 group-title="Kids" tvg-id="densplay.id" tvg-logo="http://www.dens.tv/images/channel-logo/107.jpg",Dens Play
@@ -322,7 +323,7 @@ http://ye23.vip/z7z8/2021/kbs2020.php?id=9
 #EXTINF:-1 group-title="Kids" tvg-id="kidstv.id" tvg-logo="https://upload.wikimedia.org/wikipedia/id/7/7f/Kids_TV_%282020%29.png",Kids TV
 https://nyanv-live-cdn.mncnow.id/live/eds/KidsChannel/sa_dash_vmx/KidsChannel.mpd
 
-#EXTINF:-1 group-title="Kids;International" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXOITYpX3j7YdrBcudY1WUaIfFHcpG0fHbDg&usqp=CAU",Lego Channel
+#EXTINF:-1 group-title="Kids;International" tvg-id="legochannel.us" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXOITYpX3j7YdrBcudY1WUaIfFHcpG0fHbDg&usqp=CAU",Lego Channel
 https://legochannel-roku.amagi.tv/playlist.m3u8
 
 #KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
@@ -364,7 +365,7 @@ https://shls-spacetoon-prod-dub.shahid.net/out/v1/6240b773a3f34cca95d119f9e76aec
 #EXTINF:-1 group-title="Kids;International" tvg-id="5c3f8f12a93c2d61b9990a4e" tvg-logo="https://shoutfactorytvlive.com/userFiles/uploads/Tokushoutsu/STS-Logo-Final-WampRed-Texture.png",TokuSHOUTsu
 http://stitcher-ipv4.pluto.tv/v1/stitch/embed/hls/channel/5c3f8f12a93c2d61b9990a4elivestitch/master.m3u8?deviceType=samsung-tvplus&deviceMake=samsung&deviceModel=samsung&deviceVersion=unknown&appVersion=unknown&deviceLat=0&deviceLon=0&deviceDNT=%7BTARGETOPT%7D&deviceId=%7BPSID%7D&advertisingId=%7BPSID%7D&us_privacy=1YNY&samsung_app_domain=%7BAPP_DOMAIN%7D&samsung_app_name=%7BAPP_NAME%7D&profileLimit=&profileFloor=&embedPartner=samsung-tvplus&profilesFromStream=true
 
-#EXTINF:-1 group-title="Kids" tvg-logo="https://i.imgur.com/gdlqRUy.png",Toonz Kids
+#EXTINF:-1 group-title="Kids" tvg-id="toonzkids.id" tvg-logo="https://i.imgur.com/gdlqRUy.png",Toonz Kids
 http://210.210.155.37/x6bnqe/s/s81/index.m3u8
 
 #EXTINF:-1 group-title="Kids;International" tvg-id="zoomoo.id" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/c/c5/Zoomookidslogo.png/revision/latest/scale-to-width-down/386?cb=20220221213805",Zoo Moo
@@ -569,7 +570,7 @@ https://edge-live13-hr.cvattv.com.ar/live/c6eds/Discovery_Science/SA_Live_dash_e
 https://edge-live13-hr.cvattv.com.ar/live/c6eds/Theater_HD/SA_Live_dash_enc_2A/Theater_HD.mpd
 
 #EXTINF:-1 group-title="Knowledge;International" tvg-id="discoveryturbouk.uk" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/1/11/Discovery_Turbo.png",Discovery Turbo
-https://cdn-apse1-prod.tsv2.amagi.tv/linear/amg01448-samsungin-turboin-samsungin/f4af20b4-be04-4f91-b4e0-33b7b43b2f7e/2.m3u8
+https://cdn-apse1-prod.tsv2.amagi.tv/linear/amg01448-samsungin-turboin-samsungin/f4af20b4-be04-4f91-b4e0-33b7b43b2f7e/index.m3u8
 
 #KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
 #KODIPROP:inputstream.adaptive.license_key=https://mrpw.ptmnc01.verspective.net/?deviceId=OTFmNDAwZWEtZjI5OC0zNTAzLWE0NzktZWI2NGIxMjRmMGFm
@@ -607,7 +608,7 @@ https://dai2.xumo.com/amagi_hls_data_xumo1212A-redboxpeopleareawesome/CDN/playli
 #EXTINF:-1 group-title="Knowledge;International" tvg-id="rtdocumentary.ru" tvg-logo="https://upload.wikimedia.org/wikipedia/en/a/ae/RTD-TV-logo.png",Russia Today Documentary
 https://strm.yandex.ru/kal/rtd_hd/rtd_hd0.m3u8
 
-#EXTINF:-1 group-title="Knowledge;International" tvg-id="smithsonianchanneleast.us" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/6/67/SmithsonianChannellogo.png",Smithsonian Channel
+#EXTINF:-1 group-title="Knowledge;International" tvg-id="smithsonianchanneleast.us" tvg-logo="https://i.imgur.com/okSbavu.png",Smithsonian Channel
 https://smithsonianaus-samsungau.amagi.tv/playlist.m3u8
 
 ====MOVIES====
@@ -672,7 +673,7 @@ https://nyanv-live-cdn.mncnow.id/live/eds/hbo-2/sa_dash_vmx/hbo-2.mpd
 
 #KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
 #KODIPROP:inputstream.adaptive.license_key=https://mrpw.ptmnc01.verspective.net/?deviceId=OTFmNDAwZWEtZjI5OC0zNTAzLWE0NzktZWI2NGIxMjRmMGFm
-#EXTINF:-1 group-title="Movies;International" tvg-id="hbofamilyasia.sg" tvg-logo="https://images.now-tv.com/shares/channelPreview/img/en_hk/color/ch112_160_115",HBO Family
+#EXTINF:-1 group-title="Movies;Entertainment;International" tvg-id="hbofamilyasia.sg" tvg-logo="https://images.now-tv.com/shares/channelPreview/img/en_hk/color/ch112_160_115",HBO Family
 https://nyanv-live-cdn.mncnow.id/live/eds/HBOFamily2/sa_dash_vmx/HBOFamily2.mpd
 
 #KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
@@ -902,16 +903,16 @@ https://nyanv-live-cdn.mncnow.id/live/eds/SetOne/sa_dash_vmx/SetOne.mpd
 
 #KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
 #KODIPROP:inputstream.adaptive.license_key=https://maxstream.my.id/license-proxy-widevine/cenc/?specConform=true
-#EXTINF:-1 group-title="Entertainment;International" tvg-id="paramountnetworkindonesia.id" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Paramount_Network.svg/482px-Paramount_Network.svg.png",Paramount Network
+#EXTINF:-1 group-title="Entertainment;Movies;International" tvg-id="paramountnetworkindonesia.id" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Paramount_Network.svg/482px-Paramount_Network.svg.png",Paramount Network
 https://cdn01-telkomsel-01.akamaized.net/Content/DASH/Live/channel(f092c2ba-4baa-4ebb-bd60-1cfb1af07da5)/manifest.mpd
 
-#EXTINF:-1 group-title="Entertainment;International" tvg-id="5ff8c708653d080007361b14" tvg-logo="https://logodownload.org/wp-content/uploads/2021/03/paramount-plus-logo.png",Paramount+ Picks
+#EXTINF:-1 group-title="Entertainment;Movies;International" tvg-id="5ff8c708653d080007361b14" tvg-logo="https://logodownload.org/wp-content/uploads/2021/03/paramount-plus-logo.png",Paramount+ Picks
 https://service-stitcher.clusters.pluto.tv/stitch/hls/channel/5ff8c708653d080007361b14/master.m3u8?advertisingId=&appName=web&appStoreUrl=&appVersion=DNT&app_name=&architecture=&buildVersion=&deviceDNT=0&deviceId=5d14fc31252d35decbc4080b&deviceLat=&deviceLon=&deviceMake=web&deviceModel=web&deviceType=web&deviceVersion=DNT&includeExtendedEvents=false&marketingRegion=US&serverSideAds=false&sid=873&terminate=false&userId=
 
-#EXTINF:-1 group-title="Entertainment;International" tvg-id"rockextreme.sg" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/4/41/Rock_Action.png/revision/latest?cb=20221212024829",Rock Action
+#EXTINF:-1 group-title="Entertainment;Movies;International" tvg-id"rockextreme.sg" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/4/41/Rock_Action.png/revision/latest?cb=20221212024829",Rock Action
 http://210.210.155.35:80/dr9445/h/h15/index.m3u8
 
-#EXTINF:-1 group-title="Entertainment;International" tvg-id"rockentertainment.sg" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/d/db/ROCK_entertainment_UHD.png/revision/latest/scale-to-width-down/300?cb=20210911032942",Rock Entertainment
+#EXTINF:-1 group-title="Entertainment;Movies;International" tvg-id"rockentertainment.sg" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/d/db/ROCK_entertainment_UHD.png/revision/latest/scale-to-width-down/300?cb=20210911032942",Rock Entertainment
 http://210.210.155.35:80/dr9445/h/h16/index.m3u8
 
 #EXTINF:-1 group-title="Entertainment;International" tvg-id="sbstv.kr" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Seoul_Broadcasting_System_logo.svg/640px-Seoul_Broadcasting_System_logo.svg.png",SBSTV
@@ -935,7 +936,7 @@ https://cdn-telkomsel-01.akamaized.net/Content/DASH/Live/channel(20baf7aa-fd51-4
 #EXTINF:-1 group-title="Entertainment;International" tvg-id="tlcsoutheastasia.sg" tvg-logo="https://assets.stickpng.com/images/622f4615ae7f8f3715381b48.png",TLC Southeast Asia
 https://nyanv-live-cdn.mncnow.id/live/eds/TLC/sa_dash_vmx/TLC.mpd
 
-#EXTINF:-1 group-title="Entertainment" tvg-id="useeprime.id" tvg-logo="https://images.useetv.com/logo_useeprime_ver1.png",UseePrime
+#EXTINF:-1 group-title="Entertainment;Sports" tvg-id="useeprime.id" tvg-logo="https://images.useetv.com/logo_useeprime_ver1.png",UseePrime
 https://cdn-telkomsel-01.akamaized.net/Content/DASH/Live/channel(18564c27-ff44-4d62-9fab-dcb417fcb93f)/manifest.mpd
 
 #KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
@@ -1234,13 +1235,13 @@ https://webudit.onlinewebtv.lol/lb/premium537/index.m3u8|referer=https://widevin
 #EXTINF:-1 group-title="Sports;International" tvg-id="daznlaliga.es" tvg-logo="https://img2.sport-tv-guide.live/images/tv-station-dazn-laliga-2784.png",DAZN La Liga
 https://dce-fs-live-dazn-cdn.dazn.com/dashdrm/dazn-linear-043/stream.mpd
 
-#EXTINF:-1 group-title="Sports;International" tvg-logo="https://www.wcbu2015.org/wp-content/uploads/Dubai_Sports_2014_Logo.png",Dubai Sports
+#EXTINF:-1 group-title="Sports;International" tvg-id="dubaisports1.ae" tvg-logo="https://www.wcbu2015.org/wp-content/uploads/Dubai_Sports_2014_Logo.png",Dubai Sports
 http://dmitnthvll.cdn.mangomolo.com/dubaiSports/smil:dubaiSports/chunklist.m3u8
 
-#EXTINF:-1 group-title="Sports;International" tvg-logo="https://www.wcbu2015.org/wp-content/uploads/Dubai_Sports_2014_Logo.png",Dubai Sports 2
+#EXTINF:-1 group-title="Sports;International" tvg-id="dubaisports2.ae" tvg-logo="https://www.wcbu2015.org/wp-content/uploads/Dubai_Sports_2014_Logo.png",Dubai Sports 2
 http://dmitwlvvll.cdn.mangomolo.com/dubaiSportshd/smil:dubaiSportshd.smil/chunklist.m3u8
 
-#EXTINF:-1 group-title="Sports;International" tvg-logo="https://www.wcbu2015.org/wp-content/uploads/Dubai_Sports_2014_Logo.png",Dubai Sports 3
+#EXTINF:-1 group-title="Sports;International" tvg-id="dubaisports3.ae" tvg-logo="https://www.wcbu2015.org/wp-content/uploads/Dubai_Sports_2014_Logo.png",Dubai Sports 3
 http://dmitwlvvll.cdn.mangomolo.com/dubaiSportshd5/smil:dubaiSportshd5.smil/chunklist.m3u8
 
 #EXTINF:-1 group-title="Sports;International" tvg-id="espn.us" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/ESPN_wordmark.svg/640px-ESPN_wordmark.svg.png",ESPN 1 US
@@ -1637,7 +1638,7 @@ http://pluto-live.plutotv.net/egress/chandler/pluto01/live/VIACBS03/master.m3u8
 #EXTINF:-1 group-title="Music;International" tvg-id="5ca6899a37b88b269472ea4b" tvg-logo="https://images.pluto.tv/channels/5ca6899a37b88b269472ea4b/colorLogoPNG-1641927416701.png",MTV Dating
 https://service-stitcher.clusters.pluto.tv/stitch/hls/channel/5ca6899a37b88b269472ea4b/master.m3u8?advertisingId=&appName=web&appStoreUrl=&appVersion=DNT&app_name=&architecture=&buildVersion=&deviceDNT=0&deviceId=5ca6899a37b88b269472ea4b&deviceLat=&deviceLon=&deviceMake=web&deviceModel=web&deviceType=web&deviceVersion=DNT&includeExtendedEvents=false&marketingRegion=US&serverSideAds=false&sid=330&terminate=false&userId=
 
-#EXTINF:-1 group-title="Music;International" tvg-id="5ca672f515a62078d2ec0ad2" tvg-logo="https://images.pluto.tv/channels/5ca672f515a62078d2ec0ad2/colorLogoPNG-1641928171062.png",MTV Pluto TV
+#EXTINF:-1 group-title="Music;International" tvg-id="5ca672f515a62078d2ec0ad2" tvg-logo="https://i.imgur.com/hEQafwQ.png",MTV Pluto TV
 http://service-stitcher.clusters.pluto.tv/stitch/hls/channel/5ca672f515a62078d2ec0ad2/master.m3u8?advertisingId=&appName=web&appStoreUrl=&appVersion=DNT&app_name=&architecture=&buildVersion=&deviceDNT=0&deviceId=5ca672f515a62078d2ec0ad2&deviceLat=&deviceLon=&deviceMake=web&deviceModel=web&deviceType=web&deviceVersion=DNT&includeExtendedEvents=false&marketingRegion=US&serverSideAds=false&sid=178&terminate=false&userId=
 
 #EXTINF:-1 group-title="Music;International" tvg-id="5d14fdb8ca91eedee1633117" tvg-logo="https://images.pluto.tv/channels/5d14fdb8ca91eedee1633117/colorLogoPNG.png",MTV Spankin' New
