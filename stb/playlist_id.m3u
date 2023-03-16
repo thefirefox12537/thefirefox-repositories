@@ -648,12 +648,6 @@ http://live.cooltv.top/tv/aishang.php?id=cctv13hd
 #EXTINF:-1 group-title="News;International" tvg-id="cctv17.cn" tvg-logo="https://i.imgur.com/R9CUgOC.png",CCTV-17
 http://live.cooltv.top/tv/aishang.php?id=cctv17hd
 
-#EXTINF:-1 group-title="News;International" tvg-id="cctvplus1.cn" tvg-logo="https://i.imgur.com/ymOmNzT.png",CCTV+ 1
-https://cd-live-stream.news.cctvplus.com/live/smil:CHANNEL1.smil/playlist.m3u8
-
-#EXTINF:-1 group-title="News;International" tvg-id="cctvplus2.cn" tvg-logo="https://i.imgur.com/ymOmNzT.png",CCTV+ 2
-https://cd-live-stream.news.cctvplus.com/live/smil:CHANNEL2.smil/playlist.m3u8
-
 #KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
 #KODIPROP:inputstream.adaptive.license_key=https://mrpw.ptmnc01.verspective.net/?deviceId=OTFmNDAwZWEtZjI5OC0zNTAzLWE0NzktZWI2NGIxMjRmMGFm
 #EXTINF:-1 group-title="News;International" tvg-id="cgtn.cn" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/CGTN.svg/800px-CGTN.svg.png",CGTN
@@ -1419,7 +1413,7 @@ http://live.cooltv.top/tv/aishang.php?id=cctv5hd
 #EXTINF:-1 group-title="Sports;International" tvg-id="cctv5plus.cn" tvg-logo="https://i.imgur.com/ymOmNzT.png",CCTV-5 Plus
 http://39.134.115.163:8080/PLTV/88888910/224/3221225649/index.m3u8
 
-#EXTINF:-1 group-title="Sports;International" tvg-id="cctv16.cn" tvg-logo="https://i.imgur.com/LrUdjie",CCTV-16
+#EXTINF:-1 group-title="Sports;International" tvg-id="cctv16.cn" tvg-logo="https://i.imgur.com/LrUdjie.png",CCTV-16
 http://live.cooltv.top/tv/aishang.php?id=cctv16hd
 
 #EXTINF:-1 group-title="Sports" tvg-id="championstv1.id" tvg-logo="https://i.imgur.com/ctwmSHa.png",Champions TV 1
@@ -1814,7 +1808,7 @@ https://dai2.xumo.com/amagi_hls_data_xumo1212A-redboxbaeble/CDN/playlist.m3u8
 #EXTINF:-1 group-title="Music;International" tvg-logo="https://upload.wikimedia.org/wikipedia/en/4/4f/Box_Hits_2016.png",Box Hits
 https://csm-e-boxplus.tls1.yospace.com/csm/extlive/boxplus01,boxhits-alldev.m3u8?yo.up=http://boxtv-origin-elb.cds1.yospace.com/uploads/boxhits/
 
-#EXTINF:-1 group-title="Music;International" tvg-id="cctv15.cn" tvg-logo="https://i.imhut.com/h4UPnJA.png",CCTV-15
+#EXTINF:-1 group-title="Music;International" tvg-id="cctv15.cn" tvg-logo="https://i.imgur.com/h4UPnJA.png",CCTV-15
 http://live.cooltv.top/tv/aishang.php?id=cctv15hd
 
 #EXTINF:-1 group-title="Music" tvg-id="citradangdut.id" tvg-logo="https://i.imgur.com/77KYgbz.png",Citra Dangdut
