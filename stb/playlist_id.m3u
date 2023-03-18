@@ -1,5 +1,5 @@
 #EXTM3U
-#EXTM3U billed-msg="PEMBARUAN 2023/03/18 #2  —  Terima kasih memakai playlist IPTV ini. Tidak untuk diperjualbelikan."
+#EXTM3U billed-msg="PEMBARUAN 2023/03/19  —  Terima kasih memakai playlist IPTV ini. Tidak untuk diperjualbelikan."
 #EXTM3U x-tvg-url="https://stavol.masuk.web.id/epg.xml, https://i.mjh.nz/all/epg.xml, https://i.mjh.nz/PlutoTV/all.xml, https://i.mjh.nz/SamsungTVPlus/all.xml, https://www.bevy.be/bevyfiles/indonesia.xml, https://www.bevy.be/bevyfiles/arabia.xml, https://www.bevy.be/bevyfiles/australia.xml, https://www.bevy.be/bevyfiles/china.xml, https://www.bevy.be/bevyfiles/france.xml, https://www.bevy.be/bevyfiles/germany.xml, https://www.bevy.be/bevyfiles/hongkongpremium.xml, https://www.bevy.be/bevyfiles/india.xml, https://www.bevy.be/bevyfiles/italy.xml, https://www.bevy.be/bevyfiles/japan.xml, https://www.bevy.be/bevyfiles/korea.xml, https://www.bevy.be/bevyfiles/malaysia.xml, https://www.bevy.be/bevyfiles/mexico.xml, https://www.bevy.be/bevyfiles/netherlands.xml, https://www.bevy.be/bevyfiles/netherlandspremium.xml, https://www.bevy.be/bevyfiles/poland.xml, https://www.bevy.be/bevyfiles/qatar.xml, https://www.bevy.be/bevyfiles/romania.xml, https://www.bevy.be/bevyfiles/russia.xml, https://www.bevy.be/bevyfiles/serbia.xml, https://www.bevy.be/bevyfiles/singaporepremium.xml, https://www.bevy.be/bevyfiles/southafrica.xml, https://www.bevy.be/bevyfiles/spain.xml, https://www.bevy.be/bevyfiles/sweden.xml, https://www.bevy.be/bevyfiles/thailand.xml, https://www.bevy.be/bevyfiles/turkey.xml, https://www.bevy.be/bevyfiles/uae.xml, https://www.bevy.be/bevyfiles/unitedkingdom.xml, https://www.bevy.be/bevyfiles/unitedstates.xml, https://www.bevy.be/bevyfiles/unitedstatespremium1.xml, https://www.bevy.be/bevyfiles/unitedstatespremium2.xml, https://www.bevy.be/bevyfiles/indonesiapremium1.xml, https://www.bevy.be/bevyfiles/indonesiapremium2.xml" refresh="3600"
 
 
@@ -604,10 +604,10 @@ https://moonbug-rokuus.amagi.tv/playlist.m3u8
 #EXTINF:-0 group-title="Kids" tvg-id="mykidz.id" tvg-logo="https://subsystem.indihome.co.id/cms-ih/assets/uploads/channel_list/UPLOAD-1655920070-.png",My Kidz
 http://210.210.155.37/uq2663/h/h191/index.m3u8
 
-#EXTINF:-1 group-title="Kids;International" tvg-id="5ca673e0d0bd6c2689c94ce3" tvg-logo="https://static.wikia.nocookie.net/nickelodeon/images/8/8c/Nick_Pluto_TV_logo.jpg/revision/latest?cb=20200527153528",Nick Pluto TV
+#EXTINF:-1 group-title="Kids;International" tvg-id="5ca673e0d0bd6c2689c94ce3" tvg-logo="https://images.pluto.tv/channels/5ca673e0d0bd6c2689c94ce3/colorLogoPNG.png",Nick Pluto TV
 https://siloh.pluto.tv/lilo/production/Nick/01/master.m3u8
 
-#EXTINF:-1 group-title="Kids;International" tvg-id="5ca6748a37b88b269472dad9" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/3/35/Nick_jr_logo_pluto_tv.png",Nick Jr. Pluto TV
+#EXTINF:-1 group-title="Kids;International" tvg-id="5ca6748a37b88b269472dad9" tvg-logo="https://images.pluto.tv/channels/5ca6748a37b88b269472dad9/colorLogoPNG.png",Nick Jr. Pluto TV
 http://stitcher-ipv4.pluto.tv/v1/stitch/embed/hls/channel/5ca6748a37b88b269472dad9/master.m3u8?deviceType=samsung-tvplus&deviceMake=samsung&deviceModel=samsung&deviceVersion=unknown&appVersion=unknown&deviceLat=0&deviceLon=0&deviceDNT=%7BTARGETOPT%7D&deviceId=%7BPSID%7D&advertisingId=%7BPSID%7D&us_privacy=1YNY&samsung_app_domain=%7BAPP_DOMAIN%7D&samsung_app_name=%7BAPP_NAME%7D&profileLimit=&profileFloor=&embedPartner=samsung-tvplus
 
 #KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
@@ -615,7 +615,7 @@ http://stitcher-ipv4.pluto.tv/v1/stitch/embed/hls/channel/5ca6748a37b88b269472da
 #EXTINF:-1 group-title="Kids;International" tvg-id="nickjrasia.sg" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Nick_Jr._logo_2009.svg/640px-Nick_Jr._logo_2009.svg.png",Nick Jr.
 https://nyanv-live-cdn.mncnow.id/live/eds/NickJr-HDD/sa_dash_vmx/NickJr-HDD.mpd
 
-#EXTINF:-1 group-title="Kids;International" tvg-id="5d14fb6c84dd37df3b4290c5" tvg-logo="https://tinybeans.com/wp-content/uploads/2019/07/image001.png?w=640",Nick Jr. Dora TV
+#EXTINF:-1 group-title="Kids;International" tvg-id="5d14fb6c84dd37df3b4290c5" tvg-logo="https://images.pluto.tv/channels/5d14fb6c84dd37df3b4290c5/colorLogoPNG.png",Nick Jr. Dora TV
 https://siloh.pluto.tv/lilo/production/Nick/03/master.m3u8
 
 #KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
@@ -641,7 +641,7 @@ https://2-fss-2.streamhoster.com/pl_140/amlst:200914-1298290/playlist.m3u8
 #EXTINF:-1 group-title="Kids;International" tvg-id="spacetoonarabic.ae" tvg-logo="https://upload.wikimedia.org/wikipedia/en/2/2b/Spacetoon_logo.png",Spacetoon
 https://shls-spacetoon-prod-dub.shahid.net/out/v1/6240b773a3f34cca95d119f9e76aec02/index.m3u8
 
-#EXTINF:-1 group-title="Kids;International" tvg-id="5c3f8f12a93c2d61b9990a4e" tvg-logo="https://shoutfactorytvlive.com/userFiles/uploads/Tokushoutsu/STS-Logo-Final-WampRed-Texture.png",TokuSHOUTsu
+#EXTINF:-1 group-title="Kids;International" tvg-id="5c3f8f12a93c2d61b9990a4e" tvg-logo="https://images.pluto.tv/channels/5c3f8f12a93c2d61b9990a4e/colorLogoPNG.png",TokuSHOUTsu
 http://stitcher-ipv4.pluto.tv/v1/stitch/embed/hls/channel/5c3f8f12a93c2d61b9990a4elivestitch/master.m3u8?deviceType=samsung-tvplus&deviceMake=samsung&deviceModel=samsung&deviceVersion=unknown&appVersion=unknown&deviceLat=0&deviceLon=0&deviceDNT=%7BTARGETOPT%7D&deviceId=%7BPSID%7D&advertisingId=%7BPSID%7D&us_privacy=1YNY&samsung_app_domain=%7BAPP_DOMAIN%7D&samsung_app_name=%7BAPP_NAME%7D&profileLimit=&profileFloor=&embedPartner=samsung-tvplus&profilesFromStream=true
 
 #EXTINF:-1 group-title="Kids" tvg-id="toonzkids.id" tvg-logo="https://i.imgur.com/gdlqRUy.png",Toonz Kids
@@ -1001,7 +1001,7 @@ https://cdn01-telkomsel-01.akamaized.net/Content/DASH/Live/channel(813e3bd0-d141
 #EXTINF:-1 group-title="Movies" tvg-id="mycinemaasia.id" tvg-logo="https://subsystem.indihome.co.id/cms-ih/assets/uploads/channel_list/UPLOAD-1647324751-.png",My Cinema Asia
 https://cdn01-telkomsel-01.akamaized.net/Content/DASH/Live/channel(2a91622e-73f5-49c0-bfdf-ad10b1ee356d)/manifest.mpd
 
-#EXTINF:-1 group-title="Movies" tvg-id="mycinemaeurope.id" tvg-logo="https://i.imgur.com/CpSFbEv.png",My Cinema Europe
+#EXTINF:-1 group-title="Movies;International" tvg-id="mycinemaeurope.id" tvg-logo="https://i.imgur.com/AMUAo8p.png",My Cinema Europe
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:101.0) Gecko/20100101 Firefox/101.0
 http://210.210.155.35/uq2663/h/h18/index.m3u8
 
@@ -1010,7 +1010,7 @@ http://210.210.155.35/uq2663/h/h18/index.m3u8
 #EXTINF:-1 group-title="Movies" tvg-id="myfamily.id" tvg-logo="https://subsystem.indihome.co.id/cms-ih/assets/uploads/channel_list/UPLOAD-1633000350-.png",My Family Channel
 https://cdn01-telkomsel-01.akamaized.net/Content/DASH/Live/channel(18316fae-42c1-404c-ba21-df68a1cffcac)/manifest.mpd
 
-#EXTINF:-1 group-title="Movies;International" tvg-id="5cb0cae7a461406ffe3f5213" tvg-logo="https://static.wikia.nocookie.net/dreamlogos/images/f/fa/Paramount_Movie_Channel_Pluto_TV.jpg/revision/latest/scale-to-width-down/280?cb=20210401221901",Paramount Movie Channel
+#EXTINF:-1 group-title="Movies;International" tvg-id="5cb0cae7a461406ffe3f5213" tvg-logo="https://images.pluto.tv/channels/5cb0cae7a461406ffe3f5213/colorLogoPNG.png",Paramount Movie Channel
 http://service-stitcher.clusters.pluto.tv/v1/stitch/embed/hls/channel/5cb0cae7a461406ffe3f5213/master.m3u8?advertisingId=91a6ae51-6f9d-4fbb-adb0-bdfffa44693e&appVersion=unknown&deviceDNT=0&deviceId=91a6ae51-6f9d-4fbb-adb0-bdfffa44693e&deviceLat=0&deviceLon=0&deviceMake=samsung&deviceModel=samsung&deviceType=samsung-tvplus&deviceUA=samsung/SM-T720/10&deviceVersion=unknown&embedPartner=samsung-tvplus&profileFloor=&profileLimit=&samsung_app_domain=,https://play.google.com/store/apps/details?id=com.samsung.android.tvplus&samsung_app_name=Mobile+TV+Plus&us_privacy=1YNY
 
 #EXTINF:-1 group-title="Movies;International" tvg-id="561d7d484dc7c8770484914a" tvg-logo="https://images.pluto.tv/channels/561d7d484dc7c8770484914a/colorLogoPNG.png",Pluto TV Action
@@ -1288,26 +1288,26 @@ https://nyanv-live-cdn.mncnow.id/live/eds/XingKongTV/sa_dash_vmx/XingKongTV.mpd
 ######## SPORTS ########
 
 #EXTINF:-1 group-title="Sports;International" tvg-id="abudhabisports1.ae" tvg-logo="https://www.tunisvista.com/medias/abu-dhabi-sports-1-live.png",Abu Dhabi Sports 1
-https://admdn1.cdn.mangomolo.com/adsports1/smil:adsports1.stream.smil/chunklist_b4000000_t64MTA4MHA=.m3u8
+https://admdn1.cdn.mangomolo.com/adsports1/smil:adsports1.stream.smil/chunklist.m3u8
 
 #EXTINF:-1 group-title="Sports;International" tvg-id="abudhabisports2.ae" tvg-logo="https://www.tunisvista.com/medias/abu-dhabi-sports-2-live.png",Abu Dhabi Sports 2
-https://admdn5.cdn.mangomolo.com/adsports2/smil:adsports2.stream.smil/chunklist_b4000000_t64MTA4MHA=.m3u8
+https://admdn5.cdn.mangomolo.com/adsports2/smil:adsports2.stream.smil/chunklist.m3u8
 
 #EXTINF:-1 group-title="Sports;International" tvg-id="abudhabisports3.ae" tvg-logo="https://www.tunisvista.com/medias/abu-dhabi-sports-3-live.png",Abu Dhabi Sports 3
-https://admdn3.cdn.mangomolo.com/adsports3/smil:adsports3.stream.smil/chunklist_b4000000_t64MTA4MHA=.m3u8
+https://admdn3.cdn.mangomolo.com/adsports3/smil:adsports3.stream.smil/chunklist.m3u8
 
 #EXTINF:-1 group-title="Sports;International" tvg-id="abudhabisports4.ae" tvg-logo="https://www.tunisvista.com/medias/abu-dhabi-sports-4-live.png",Abu Dhabi Sports 4
-https://admdn4.cdn.mangomolo.com/adsports4/smil:adsports4.stream.smil/chunklist_b4000000_t64MTA4MHA=.m3u8
+https://admdn4.cdn.mangomolo.com/adsports4/smil:adsports4.stream.smil/chunklist.m3u8
 
-#EXTINF:-1 group-title="Sports;International" tvg-id="arenasport1serbia.rs" tvg-logo="https://i.imgur.com/uCXi8Hm.png",Arena Sport 1
+#EXTINF:-1 group-title="Sports;International" tvg-id="arenasport1serbia.rs" tvg-logo="https://www.tvarenasport.si/uploads/web/arenasport1.png",Arena Sport 1
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36
 https://webudit.onlinewebtv.lol/lb/premium429/index.m3u8?|referer=https://widevine.licenses4.me/&User-agent=REDLINECLIENT
 
-#EXTINF:-1 group-title="Sports;International" tvg-id="arenasport2serbia.rs" tvg-logo="https://i.imgur.com/uCXi8Hm.png",Arena Sport 2
+#EXTINF:-1 group-title="Sports;International" tvg-id="arenasport2serbia.rs" tvg-logo="https://www.tvarenasport.si/uploads/web/arenasport2.png",Arena Sport 2
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36
 https://webudit.onlinewebtv.lol/lb/premium433/index.m3u8|referer=https://widevine.licenses4.me/
 
-#EXTINF:-1 group-title="Sports;International" tvg-id="arenasport3serbia.rs" tvg-logo="https://i.imgur.com/uCXi8Hm.png",Arena Sport 3
+#EXTINF:-1 group-title="Sports;International" tvg-id="arenasport3serbia.rs" tvg-logo="https://www.tvarenasport.si/uploads/web/arenasport3.png",Arena Sport 3
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36
 https://webudit.onlinewebtv.lol/lb/premium434/index.m3u8|referer=https://widevine.licenses4.me/
 
@@ -1522,7 +1522,7 @@ https://dce-fs-live-dazn-cdn.dazn.com/dashdrm/dazn-linear-040/stream.mpd
 #EXTINF:-1 group-title="Sports;International" tvg-id="daznbeinsports3.uk" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Logo_bein_sports_3.png/800px-Logo_bein_sports_3.png",beIN Sports DAZN 3
 https://dce-fs-live-dazn-cdn.dazn.com/dashdrm/dazn-linear-041/stream.mpd
 
-#EXTINF:-1 group-title="Sports;International" tvg-id="5ebc8688f3697d00072f7cf8" tvg-logo="https://upload.wikimedia.org/wikipedia/en/a/a9/Bellator_MMA_Logo.png",Belator MMA
+#EXTINF:-1 group-title="Sports;International" tvg-id="5ebc8688f3697d00072f7cf8" tvg-logo="https://images.pluto.tv/channels/5ebc8688f3697d00072f7cf8/colorLogoPNG.png",Belator MMA
 http://stitcher-ipv4.pluto.tv/v1/stitch/embed/hls/channel/62792f34f3aa05000728841e/master.m3u8?deviceType=samsung-tvplus&deviceMake=samsung&deviceModel=samsung&deviceVersion=unknown&appVersion=unknown&deviceLat=0&deviceLon=0&deviceDNT=%7BTARGETOPT%7D&deviceId=%7BPSID%7D&advertisingId=%7BPSID%7D&us_privacy=1YNY&samsung_app_domain=%7BAPP_DOMAIN%7D&samsung_app_name=%7BAPP_NAME%7D&profileLimit=&profileFloor=&embedPartner=samsung-tvplus
 
 #EXTINF:-1 group-title="Sports;International" tvg-id="btsport1.uk" tvg-logo="https://img01.products.bt.co.uk/content/dam/bt/portal/images/logos/channel-logo/full-logo/2022/BTSPORT_1_2018_WHITE_RGB.png",BT Sports 1
@@ -1549,7 +1549,7 @@ https://webudit.onlinewebtv.lol/lb/premium48/index.m3u8?|referer=https://widevin
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36
 https://webudit.onlinewebtv.lol/lb/premium73/index.m3u8?|referer=https://widevine.licenses4.me/&User-agent=REDLINECLIENT
 
-#EXTINF:-1 group-title="Sports;International" tvg-logo="https://images.pluto.tv/channels/5e9f2c05172a0f0007db4786/colorLogoPNG.png",CBS Sports Network
+#EXTINF:-1 group-title="Sports;International" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/4/46/CBS_Sports_Network_2021_%28Blue%29.svg/revision/latest/scale-to-width-down/640?cb=20210227223317",CBS Sports Network
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36
 https://webudi.onlinewebtv.lol/lb/premium308/index.m3u8?|Referer=https://widevine.licenses4.me/&User-agent=REDLINECLIENT
 
@@ -1637,23 +1637,23 @@ https://webudi.onlinewebtv.lol/lb/premium402/index.m3u8?|referer=https://widevin
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36
 https://webudi.onlinewebtv.lol/lb/premium403/index.m3u8?|referer=https://widevine.licenses4.me/&User-agent=REDLINECLIENT
 
-#EXTINF:-1 group-title="Sports;International" tvg-id="dubairacing1.ae" tvg-logo="https://i.imgur.com/0UyZUMt.png",Dubai Racing
+#EXTINF:-1 group-title="Sports;International" tvg-id="dubairacing1.ae" tvg-logo="https://i.imgur.com/0UyZUMt.png",Dubai Racing 1
 http://dmisvthvll.cdn.mangomolo.com/events/smil:events.smil/chunklist.m3u8
 
 #EXTINF:-1 group-title="Sports;International" tvg-id="dubairacing2.ae" tvg-logo="https://i.imgur.com/0UyZUMt.png",Dubai Racing 2
 http://dmithrvll.cdn.mangomolo.com/dubairacing/smil:dubairacing.smil/chunklist.m3u8
 
 #EXTINF:-1 group-title="Sports;International" tvg-id="dubairacing3.ae" tvg-logo="https://i.imgur.com/0UyZUMt.png",Dubai Racing 3
-https://dmithrvll.cdn.mangomolo.com/dubaimubasher/smil:dubaimubasher.smil/playlist.m3u8
+https://dmithrvll.cdn.mangomolo.com/dubaimubasher/smil:dubaimubasher.smil/chunklist.m3u8
 
-#EXTINF:-1 group-title="Sports;International" tvg-id="dubaisports1.ae" tvg-logo="https://i.imgur.com/xuFbLf7.png",Dubai Sports
-http://dmitnthvll.cdn.mangomolo.com/dubaiSports/smil:dubaiSports.smil/chunklist.m3u8
+#EXTINF:-1 group-title="Sports;International" tvg-id="dubaisports1.ae" tvg-logo="https://i.imgur.com/xuFbLf7.png",Dubai Sports 1
+https://dmitnthvll.cdn.mangomolo.com/dubaisports/smil:dubaisports.smil/chunklist.m3u8
 
 #EXTINF:-1 group-title="Sports;International" tvg-id="dubaisports2.ae" tvg-logo="https://i.imgur.com/o8RMWHE.png",Dubai Sports 2
-http://dmitwlvvll.cdn.mangomolo.com/dubaiSportshd/smil:dubaiSportshd.smil/chunklist.m3u8
+http://dmitwlvvll.cdn.mangomolo.com/dubaisportshd/smil:dubaisportshd.smil/chunklist.m3u8
 
 #EXTINF:-1 group-title="Sports;International" tvg-id="dubaisports3.ae" tvg-logo="https://i.imgur.com/XjOO8ri.png",Dubai Sports 3
-http://dmitwlvvll.cdn.mangomolo.com/dubaiSportshd5/smil:dubaiSportshd5.smil/chunklist.m3u8
+http://dmitwlvvll.cdn.mangomolo.com/dubaisportshd5/smil:dubaisportshd5.smil/chunklist.m3u8
 
 #EXTINF:-1 group-title="Sports;International" tvg-id="elevensports1poland.pl" tvg-logo="https://ocdn.eu/ptv2-images/logo-migrated/eleven-sports-1.png",Eleven Sports 1
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36
@@ -1985,7 +1985,7 @@ https://stream.warpballsod.tv/trueSports2.m3u8?|Referer=https://www.youdooball.c
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.79 Safari/537.36 Maxthon/5.2.7.3000
 https://youdooball.livedoomovies.com:4432/02_Sports5_480p/chunklist.m3u8?|Referer=https://www.youdooball.com/
 
-#EXTINF:-1 group-title="Sports;International" tvg-id="tvnsportasia.hk" tvg-logo="https://i.imgur.com/DNkR0is.png",tvN Sport
+#EXTINF:-1 group-title="Sports;International" tvg-id="tvnsportsasia.hk" tvg-logo="https://i.imgur.com/DNkR0is.png",tvN Sports
 https://cdn-us-154.cloudrsst.com/live/olivetv_540/playlist.m3u8
 
 #EXTINF:-1 group-title="Sports;International" tvg-id="unifisports1.my" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/8/8a/Unifi-Sports_1.png/revision/latest?cb=20210712111848",Unifi Sports 1
@@ -2289,7 +2289,7 @@ http://ye23.vip/z7z8/2021/kbs2020.php?id=1
 http://ye23.vip/z7z8/2021/kbs2020.php?id=2
 
 #EXTINF:-1 group-title="International;Undefined" tvg-id="mbctv.kr" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Munhwa_Broadcasting_Company.svg/640px-Munhwa_Broadcasting_Company.svg.png",MBC TV
-http://vod.mpmbc.co.kr:1935/live/encoder-tv/chunklist_w1655101362.m3u8
+http://vod.mpmbc.co.kr:1935/live/encoder-tv/chunklist.m3u8
 
 #EXTINF:-1 group-title="International;Undefined" tvg-id="bs12.jp" tvg-logo="https://i.imgur.com/rpRlJUm.png",BS 12
 http://redlabmcdn.s.llnwi.net/nv02/bs08hd/index.m3u8

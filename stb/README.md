@@ -17,8 +17,8 @@ Rencana akan menambah banyak playlist untuk saluran lokal/daerah sesuai region k
 1. Saluran dari MNC Vision, Usee/Indihome TV, Maxstream, Vidio, Transvision/CubMu
 1. Saluran luar negeri:
    1. Asia Tenggara
-   1. Tiongkok
-   1. Korea
+   1. Tiongkok, Hongkong, Taiwan
+   1. Korea Selatan
    1. Jepang
    1. Timur Tengah
    1. Eropa/Amerika
@@ -41,6 +41,7 @@ Rencana akan menambah banyak playlist untuk saluran lokal/daerah sesuai region k
 1. 2023/03/17 =  Penambahan siaran baru, penyegaran logo saluran-saluran baru
 1. 2023/03/18 =  Perbaikan dan penghapusan siaran yang mati, penambahan siaran baru, perubahan letak kategori pada masing-masing saluran yang tidak sesuai
 1. 2023/03/18 #2 =  Perbaikan dan penghapusan siaran yang mati, penambahan siaran baru, penyegaran logo lama
+1. 2023/03/19 =  Perbaikan siaran yang rusak
 
 ## Disclaimer
 
