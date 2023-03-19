@@ -1,5 +1,5 @@
 #EXTM3U
-#EXTM3U billed-msg="PEMBARUAN 2023/03/19  —  Terima kasih memakai playlist IPTV ini. Tidak untuk diperjualbelikan."
+#EXTM3U billed-msg="PEMBARUAN 2023/03/20  —  Terima kasih memakai playlist IPTV ini. Tidak untuk diperjualbelikan."
 #EXTM3U x-tvg-url="https://stavol.masuk.web.id/epg.xml, https://i.mjh.nz/all/epg.xml, https://i.mjh.nz/PlutoTV/all.xml, https://i.mjh.nz/SamsungTVPlus/all.xml, https://www.bevy.be/bevyfiles/indonesia.xml, https://www.bevy.be/bevyfiles/arabia.xml, https://www.bevy.be/bevyfiles/australia.xml, https://www.bevy.be/bevyfiles/china.xml, https://www.bevy.be/bevyfiles/france.xml, https://www.bevy.be/bevyfiles/germany.xml, https://www.bevy.be/bevyfiles/hongkongpremium.xml, https://www.bevy.be/bevyfiles/india.xml, https://www.bevy.be/bevyfiles/italy.xml, https://www.bevy.be/bevyfiles/japan.xml, https://www.bevy.be/bevyfiles/korea.xml, https://www.bevy.be/bevyfiles/malaysia.xml, https://www.bevy.be/bevyfiles/mexico.xml, https://www.bevy.be/bevyfiles/netherlands.xml, https://www.bevy.be/bevyfiles/netherlandspremium.xml, https://www.bevy.be/bevyfiles/poland.xml, https://www.bevy.be/bevyfiles/qatar.xml, https://www.bevy.be/bevyfiles/romania.xml, https://www.bevy.be/bevyfiles/russia.xml, https://www.bevy.be/bevyfiles/serbia.xml, https://www.bevy.be/bevyfiles/singaporepremium.xml, https://www.bevy.be/bevyfiles/southafrica.xml, https://www.bevy.be/bevyfiles/spain.xml, https://www.bevy.be/bevyfiles/sweden.xml, https://www.bevy.be/bevyfiles/thailand.xml, https://www.bevy.be/bevyfiles/turkey.xml, https://www.bevy.be/bevyfiles/uae.xml, https://www.bevy.be/bevyfiles/unitedkingdom.xml, https://www.bevy.be/bevyfiles/unitedstates.xml, https://www.bevy.be/bevyfiles/unitedstatespremium1.xml, https://www.bevy.be/bevyfiles/unitedstatespremium2.xml, https://www.bevy.be/bevyfiles/indonesiapremium1.xml, https://www.bevy.be/bevyfiles/indonesiapremium2.xml" refresh="3600"
 
 
@@ -202,7 +202,7 @@ https://c.mjh.nz/abc-kids.m3u8
 #EXTINF:-1 group-title="Kids;International" tvg-id="animaxasia.sg" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Animax.svg/640px-Animax.svg.png",Animax
 https://nyanv-live-cdn.mncnow.id/live/eds/Animax/sa_dash_vmx/Animax.mpd
 
-#EXTINF:-1 group-title="Kids;International" tvg-id="5812b7d3249444e05d09cc49" tvg-logo="https://images.pluto.tv/channels/5812b7d3249444e05d09cc49/colorLogoPNG.png",Anime All Day
+#EXTINF:-1 group-title="Kids;International" tvg-id="5812b7d3249444e05d09cc49" tvg-logo="https://i.imgur.com/zImbQzN.png",Anime All Day
 http://stitcher-ipv4.pluto.tv/v1/stitch/embed/hls/channel/5c363ac9e41be30cb6054c7c/master.m3u8?deviceType=samsung-tvplus&deviceMake=samsung&deviceModel=samsung&deviceVersion=unknown&appVersion=unknown&deviceLat=0&deviceLon=0&deviceDNT=%7BTARGETOPT%7D&deviceId=%7BPSID%7D&advertisingId=%7BPSID%7D&us_privacy=1YNY&samsung_app_domain=%7BAPP_DOMAIN%7D&samsung_app_name=%7BAPP_NAME%7D&profileLimit=&profileFloor=&embedPartner=samsung-tvplus
 
 #EXTINF:-1 group-title="Kids;International" tvg-id="aniplus.th" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/b/b8/Aniplus_Asia_Logo.png/revision/latest?cb=20180531073555",AniPlus
@@ -236,7 +236,7 @@ https://nyanv-live-cdn.mncnow.id/live/eds/Boomerang/sa_dash_vmx/Boomerang.mpd
 
 #KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
 #KODIPROP:inputstream.adaptive.license_key=https://mrpw.ptmnc01.verspective.net/?deviceId=OTFmNDAwZWEtZjI5OC0zNTAzLWE0NzktZWI2NGIxMjRmMGFm
-#EXTINF:-1 group-title="Kids;International" tvg-id="cartoonnetworkasia.sg" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/f/fe/CARTOON_NETWORK_logo.png",Cartoon Network
+#EXTINF:-1 group-title="Kids;International" tvg-id="cartoonnetworkasia.sg" tvg-logo="https://i.imgur.com/8VTfjI6.png",Cartoon Network
 https://nyanv-live-cdn.mncnow.id/live/eds/CartoonNetwork/sa_dash_vmx/CartoonNetwork.mpd
 
 #KODIPROP:inputstreamaddon=inputstream.adaptive
@@ -294,7 +294,7 @@ https://webudit.onlinewebtv.lol/lb/premium312/index.m3u8|referer=https://widevin
 
 #KODIPROP:inputstream.adaptive.license_type=org.w3.clearkey
 #KODIPROP:inputstream.adaptive.license_key=https://clearkey-base64-2-hex-json.herokuapp.com/results.php?keyid=bd29c4a538f28845ce33581111749428&key=46d9589f41a11c3637c07c604956deac
-#EXTINF:-1 group-title="Kids;International" tvg-id="disneyjunioreast.us" tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/b/bb/Disney_Junior.svg/640px-Disney_Junior.svg.png",Disney Jr.
+#EXTINF:-1 group-title="Kids;International" tvg-id="disneyjunioreast.us" tvg-logo="https://i.imgur.com/7d4qj7l.png",Disney Jr.
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36
 https://webudit.onlinewebtv.lol/lb/premium313/index.m3u8|referer=https://widevine.licenses4.me/
 
@@ -327,7 +327,7 @@ https://happykidsjunior-vizio.amagi.tv/playlist.m3u8
 #EXTINF:-1 group-title="Kids" tvg-id="horee.id" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/0/0e/HOREE_logo.png/revision/latest?cb=20180705160440",Horee
 https://mooncang.my.id/api/vidio/ch.m3u8?id=6397&code=horee
 
-#EXTINF:-1 group-title="Kids" tvg-id="hiphiphoree.id" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/0/0e/HOREE_logo.png/revision/latest?cb=20180705160440",Hip-Hip Horee
+#EXTINF:-1 group-title="Kids" tvg-id="hiphiphoree.id" tvg-logo="https://i.imgur.com/H7ngHPj.png",Hip-Hip Horee
 https://mooncang.my.id/api/vidio/ch.m3u8?id=7052&code=hip-hip-horee
 
 #KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
@@ -357,10 +357,10 @@ https://moonbug-rokuus.amagi.tv/playlist.m3u8
 #EXTINF:-0 group-title="Kids" tvg-id="mykidz.id" tvg-logo="https://subsystem.indihome.co.id/cms-ih/assets/uploads/channel_list/UPLOAD-1655920070-.png",My Kidz
 http://210.210.155.37/uq2663/h/h191/index.m3u8
 
-#EXTINF:-1 group-title="Kids;International" tvg-id="5ca673e0d0bd6c2689c94ce3" tvg-logo="https://images.pluto.tv/channels/5ca673e0d0bd6c2689c94ce3/colorLogoPNG.png",Nick Pluto TV
+#EXTINF:-1 group-title="Kids;International" tvg-id="5ca673e0d0bd6c2689c94ce3" tvg-logo="https://i.imgur.com/q9S70bW.png",Nick Pluto TV
 https://siloh.pluto.tv/lilo/production/Nick/01/master.m3u8
 
-#EXTINF:-1 group-title="Kids;International" tvg-id="5ca6748a37b88b269472dad9" tvg-logo="https://images.pluto.tv/channels/5ca6748a37b88b269472dad9/colorLogoPNG.png",Nick Jr. Pluto TV
+#EXTINF:-1 group-title="Kids;International" tvg-id="5ca6748a37b88b269472dad9" tvg-logo="https://i.imgur.com/zlRIPDO.png",Nick Jr. Pluto TV
 http://stitcher-ipv4.pluto.tv/v1/stitch/embed/hls/channel/5ca6748a37b88b269472dad9/master.m3u8?deviceType=samsung-tvplus&deviceMake=samsung&deviceModel=samsung&deviceVersion=unknown&appVersion=unknown&deviceLat=0&deviceLon=0&deviceDNT=%7BTARGETOPT%7D&deviceId=%7BPSID%7D&advertisingId=%7BPSID%7D&us_privacy=1YNY&samsung_app_domain=%7BAPP_DOMAIN%7D&samsung_app_name=%7BAPP_NAME%7D&profileLimit=&profileFloor=&embedPartner=samsung-tvplus
 
 #KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
@@ -368,7 +368,7 @@ http://stitcher-ipv4.pluto.tv/v1/stitch/embed/hls/channel/5ca6748a37b88b269472da
 #EXTINF:-1 group-title="Kids;International" tvg-id="nickjrasia.sg" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Nick_Jr._logo_2009.svg/640px-Nick_Jr._logo_2009.svg.png",Nick Jr.
 https://nyanv-live-cdn.mncnow.id/live/eds/NickJr-HDD/sa_dash_vmx/NickJr-HDD.mpd
 
-#EXTINF:-1 group-title="Kids;International" tvg-id="5d14fb6c84dd37df3b4290c5" tvg-logo="https://images.pluto.tv/channels/5d14fb6c84dd37df3b4290c5/colorLogoPNG.png",Nick Jr. Dora TV
+#EXTINF:-1 group-title="Kids;International" tvg-id="5d14fb6c84dd37df3b4290c5" tvg-logo="https://i.imgur.com/fNSFQy6.png",Nick Jr. Dora TV
 https://siloh.pluto.tv/lilo/production/Nick/03/master.m3u8
 
 #KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
@@ -376,16 +376,16 @@ https://siloh.pluto.tv/lilo/production/Nick/03/master.m3u8
 #EXTINF:-1 group-title="Kids;International" tvg-id="nickelodeonasia.sg" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Nickelodeon_2009_logo.svg/640px-Nickelodeon_2009_logo.svg.png",Nickelodeon
 https://nyanv-live-cdn.mncnow.id/live/eds/Nickelodeon/sa_dash_vmx/Nickelodeon.mpd
 
-#EXTINF:-1 group-title="Kids;International" tvg-id="5ca7f16c37b88b2694731c79" tvg-logo="https://images.pluto.tv/channels/5ca7f16c37b88b2694731c79/colorLogoPNG.png",Pluto TV Gamer
+#EXTINF:-1 group-title="Kids;International" tvg-id="5ca7f16c37b88b2694731c79" tvg-logo="https://i.imgur.com/vP2nG78.png",Pluto TV Gamer
 http://stitcher-ipv4.pluto.tv/v1/stitch/embed/hls/channel/5ca7f16c37b88b2694731c79/master.m3u8?deviceType=samsung-tvplus&deviceMake=samsung&deviceModel=samsung&deviceVersion=unknown&appVersion=unknown&deviceLat=0&deviceLon=0&deviceDNT=%7BTARGETOPT%7D&deviceId=%7BPSID%7D&advertisingId=%7BPSID%7D&us_privacy=1YNY&samsung_app_domain=%7BAPP_DOMAIN%7D&samsung_app_name=%7BAPP_NAME%7D&profileLimit=&profileFloor=&embedPartner=samsung-tvplus
 
-#EXTINF:-1 group-title="Kids;International" tvg-id"5ad8d54be738977e2c310940" tvg-logo="https://images.pluto.tv/channels/5ad8d54be738977e2c310940/colorLogoPNG.png",Pluto TV Kids
+#EXTINF:-1 group-title="Kids;International" tvg-id"5ad8d54be738977e2c310940" tvg-logo="https://i.imgur.com/dOdwxBD.png",Pluto TV Kids
 http://stitcher-ipv4.pluto.tv/v1/stitch/embed/hls/channel/51c75f7bb6f26ba1cd00002f/master.m3u8?deviceType=samsung-tvplus&deviceMake=samsung&deviceModel=samsung&deviceVersion=unknown&appVersion=unknown&deviceLat=0&deviceLon=0&deviceDNT=%7BTARGETOPT%7D&deviceId=%7BPSID%7D&advertisingId=%7BPSID%7D&us_privacy=1YNY&samsung_app_domain=%7BAPP_DOMAIN%7D&samsung_app_name=%7BAPP_NAME%7D&profileLimit=&profileFloor=&embedPartner=samsung-tvplus
 
-#EXTINF:-1 group-title="Kids;International" tvg-id"5f8eba14a4ffb8000764e950" tvg-logo="https://images.pluto.tv/channels/5f8eba14a4ffb8000764e950/colorLogoPNG.png",Pluto TV Kids Animation
+#EXTINF:-1 group-title="Kids;International" tvg-id"5f8eba14a4ffb8000764e950" tvg-logo="https://i.imgur.com/yLiYjHb.png",Pluto TV Kids Animation
 http://stitcher-ipv4.pluto.tv/v1/stitch/embed/hls/channel/5db0ad56edc89300090d2ebb/master.m3u8?deviceType=samsung-tvplus&deviceMake=samsung&deviceModel=samsung&deviceVersion=unknown&appVersion=unknown&deviceLat=0&deviceLon=0&deviceDNT=%7BTARGETOPT%7D&deviceId=%7BPSID%7D&advertisingId=%7BPSID%7D&us_privacy=1YNY&samsung_app_domain=%7BAPP_DOMAIN%7D&samsung_app_name=%7BAPP_NAME%7D&profileLimit=&profileFloor=&embedPartner=samsung-tvplus
 
-#EXTINF:-1 group-title="Kids;International" tvg-id"" tvg-logo="https://i.postimg.cc/tJYv50RH/tween.png",Pluto TV Tween
+#EXTINF:-1 group-title="Kids;International" tvg-id"" tvg-logo="https://i.imgur.com/kTK0gli.png",Pluto TV Tween
 http://stitcher-ipv4.pluto.tv/v1/stitch/embed/hls/channel/5db0ae5af8797b00095c0794/master.m3u8?deviceType=samsung-tvplus&deviceMake=samsung&deviceModel=samsung&deviceVersion=unknown&appVersion=unknown&deviceLat=0&deviceLon=0&deviceDNT=%7BTARGETOPT%7D&deviceId=%7BPSID%7D&advertisingId=%7BPSID%7D&us_privacy=1YNY&samsung_app_domain=%7BAPP_DOMAIN%7D&samsung_app_name=%7BAPP_NAME%7D&profileLimit=&profileFloor=&embedPartner=samsung-tvplus
 
 #EXTINF:-1 group-title="Kids;International" tvg-id="pbskids.us" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/PBS_Kids_logo_%282022%29.svg/768px-PBS_Kids_logo_%282022%29.svg.png",PBS Kids
@@ -394,7 +394,7 @@ https://2-fss-2.streamhoster.com/pl_140/amlst:200914-1298290/playlist.m3u8
 #EXTINF:-1 group-title="Kids;International" tvg-id="spacetoonarabic.ae" tvg-logo="https://upload.wikimedia.org/wikipedia/en/2/2b/Spacetoon_logo.png",Spacetoon
 https://shls-spacetoon-prod-dub.shahid.net/out/v1/6240b773a3f34cca95d119f9e76aec02/index.m3u8
 
-#EXTINF:-1 group-title="Kids;International" tvg-id="5c3f8f12a93c2d61b9990a4e" tvg-logo="https://images.pluto.tv/channels/5c3f8f12a93c2d61b9990a4e/colorLogoPNG.png",TokuSHOUTsu
+#EXTINF:-1 group-title="Kids;International" tvg-id="5c3f8f12a93c2d61b9990a4e" tvg-logo="https://i.imgur.com/i03GOVo.png",TokuSHOUTsu
 http://stitcher-ipv4.pluto.tv/v1/stitch/embed/hls/channel/5c3f8f12a93c2d61b9990a4elivestitch/master.m3u8?deviceType=samsung-tvplus&deviceMake=samsung&deviceModel=samsung&deviceVersion=unknown&appVersion=unknown&deviceLat=0&deviceLon=0&deviceDNT=%7BTARGETOPT%7D&deviceId=%7BPSID%7D&advertisingId=%7BPSID%7D&us_privacy=1YNY&samsung_app_domain=%7BAPP_DOMAIN%7D&samsung_app_name=%7BAPP_NAME%7D&profileLimit=&profileFloor=&embedPartner=samsung-tvplus&profilesFromStream=true
 
 #EXTINF:-1 group-title="Kids" tvg-id="toonzkids.id" tvg-logo="https://i.imgur.com/gdlqRUy.png",Toonz Kids
@@ -506,7 +506,7 @@ https://nyanv-live-cdn.mncnow.id/live/eds/NHKWorldTV/sa_dash_vmx/NHKWorldTV.mpd
 #EXTINF:-1 group-title="News;International" tvg-id="nhkworldpremium.jp" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/9/90/Logo_NHK_World_Premium.jpg",NHK World Premium
 https://nyanv-live-cdn.mncnow.id/live/eds/NHKWorldPremium/sa_dash_vmx/NHKWorldPremium.mpd
 
-#EXTINF:-1 group-title="News;International" tvg-id="ntvnews24.jp" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/News24.svg/640px-News24.svg.png",NTV News 24
+#EXTINF:-1 group-title="News;International" tvg-id="ntvnews24.jp" tvg-logo="https://i.imgur.com/hoyuTUP.png",NTV News 24
 https://n24-cdn-live-b.ntv.co.jp/ch01/index.m3u8
 
 #EXTINF:-1 group-title="International" tvg-id="raiitaliaasia.it" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Logo_of_RAI_%282016%29.svg/512px-Logo_of_RAI_%282016%29.svg.png",RAI Italia
@@ -605,7 +605,7 @@ https://cdn-apse1-prod.tsv2.amagi.tv/linear/amg01448-samsungin-turboin-samsungin
 
 #KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
 #KODIPROP:inputstream.adaptive.license_key=https://mrpw.ptmnc01.verspective.net/?deviceId=OTFmNDAwZWEtZjI5OC0zNTAzLWE0NzktZWI2NGIxMjRmMGFm
-#EXTINF:-1 group-title="Knowledge;International" tvg-id="historyasia.us" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/History_Logo.svg/458px-History_Logo.svg.png",History
+#EXTINF:-1 group-title="Knowledge;International" tvg-id="historyasia.us" tvg-logo="https://i.imgur.com/YNpOmEc.png",History
 https://nyanv-live-cdn.mncnow.id/live/eds/History/sa_dash_vmx/History.mpd
 
 #KODIPROP:inputstreamaddon=inputstream.adaptive
@@ -668,7 +668,7 @@ https://mooncang.my.id/api/astro/ch.mpd?id=5085
 #EXTINF:-1 group-title="Movies" tvg-id="bioskopindonesia.id" tvg-logo="https://upload.wikimedia.org/wikipedia/id/a/a7/Bioskop_Indonesia_TV.png",Bioskop Indonesia
 https://cdnjkt2.transvision.co.id:1001/live/master/4/4028c6856fd0d66d0170341bf1000905/manifest.mpd
 
-#EXTINF:-1 group-title="Movies;International" tvg-id="58af4c093a41ca9d4ecabe96" tvg-logo="https://images.pluto.tv/channels/58af4c093a41ca9d4ecabe96/colorLogoPNG.png",Black Cinema
+#EXTINF:-1 group-title="Movies;International" tvg-id="58af4c093a41ca9d4ecabe96" tvg-logo="https://i.imgur.com/coi8cRR.png",Black Cinema
 http://service-stitcher.clusters.pluto.tv/stitch/hls/channel/58af4c093a41ca9d4ecabe96/master.m3u8?terminate=false&deviceType=web&deviceMake=web&deviceModel=web&sid=80&deviceId=58af4c093a41ca9d4ecabe96&deviceVersion=DNT&appVersion=DNT&deviceDNT=0&userId=&advertisingId=&deviceLat=&deviceLon=&app_name=&appName=web&buildVersion=&appStoreUrl=&architecture=&includeExtendedEvents=false&marketingRegion=US&serverSideAds=false
 
 #EXTINF:-1 group-title="Movies;International" tvg-id="cctv6.cn" tvg-logo="https://i.imgur.com/e2WhuFQ.png",CCTV-6
@@ -763,22 +763,22 @@ http://210.210.155.35/uq2663/h/h18/index.m3u8
 #EXTINF:-1 group-title="Movies" tvg-id="myfamily.id" tvg-logo="https://subsystem.indihome.co.id/cms-ih/assets/uploads/channel_list/UPLOAD-1633000350-.png",My Family Channel
 https://cdn01-telkomsel-01.akamaized.net/Content/DASH/Live/channel(18316fae-42c1-404c-ba21-df68a1cffcac)/manifest.mpd
 
-#EXTINF:-1 group-title="Movies;International" tvg-id="5cb0cae7a461406ffe3f5213" tvg-logo="https://images.pluto.tv/channels/5cb0cae7a461406ffe3f5213/colorLogoPNG.png",Paramount Movie Channel
+#EXTINF:-1 group-title="Movies;International" tvg-id="5cb0cae7a461406ffe3f5213" tvg-logo="https://i.imgur.com/3Os1IDq.png",Paramount Movie Channel
 http://service-stitcher.clusters.pluto.tv/v1/stitch/embed/hls/channel/5cb0cae7a461406ffe3f5213/master.m3u8?advertisingId=91a6ae51-6f9d-4fbb-adb0-bdfffa44693e&appVersion=unknown&deviceDNT=0&deviceId=91a6ae51-6f9d-4fbb-adb0-bdfffa44693e&deviceLat=0&deviceLon=0&deviceMake=samsung&deviceModel=samsung&deviceType=samsung-tvplus&deviceUA=samsung/SM-T720/10&deviceVersion=unknown&embedPartner=samsung-tvplus&profileFloor=&profileLimit=&samsung_app_domain=,https://play.google.com/store/apps/details?id=com.samsung.android.tvplus&samsung_app_name=Mobile+TV+Plus&us_privacy=1YNY
 
-#EXTINF:-1 group-title="Movies;International" tvg-id="561d7d484dc7c8770484914a" tvg-logo="https://images.pluto.tv/channels/561d7d484dc7c8770484914a/colorLogoPNG.png",Pluto TV Action
+#EXTINF:-1 group-title="Movies;International" tvg-id="561d7d484dc7c8770484914a" tvg-logo="https://i.imgur.com/2PoOGxB.png",Pluto TV Action
 http://service-stitcher.clusters.pluto.tv/stitch/hls/channel/561d7d484dc7c8770484914a/master.m3u8?terminate=false&deviceType=web&deviceMake=web&deviceModel=web&sid=54&deviceId=561d7d484dc7c8770484914a&deviceVersion=DNT&appVersion=DNT&deviceDNT=0&userId=&advertisingId=&deviceLat=&deviceLon=&app_name=&appName=web&buildVersion=&appStoreUrl=&architecture=&includeExtendedEvents=false&marketingRegion=US&serverSideAds=false
 
-#EXTINF:-1 group-title="Movies;International" tvg-id="5a4d3a00ad95e4718ae8d8db" tvg-logo="https://images.pluto.tv/channels/5a4d3a00ad95e4718ae8d8db/colorLogoPNG-1630516100243.png",Pluto TV Comedy
+#EXTINF:-1 group-title="Movies;International" tvg-id="5a4d3a00ad95e4718ae8d8db" tvg-logo="https://i.imgur.com/2aOaZqI.png",Pluto TV Comedy
 http://service-stitcher.clusters.pluto.tv/stitch/hls/channel/5a4d3a00ad95e4718ae8d8db/master.m3u8?terminate=false&deviceType=web&deviceMake=web&deviceModel=web&sid=57&deviceId=5a4d3a00ad95e4718ae8d8db&deviceVersion=DNT&appVersion=DNT&deviceDNT=0&userId=&advertisingId=&deviceLat=&deviceLon=&app_name=&appName=web&buildVersion=&appStoreUrl=&architecture=&includeExtendedEvents=false&marketingRegion=US&serverSideAds=false
 
-#EXTINF:-1 group-title="Movies;International" tvg-id="5f4d8594eb979c0007706de7" tvg-logo="https://images.pluto.tv/channels/5f4d8594eb979c0007706de7/colorLogoPNG.png",Pluto TV Crime
+#EXTINF:-1 group-title="Movies;International" tvg-id="5f4d8594eb979c0007706de7" tvg-logo="https://i.imgur.com/amLzPLh.png",Pluto TV Crime
 http://service-stitcher.clusters.pluto.tv/stitch/hls/channel/5f4d8594eb979c0007706de7/master.m3u8?terminate=false&deviceType=web&deviceMake=web&deviceModel=web&sid=73&deviceId=5f4d8594eb979c0007706de7&deviceVersion=DNT&appVersion=DNT&deviceDNT=0&userId=&advertisingId=&deviceLat=&deviceLon=&app_name=&appName=web&buildVersion=&appStoreUrl=&architecture=&includeExtendedEvents=false&marketingRegion=US&serverSideAds=false
 
-#EXTINF:-1 group-title="Movies;International" tvg-id="569546031a619b8f07ce6e25" tvg-logo="https://images.pluto.tv/channels/569546031a619b8f07ce6e25/colorLogoPNG.png",Pluto TV Horror
+#EXTINF:-1 group-title="Movies;International" tvg-id="569546031a619b8f07ce6e25" tvg-logo="https://i.imgur.com/XfZAbc3.png",Pluto TV Horror
 http://service-stitcher.clusters.pluto.tv/stitch/hls/channel/569546031a619b8f07ce6e25/master.m3u8?terminate=false&deviceType=web&deviceMake=web&deviceModel=web&sid=75&deviceId=569546031a619b8f07ce6e25&deviceVersion=DNT&appVersion=DNT&deviceDNT=0&userId=&advertisingId=&deviceLat=&deviceLon=&app_name=&appName=web&buildVersion=&appStoreUrl=&architecture=&includeExtendedEvents=false&marketingRegion=US&serverSideAds=false
 
-#EXTINF:-1 group-title="Movies;International" tvg-id="5c6dc88fcd232425a6e0f06e" tvg-logo="https://images.pluto.tv/channels/5c6dc88fcd232425a6e0f06e/colorLogoPNG.png",Pluto TV Terror
+#EXTINF:-1 group-title="Movies;International" tvg-id="5c6dc88fcd232425a6e0f06e" tvg-logo="https://i.imgur.com/GaEiYTQ.png",Pluto TV Terror
 http://service-stitcher.clusters.pluto.tv/stitch/hls/channel/5c6dc88fcd232425a6e0f06e/master.m3u8?terminate=false&deviceType=web&deviceMake=web&deviceModel=web&sid=76&deviceId=5c6dc88fcd232425a6e0f06e&deviceVersion=DNT&appVersion=DNT&deviceDNT=0&userId=&advertisingId=&deviceLat=&deviceLon=&app_name=&appName=web&buildVersion=&appStoreUrl=&architecture=&includeExtendedEvents=false&marketingRegion=US&serverSideAds=false
 
 #KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
@@ -1258,24 +1258,24 @@ https://service-stitcher.clusters.pluto.tv/stitch/hls/channel/5df975e2b27cf50009
 #KODIPROP:inputstream.adaptive.manifest_type=dash
 #KODIPROP:inputstream.adaptive.license_type=clearkey
 #KODIPROP:inputstream.adaptive.license_key=82f8e2a17dac44c0a18f660479349c59:1b144f73e6fefe91cd05f850e2b589d0
-#EXTINF:-1 group-title="Sports;International" tvg-id="daznbeinsports1.uk" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Logo_bein_sports_1.png/800px-Logo_bein_sports_1.png",beIN Sports DAZN 1
+#EXTINF:-1 group-title="Sports;International" tvg-id="daznbeinsports1.uk" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Logo_bein_sports_1.png/800px-Logo_bein_sports_1.png",DAZN beIN Sports 1
 https://dce-fs-live-dazn-cdn.dazn.com/dashdrm/dazn-linear-039/stream.mpd
 
 #KODIPROP:inputstreamaddon=inputstream.adaptive
 #KODIPROP:inputstream.adaptive.manifest_type=dash
 #KODIPROP:inputstream.adaptive.license_type=clearkey
 #KODIPROP:inputstream.adaptive.license_key=82f8e2a17dac44c0a18f660479349c59:1b144f73e6fefe91cd05f850e2b589d0
-#EXTINF:-1 group-title="Sports;International" tvg-id="dazbeinsports2.uk" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Logo_bein_sports_2.png/800px-Logo_bein_sports_2.png",beIN Sports DAZN 2
+#EXTINF:-1 group-title="Sports;International" tvg-id="dazbeinsports2.uk" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Logo_bein_sports_2.png/800px-Logo_bein_sports_2.png",DAZN beIN Sports 2
 https://dce-fs-live-dazn-cdn.dazn.com/dashdrm/dazn-linear-040/stream.mpd
 
 #KODIPROP:inputstreamaddon=inputstream.adaptive
 #KODIPROP:inputstream.adaptive.manifest_type=dash
 #KODIPROP:inputstream.adaptive.license_type=clearkey
 #KODIPROP:inputstream.adaptive.license_key=82f8e2a17dac44c0a18f660479349c59:1b144f73e6fefe91cd05f850e2b589d0
-#EXTINF:-1 group-title="Sports;International" tvg-id="daznbeinsports3.uk" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Logo_bein_sports_3.png/800px-Logo_bein_sports_3.png",beIN Sports DAZN 3
+#EXTINF:-1 group-title="Sports;International" tvg-id="daznbeinsports3.uk" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Logo_bein_sports_3.png/800px-Logo_bein_sports_3.png",DAZN beIN Sports 3
 https://dce-fs-live-dazn-cdn.dazn.com/dashdrm/dazn-linear-041/stream.mpd
 
-#EXTINF:-1 group-title="Sports;International" tvg-id="5ebc8688f3697d00072f7cf8" tvg-logo="https://images.pluto.tv/channels/5ebc8688f3697d00072f7cf8/colorLogoPNG.png",Belator MMA
+#EXTINF:-1 group-title="Sports;International" tvg-id="5ebc8688f3697d00072f7cf8" tvg-logo="https://i.imgur.com/dxTIvB2.png",Bellator MMA
 http://stitcher-ipv4.pluto.tv/v1/stitch/embed/hls/channel/62792f34f3aa05000728841e/master.m3u8?deviceType=samsung-tvplus&deviceMake=samsung&deviceModel=samsung&deviceVersion=unknown&appVersion=unknown&deviceLat=0&deviceLon=0&deviceDNT=%7BTARGETOPT%7D&deviceId=%7BPSID%7D&advertisingId=%7BPSID%7D&us_privacy=1YNY&samsung_app_domain=%7BAPP_DOMAIN%7D&samsung_app_name=%7BAPP_NAME%7D&profileLimit=&profileFloor=&embedPartner=samsung-tvplus
 
 #EXTINF:-1 group-title="Sports;International" tvg-id="btsport1.uk" tvg-logo="https://img01.products.bt.co.uk/content/dam/bt/portal/images/logos/channel-logo/full-logo/2022/BTSPORT_1_2018_WHITE_RGB.png",BT Sports 1
@@ -1328,12 +1328,12 @@ https://mooncang.my.id/api/vidio/ch.mpd?id=6786&code=champions-tv-3
 
 #KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
 #KODIPROP:inputstream.adaptive.license_key=https://mooncang.my.id/api/vidio/drm.php?id=9182
-#EXTINF:-1 group-title="Sports" tvg-id="championstv5.id" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/c/c0/Champions_TV_5.png/revision/latest?cb=20220810080805",Champions TV 5
+#EXTINF:-1 group-title="Sports" tvg-id="championstv5.id" tvg-logo="https://i.imgur.com/pqvRLXh.png",Champions TV 5
 https://mooncang.my.id/api/vidio/ch.mpd?id=9182&code=champions-tv-5
 
 #KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
 #KODIPROP:inputstream.adaptive.license_key=https://mooncang.my.id/api/vidio/drm.php?id=9183
-#EXTINF:-1 group-title="Sports" tvg-id="championstv6.id" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/4/4a/Champions_TV_6.png/revision/latest?cb=20220810081421",Champions TV 6
+#EXTINF:-1 group-title="Sports" tvg-id="championstv6.id" tvg-logo="https://i.imgur.com/yx4sCwr.png",Champions TV 6
 https://mooncang.my.id/api/vidio/ch.mpd?id=9183&code=champions-tv-6
 
 #KODIPROP:inputstream.adaptive.license_type=clearkey
@@ -1371,7 +1371,7 @@ https://dce-fs-live-dazn-cdn.dazn.com/dashdrm/dazn-linear-016/stream.mpd
 
 #KODIPROP:inputstream.adaptive.license_type=clearkey
 #KODIPROP:inputstream.adaptive.license_key=82f8e2a17dac44c0a18f660479349c59:1b144f73e6fefe91cd05f850e2b589d0
-#EXTINF:-1 group-title="Sports;International" tvg-id="daznlaliga.es" tvg-logo="https://img2.sport-tv-guide.live/images/tv-station-dazn-laliga-2784.png",DAZN La Liga
+#EXTINF:-1 group-title="Sports;International" tvg-id="daznlaliga.es" tvg-logo="https://img2.sport-tv-guide.live/images/tv-station-dazn-laliga-2784.png",DAZN LaLiga
 https://dce-fs-live-dazn-cdn.dazn.com/dashdrm/dazn-linear-043/stream.mpd
 
 #EXTINF:-1 group-title="Sports;International" tvg-id="digisport1romania.ro" tvg-logo="https://ewsat.com/img/DIGI_SPORT_1.png",Digi Sport 1 
@@ -1501,11 +1501,11 @@ https://nyanv-live-cdn.mncnow.id/live/eds/Soccer-2/sa_dash_vmx/Soccer-2.mpd
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 6.2; Win64; x64;) Gecko/20100101 Firefox/20.0
 https://stream.ads.ottera.tv/playlist.m3u8?network_id=535
 
-#EXTINF:-1 group-title="Sports;International" tvg-id="movistarlaliga.es" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/LaLiga_por_Movistar_Plus%2B_2022_logo.svg/640px-LaLiga_por_Movistar_Plus%2B_2022_logo.svg.png",Movistar LaLiga
+#EXTINF:-1 group-title="Sports;International" tvg-id="movistarlaliga.es" tvg-logo="https://i.imgur.com/HPMLSGb.png",Movistar LaLiga
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36
 https://webudit.onlinewebtv.lol/lb/premium538/index.m3u8|referer=https://widevine.licenses4.me/
 
-#EXTINF:-1 group-title="Sports;International" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Liga_de_Campeones_por_Movistar_Plus%2B_2022_logo.svg/640px-Liga_de_Campeones_por_Movistar_Plus%2B_2022_logo.svg.png",Movistar Liga de Campeones
+#EXTINF:-1 group-title="Sports;International" tvg-id="movistarligadecampeones.es" tvg-logo="https://i.imgur.com/mBl0IxY.png",Movistar Liga de Campeones
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36
 https://webudit.onlinewebtv.lol/lb/premium435/index.m3u8|referer=https://widevine.licenses4.me/
 
@@ -1882,22 +1882,22 @@ https://webudit.onlinewebtv.lol/lb/premium371/index.m3u8|referer=https://widevin
 #EXTINF:-1 group-title="Music;International" tvg-id="mtvliveus.us" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/MTV_Live_2021_logo.svg/640px-MTV_Live_2021_logo.svg.png",MTV Live
 http://103.167.167.5:8111/play/a00q/index.m3u8
 
-#EXTINF:-1 group-title="Music;International" tvg-id="5d14fd1a252d35decbc4080c" tvg-logo="https://images.pluto.tv/channels/5d14fd1a252d35decbc4080c/colorLogoPNG.png",MTV Biggest Pop
+#EXTINF:-1 group-title="Music;International" tvg-id="5d14fd1a252d35decbc4080c" tvg-logo="https://i.imgur.com/kXwxqg3.png",MTV Biggest Pop
 http://pluto-live.plutotv.net/egress/chandler/pluto01/live/VIACBS02/master.m3u8
 
-#EXTINF:-1 group-title="Music;International" tvg-id="5d3609cd6a6c78d7672f2a81" tvg-logo="https://images.pluto.tv/channels/5d3609cd6a6c78d7672f2a81/colorLogoPNG.png",MTV Block Party
+#EXTINF:-1 group-title="Music;International" tvg-id="5d3609cd6a6c78d7672f2a81" tvg-logo="https://i.imgur.com/7R6I542.png",MTV Block Party
 http://pluto-live.plutotv.net/egress/chandler/pluto01/live/VIACBS03/master.m3u8
 
-#EXTINF:-1 group-title="Music;International" tvg-id="5ca6899a37b88b269472ea4b" tvg-logo="https://images.pluto.tv/channels/5ca6899a37b88b269472ea4b/colorLogoPNG-1641927416701.png",MTV Dating
+#EXTINF:-1 group-title="Music;International" tvg-id="5ca6899a37b88b269472ea4b" tvg-logo="https://i.imgur.com/hbtvJrn.png",MTV Dating
 https://service-stitcher.clusters.pluto.tv/stitch/hls/channel/5ca6899a37b88b269472ea4b/master.m3u8?advertisingId=&appName=web&appStoreUrl=&appVersion=DNT&app_name=&architecture=&buildVersion=&deviceDNT=0&deviceId=5ca6899a37b88b269472ea4b&deviceLat=&deviceLon=&deviceMake=web&deviceModel=web&deviceType=web&deviceVersion=DNT&includeExtendedEvents=false&marketingRegion=US&serverSideAds=false&sid=330&terminate=false&userId=
 
-#EXTINF:-1 group-title="Music;International" tvg-id="5ca672f515a62078d2ec0ad2" tvg-logo="https://i.imgur.com/hEQafwQ.png",MTV Pluto TV
+#EXTINF:-1 group-title="Music;International" tvg-id="5ca672f515a62078d2ec0ad2" tvg-logo="https://i.imgur.com/ssuIAd3.png",MTV Pluto TV
 http://service-stitcher.clusters.pluto.tv/stitch/hls/channel/5ca672f515a62078d2ec0ad2/master.m3u8?advertisingId=&appName=web&appStoreUrl=&appVersion=DNT&app_name=&architecture=&buildVersion=&deviceDNT=0&deviceId=5ca672f515a62078d2ec0ad2&deviceLat=&deviceLon=&deviceMake=web&deviceModel=web&deviceType=web&deviceVersion=DNT&includeExtendedEvents=false&marketingRegion=US&serverSideAds=false&sid=178&terminate=false&userId=
 
-#EXTINF:-1 group-title="Music;International" tvg-id="5d14fdb8ca91eedee1633117" tvg-logo="https://images.pluto.tv/channels/5d14fdb8ca91eedee1633117/colorLogoPNG.png",MTV Spankin' New
+#EXTINF:-1 group-title="Music;International" tvg-id="5d14fdb8ca91eedee1633117" tvg-logo="https://i.imgur.com/mzF1SN8.png",MTV Spankin' New
 http://pluto-live.plutotv.net/egress/chandler/pluto01/live/VIACBS07/master.m3u8
 
-#EXTINF:-1 group-title="Music;International" tvg-id="5d14fc31252d35decbc4080b" tvg-logo="https://images.pluto.tv/channels/5d14fc31252d35decbc4080b/colorLogoPNG.png",MTV Yo!
+#EXTINF:-1 group-title="Music;International" tvg-id="5d14fc31252d35decbc4080b" tvg-logo="https://i.imgur.com/jcK5SWg.png",MTV Yo!
 http://pluto-live.plutotv.net/egress/chandler/pluto01/live/VIACBS01/master.m3u8
 
 #KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
@@ -2050,10 +2050,10 @@ http://redlabmcdn.s.llnwi.net/nv02/bs08hd/index.m3u8
 #EXTINF:-1 group-title="International;Undefined" tvg-id="bsasahi.jp" tvg-logo="https://i.imgur.com/qPnHwQd.png",BS Asahi
 http://redlabmcdn.s.llnwi.net/nv02/bs04hd/index.m3u8
 
-#EXTINF:-1 group-title="International;Undefined" tvg-id="bsfuji.jp" tvg-logo="https://i.imgur.com/Gwe3An2.png",BS Fuji TV
+#EXTINF:-1 group-title="International;Undefined" tvg-id="bsfuji.jp" tvg-logo="https://i.imgur.com/Z2x3hk7.png",BS Fuji TV
 http://redlabmcdn.s.llnwi.net/nv02/bs07hd/index.m3u8
 
-#EXTINF:-1 group-title="International;Undefined" tvg-id="bsnippontv.jp" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/BS4_logo.svg/640px-BS4_logo.svg.png",BS Nippon TV
+#EXTINF:-1 group-title="International;Undefined" tvg-id="bsnippontv.jp" tvg-logo="https://i.imgur.com/1f7BaBm.png",BS Nippon TV
 http://redlabmcdn.s.llnwi.net/nv02/bs03hd/index.m3u8
 
 #EXTINF:-1 group-title="International;Undefined" tvg-id="bstbs.jp" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/BS-TBS_2020.svg/640px-BS-TBS_2020.svg.png",BS TBS
@@ -2062,10 +2062,10 @@ http://redlabmcdn.s.llnwi.net/nv02/bs05hd/index.m3u8
 #EXTINF:-1 group-title="International;Undefined" tvg-id="bstvtokyo.jp" tvg-logo="https://i.imgur.com/yJfA6ak.png",BS TV Tokyo
 http://redlabmcdn.s.llnwi.net/nv02/bs06hd/index.m3u8
 
-#EXTINF:-1 group-title="International;Undefined" tvg-id="nippontv.jp" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Nippon_Television_Holdings_logo.svg/640px-Nippon_Television_Holdings_logo.svg.png",Nippon TV
+#EXTINF:-1 group-title="International;Undefined" tvg-id="nippontv.jp" tvg-logo="https://i.imgur.com/2Xv4IFl.png",Nippon TV
 https://stream01.willfonk.com/live_playlist.m3u8?cid=BS294&r=HD&ccode=JP&m=d0:20:20:04:35:cc&t=0d6938cb3dcf4b79848bc1753a59daf1
 
-#EXTINF:-1 group-title="International;Undefined" tvg-id="jocxdtv.jp" tvg-logo="https://upload.wikimedia.org/wikipedia/id/thumb/e/e9/Fuji_TV_logo.svg/492px-Fuji_TV_logo.svg.png",Fuji TV
+#EXTINF:-1 group-title="International;Undefined" tvg-id="jocxdtv.jp" tvg-logo="https://i.imgur.com/hAXs8gu.png",Fuji TV
 http://redlabmcdn.s.llnwi.net/nv02/ryowa7hd/index.m3u8
 
 #EXTINF:-1 group-title="International;Undefined" tvg-id="tvasahi.jp" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/TV_Asahi_Logo.svg/640px-TV_Asahi_Logo.svg.png",TV Asahi

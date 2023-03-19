@@ -34,15 +34,6 @@ Rencana akan menambah banyak playlist untuk saluran lokal/daerah sesuai region k
 1. Religi
 1. Olahraga
 
-## Changelog
-
-1. 2023/03/12 =  Upload perdana
-1. 2023/03/16 =  Perbaikan siaran yang mati, penambahan siaran baru
-1. 2023/03/17 =  Penambahan siaran baru, penyegaran logo saluran-saluran baru
-1. 2023/03/18 =  Perbaikan dan penghapusan siaran yang mati, penambahan siaran baru, perubahan letak kategori pada masing-masing saluran yang tidak sesuai
-1. 2023/03/18 #2 =  Perbaikan dan penghapusan siaran yang mati, penambahan siaran baru, penyegaran logo lama
-1. 2023/03/19 =  Perbaikan siaran yang rusak
-
 ## Disclaimer
 
 Semua saluran yang didapat dari kumpulan penyedia playlist IPTV, siaran live streaming internet. Jadi kalau ada siaran yang mati maka penyedia siarannya tidak tersedia atau mengalami gangguan, besar kemungkinan akan diupdate atau dihapus dari playlistnya.
