@@ -1,5 +1,5 @@
 #EXTM3U
-#EXTM3U billed-msg="PEMBARUAN 2023/03/20  —  Terima kasih memakai playlist IPTV ini. Tidak untuk diperjualbelikan."
+#EXTM3U billed-msg="PEMBARUAN 2023/03/21  —  Terima kasih memakai playlist IPTV ini. Tidak untuk diperjualbelikan."
 #EXTM3U x-tvg-url="https://stavol.masuk.web.id/epg.xml, https://i.mjh.nz/all/epg.xml, https://i.mjh.nz/PlutoTV/all.xml, https://i.mjh.nz/SamsungTVPlus/all.xml, https://www.bevy.be/bevyfiles/indonesia.xml, https://www.bevy.be/bevyfiles/arabia.xml, https://www.bevy.be/bevyfiles/australia.xml, https://www.bevy.be/bevyfiles/china.xml, https://www.bevy.be/bevyfiles/france.xml, https://www.bevy.be/bevyfiles/germany.xml, https://www.bevy.be/bevyfiles/hongkongpremium.xml, https://www.bevy.be/bevyfiles/india.xml, https://www.bevy.be/bevyfiles/italy.xml, https://www.bevy.be/bevyfiles/japan.xml, https://www.bevy.be/bevyfiles/korea.xml, https://www.bevy.be/bevyfiles/malaysia.xml, https://www.bevy.be/bevyfiles/mexico.xml, https://www.bevy.be/bevyfiles/netherlands.xml, https://www.bevy.be/bevyfiles/netherlandspremium.xml, https://www.bevy.be/bevyfiles/poland.xml, https://www.bevy.be/bevyfiles/qatar.xml, https://www.bevy.be/bevyfiles/romania.xml, https://www.bevy.be/bevyfiles/russia.xml, https://www.bevy.be/bevyfiles/serbia.xml, https://www.bevy.be/bevyfiles/singaporepremium.xml, https://www.bevy.be/bevyfiles/southafrica.xml, https://www.bevy.be/bevyfiles/spain.xml, https://www.bevy.be/bevyfiles/sweden.xml, https://www.bevy.be/bevyfiles/thailand.xml, https://www.bevy.be/bevyfiles/turkey.xml, https://www.bevy.be/bevyfiles/uae.xml, https://www.bevy.be/bevyfiles/unitedkingdom.xml, https://www.bevy.be/bevyfiles/unitedstates.xml, https://www.bevy.be/bevyfiles/unitedstatespremium1.xml, https://www.bevy.be/bevyfiles/unitedstatespremium2.xml, https://www.bevy.be/bevyfiles/indonesiapremium1.xml, https://www.bevy.be/bevyfiles/indonesiapremium2.xml" refresh="3600"
 
 
@@ -156,12 +156,12 @@ http://210.210.155.35:80/qwr9ew/s/s07/index.m3u8
 
 #KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
 #KODIPROP:inputstream.adaptive.license_key=https://mrpw.ptmnc01.verspective.net/?deviceId=NDIzMDJhZmUtYWRjMi0zNGJkLTkyN2EtYmE1ZDFlZWIwODEz
-#EXTINF:-1 group-title="National/Local;News" tvg-id="tvone.id" tvg-logo="https://i.imgur.com/iZXjOH4.png",TVOne
+#EXTINF:-1 group-title="National/Local;News" tvg-id="tvone.id" tvg-logo="https://i.imgur.com/iZXjOH4.png",tvOne
 https://nyanv-live-cdn.mncnow.id/live/eds/TVOne/sa_dash_vmx/TVOne.mpd
 https://mooncang.my.id/api/youtube/ytl.php?url=https://www.youtube.com/c/tvonenews/live
 
-#EXTINF:-1 group-title="National/Local;Entertainment" tvg-id="vivatelevisi.id" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/7/7b/VTV_Indonesia_red.png",VIVA TV
-https://free-renotv.my.id/ts.m3u8?ch=MTg3ZTZhNzM0YjUxMzM2ZU43aG5IUWVOM3QzcWlJL2tUbVZ3L0xCaGI5Zng2RWxRWC9DWDBaR25MOHM5ajNQZG5qR2F3OW15TkdoTkFrSzlCVWNFeFRBSDJETWZPQVZHa0MzdnRBPT0=
+#EXTINF:-1 group-title="National/Local;Entertainment" tvg-id="vivatelevisi.id" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/7/7b/VTV_Indonesia_red.png",VTV
+#https://free-renotv.my.id/ts.m3u8?ch=MTg3ZTZhNzM0YjUxMzM2ZU43aG5IUWVOM3QzcWlJL2tUbVZ3L0xCaGI5Zng2RWxRWC9DWDBaR25MOHM5ajNQZG5qR2F3OW15TkdoTkFrSzlCVWNFeFRBSDJETWZPQVZHa0MzdnRBPT0=
 
 ######## TRANS MEDIA ########
 
@@ -198,7 +198,6 @@ https://edge.medcom.id/live-edge/smil:magna.smil/playlist.m3u8
 https://edge.medcom.id/live-edge/smil:mgnch.smil/playlist.m3u8
 
 #EXTINF:-1 group-title="National/Local;News" tvg-id="bntv.id" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/5/54/BN_Channel.png",BN Channel
-http://103.167.167.5:8111/play/a00b/index.m3u8
 https://mooncang.my.id/api/youtube/ytl.php?url=https://youtu.be/0Kln8aj0v3E
 
 ######## KOMPAS GRAMEDIA ########
@@ -568,7 +567,7 @@ http://ebsonair.ebs.co.kr/ebsufamilypc/familypc1m/playlist.m3u8
 #EXTINF:-1 group-title="Kids;International" tvg-id="happykids.us" tvg-logo="https://happykids.tv/img/logo.png",HappyKids
 https://happykids-vizio.amagi.tv/playlist.m3u8
 
-#EXTINF:-1 group-title="Kids;International" tvg-id="happykidsjunior.us" tvg-logo="https://happykids.tv/img/logo.png",HappyKids Junior
+#EXTINF:-1 group-title="Kids;International" tvg-id="happykidsjunior.us" tvg-logo="https://i.imgur.com/Gp6zEQa.png",HappyKids Junior
 https://happykidsjunior-vizio.amagi.tv/playlist.m3u8
 
 #EXTINF:-1 group-title="Kids" tvg-id="horee.id" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/0/0e/HOREE_logo.png/revision/latest?cb=20180705160440",Horee
@@ -897,7 +896,7 @@ https://dai2.xumo.com/amagi_hls_data_xumo1212A-redboxpeopleareawesome/CDN/playli
 #EXTINF:-1 group-title="Knowledge;International" tvg-id="rtdocumentary.ru" tvg-logo="https://upload.wikimedia.org/wikipedia/en/a/ae/RTD-TV-logo.png",Russia Today Documentary
 https://strm.yandex.ru/kal/rtd_hd/rtd_hd0.m3u8
 
-#EXTINF:-1 group-title="Knowledge;International" tvg-id="smithsonianchanneleast.us" tvg-logo="https://i.imgur.com/okSbavu.png",Smithsonian Channel
+#EXTINF:-1 group-title="Knowledge;International" tvg-id="smithsonianchanneluk.uk" tvg-logo="https://i.imgur.com/okSbavu.png",Smithsonian Channel
 https://smithsonianaus-samsungau.amagi.tv/playlist.m3u8
 
 ######## MOVIES ########
@@ -2161,10 +2160,10 @@ https://mooncang.my.id/api/vidio/ch.m3u8?id=7619&code=musica
 #KODIPROP:inputstream.adaptive.manifest_type=dash
 #KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
 #KODIPROP:inputstream.adaptive.license_key=https://lic.drmtoday.com/license-proxy-widevine/cenc/?specConform=true
-#EXTINF:-1 group-title="Music" tvg-id="musikindonesia.id" tvg-logo="https://upload.wikimedia.org/wikipedia/id/a/a7/Musik_Indonesia_Transvision.png",Musik Indonesia
+#EXTINF:-1 group-title="Music" tvg-id="musikindonesia.id" tvg-logo="https://i.imgur.com/Vzg8TUC.png",Musik Indonesia
 https://cdnjkt2.transvision.co.id:1001/live/master/2/4028c685730a4243017317dee5df1572/manifest.mpd
 
-#EXTINF:-1 group-title="Music" tvg-id="prambors.id" tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/6/64/Prambors_%28logo%29.svg/754px-Prambors_%28logo%29.svg.png",Prambors TV
+#EXTINF:-1 group-title="Music" tvg-id="prambors.id" tvg-logo="https://i.imgur.com/5lLTBDV.png",Prambors TV
 https://seulangatv.com/YANG-NYURI-ANAK-DAJJAL/vidioHLS/7004.m3u8
 
 #EXTINF:-1 group-title="Music;International" tvg-id="radioutv.us" tvg-logo="https://radiou.com/wp-content/uploads/2014/07/LogoFullsize140724-300x300.jpg",RadioU TV
@@ -2256,7 +2255,7 @@ https://nyanv-live-cdn.mncnow.id/live/eds/TawafTV/sa_dash_vmx/TawafTV.mpd
 
 #KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
 #KODIPROP:inputstream.adaptive.license_key=https://mrpw.ptmnc01.verspective.net/?deviceId=OTFmNDAwZWEtZjI5OC0zNTAzLWE0NzktZWI2NGIxMjRmMGFm
-#EXTINF:-1 group-title="Religion" tvg-id="muhammadiyahtv.id" tvg-logo="https://upload.wikimedia.org/wikipedia/id/thumb/a/a5/TVMu_logo.svg/1200px-TVMu_logo.svg.png",TVMu
+#EXTINF:-1 group-title="Religion" tvg-id="muhammadiyahtv.id" tvg-logo="https://upload.wikimedia.org/wikipedia/id/thumb/a/a5/TVMu_logo.svg/1200px-TVMu_logo.svg.png",tvMu
 https://nyanv-live-cdn.mncnow.id/live/eds/TVMuhammadiyah/sa_dash_vmx/TVMuhammadiyah.mpd
 
 #EXTINF:-1 group-title="Religion" tvg-id="uchannel.id" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/U-Channel_id.png/640px-U-Channel_id.png",U-Channel
@@ -2306,7 +2305,7 @@ http://redlabmcdn.s.llnwi.net/nv02/bs03hd/index.m3u8
 #EXTINF:-1 group-title="International;Undefined" tvg-id="bstbs.jp" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/BS-TBS_2020.svg/640px-BS-TBS_2020.svg.png",BS TBS
 http://redlabmcdn.s.llnwi.net/nv02/bs05hd/index.m3u8
 
-#EXTINF:-1 group-title="International;Undefined" tvg-id="bstvtokyo.jp" tvg-logo="https://i.imgur.com/yJfA6ak.png",BS TV Tokyo
+#EXTINF:-1 group-title="International;Undefined" tvg-id="bstvtokyo.jp" tvg-logo="https://i.imgur.com/tPIKkYZ.png",BS TV Tokyo
 http://redlabmcdn.s.llnwi.net/nv02/bs06hd/index.m3u8
 
 #EXTINF:-1 group-title="International;Undefined" tvg-id="nippontv.jp" tvg-logo="https://i.imgur.com/2Xv4IFl.png",Nippon TV
