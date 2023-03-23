@@ -18,6 +18,7 @@ Rencana akan menambah banyak playlist untuk saluran lokal/daerah sesuai region k
 1. Saluran luar negeri:
    1. Asia Tenggara
    1. Tiongkok, Hongkong, Taiwan
+   1. India
    1. Korea Selatan
    1. Jepang
    1. Timur Tengah
@@ -36,4 +37,4 @@ Rencana akan menambah banyak playlist untuk saluran lokal/daerah sesuai region k
 
 ## Disclaimer
 
-Semua saluran yang didapat dari kumpulan penyedia playlist IPTV, siaran live streaming internet. Jadi kalau ada siaran yang mati maka penyedia siarannya tidak tersedia atau mengalami gangguan, besar kemungkinan akan diupdate atau dihapus dari playlistnya.
+Semua saluran yang didapat dari kumpulan penyedia playlist IPTV, penyedia Xtream Code, dan siaran live streaming internet. Jadi kalau ada siaran yang mati maka penyedia siarannya tidak tersedia atau mengalami gangguan, besar kemungkinan akan diupdate atau dihapus dari playlistnya.
