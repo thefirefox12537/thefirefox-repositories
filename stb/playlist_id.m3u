@@ -1,5 +1,5 @@
 #EXTM3U
-#EXTM3U billed-msg="PEMBARUAN 2023/03/24  —  Selamat menunaikan ibadah puasa Ramadhan 1444 H  —  Terima kasih memakai playlist IPTV ini. Tidak untuk diperjualbelikan."
+#EXTM3U billed-msg="PEMBARUAN 2023/03/25  —  Selamat menunaikan ibadah puasa Ramadhan 1444 H  —  Terima kasih memakai playlist IPTV ini. Tidak untuk diperjualbelikan."
 #EXTM3U x-tvg-url="https://stavol.masuk.web.id/epg.xml, https://i.mjh.nz/all/epg.xml, https://i.mjh.nz/PlutoTV/all.xml, https://i.mjh.nz/SamsungTVPlus/all.xml, https://www.bevy.be/bevyfiles/arabia.xml, https://www.bevy.be/bevyfiles/australia.xml, https://www.bevy.be/bevyfiles/bulgaria.xml, https://www.bevy.be/bevyfiles/canadapremium.xml, https://www.bevy.be/bevyfiles/china.xml, https://www.bevy.be/bevyfiles/france.xml, https://www.bevy.be/bevyfiles/germany.xml, https://www.bevy.be/bevyfiles/hongkongpremium.xml, https://www.bevy.be/bevyfiles/india.xml, https://www.bevy.be/bevyfiles/italy.xml, https://www.bevy.be/bevyfiles/japan.xml, https://www.bevy.be/bevyfiles/korea.xml, https://www.bevy.be/bevyfiles/malaysia.xml, https://www.bevy.be/bevyfiles/mexico.xml, https://www.bevy.be/bevyfiles/netherlands.xml, https://www.bevy.be/bevyfiles/netherlandspremium.xml, https://www.bevy.be/bevyfiles/poland.xml, https://www.bevy.be/bevyfiles/qatar.xml, https://www.bevy.be/bevyfiles/romania.xml, https://www.bevy.be/bevyfiles/russia.xml, https://www.bevy.be/bevyfiles/serbia.xml, https://www.bevy.be/bevyfiles/singaporepremium.xml, https://www.bevy.be/bevyfiles/southafrica.xml, https://www.bevy.be/bevyfiles/spain.xml, https://www.bevy.be/bevyfiles/sweden.xml, https://www.bevy.be/bevyfiles/thailand.xml, https://www.bevy.be/bevyfiles/turkey.xml, https://www.bevy.be/bevyfiles/uae.xml, https://www.bevy.be/bevyfiles/unitedkingdom.xml, https://www.bevy.be/bevyfiles/unitedstates.xml, https://www.bevy.be/bevyfiles/unitedstatespremium1.xml, https://www.bevy.be/bevyfiles/unitedstatespremium2.xml, https://www.bevy.be/bevyfiles/indonesia.xml, https://www.bevy.be/bevyfiles/indonesiapremium1.xml, https://www.bevy.be/bevyfiles/indonesiapremium2.xml" refresh="3600"
 
 
@@ -153,7 +153,7 @@ https://mooncang.my.id/api/vidio/ch.m3u8?id=8237&code=mentari-tv
 #EXTINF:-1 group-title="National/Local;Entertainment" tvg-id="antv.id" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Antv_logo.svg/640px-Antv_logo.svg.png",ANTV
 https://nyanv-live-cdn.mncnow.id/live/eds/ANTV/sa_dash_vmx/ANTV.mpd
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:101.0) Gecko/20100101 Firefox/101.0
-http://210.210.155.35:80/qwr9ew/s/s07/index.m3u8
+http://rr2.dens.tv/s/s07/index.m3u8
 
 #KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
 #KODIPROP:inputstream.adaptive.license_key=https://mrpw.ptmnc01.verspective.net/?deviceId=NDIzMDJhZmUtYWRjMi0zNGJkLTkyN2EtYmE1ZDFlZWIwODEz
@@ -216,7 +216,7 @@ https://mooncang.my.id/api/youtube/ytl.php?url=https://www.youtube.com/c/kompast
 #EXTINF:-1 group-title="National/Local;Entertainment" tvg-id="net.id" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/NET._sky_blue.svg/640px-NET._sky_blue.svg.png",NET
 https://nyanv-live-cdn.mncnow.id/live/eds/NetTV-HD/sa_dash_vmx/NetTV-HD.mpd
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:101.0) Gecko/20100101 Firefox/101.0
-http://210.210.155.35:80/qwr9ew/s/s08/index.m3u8
+http://rr2.dens.tv/s/s08/index.m3u8
 
 ######## RAJAWALI CORP ########
 
@@ -323,7 +323,8 @@ http://122.248.43.138:1935/ch4/myStream/playlist.m3u8
 http://116.254.112.74/hls/cakralive.m3u8
 
 #EXTINF:-1 group-title="National/Local;Entertainment" tvg-id="elshintatv.id" tvg-logo="https://elshintatv.co.id/public/assets/312f2-logo-elshinta.png",Elshinta TV
-http://210.210.155.37:80/qwr9ew/s/s10/index.m3u8
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:101.0) Gecko/20100101 Firefox/101.0
+http://rr2.dens.tv/s/s10/index.m3u8
 
 #EXTINF:-1 group-title="National/Local;News" tvg-id="garudatv.id" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Logo_GarudaTV_3D_Putih_Silver_Merah.png/800px-Logo_GarudaTV_3D_Putih_Silver_Merah.png",Garuda TV
 https://stream.garuda.tv/live/garudatv/live.m3u8
@@ -444,7 +445,7 @@ https://h1.intechmedia.net/intech/ch16.m3u8
 #EXTINF:-1 group-title="Kids;International" tvg-id="abckids.au" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/0/05/ABC_Kids_%282020%29.png",ABC Kids
 https://c.mjh.nz/abc-kids.m3u8
 
-#EXTINF:-1 group-title="Kids;International" tvg-id="abcme.au" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/1/15/ABC_Me.svg/revision/latest/scale-to-width-down/640?cb=20160904122304",ABC ME
+#EXTINF:-1 group-title="Kids;International" tvg-id="abcme.au" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/1/15/ABC_Me.svg/revision/latest/scale-to-width-down/640?cb=20160904122304",ABC Me
 https://c.mjh.nz/abc-me.m3u8
 
 #KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
@@ -453,7 +454,7 @@ https://c.mjh.nz/abc-me.m3u8
 https://nyanv-live-cdn.mncnow.id/live/eds/Animax/sa_dash_vmx/Animax.mpd
 
 #EXTINF:-1 group-title="Kids;International" tvg-id="5812b7d3249444e05d09cc49" tvg-logo="https://i.imgur.com/zImbQzN.png",Anime All Day
-http://stitcher-ipv4.pluto.tv/v1/stitch/embed/hls/channel/5c363ac9e41be30cb6054c7c/master.m3u8?deviceType=samsung-tvplus&deviceMake=samsung&deviceModel=samsung&deviceVersion=unknown&appVersion=unknown&deviceLat=0&deviceLon=0&deviceDNT=%7BTARGETOPT%7D&deviceId=%7BPSID%7D&advertisingId=%7BPSID%7D&us_privacy=1YNY&samsung_app_domain=%7BAPP_DOMAIN%7D&samsung_app_name=%7BAPP_NAME%7D&profileLimit=&profileFloor=&embedPartner=samsung-tvplus
+https://service-stitcher.clusters.pluto.tv/v1/stitch/embed/hls/channel/5c363ac9e41be30cb6054c7c/master.m3u8?advertisingId=channel&appName=rokuchannel&appVersion=1.0&bmodel=bm1&channel_id=channel&content=channel&content_rating=ROKU_ADS_CONTENT_RATING&content_type=livefeed&coppa=false&deviceDNT=1&deviceId=channel&deviceMake=rokuChannel&deviceModel=web&deviceType=rokuChannel&deviceVersion=1.0&embedPartner=rokuChannel&genre=ROKU_ADS_CONTENT_GENRE&is_lat=1&platform=web&rdid=channel&studio_id=viacom&tags=ROKU_CONTENT_TAGS
 
 #EXTINF:-1 group-title="Kids;International" tvg-id="aniplus.th" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/b/b8/Aniplus_Asia_Logo.png/revision/latest?cb=20180531073555",AniPlus
 http://103.167.167.5:8111/play/a033/index.m3u8
@@ -528,7 +529,8 @@ https://contvanime-littlstar.cinedigm.com/ingest/master.m3u8
 http://sun66.xyz:54381/sadik.ypr434/1453.1982/79930
 
 #EXTINF:-1 group-title="Kids" tvg-id="densplay.id" tvg-logo="http://www.dens.tv/images/channel-logo/107.jpg",Dens Play
-http://210.210.155.37/x6bnqe/s/s37/index.m3u8
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:101.0) Gecko/20100101 Firefox/101.0
+http://rr3.dens.tv/s/s37/index.m3u8
 
 #KODIPROP:inputstream.adaptive.license_type=org.w3.clearkey
 #KODIPROP:inputstream.adaptive.license_key=ffb2f0f63c23a3592d4653e938b9ca19:d3661ae881fc55fc7a15815cd439747b
@@ -601,13 +603,14 @@ https://nyanv-live-cdn.mncnow.id/live/eds/MiaoMi/sa_dash_vmx/MiaoMi.mpd
 https://moonbug-rokuus.amagi.tv/playlist.m3u8
 
 #EXTINF:-0 group-title="Kids" tvg-id="mykidz.id" tvg-logo="https://i.imgur.com/Ja9Rx9p.png",My Kidz
-http://210.210.155.37/uq2663/h/h191/index.m3u8
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:101.0) Gecko/20100101 Firefox/101.0
+http://rr.dens.tv/h/h191/index.m3u8
 
 #EXTINF:-1 group-title="Kids;International" tvg-id="5ca673e0d0bd6c2689c94ce3" tvg-logo="https://i.imgur.com/q9S70bW.png",Nick Pluto TV
-https://siloh.pluto.tv/lilo/production/Nick/01/master.m3u8
+http://service-stitcher.clusters.pluto.tv/stitch/hls/channel/5ca673e0d0bd6c2689c94ce3/master.m3u8?advertisingId=&appName=web&appStoreUrl=&appVersion=DNT&app_name=&architecture=&buildVersion=&deviceDNT=0&deviceId=5ca673e0d0bd6c2689c94ce3&deviceLat=&deviceLon=&deviceMake=web&deviceModel=web&deviceType=web&deviceVersion=DNT&includeExtendedEvents=false&marketingRegion=US&serverSideAds=false&sid=977&terminate=false&userId=
 
 #EXTINF:-1 group-title="Kids;International" tvg-id="5ca6748a37b88b269472dad9" tvg-logo="https://i.imgur.com/zlRIPDO.png",Nick Jr. Pluto TV
-http://stitcher-ipv4.pluto.tv/v1/stitch/embed/hls/channel/5ca6748a37b88b269472dad9/master.m3u8?deviceType=samsung-tvplus&deviceMake=samsung&deviceModel=samsung&deviceVersion=unknown&appVersion=unknown&deviceLat=0&deviceLon=0&deviceDNT=%7BTARGETOPT%7D&deviceId=%7BPSID%7D&advertisingId=%7BPSID%7D&us_privacy=1YNY&samsung_app_domain=%7BAPP_DOMAIN%7D&samsung_app_name=%7BAPP_NAME%7D&profileLimit=&profileFloor=&embedPartner=samsung-tvplus
+http://service-stitcher.clusters.pluto.tv/stitch/hls/channel/5ca6748a37b88b269472dad9/master.m3u8?advertisingId=&appName=web&appStoreUrl=&appVersion=DNT&app_name=&architecture=&buildVersion=&deviceDNT=0&deviceId=5ca6748a37b88b269472dad9&deviceLat=&deviceLon=&deviceMake=web&deviceModel=web&deviceType=web&deviceVersion=DNT&includeExtendedEvents=false&marketingRegion=US&serverSideAds=false&sid=978&terminate=false&userId=
 
 #KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
 #KODIPROP:inputstream.adaptive.license_key=https://mrpw.ptmnc01.verspective.net/?deviceId=OTFmNDAwZWEtZjI5OC0zNTAzLWE0NzktZWI2NGIxMjRmMGFm
@@ -615,7 +618,7 @@ http://stitcher-ipv4.pluto.tv/v1/stitch/embed/hls/channel/5ca6748a37b88b269472da
 https://nyanv-live-cdn.mncnow.id/live/eds/NickJr-HDD/sa_dash_vmx/NickJr-HDD.mpd
 
 #EXTINF:-1 group-title="Kids;International" tvg-id="5d14fb6c84dd37df3b4290c5" tvg-logo="https://i.imgur.com/fNSFQy6.png",Nick Jr. Dora TV
-https://siloh.pluto.tv/lilo/production/Nick/03/master.m3u8
+https://service-stitcher.clusters.pluto.tv/stitch/hls/channel/5d14fb6c84dd37df3b4290c5/master.m3u8?advertisingId=&appName=web&appStoreUrl=&appVersion=DNT&app_name=&architecture=&buildVersion=&deviceDNT=0&deviceId=5d14fb6c84dd37df3b4290c5&deviceLat=&deviceLon=&deviceMake=web&deviceModel=web&deviceType=web&deviceVersion=DNT&includeExtendedEvents=false&marketingRegion=US&serverSideAds=false&sid=985&terminate=false&userId=
 
 #KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
 #KODIPROP:inputstream.adaptive.license_key=https://mrpw.ptmnc01.verspective.net/?deviceId=OTFmNDAwZWEtZjI5OC0zNTAzLWE0NzktZWI2NGIxMjRmMGFm
@@ -626,13 +629,13 @@ https://nyanv-live-cdn.mncnow.id/live/eds/Nickelodeon/sa_dash_vmx/Nickelodeon.mp
 http://sun66.xyz:54381/sadik.ypr434/1453.1982/78593
 
 #EXTINF:-1 group-title="Kids;International" tvg-id="5ca7f16c37b88b2694731c79" tvg-logo="https://i.imgur.com/vP2nG78.png",Pluto TV Gamer
-http://stitcher-ipv4.pluto.tv/v1/stitch/embed/hls/channel/5ca7f16c37b88b2694731c79/master.m3u8?deviceType=samsung-tvplus&deviceMake=samsung&deviceModel=samsung&deviceVersion=unknown&appVersion=unknown&deviceLat=0&deviceLon=0&deviceDNT=%7BTARGETOPT%7D&deviceId=%7BPSID%7D&advertisingId=%7BPSID%7D&us_privacy=1YNY&samsung_app_domain=%7BAPP_DOMAIN%7D&samsung_app_name=%7BAPP_NAME%7D&profileLimit=&profileFloor=&embedPartner=samsung-tvplus
+https://service-stitcher.clusters.pluto.tv/stitch/hls/channel/5ca7f16c37b88b2694731c79/master.m3u8?advertisingId=&appName=web&appStoreUrl=&appVersion=DNT&app_name=&architecture=&buildVersion=&deviceDNT=0&deviceId=5ca7f16c37b88b2694731c79&deviceLat=&deviceLon=&deviceMake=web&deviceModel=web&deviceType=web&deviceVersion=DNT&includeExtendedEvents=false&marketingRegion=US&serverSideAds=false&sid=801&terminate=false&userId=
 
 #EXTINF:-1 group-title="Kids;International" tvg-id"5ad8d54be738977e2c310940" tvg-logo="https://i.imgur.com/dOdwxBD.png",Pluto TV Kids
 http://stitcher-ipv4.pluto.tv/v1/stitch/embed/hls/channel/51c75f7bb6f26ba1cd00002f/master.m3u8?deviceType=samsung-tvplus&deviceMake=samsung&deviceModel=samsung&deviceVersion=unknown&appVersion=unknown&deviceLat=0&deviceLon=0&deviceDNT=%7BTARGETOPT%7D&deviceId=%7BPSID%7D&advertisingId=%7BPSID%7D&us_privacy=1YNY&samsung_app_domain=%7BAPP_DOMAIN%7D&samsung_app_name=%7BAPP_NAME%7D&profileLimit=&profileFloor=&embedPartner=samsung-tvplus
 
 #EXTINF:-1 group-title="Kids;International" tvg-id"5f8eba14a4ffb8000764e950" tvg-logo="https://i.imgur.com/yLiYjHb.png",Pluto TV Kids Animation
-http://stitcher-ipv4.pluto.tv/v1/stitch/embed/hls/channel/5db0ad56edc89300090d2ebb/master.m3u8?deviceType=samsung-tvplus&deviceMake=samsung&deviceModel=samsung&deviceVersion=unknown&appVersion=unknown&deviceLat=0&deviceLon=0&deviceDNT=%7BTARGETOPT%7D&deviceId=%7BPSID%7D&advertisingId=%7BPSID%7D&us_privacy=1YNY&samsung_app_domain=%7BAPP_DOMAIN%7D&samsung_app_name=%7BAPP_NAME%7D&profileLimit=&profileFloor=&embedPartner=samsung-tvplus
+https://service-stitcher.clusters.pluto.tv/stitch/hls/channel/5db0ad56edc89300090d2ebb/master.m3u8?advertisingId=&appName=web&appStoreUrl=&appVersion=DNT&app_name=&architecture=&buildVersion=&deviceDNT=0&deviceId=5db0ad56edc89300090d2ebb&deviceLat=&deviceLon=&deviceMake=web&deviceModel=web&deviceType=web&deviceVersion=DNT&includeExtendedEvents=false&marketingRegion=US&serverSideAds=false&sid=976&terminate=false&userId=
 
 #EXTINF:-1 group-title="Kids;International" tvg-id"" tvg-logo="https://i.imgur.com/kTK0gli.png",Pluto TV Tween
 http://stitcher-ipv4.pluto.tv/v1/stitch/embed/hls/channel/5db0ae5af8797b00095c0794/master.m3u8?deviceType=samsung-tvplus&deviceMake=samsung&deviceModel=samsung&deviceVersion=unknown&appVersion=unknown&deviceLat=0&deviceLon=0&deviceDNT=%7BTARGETOPT%7D&deviceId=%7BPSID%7D&advertisingId=%7BPSID%7D&us_privacy=1YNY&samsung_app_domain=%7BAPP_DOMAIN%7D&samsung_app_name=%7BAPP_NAME%7D&profileLimit=&profileFloor=&embedPartner=samsung-tvplus
@@ -644,10 +647,11 @@ https://2-fss-2.streamhoster.com/pl_140/amlst:200914-1298290/playlist.m3u8
 https://shls-spacetoon-prod-dub.shahid.net/out/v1/6240b773a3f34cca95d119f9e76aec02/index.m3u8
 
 #EXTINF:-1 group-title="Kids;International" tvg-id="5c3f8f12a93c2d61b9990a4e" tvg-logo="https://i.imgur.com/i03GOVo.png",TokuSHOUTsu
-http://stitcher-ipv4.pluto.tv/v1/stitch/embed/hls/channel/5c3f8f12a93c2d61b9990a4elivestitch/master.m3u8?deviceType=samsung-tvplus&deviceMake=samsung&deviceModel=samsung&deviceVersion=unknown&appVersion=unknown&deviceLat=0&deviceLon=0&deviceDNT=%7BTARGETOPT%7D&deviceId=%7BPSID%7D&advertisingId=%7BPSID%7D&us_privacy=1YNY&samsung_app_domain=%7BAPP_DOMAIN%7D&samsung_app_name=%7BAPP_NAME%7D&profileLimit=&profileFloor=&embedPartner=samsung-tvplus&profilesFromStream=true
+http://service-stitcher.clusters.pluto.tv/stitch/hls/channel/5c3f8f12a93c2d61b9990a4e/master.m3u8?advertisingId=&appName=web&appStoreUrl=&appVersion=DNT&app_name=&architecture=&buildVersion=&deviceDNT=0&deviceId=5c3f8f12a93c2d61b9990a4e&deviceLat=&deviceLon=&deviceMake=web&deviceModel=web&deviceType=web&deviceVersion=DNT&includeExtendedEvents=false&marketingRegion=US&serverSideAds=false&sid=848&terminate=false&userId=
 
 #EXTINF:-1 group-title="Kids" tvg-id="toonzkids.id" tvg-logo="https://i.imgur.com/gdlqRUy.png",Toonz Kids
-#http://210.210.155.37/x6bnqe/s/s81/index.m3u8
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:101.0) Gecko/20100101 Firefox/101.0
+#http://rr3.dens.tv/s/s81/index.m3u8
 
 #EXTINF:-1 group-title="Kids;International" tvg-id="zoomoo.sg" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/c/c5/Zoomookidslogo.png/revision/latest/scale-to-width-down/386?cb=20220221213805",Zoo Moo
 https://mooncang.my.id/api/vidio/ch.m3u8?id=6533&code=zoomoo
@@ -763,9 +767,6 @@ https://nyanv-live-cdn.mncnow.id/live/eds/NHKWorldPremium/sa_dash_vmx/NHKWorldPr
 #EXTINF:-1 group-title="News;International" tvg-id="ntvnews24.jp" tvg-logo="https://i.imgur.com/hoyuTUP.png",NTV News 24
 https://n24-cdn-live-b.ntv.co.jp/ch01/index.m3u8
 
-#EXTINF:-1 group-title="International" tvg-id="raiitaliaasia.it" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Logo_of_RAI_%282016%29.svg/512px-Logo_of_RAI_%282016%29.svg.png",RAI Italia
-http://210.210.155.37/x6bnqe/s/s63/index2.m3u8
-
 #KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
 #KODIPROP:inputstream.adaptive.license_key=https://mrpw.ptmnc01.verspective.net/?deviceId=OTFmNDAwZWEtZjI5OC0zNTAzLWE0NzktZWI2NGIxMjRmMGFm
 #EXTINF:-1 group-title="News;International" tvg-id="rt.ru" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Russia-Today-Logo.svg/2560px-Russia-Today-Logo.svg.png",Russia Today
@@ -824,7 +825,8 @@ https://nyanv-live-cdn.mncnow.id/live/eds/CGTN_Doc/sa_dash_vmx/CGTN_Doc.mpd
 https://nyanv-live-cdn.mncnow.id/live/eds/CrimeInvestigation/sa_dash_vmx/CrimeInvestigation.mpd
 
 #EXTINF:-1 group-title="Knowledge" tvg-id="denslearningknowledge.id" tvg-logo="http://www.dens.tv/images/channel-logo/1.jpg",Dens Learning & Knowledge
-http://210.210.155.37/x6bnqe/s/s36/index.m3u8
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:101.0) Gecko/20100101 Firefox/101.0
+http://rr3.dens.tv/s/s36/index.m3u8
 
 #KODIPROP:inputstream.adaptive.license_type=clearkey
 #KODIPROP:inputstream.adaptive.license_key=https://aqfadtv.xyz/clearkey/unifitv/didiktvkpm/
@@ -999,7 +1001,8 @@ https://nyanv-live-cdn.mncnow.id/live/eds/HitsMovies/sa_dash_vmx/HitsMovies.mpd
 https://nyanv-live-cdn.mncnow.id/live/eds/IndonesiaMovieChannels-HD/sa_dash_vmx/IndonesiaMovieChannels-HD.mpd
 
 #EXTINF:-1 group-title="Movies;International" tvg-id="kplus.sg" tvg-logo="https://i.imgur.com/ZZGUuhE.png",K+
-http://210.210.155.37/uq2663/h/h08/index.m3u8
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:101.0) Gecko/20100101 Firefox/101.0
+http://rr.dens.tv/h/h08/index.m3u8
 
 #KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
 #KODIPROP:inputstream.adaptive.license_key=https://maxstream.my.id/license-proxy-widevine/cenc/?specConform=true
@@ -1013,7 +1016,8 @@ https://cdn01-telkomsel-01.akamaized.net/Content/DASH/Live/channel(2a91622e-73f5
 
 #EXTINF:-1 group-title="Movies;International" tvg-id="mycinemaeurope.id" tvg-logo="https://i.imgur.com/AMUAo8p.png",My Cinema Europe
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:101.0) Gecko/20100101 Firefox/101.0
-http://210.210.155.35/uq2663/h/h18/index.m3u8
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:101.0) Gecko/20100101 Firefox/101.0
+http://rr.dens.tv/h/h18/index.m3u8
 
 #KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
 #KODIPROP:inputstream.adaptive.license_key=https://maxstream.my.id/license-proxy-widevine/cenc/?specConform=true
@@ -1021,7 +1025,7 @@ http://210.210.155.35/uq2663/h/h18/index.m3u8
 https://cdn01-telkomsel-01.akamaized.net/Content/DASH/Live/channel(18316fae-42c1-404c-ba21-df68a1cffcac)/manifest.mpd
 
 #EXTINF:-1 group-title="Movies;International" tvg-id="5cb0cae7a461406ffe3f5213" tvg-logo="https://i.imgur.com/3Os1IDq.png",Paramount Movie Channel
-http://service-stitcher.clusters.pluto.tv/v1/stitch/embed/hls/channel/5cb0cae7a461406ffe3f5213/master.m3u8?advertisingId=91a6ae51-6f9d-4fbb-adb0-bdfffa44693e&appVersion=unknown&deviceDNT=0&deviceId=91a6ae51-6f9d-4fbb-adb0-bdfffa44693e&deviceLat=0&deviceLon=0&deviceMake=samsung&deviceModel=samsung&deviceType=samsung-tvplus&deviceUA=samsung/SM-T720/10&deviceVersion=unknown&embedPartner=samsung-tvplus&profileFloor=&profileLimit=&samsung_app_domain=,https://play.google.com/store/apps/details?id=com.samsung.android.tvplus&samsung_app_name=Mobile+TV+Plus&us_privacy=1YNY
+https://service-stitcher.clusters.pluto.tv/stitch/hls/channel/5cb0cae7a461406ffe3f5213/master.m3u8?advertisingId=&appName=web&appStoreUrl=&appVersion=DNT&app_name=&architecture=&buildVersion=&deviceDNT=0&deviceId=5cb0cae7a461406ffe3f5213&deviceLat=&deviceLon=&deviceMake=web&deviceModel=web&deviceType=web&deviceVersion=DNT&includeExtendedEvents=false&marketingRegion=US&serverSideAds=false&sid=100&terminate=false&userId=
 
 #EXTINF:-1 group-title="Movies;International" tvg-id="561d7d484dc7c8770484914a" tvg-logo="https://i.imgur.com/2PoOGxB.png",Pluto TV Action
 http://service-stitcher.clusters.pluto.tv/stitch/hls/channel/561d7d484dc7c8770484914a/master.m3u8?terminate=false&deviceType=web&deviceMake=web&deviceModel=web&sid=54&deviceId=561d7d484dc7c8770484914a&deviceVersion=DNT&appVersion=DNT&deviceDNT=0&userId=&advertisingId=&deviceLat=&deviceLon=&app_name=&appName=web&buildVersion=&appStoreUrl=&architecture=&includeExtendedEvents=false&marketingRegion=US&serverSideAds=false
@@ -1125,13 +1129,16 @@ https://seulangatv.com/YANG-NYURI-ANAK-DAJJAL/vidioHLS/6402.m3u8
 http://beetv.my.id/x/vidio-citrakuliner-masihsama.m3u8
 
 #EXTINF:-1 group-title="Entertainment" tvg-id="denslifenstyle.id" tvg-logo="http://www.dens.tv/images/channel-logo/42.jpg",Dens Life & Style
-http://210.210.155.37/x6bnqe/s/s101/live.m3u8
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:101.0) Gecko/20100101 Firefox/101.0
+http://rr3.dens.tv/s/s101/live.m3u8
 
 #EXTINF:-1 group-title="Entertainment" tvg-id="densshowbiz.id" tvg-logo="http://www.dens.tv/images/channel-logo/102.jpg",Dens ShowBiz
-http://210.210.155.37/x6bnqe/s/s35/index.m3u8
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:101.0) Gecko/20100101 Firefox/101.0
+http://rr3.dens.tv/s/s35/index.m3u8
 
 #EXTINF:-1 group-title="Entertainment" tvg-id="densfoodchannel.id" tvg-logo="http://www.dens.tv/images/channel-logo/117.jpg",Dens Food Channel
-http://210.210.155.37/x6bnqe/s/s38/index.m3u8
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:101.0) Gecko/20100101 Firefox/101.0
+http://rr3.dens.tv/s/s38/index.m3u8
 
 #KODIPROP:inputstreamaddon=inputstream.adaptive
 #EXTHTTP:{"dt-custom-data": "eyJ1c2VySWQiOiJyZWFjdC1qdy1wbGF5ZXIiLCJzZXNzaW9uSWQiOiIxMjM0NTY3ODkiLCJtZXJjaGFudCI6ImdpaXRkX3RyYW5zdmlzaW9uIn0="}
@@ -1533,7 +1540,7 @@ https://dce-fs-live-dazn-cdn.dazn.com/dashdrm/dazn-linear-040/stream.mpd
 https://dce-fs-live-dazn-cdn.dazn.com/dashdrm/dazn-linear-041/stream.mpd
 
 #EXTINF:-1 group-title="Sports;International" tvg-id="5ebc8688f3697d00072f7cf8" tvg-logo="https://i.imgur.com/dxTIvB2.png",Bellator MMA
-http://stitcher-ipv4.pluto.tv/v1/stitch/embed/hls/channel/62792f34f3aa05000728841e/master.m3u8?deviceType=samsung-tvplus&deviceMake=samsung&deviceModel=samsung&deviceVersion=unknown&appVersion=unknown&deviceLat=0&deviceLon=0&deviceDNT=%7BTARGETOPT%7D&deviceId=%7BPSID%7D&advertisingId=%7BPSID%7D&us_privacy=1YNY&samsung_app_domain=%7BAPP_DOMAIN%7D&samsung_app_name=%7BAPP_NAME%7D&profileLimit=&profileFloor=&embedPartner=samsung-tvplus
+https://service-stitcher.clusters.pluto.tv/stitch/hls/channel/5ebc8688f3697d00072f7cf8/master.m3u8?advertisingId=&appName=web&appStoreUrl=&appVersion=DNT&app_name=&architecture=&buildVersion=&deviceDNT=0&deviceId=5ebc8688f3697d00072f7cf8&deviceLat=&deviceLon=&deviceMake=web&deviceModel=web&deviceType=web&deviceVersion=DNT&includeExtendedEvents=false&marketingRegion=US&serverSideAds=false&sid=730&terminate=false&userId=
 
 #EXTINF:-1 group-title="Sports;International" tvg-logo="https://images.prismic.io/atmosphere-marketing/372f3f16-2a2d-401b-ba32-08e6f8e01693_Billiards+-+Channel+Logo.png",Billiard TV
 https://1621590671.rsc.cdn77.org/HLS/BILLIARDTV_SCTE.m3u8
@@ -1739,8 +1746,7 @@ https://nyanv-live-cdn.mncnow.id/live/eds/FightSports/sa_dash_vmx/FightSports.mp
 https://webudit.onlinewebtv.lol/lb/premium39/index.m3u8|referer=https://widevine.licenses4.me/
 
 #EXTINF:-1 group-title="Sports;International" tvg-id="foxsports2.us" tvg-logo="https://imgx.fubo.tv/station_logos/fs2_2021_m.png",FOX Sports 2
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36
-https://webudit.onlinewebtv.lol/lb/premium11/index.m3u8|referer=https://widevine.licenses4.me/
+http://tv.nousiptv.com:8080/mitv/wAqfqtdguy/2044
 
 #EXTINF:-1 group-title="Sports;International" tvg-logo="https://i.imgur.com/WA1Scah.png",FOX Sports 1 Mexico
 https://dizf8i52j4sep.cloudfront.net/out/v1/148af6c03e6d48b0a725611fae5ed3a7/index.mpd
@@ -1784,7 +1790,7 @@ https://webudi.onlinewebtv.lol/lb/premium138/index.m3u8?|referer=https://widevin
 
 #EXTINF:-1 group-title="Sports;International" tvg-id="mlbnetwork.us" tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/a/ac/MLBNetworkLogo.svg/640px-MLBNetworkLogo.svg.png",MLB Network
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36
-https://webudit.onlinewebtv.lol/lb/premium399/index.m3u8|referer=https://widevine.licenses4.me/
+https://webudit.onlinewebtv.lol/lb/premium3
 
 #EXTINF:-1 group-title="Sports;International" tvg-logo="https://www.mmatv.co.uk/wp-content/uploads/2016/01/MMATV-logo-1.png",MMA TV
 https://stream.ads.ottera.tv/playlist.m3u8?network_id=819&livestream=1&live=1&app_bundle=com.plexapp.android&did=62274240-07e7-5d94-8dc8-ef68cf19e175&app_domain=app.plex.tv&app_name=plex&h=&w=&custom4=plex&gdpr=0&device_make=&device_model=&coppa=1&us_privacy=1---&custom_6=byPFmwd4yw8HDyR1xiKT&custom_7=60ecb878ebef9d002c4d0a11&is_lat=099/index.m3u8|referer=https://widevine.licenses4.me/
@@ -2467,5 +2473,9 @@ https://aqfadtv.xyz/live/8tv/index.mpd
 #KODIPROP:inputstream.adaptive.license_key=https://aqfadtv.xyz/clearkey/unifitv/tv9/
 #EXTINF:-1 group-title="International;Undefined" tvg-id="tv9.my" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/TV9_%28Malaysia%29_logo.svg/612px-TV9_%28Malaysia%29_logo.svg.png",TV9 Malaysia
 https://aqfadtv.xyz/live/tv9/index.mpd
+
+#EXTINF:-1 group-title="International;Undefined" tvg-id="raiitaliaasia.it" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Logo_of_RAI_%282016%29.svg/512px-Logo_of_RAI_%282016%29.svg.png",RAI Italia
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:101.0) Gecko/20100101 Firefox/101.0
+http://rr3.dens.tv/s/s63/index2.m3u8
 
 ######## UNDEFINED ########
