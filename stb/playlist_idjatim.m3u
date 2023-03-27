@@ -3,6 +3,11 @@
 #EXTM3U x-tvg-url="https://stavol.masuk.web.id/epg.xml, https://i.mjh.nz/all/epg.xml, https://i.mjh.nz/PlutoTV/all.xml, https://i.mjh.nz/SamsungTVPlus/all.xml, https://www.bevy.be/bevyfiles/arabia.xml, https://www.bevy.be/bevyfiles/australia.xml, https://www.bevy.be/bevyfiles/australiapremium.xml, https://www.bevy.be/bevyfiles/bulgaria.xml, https://www.bevy.be/bevyfiles/canadapremium.xml, https://www.bevy.be/bevyfiles/china.xml, https://www.bevy.be/bevyfiles/chinapremium1.xml, https://www.bevy.be/bevyfiles/chinapremium2.xml, https://www.bevy.be/bevyfiles/france.xml, https://www.bevy.be/bevyfiles/germany.xml, https://www.bevy.be/bevyfiles/hongkongpremium.xml, https://www.bevy.be/bevyfiles/india.xml, https://www.bevy.be/bevyfiles/italy.xml, https://www.bevy.be/bevyfiles/japan.xml, https://www.bevy.be/bevyfiles/korea.xml, https://www.bevy.be/bevyfiles/malaysia.xml, https://www.bevy.be/bevyfiles/mexico.xml, https://www.bevy.be/bevyfiles/netherlands.xml, https://www.bevy.be/bevyfiles/netherlandspremium.xml, https://www.bevy.be/bevyfiles/poland.xml, https://www.bevy.be/bevyfiles/qatar.xml, https://www.bevy.be/bevyfiles/romania.xml, https://www.bevy.be/bevyfiles/russia.xml, https://www.bevy.be/bevyfiles/serbia.xml, https://www.bevy.be/bevyfiles/singaporepremium.xml, https://www.bevy.be/bevyfiles/southafrica.xml, https://www.bevy.be/bevyfiles/spain.xml, https://www.bevy.be/bevyfiles/sweden.xml, https://www.bevy.be/bevyfiles/thailand.xml, https://www.bevy.be/bevyfiles/turkey.xml, https://www.bevy.be/bevyfiles/turkeypremium1.xml, https://www.bevy.be/bevyfiles/turkeypremium2.xml, https://www.bevy.be/bevyfiles/uae.xml, https://www.bevy.be/bevyfiles/unitedkingdom.xml, https://www.bevy.be/bevyfiles/unitedstates.xml, https://www.bevy.be/bevyfiles/unitedstatespremium1.xml, https://www.bevy.be/bevyfiles/unitedstatespremium2.xml, https://www.bevy.be/bevyfiles/indonesia.xml, https://www.bevy.be/bevyfiles/indonesiapremium1.xml, https://www.bevy.be/bevyfiles/indonesiapremium2.xml" refresh="3600"
 
 
+######## INFORMATION ########
+
+#EXTINF:-1 group-title="# INFORMATION #" tvg-logo="https://dl.dropbox.com/s/7iq2mnonxq91zlu/12537.stream.ip.tv_logo.png?dl=0",# INFORMATION #
+https://dl.dropbox.com/s/brn65fbh3gjip9a/info.m3u8?dl=0
+
 ======== NASIONAL/LOKAL ========
 
 ######## LPP TVRI ########
@@ -300,7 +305,8 @@ http://rr3.dens.tv/s/s37/index.m3u8
 #KODIPROP:inputstream.adaptive.license_type=org.w3.clearkey
 #KODIPROP:inputstream.adaptive.license_key=ffb2f0f63c23a3592d4653e938b9ca19:d3661ae881fc55fc7a15815cd439747b
 #EXTINF:-1 group-title="Kids;International" tvg-id="discoverykids.uk" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/2016_Discovery_Kids_logo.svg/546px-2016_Discovery_Kids_logo.svg.png",Discovery Kids
-https://cdn.cvattv.com.ar/live/c6eds/Discovery_Kids/SA_Live_dash_enc_2A/Discovery_Kids.mpd
+https://dl.dropbox.com/s/brn65fbh3gjip9a/info.m3u8?dl=0
+#https://cdn.cvattv.com.ar/live/c6eds/Discovery_Kids/SA_Live_dash_enc_2A/Discovery_Kids.mpd
 
 #KODIPROP:inputstream.adaptive.license_type=org.w3.clearkey
 #KODIPROP:inputstream.adaptive.license_key=https://clearkey-base64-2-hex-json.herokuapp.com/results.php?keyid=4a742e478d14023e1993e011d9415f94&key=0df77ede9bc744376836d21afa137dda
@@ -338,10 +344,12 @@ https://happykids-vizio.amagi.tv/playlist.m3u8
 https://happykidsjunior-vizio.amagi.tv/playlist.m3u8
 
 #EXTINF:-1 group-title="Kids" tvg-id="horee.id" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/0/0e/HOREE_logo.png/revision/latest?cb=20180705160440",Horee
-https://mooncang.my.id/api/vidio/ch.m3u8?id=6397&code=horee
+https://dl.dropbox.com/s/brn65fbh3gjip9a/info.m3u8?dl=0
+#https://mooncang.my.id/api/vidio/ch.m3u8?id=6397&code=horee
 
 #EXTINF:-1 group-title="Kids" tvg-id="hiphiphoree.id" tvg-logo="https://i.imgur.com/H7ngHPj.png",Hip-Hip Horee
-https://mooncang.my.id/api/vidio/ch.m3u8?id=7052&code=hip-hip-horee
+https://dl.dropbox.com/s/brn65fbh3gjip9a/info.m3u8?dl=0
+#https://mooncang.my.id/api/vidio/ch.m3u8?id=7052&code=hip-hip-horee
 
 #KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
 #KODIPROP:inputstream.adaptive.license_key=https://maxstream.my.id/license-proxy-widevine/cenc/?specConform=true
@@ -551,7 +559,8 @@ https://nyanv-live-cdn.mncnow.id/live/eds/TV5/sa_dash_vmx/TV5.mpd
 https://nyanv-live-cdn.mncnow.id/live/eds/TRTWorld/sa_dash_vmx/TRTWorld.mpd
 
 #EXTINF:-1 group-title="News" tvg-id="tvtempo.id" tvg-logo="https://i.imgur.com/z22sDXa.png",TV Tempo
-https://mooncang.my.id/api/vidio/ch.m3u8?id=7946&code=tv-tempo
+https://dl.dropbox.com/s/brn65fbh3gjip9a/info.m3u8?dl=0
+#https://mooncang.my.id/api/vidio/ch.m3u8?id=7946&code=tv-tempo
 
 #EXTINF:-1 group-title="News;International" tvg-id="voa.us" tvg-logo="https://festival.aji.or.id/2016/wp-content/uploads/2016/10/logo-voa-oke-e1475560866102.png",Voice Of America
 https://voa-ingest.akamaized.net/hls/live/2033868/tvmc03/playlist.m3u8
@@ -620,7 +629,8 @@ https://cdnjkt2.transvision.co.id:1001/live/master/5/4028c68572841ba301729d4068d
 #KODIPROP:inputstream.adaptive.license_type=org.w3.clearkey
 #KODIPROP:inputstream.adaptive.license_key=https://ar.tvgratis.live/arkey/Theater_HD.json
 #EXTINF:-1 group-title="Knowledge;International" tvg-id="discoverytheateruk.uk" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/2015_Discovery_theater_HD_logo.svg/640px-2015_Discovery_theater_HD_logo.svg.png",Discovery Theater
-https://edge-live13-hr.cvattv.com.ar/live/c6eds/Theater_HD/SA_Live_dash_enc_2A/Theater_HD.mpd
+https://dl.dropbox.com/s/brn65fbh3gjip9a/info.m3u8?dl=0
+#https://edge-live13-hr.cvattv.com.ar/live/c6eds/Theater_HD/SA_Live_dash_enc_2A/Theater_HD.mpd
 
 #EXTINF:-1 group-title="Knowledge;International" tvg-id="discoveryturbouk.uk" tvg-logo="https://i.imgur.com/9sYeQuS.png",Discovery Turbo
 https://cdn-apse1-prod.tsv2.amagi.tv/linear/amg01448-samsungin-turboin-samsungin/f4af20b4-be04-4f91-b4e0-33b7b43b2f7e/2.m3u8
@@ -680,7 +690,8 @@ https://smithsonianaus-samsungau.amagi.tv/playlist.m3u8
 #KODIPROP:inputstream.adaptive.license_type=clearkey
 #KODIPROP:inputstream.adaptive.license_key=https://ck-dash-mpd.astradamy.com/dash-ck/linear/5085
 #EXTINF:-1 group-title="Movies;International" tvg-id="astrocitra.my" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/9/94/Astro_Citra.png/revision/latest?cb=20201215114818",Astro Citra
-https://dikasurada.kutubusuk.workers.dev/dash-wv/linear/5085/default_primary.mpd
+https://dl.dropbox.com/s/brn65fbh3gjip9a/info.m3u8?dl=0
+#https://dikasurada.kutubusuk.workers.dev/dash-wv/linear/5085/default_primary.mpd
 
 #KODIPROP:inputstreamaddon=inputstream.adaptive
 #EXTHTTP:{"dt-custom-data": "eyJ1c2VySWQiOiJyZWFjdC1qdy1wbGF5ZXIiLCJzZXNzaW9uSWQiOiIxMjM0NTY3ODkiLCJtZXJjaGFudCI6ImdpaXRkX3RyYW5zdmlzaW9uIn0="}
@@ -718,7 +729,8 @@ https://nyanv-live-cdn.mncnow.id/live/eds/CinemaxHD2/sa_dash_vmx/CinemaxHD2.mpd
 
 #EXTINF:-1 group-title="Movies" tvg-id="citrabioskop.id" tvg-logo="https://i.imgur.com/KK1ipNk.png",Citra Bioskop
 #EXTVLCOPT:http-user-agent=VLC/3.0.9 LibVLC/3.0.9
-https://seulangatv.com/YANG-NYURI-ANAK-DAJJAL/vidioHLS/6684.m3u8
+https://dl.dropbox.com/s/brn65fbh3gjip9a/info.m3u8?dl=0
+#https://seulangatv.com/YANG-NYURI-ANAK-DAJJAL/vidioHLS/6684.m3u8
 
 #EXTINF:-1 group-title="Movies;International" tvg-id="crackle.us" tvg-logo="https://s3.amazonaws.com/media.wishpond.com/media/004/380/017/original.png?1427909518",Crackle
 http://crackle-xumo.amagi.tv/playlist.m3u8
@@ -883,15 +895,18 @@ http://39.135.138.59:18890/PLTV/88888910/224/3221225628/index.m3u8
 
 #EXTINF:-1 group-title="Entertainment" tvg-id="citradrama.id" tvg-logo="https://i.imgur.com/lXhXwx7.png",Citra Drama
 #EXTVLCOPT:http-user-agent=VLC/3.0.9 LibVLC/3.0.9
-https://seulangatv.com/YANG-NYURI-ANAK-DAJJAL/vidioHLS/6401.m3u8?
+https://dl.dropbox.com/s/brn65fbh3gjip9a/info.m3u8?dl=0
+#https://seulangatv.com/YANG-NYURI-ANAK-DAJJAL/vidioHLS/6401.m3u8?
 
 #EXTINF:-1 group-title="Entertainment" tvg-id="citraentertainment.id" tvg-logo="https://i.imgur.com/Q1N6ka8.png",Citra Entertainment
 #EXTVLCOPT:http-user-agent=VLC/3.0.9 LibVLC/3.0.9
-https://seulangatv.com/YANG-NYURI-ANAK-DAJJAL/vidioHLS/6402.m3u8
+https://dl.dropbox.com/s/brn65fbh3gjip9a/info.m3u8?dl=0
+#https://seulangatv.com/YANG-NYURI-ANAK-DAJJAL/vidioHLS/6402.m3u8
 
 #EXTINF:-1 group-title="Entertainment" tvg-id="citraculinarytravel.id" tvg-logo="https://i.imgur.com/EuZmCOh.png",Citra Culinary & Travel
 #EXTVLCOPT:http-user-agent=VLC/3.0.9 LibVLC/3.0.9
-http://beetv.my.id/x/vidio-citrakuliner-masihsama.m3u8
+https://dl.dropbox.com/s/brn65fbh3gjip9a/info.m3u8?dl=0
+#http://beetv.my.id/x/vidio-citrakuliner-masihsama.m3u8
 
 #EXTINF:-1 group-title="Entertainment" tvg-id="denslifenstyle.id" tvg-logo="http://www.dens.tv/images/channel-logo/42.jpg",Dens Life & Style
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:101.0) Gecko/20100101 Firefox/101.0
@@ -927,13 +942,16 @@ https://cdnjkt2.transvision.co.id:1001/live/master/4/4028c6856fd0d66d0170342015d
 https://nyanv-live-cdn.mncnow.id/live/eds/MNCEntertainment/sa_dash_vmx/MNCEntertainment.mpd
 
 #EXTINF:-1 group-title="Entertainment;International" tvg-id="fashiontvasia.fr" tvg-logo="https://i.imgur.com/m7iKAig.png",Fashion TV
-https://mooncang.my.id/api/vidio/ch.m3u8?id=6511&code=fashion-tv-global
+https://dl.dropbox.com/s/brn65fbh3gjip9a/info.m3u8?dl=0
+#https://mooncang.my.id/api/vidio/ch.m3u8?id=6511&code=fashion-tv-global
 
 #EXTINF:-1 group-title="Entertainment;International" tvg-id="fashiontvloriginal.fr" tvg-logo="https://i.imgur.com/m7iKAig.png",Fashion TV L'Original
-https://mooncang.my.id/api/vidio/ch.m3u8?id=6507&code=fashiontv-l-original
+https://dl.dropbox.com/s/brn65fbh3gjip9a/info.m3u8?dl=0
+#https://mooncang.my.id/api/vidio/ch.m3u8?id=6507&code=fashiontv-l-original
 
 #EXTINF:-1 group-title="Entertainment;International" tvg-id="fashiontvmidnightsecrets.fr" tvg-logo="https://i.imgur.com/m7iKAig.png",Fashion TV Midnight Secrets
-https://mooncang.my.id/api/vidio/ch.m3u8?id=6504&code=fashion-tv-midnight-secrets
+https://dl.dropbox.com/s/brn65fbh3gjip9a/info.m3u8?dl=0
+#https://mooncang.my.id/api/vidio/ch.m3u8?id=6504&code=fashion-tv-midnight-secrets
 
 #KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
 #KODIPROP:inputstream.adaptive.license_key=https://mrpw.ptmnc01.verspective.net/?deviceId=OTFmNDAwZWEtZjI5OC0zNTAzLWE0NzktZWI2NGIxMjRmMGFm
@@ -1980,7 +1998,8 @@ https://csm-e-boxplus.tls1.yospace.com/csm/extlive/boxplus01,boxhits-alldev.m3u8
 http://39.135.138.60:18890/PLTV/88888910/224/3221225641/index.m3u8
 
 #EXTINF:-1 group-title="Music" tvg-id="citradangdut.id" tvg-logo="https://i.imgur.com/77KYgbz.png",Citra Dangdut
-https://seulangatv.com/YANG-NYURI-ANAK-DAJJAL/vidioHLS/6587.m3u8
+https://dl.dropbox.com/s/brn65fbh3gjip9a/info.m3u8?dl=0
+#https://seulangatv.com/YANG-NYURI-ANAK-DAJJAL/vidioHLS/6587.m3u8
 
 #KODIPROP:inputstreamaddon=inputstream.adaptive
 #EXTHTTP:{"dt-custom-data": "eyJ1c2VySWQiOiJyZWFjdC1qdy1wbGF5ZXIiLCJzZXNzaW9uSWQiOiIxMjM0NTY3ODkiLCJtZXJjaGFudCI6ImdpaXRkX3RyYW5zdmlzaW9uIn0="}
@@ -2031,7 +2050,8 @@ https://nyanv-live-cdn.mncnow.id/live/eds/MusicChannel/sa_dash_vmx/MusicChannel.
 
 #EXTINF:-1 group-title="Music" tvg-id="musica.id" tvg-logo="https://musica.id/wordpress/wp-content/uploads/2021/07/logo-musica-med.png",Musica
 #EXTVLCOPT:http-user-agent=YoVideo/1.7 (Linux;Android) ExoPlayerLib/2.1.1
-https://mooncang.my.id/api/vidio/ch.m3u8?id=7619&code=musica
+https://dl.dropbox.com/s/brn65fbh3gjip9a/info.m3u8?dl=0
+#https://mooncang.my.id/api/vidio/ch.m3u8?id=7619&code=musica
 
 #KODIPROP:inputstreamaddon=inputstream.adaptive
 #EXTHTTP:{"dt-custom-data": "eyJ1c2VySWQiOiJyZWFjdC1qdy1wbGF5ZXIiLCJzZXNzaW9uSWQiOiIxMjM0NTY3ODkiLCJtZXJjaGFudCI6ImdpaXRkX3RyYW5zdmlzaW9uIn0="}
@@ -2089,7 +2109,8 @@ https://content.uplynk.com/channel/36953f5b6546464590d2fcd954bc89cf.m3u8
 ######## RELIGION ########
 
 #EXTINF:-1 group-title="Religion" tvg-id="ajwatv.id" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/3/3d/Ajwa_TV_logo.png",Ajwa TV
-https://mooncang.my.id/api/vidio/ch.m3u8?id=7464&code=ajwa-tv
+https://dl.dropbox.com/s/brn65fbh3gjip9a/info.m3u8?dl=0
+#https://mooncang.my.id/api/vidio/ch.m3u8?id=7464&code=ajwa-tv
 
 #KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
 #KODIPROP:inputstream.adaptive.license_key=https://mrpw.ptmnc01.verspective.net/?deviceId=OTFmNDAwZWEtZjI5OC0zNTAzLWE0NzktZWI2NGIxMjRmMGFm
@@ -2104,9 +2125,10 @@ https://streaming.yufid.com/hls/artvisi.m3u8
 #EXTINF:-1 group-title="Religion;International" tvg-id="astrooasis.my" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/f/f5/Astro_Oasis.png",Astro Oasis
 https://dikasurada.kutubusuk.workers.dev/dash-wv/linear/2505/default_primary.mpd
 
-#EXTVLCOPT:http-user-agent=VLC/3.0.9 LibVLC/3.0.9
 #EXTINF:-1 group-title="Religion" tvg-id="citramuslim.id" tvg-logo="https://i.imgur.com/L0kjuZs.png",Citra Muslim
-https://seulangatv.com/YANG-NYURI-ANAK-DAJJAL/vidioHLS/6678.m3u8
+#EXTVLCOPT:http-user-agent=VLC/3.0.9 LibVLC/3.0.9
+https://dl.dropbox.com/s/brn65fbh3gjip9a/info.m3u8?dl=0
+#https://seulangatv.com/YANG-NYURI-ANAK-DAJJAL/vidioHLS/6678.m3u8
 
 #EXTINF:-1 group-title="Religion" tvg-logo="https://i.imgur.com/MfogyNo.png",DEI Kids TV
 https://h1.intechmedia.net/intech/ch80.m3u8
